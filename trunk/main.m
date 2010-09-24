@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define abc 10
+
 int main(int argc, char *argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     int retVal = UIApplicationMain(argc, argv, nil, nil);
