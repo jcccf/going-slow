@@ -14,7 +14,6 @@
 @synthesize window;
 @synthesize tabBarController;
 
-
 #pragma mark -
 #pragma mark Application lifecycle
 

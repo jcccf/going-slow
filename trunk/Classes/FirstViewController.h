@@ -10,7 +10,8 @@
 
 
 @interface FirstViewController : UIViewController {
+	UIImageView *backGroundImage;
 
 }
-
+@property (nonatomic, retain) IBOutlet UIImageView *backGroundImage;
 @end

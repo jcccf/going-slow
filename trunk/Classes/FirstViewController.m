@@ -12,16 +12,19 @@
 
 @implementation FirstViewController
 
-
+@synthesize backGroundImage;
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
+		[backGroundImage setImage:[UIImage imageNamed:@"TestImage5150.png"]];
+		[backGroundImage setFrame:CGRectMake(33, 33, 33, 33)];
+		[self.view addSubview:backGroundImage];
     }
     return self;
-}
-*/
+}*/
+
 
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
@@ -58,6 +61,7 @@
 
 
 - (void)dealloc {
+	[backGroundImage dealloc];
     [super dealloc];
 }
 
