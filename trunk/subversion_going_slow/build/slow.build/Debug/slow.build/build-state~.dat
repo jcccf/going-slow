@@ -1,0 +1,68 @@
+Tslow
+v7
+r1
+cCheck dependencies
+
+N/Users/dagreg/Documents/subversion_going_slow/FirstView.xib
+c000000004CA1833900000000000049CE
+t1285653305
+s18894
+
+N/Users/dagreg/Documents/subversion_going_slow/MainWindow.xib
+c000000004CA183390000000000006422
+t1285653305
+s25634
+
+N/Users/dagreg/Documents/subversion_going_slow/SecondView.xib
+c000000004CA1833900000000000049CC
+t1285653305
+s18892
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug/slow.app
+t2
+s0
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug/slow.app/Contents/Info.plist
+t2
+s0
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug/slow.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug/slow.app/Contents/Resources/FirstView.nib
+t2
+s0
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug/slow.app/Contents/Resources/MainWindow.nib
+t2
+s0
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug/slow.app/Contents/Resources/SecondView.nib
+t2
+s0
+
+Nslow-Info.plist
+c000000004CA18339000000000000038D
+t1285653305
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies307346135#307346135#0(66"[BEROR]error: There is no SDK with the name or path 'iphoneos4.0'1(4@58"error: There is no SDK with the name or path 'iphoneos4.0'307346135#18446744073709551615#0#0(1@0"0(0#1#0"8606174976#0"0#
+
+CCompileXIB /Users/dagreg/Documents/subversion_going_slow/FirstView.xib
+r0
+
+CCompileXIB /Users/dagreg/Documents/subversion_going_slow/MainWindow.xib
+r0
+
+CCompileXIB /Users/dagreg/Documents/subversion_going_slow/SecondView.xib
+r0
+
+CProcessInfoPlistFile /Users/dagreg/Documents/subversion_going_slow/build/Debug/slow.app/Contents/Info.plist slow-Info.plist
+r0
+
+CTouch /Users/dagreg/Documents/subversion_going_slow/build/Debug/slow.app
+r0
+

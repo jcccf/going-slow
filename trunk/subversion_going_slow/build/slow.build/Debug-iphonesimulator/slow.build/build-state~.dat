@@ -1,0 +1,273 @@
+Tslow
+v7
+r0
+t307346150.336278
+cCheck dependencies
+cProcessInfoPlistFile /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/Info.plist slow-Info.plist
+cCompileXIB /Users/dagreg/Documents/subversion_going_slow/MainWindow.xib
+cCompileXIB /Users/dagreg/Documents/subversion_going_slow/SecondView.xib
+cCompileXIB /Users/dagreg/Documents/subversion_going_slow/FirstView.xib
+cProcessPCH /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/slow_Prefix-gdbrcqxnfwnqilfogbwkjlopllti/slow_Prefix.pch.gch slow_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/main.o /Users/dagreg/Documents/subversion_going_slow/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/slowAppDelegate.o /Users/dagreg/Documents/subversion_going_slow/Classes/slowAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/FirstViewController.o /Users/dagreg/Documents/subversion_going_slow/Classes/FirstViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow normal i386
+cGenerateDSYMFile /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app.dSYM /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow
+cTouch /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk
+c000000004CA17EA40000000000000110
+t1285652132
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C5A4DB60000000000295900
+t1280986550
+s2709760
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C5A4DB0000000000029D580
+t1280986544
+s2741632
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C5A4DA10000000000001466
+t1280986529
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C6241ED00000000000009CD
+t1281507821
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C6242840000000001E228C0
+t1281507972
+s31598784
+
+N/Users/dagreg/Documents/subversion_going_slow/Classes/FirstViewController.h
+c000000004CA1833900000000000000E8
+t1285653305
+s232
+i<UIKit/UIKit.h>
+
+N/Users/dagreg/Documents/subversion_going_slow/Classes/FirstViewController.m
+c000000004CA1833900000000000005C0
+t1285653305
+s1472
+i"FirstViewController.h"
+
+N/Users/dagreg/Documents/subversion_going_slow/Classes/slowAppDelegate.h
+c000000004CA1833900000000000001D1
+t1285653305
+s465
+i<UIKit/UIKit.h>
+
+N/Users/dagreg/Documents/subversion_going_slow/Classes/slowAppDelegate.m
+c000000004CA183390000000000000C2A
+t1285653305
+s3114
+i"slowAppDelegate.h"
+
+N/Users/dagreg/Documents/subversion_going_slow/FirstView.xib
+c000000004CA1833900000000000049CE
+t1285653305
+s18894
+
+N/Users/dagreg/Documents/subversion_going_slow/MainWindow.xib
+c000000004CA183390000000000006422
+t1285653305
+s25634
+
+N/Users/dagreg/Documents/subversion_going_slow/SecondView.xib
+c000000004CA1833900000000000049CC
+t1285653305
+s18892
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app
+t1285653350
+s272
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app.dSYM
+t1285653350
+s102
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/FirstView.nib
+t1285653349
+s2879
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/Info.plist
+t1285653349
+s579
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/MainWindow.nib
+t1285653349
+s3050
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/PkgInfo
+t1285653349
+s8
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/SecondView.nib
+t1285653349
+s2876
+
+N/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow
+t1285653350
+s16976
+
+N/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/FirstViewController.o
+t1285653350
+s34424
+
+N/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/main.o
+t1285653350
+s6316
+
+N/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/slow.LinkFileList
+c000000004CA18365000000000000018B
+t1285653349
+s395
+
+N/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/slowAppDelegate.o
+t1285653350
+s51064
+
+N/Users/dagreg/Documents/subversion_going_slow/main.m
+c000000004CA183390000000000000173
+t1285653305
+s371
+i<UIKit/UIKit.h>
+
+N/Users/dagreg/Documents/subversion_going_slow/slow_Prefix.pch
+c000000004CA1833900000000000000B1
+t1285653305
+s177
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/slow_Prefix-gdbrcqxnfwnqilfogbwkjlopllti/slow_Prefix.pch.gch
+t1285653350
+s15211536
+
+Nslow-Info.plist
+c000000004CA18339000000000000038D
+t1285653305
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies307346149#307346149#0(0"0(0#1#0"8608485088#0"0#
+
+CCompileC build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/FirstViewController.o /Users/dagreg/Documents/subversion_going_slow/Classes/FirstViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307346150.235102
+e307346150.293696
+r1
+xCompileC
+xbuild/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/FirstViewController.o
+x/Users/dagreg/Documents/subversion_going_slow/Classes/FirstViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@83"Compile /Users/dagreg/Documents/subversion_going_slow/Classes/FirstViewController.m307346150#307346150#0(0"0(0#0#75"/Users/dagreg/Documents/subversion_going_slow/Classes/FirstViewController.m8607031776#1969"    cd /Users/dagreg/Documents/subversion_going_slow    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-generated-files.hmap -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-own-target-headers.hmap -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-all-target-headers.hmap -iquote /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-project-headers.hmap -F/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator -I/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/DerivedSources/i386 -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/slow_Prefix-gdbrcqxnfwnqilfogbwkjlopllti/slow_Prefix.pch -c /Users/dagreg/Documents/subversion_going_slow/Classes/FirstViewController.m -o /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/FirstViewController.o0#
+
+CCompileC build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/main.o /Users/dagreg/Documents/subversion_going_slow/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307346150.233078
+e307346150.285466
+r1
+xCompileC
+xbuild/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/main.o
+x/Users/dagreg/Documents/subversion_going_slow/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/dagreg/Documents/subversion_going_slow/main.m307346150#307346150#0(0"0(0#0#52"/Users/dagreg/Documents/subversion_going_slow/main.m8607190848#1931"    cd /Users/dagreg/Documents/subversion_going_slow    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-generated-files.hmap -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-own-target-headers.hmap -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-all-target-headers.hmap -iquote /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-project-headers.hmap -F/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator -I/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/DerivedSources/i386 -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/slow_Prefix-gdbrcqxnfwnqilfogbwkjlopllti/slow_Prefix.pch -c /Users/dagreg/Documents/subversion_going_slow/main.m -o /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/main.o0#
+
+CCompileC build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/slowAppDelegate.o /Users/dagreg/Documents/subversion_going_slow/Classes/slowAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307346150.234160
+e307346150.304042
+r1
+xCompileC
+xbuild/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/slowAppDelegate.o
+x/Users/dagreg/Documents/subversion_going_slow/Classes/slowAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/dagreg/Documents/subversion_going_slow/Classes/slowAppDelegate.m307346150#307346150#0(0"0(0#0#71"/Users/dagreg/Documents/subversion_going_slow/Classes/slowAppDelegate.m8609054144#1961"    cd /Users/dagreg/Documents/subversion_going_slow    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-generated-files.hmap -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-own-target-headers.hmap -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-all-target-headers.hmap -iquote /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-project-headers.hmap -F/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator -I/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/DerivedSources/i386 -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/slow_Prefix-gdbrcqxnfwnqilfogbwkjlopllti/slow_Prefix.pch -c /Users/dagreg/Documents/subversion_going_slow/Classes/slowAppDelegate.m -o /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/slowAppDelegate.o0#
+
+CCompileXIB /Users/dagreg/Documents/subversion_going_slow/FirstView.xib
+s307346149.230012
+e307346149.661107
+r1
+xCompileXIB
+x/Users/dagreg/Documents/subversion_going_slow/FirstView.xib
+lSLF07#2@24"CompileXIB FirstView.xib307346149#307346149#0(0"0(0#0#59"/Users/dagreg/Documents/subversion_going_slow/FirstView.xib8607331968#586"    cd /Users/dagreg/Documents/subversion_going_slow    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/FirstView.nib /Users/dagreg/Documents/subversion_going_slow/FirstView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB /Users/dagreg/Documents/subversion_going_slow/MainWindow.xib
+s307346149.228397
+e307346149.637592
+r1
+xCompileXIB
+x/Users/dagreg/Documents/subversion_going_slow/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib307346149#307346149#0(0"0(0#0#60"/Users/dagreg/Documents/subversion_going_slow/MainWindow.xib8607594720#588"    cd /Users/dagreg/Documents/subversion_going_slow    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/MainWindow.nib /Users/dagreg/Documents/subversion_going_slow/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB /Users/dagreg/Documents/subversion_going_slow/SecondView.xib
+s307346149.229076
+e307346149.656699
+r1
+xCompileXIB
+x/Users/dagreg/Documents/subversion_going_slow/SecondView.xib
+lSLF07#2@25"CompileXIB SecondView.xib307346149#307346149#0(0"0(0#0#60"/Users/dagreg/Documents/subversion_going_slow/SecondView.xib8607490368#588"    cd /Users/dagreg/Documents/subversion_going_slow    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/SecondView.nib /Users/dagreg/Documents/subversion_going_slow/SecondView.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CGenerateDSYMFile /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app.dSYM /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow
+s307346150.322306
+e307346150.333931
+r1
+xGenerateDSYMFile
+x/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app.dSYM
+x/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow
+lSLF07#2@100"GenerateDSYMFile build/Debug-iphonesimulator/slow.app.dSYM build/Debug-iphonesimulator/slow.app/slow307346150#307346150#0(0"0(0#0#87"/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow8606097088#395"    cd /Users/dagreg/Documents/subversion_going_slow    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow -o /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app.dSYM0#
+
+CLd /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow normal i386
+s307346150.304127
+e307346150.322212
+r1
+xLd
+x/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow
+xnormal
+xi386
+lSLF07#2@92"Link /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow307346150#307346150#0(0"0(0#0#0"8606571616#920"    cd /Users/dagreg/Documents/subversion_going_slow    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -L/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator -F/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator -filelist /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/Objects-normal/i386/slow.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/slow0#
+
+CProcessInfoPlistFile /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/Info.plist slow-Info.plist
+s307346149.223723
+e307346149.228321
+r1
+xProcessInfoPlistFile
+x/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/Info.plist
+xslow-Info.plist
+lSLF07#2@23"Process slow-Info.plist307346149#307346149#0(0"0(0#0#61"/Users/dagreg/Documents/subversion_going_slow/slow-Info.plist8608461088#491"    cd /Users/dagreg/Documents/subversion_going_slow    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility slow-Info.plist -genpkginfo /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app/Info.plist0#
+
+CProcessPCH /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/slow_Prefix-gdbrcqxnfwnqilfogbwkjlopllti/slow_Prefix.pch.gch slow_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s307346149.661220
+e307346150.232969
+r1
+xProcessPCH
+x/var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/slow_Prefix-gdbrcqxnfwnqilfogbwkjlopllti/slow_Prefix.pch.gch
+xslow_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@26"Precompile slow_Prefix.pch307346149#307346150#0(0"0(0#0#61"/Users/dagreg/Documents/subversion_going_slow/slow_Prefix.pch8607676000#1819"    cd /Users/dagreg/Documents/subversion_going_slow    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-generated-files.hmap -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-own-target-headers.hmap -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-all-target-headers.hmap -iquote /Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/slow-project-headers.hmap -F/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator -I/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/DerivedSources/i386 -I/Users/dagreg/Documents/subversion_going_slow/build/slow.build/Debug-iphonesimulator/slow.build/DerivedSources -c /Users/dagreg/Documents/subversion_going_slow/slow_Prefix.pch -o /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/slow_Prefix-gdbrcqxnfwnqilfogbwkjlopllti/slow_Prefix.pch.gch0#
+
+CTouch /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app
+s307346150.334012
+e307346150.336241
+r1
+xTouch
+x/Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app
+lSLF07#2@88"Touch /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app307346150#307346150#0(0"0(0#0#0"8605886752#289"    cd /Users/dagreg/Documents/subversion_going_slow    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dagreg/Documents/subversion_going_slow/build/Debug-iphonesimulator/slow.app0#
+
