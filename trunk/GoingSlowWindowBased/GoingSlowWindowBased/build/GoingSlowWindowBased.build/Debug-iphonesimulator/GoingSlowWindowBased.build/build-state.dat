@@ -1,0 +1,365 @@
+TGoingSlowWindowBased
+v7
+r0
+t307499719.344027
+cCheck dependencies
+cProcessInfoPlistFile /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist GoingSlowWindowBased-Info.plist
+cCompileXIB /Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib
+cCpResource build/Debug-iphonesimulator/GoingSlowWindowBased.app/breathe.png breathe.png
+cCpResource build/Debug-iphonesimulator/GoingSlowWindowBased.app/TestImage5150.png TestImage5150.png
+cProcessPCH /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch GoingSlowWindowBased_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o /Users/dagreg/Documents/GoingSlowWindowBased/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased normal i386
+cGenerateDSYMFile /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app.dSYM /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased
+cTouch /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk
+c000000004CA17EA40000000000000110
+t1285652132
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C5A4DB60000000000295900
+t1280986550
+s2709760
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C5A4DB0000000000029D580
+t1280986544
+s2741632
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C5A4DA10000000000001466
+t1280986529
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C6241ED00000000000009CD
+t1281507821
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C6242840000000001E228C0
+t1281507972
+s31598784
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h
+c000000004CA3C57000000000000002FF
+t1285801328
+s767
+i<UIKit/UIKit.h>
+i"GoingSlowWindowBasedAppDelegate.h"
+i"SecondView.h"
+i"ThirdView.h"
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m
+c000000004CA3DAFC0000000000000B14
+t1285806844
+s2836
+i"GoingSlowWindowBasedAppDelegate.h"
+i"FirstView.h"
+i"SecondView.h"
+i"ThirdView.h"
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h
+c000000004CA3C02C0000000000000350
+t1285799980
+s848
+i<UIKit/UIKit.h>
+i"FirstView.h"
+i"SecondView.h"
+i"ThirdView.h"
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m
+c000000004CA3C9A80000000000000C2F
+t1285802408
+s3119
+i"GoingSlowWindowBasedAppDelegate.h"
+i"FirstView.h"
+i"SecondView.h"
+i"ThirdView.h"
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h
+c000000004CA3BFB00000000000000156
+t1285799856
+s342
+i<UIKit/UIKit.h>
+i"GoingSlowWindowBasedAppDelegate.h"
+i"FirstView.h"
+i"SecondView.h"
+i"ThirdView.h"
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m
+c000000004CA3DAEB00000000000006A2
+t1285806827
+s1698
+i"GoingSlowWindowBasedAppDelegate.h"
+i"FirstView.h"
+i"SecondView.h"
+i"ThirdView.h"
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h
+c000000004CA3D326000000000000054A
+t1285804838
+s1354
+i<UIKit/UIKit.h>
+i"GoingSlowWindowBasedAppDelegate.h"
+i"FirstView.h"
+i"SecondView.h"
+i"ThirdView.h"
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m
+c000000004CA3DB00000000000000159C
+t1285806848
+s5532
+i"GoingSlowWindowBasedAppDelegate.h"
+i"FirstView.h"
+i"SecondView.h"
+i"ThirdView.h"
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/GoingSlowWindowBased_Prefix.pch
+c000000004CA3B5A800000000000000D1
+t1285797288
+s209
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib
+c000000004CA3B5A80000000000002149
+t1285797288
+s8521
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/TestImage5150.png
+c000000004CA285EE0000000000001460
+t1285719534
+s5216
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/breathe.png
+c000000004CA2900A000000000000642E
+t1285722122
+s25646
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app
+t1285806849
+s272
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app.dSYM
+t1285806849
+s102
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased
+t1285806849
+s39856
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist
+t1285799627
+s649
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/MainWindow.nib
+t1285799628
+s1544
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/PkgInfo
+t1285799627
+s8
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/TestImage5150.png
+t1285801254
+s5216
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/breathe.png
+t1285801133
+s25646
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o
+t1285806849
+s53384
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBased.LinkFileList
+c000000004CA3BECB000000000000032D
+t1285799627
+s813
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o
+t1285805069
+s59044
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o
+t1285806828
+s35128
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o
+t1285806849
+s67068
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o
+t1285799629
+s6316
+
+N/Users/dagreg/Documents/GoingSlowWindowBased/main.m
+c000000004CA3B5A80000000000000179
+t1285797288
+s377
+i<UIKit/UIKit.h>
+
+N/var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch
+t1285799628
+s15211536
+
+NGoingSlowWindowBased-Info.plist
+c000000004CA3B5A8000000000000038D
+t1285797288
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies307499719#307499719#0(0"0(0#1#0"8620651040#0"0#
+
+CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307499649.555395
+e307499649.689703
+r1
+xCompileC
+xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o
+x/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m307499649#307499649#0(0"0(0#0#64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m8603471584#2258"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o0#
+
+CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307497869.681352
+e307497869.803084
+r1
+xCompileC
+xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o
+x/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307497869#307497869#0(0"0(0#0#86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m8614722720#2302"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o0#
+
+CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307499628.541987
+e307499628.643735
+r1
+xCompileC
+xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o
+x/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m307499628#307499628#0(0"0(0#0#65"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m8618533536#2260"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o0#
+
+CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307499649.613004
+e307499649.758736
+r1
+xCompileC
+xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o
+x/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m: In function '-[ThirdView init]':
+o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m:40: warning: class 'ThirdView' does not implement the 'UITextViewDelegate' protocol
+o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m:44: warning: class 'ThirdView' does not implement the 'UITextViewDelegate' protocol
+o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m:50: warning: class 'ThirdView' does not implement the 'UITextViewDelegate' protocol
+lSLF07#2@72"Compile /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m307499649#307499649#0(546"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m: In function '-[ThirdView init]':/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m:40: warning: class 'ThirdView' does not implement the 'UITextViewDelegate' protocol/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m:44: warning: class 'ThirdView' does not implement the 'UITextViewDelegate' protocol/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m:50: warning: class 'ThirdView' does not implement the 'UITextViewDelegate' protocol3(22@70"Class 'ThirdView' does not implement the 'UITextViewDelegate' protocol307499649#99#149#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m307499648#40#0#40#0#45"class '*' does not implement the '*' protocol0(22@70"Class 'ThirdView' does not implement the 'UITextViewDelegate' protocol307499649#248#149#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m307499648#44#0#44#0#45"class '*' does not implement the '*' protocol0(22@70"Class 'ThirdView' does not implement the 'UITextViewDelegate' protocol307499649#397#149#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m307499648#50#0#50#0#45"class '*' does not implement the '*' protocol0(0#0#64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m8619127296#2258"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o0#
+
+CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o /Users/dagreg/Documents/GoingSlowWindowBased/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307492428.992365
+e307492429.058697
+r1
+xCompileC
+xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o
+x/Users/dagreg/Documents/GoingSlowWindowBased/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@59"Compile /Users/dagreg/Documents/GoingSlowWindowBased/main.m307492428#307492429#0(0"0(0#0#51"/Users/dagreg/Documents/GoingSlowWindowBased/main.m8614362080#2240"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/main.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib
+s307492427.870164
+e307492428.203231
+r1
+xCompileXIB
+x/Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib307492427#307492428#0(0"0(0#0#59"/Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib8615563712#601"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/MainWindow.nib /Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCpResource build/Debug-iphonesimulator/GoingSlowWindowBased.app/TestImage5150.png TestImage5150.png
+s307494054.396554
+e307494054.403153
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/GoingSlowWindowBased.app/TestImage5150.png
+xTestImage5150.png
+lSLF07#2@22"Copy TestImage5150.png307494054#307494054#0(0"0(0#0#62"/Users/dagreg/Documents/GoingSlowWindowBased/TestImage5150.png8616327872#492"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dagreg/Documents/GoingSlowWindowBased/TestImage5150.png /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app0#
+
+CCpResource build/Debug-iphonesimulator/GoingSlowWindowBased.app/breathe.png breathe.png
+s307493933.087270
+e307493933.155390
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/GoingSlowWindowBased.app/breathe.png
+xbreathe.png
+lSLF07#2@16"Copy breathe.png307493933#307493933#0(0"0(0#0#56"/Users/dagreg/Documents/GoingSlowWindowBased/breathe.png12948278432039028#486"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/dagreg/Documents/GoingSlowWindowBased/breathe.png /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app0#
+
+CGenerateDSYMFile /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app.dSYM /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased
+s307499649.779784
+e307499649.796559
+r1
+xGenerateDSYMFile
+x/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app.dSYM
+x/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased
+lSLF07#2@148"GenerateDSYMFile build/Debug-iphonesimulator/GoingSlowWindowBased.app.dSYM build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased307499649#307499649#0(0"0(0#0#118"/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased8612308288#440"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased -o /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app.dSYM0#
+
+CLd /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased normal i386
+s307499649.758828
+e307499649.779660
+r1
+xLd
+x/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased
+xnormal
+xi386
+lSLF07#2@123"Link /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased307499649#307499649#0(0"0(0#0#0"8614194240#995"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -L/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -filelist /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBased.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased0#
+
+CProcessInfoPlistFile /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist GoingSlowWindowBased-Info.plist
+s307492427.863465
+e307492427.870089
+r1
+xProcessInfoPlistFile
+x/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist
+xGoingSlowWindowBased-Info.plist
+lSLF07#2@39"Process GoingSlowWindowBased-Info.plist307492427#307492427#0(0"0(0#0#76"/Users/dagreg/Documents/GoingSlowWindowBased/GoingSlowWindowBased-Info.plist27303270315982948#536"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility GoingSlowWindowBased-Info.plist -genpkginfo /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist0#
+
+CProcessPCH /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch GoingSlowWindowBased_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s307492428.203500
+e307492428.992204
+r1
+xProcessPCH
+x/var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch
+xGoingSlowWindowBased_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@42"Precompile GoingSlowWindowBased_Prefix.pch307492428#307492428#0(0"0(0#0#76"/Users/dagreg/Documents/GoingSlowWindowBased/GoingSlowWindowBased_Prefix.pch7594869363256026112#2113"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -c /Users/dagreg/Documents/GoingSlowWindowBased/GoingSlowWindowBased_Prefix.pch -o /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch0#
+
+CTouch /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app
+s307499649.796641
+e307499649.798750
+r1
+xTouch
+x/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app
+lSLF07#2@103"Touch /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app307499649#307499649#0(0"0(0#0#0"8611645568#303"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app0#
+
