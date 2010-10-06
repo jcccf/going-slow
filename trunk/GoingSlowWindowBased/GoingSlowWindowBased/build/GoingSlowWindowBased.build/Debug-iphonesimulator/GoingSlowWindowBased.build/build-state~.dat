@@ -1,302 +1,0 @@
-TGoingSlowWindowBased
-v7
-r0
-t307492429.096241
-cCheck dependencies
-cProcessInfoPlistFile /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist GoingSlowWindowBased-Info.plist
-cCompileXIB /Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib
-cProcessPCH /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch GoingSlowWindowBased_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o /Users/dagreg/Documents/GoingSlowWindowBased/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk
-c000000004CA17EA40000000000000110
-t1285652132
-s272
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004C5A4DB60000000000295900
-t1280986550
-s2709760
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004C5A4DB0000000000029D580
-t1280986544
-s2741632
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004C5A4DA10000000000001466
-t1280986529
-s5222
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004C6241ED00000000000009CD
-t1281507821
-s2509
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004C6242840000000001E228C0
-t1281507972
-s31598784
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h
-c000000004CA3BD24000000000000016D
-t1285799204
-s365
-i<UIKit/UIKit.h>
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m
-c000000004CA3BD35000000000000062D
-t1285799221
-s1581
-i"FirstView.h"
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h
-c000000004CA3BE310000000000000304
-t1285799473
-s772
-i<UIKit/UIKit.h>
-i"FirstView.h"
-i"SecondView.h"
-i"ThirdView.h"
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m
-c000000004CA3BEC90000000000000BCC
-t1285799625
-s3020
-i"GoingSlowWindowBasedAppDelegate.h"
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h
-c000000004CA3BECB000000000000011C
-t1285799627
-s284
-i<UIKit/UIKit.h>
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m
-c000000004CA3BCD30000000000000612
-t1285799123
-s1554
-i"SecondView.h"
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h
-c000000004CA3BD0C000000000000011A
-t1285799180
-s282
-i<UIKit/UIKit.h>
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m
-c000000004CA3BCDA000000000000060F
-t1285799130
-s1551
-i"ThirdView.h"
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/GoingSlowWindowBased_Prefix.pch
-c000000004CA3B5A800000000000000D1
-t1285797288
-s209
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib
-c000000004CA3B5A80000000000002149
-t1285797288
-s8521
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app
-t2
-s0
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app.dSYM
-t2
-s0
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased
-t2
-s0
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist
-t1285799627
-s649
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/MainWindow.nib
-t1285799628
-s1544
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/PkgInfo
-t1285799627
-s8
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o
-t2
-s0
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBased.LinkFileList
-c000000004CA3BECB000000000000032D
-t1285799627
-s813
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o
-t2
-s0
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o
-t2
-s0
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o
-t2
-s0
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o
-t1285799629
-s6316
-
-N/Users/dagreg/Documents/GoingSlowWindowBased/main.m
-c000000004CA3B5A80000000000000179
-t1285797288
-s377
-i<UIKit/UIKit.h>
-
-N/var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch
-t1285799628
-s15211536
-
-NGoingSlowWindowBased-Info.plist
-c000000004CA3B5A8000000000000038D
-t1285797288
-s909
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies307492427#307492427#0(0"0(0#1#0"7008295290451945472#0"0#
-
-CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s307492428.995210
-e307492429.063204
-r0
-xCompileC
-xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o
-x/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m:9:
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h:14: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h:17: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m:13: error: no declaration of property 'delegateReference' found in the interface
-lSLF07#2@72"Compile /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m307492428#307492429#0(538"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m:9:/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h:14: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h:17: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m:13: error: no declaration of property 'delegateReference' found in the interface3(4@74"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'307492429#90#151#2(7@86"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m307492429#18446744073709551615#0#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m307492021#9#0#9#0#0"0(13@142"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate' in /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492429#18446744073709551615#0#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492004#14#0#14#0#0"0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492004#14#0#14#0#19"expected * before *0(4@74"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'307492429#241#151#2(7@86"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m307492429#18446744073709551615#0#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m307492021#9#0#9#0#0"0(13@142"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate' in /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492429#18446744073709551615#0#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492004#17#0#17#0#0"0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492004#17#0#17#0#19"expected * before *0(4@69"No declaration of property 'delegateReference' found in the interface307492429#392#146#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m307492021#13#0#13#0#0"0(0#0#64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m8614117568#2258"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/FirstView.o1#
-
-CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s307492428.993969
-e307492429.058980
-r0
-xCompileC
-xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o
-x/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h:10,
-o                 from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:9:
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h:14: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h:17: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'
-oIn file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h:11,
-o                 from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:9:
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h:13: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'
-oIn file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h:12,
-o                 from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:9:
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h:13: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m: In function '-[GoingSlowWindowBasedAppDelegate application:didFinishLaunchingWithOptions:]':
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:26: error: 'UITabBArController' undeclared (first use in this function)
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:26: error: (Each undeclared identifier is reported only once
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:26: error: for each function it appears in.)
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:31: error: request for member 'delegateReference' in something not a structure or union
-lSLF07#2@94"Compile /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492428#307492429#0(2075"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h:10,                 from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:9:/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h:14: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h:17: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h:11,                 from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:9:/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h:13: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h:12,                 from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:9:/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h:13: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m: In function '-[GoingSlowWindowBasedAppDelegate application:didFinishLaunchingWithOptions:]':/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:26: error: 'UITabBArController' undeclared (first use in this function)/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:26: error: (Each undeclared identifier is reported only once/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:26: error: for each function it appears in.)/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m:31: error: request for member 'delegateReference' in something not a structure or union6(4@74"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'307492429#225#151#3(7@108"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492429#18446744073709551615#0#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492425#9#0#9#0#0"0(7@108"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h307492429#18446744073709551615#0#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h307492273#10#0#10#0#0"0(13@142"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate' in /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492429#18446744073709551615#0#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492004#14#0#14#0#0"0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492004#14#0#14#0#19"expected * before *0(4@74"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'307492429#376#151#3(7@108"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492429#18446744073709551615#0#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492425#9#0#9#0#0"0(7@108"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h307492429#18446744073709551615#0#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h307492273#10#0#10#0#0"0(13@142"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate' in /Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492429#18446744073709551615#0#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492004#17#0#17#0#0"0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/FirstView.h307492004#17#0#17#0#19"expected * before *0(4@74"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'307492429#752#152#3(7@108"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492429#18446744073709551615#0#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492425#9#0#9#0#0"0(7@108"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h307492429#18446744073709551615#0#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h307492273#11#0#11#0#0"0(13@143"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate' in /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h307492429#18446744073709551615#0#0(6@65"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h307492427#13#0#13#0#0"0(6@65"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h307492427#13#0#13#0#19"expected * before *0(4@74"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'307492429#1129#151#3(7@108"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492429#18446744073709551615#0#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492425#9#0#9#0#0"0(7@108"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h307492429#18446744073709551615#0#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.h307492273#12#0#12#0#0"0(13@142"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate' in /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h307492429#18446744073709551615#0#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h307491980#13#0#13#0#0"0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h307491980#13#0#13#0#19"expected * before *0(4@60"'UITabBArController' undeclared (first use in this function)307492429#1461#159#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492425#26#0#26#0#43"'*' undeclared (first use in this function)0(4@76"Request for member 'delegateReference' in something not a structure or union307492429#1900#175#0(6@86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m307492425#31#0#31#0#0"0(0#0#86"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m8614258304#2302"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/Classes/GoingSlowWindowBasedAppDelegate.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/GoingSlowWindowBasedAppDelegate.o1#
-
-CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s307492428.997006
-e307492429.057237
-r0
-xCompileC
-xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o
-x/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m:9:
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h:13: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'
-lSLF07#2@73"Compile /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m307492428#307492429#0(243"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m:9:/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h:13: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'1(4@74"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'307492429#91#152#2(7@87"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m307492429#18446744073709551615#0#0(6@65"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m307491923#9#0#9#0#0"0(13@143"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate' in /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h307492429#18446744073709551615#0#0(6@65"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h307492427#13#0#13#0#0"0(6@65"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.h307492427#13#0#13#0#19"expected * before *0(0#0#65"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m8613811616#2260"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/Classes/SecondView.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/SecondView.o1#
-
-CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s307492429.057378
-e307492429.096151
-r0
-xCompileC
-xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o
-x/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m:9:
-o/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h:13: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'
-lSLF07#2@72"Compile /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m307492429#307492429#0(241"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m:9:/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h:13: error: expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'1(4@74"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate'307492429#90#151#2(7@86"In file included from /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m307492429#18446744073709551615#0#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m307491930#9#0#9#0#0"0(13@142"Expected specifier-qualifier-list before 'GoingSlowWindowBasedAppDelegate' in /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h307492429#18446744073709551615#0#0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h307491980#13#0#13#0#0"0(6@64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.h307491980#13#0#13#0#19"expected * before *0(0#0#64"/Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m8614325184#2258"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/Classes/ThirdView.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/ThirdView.o1#
-
-CCompileC build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o /Users/dagreg/Documents/GoingSlowWindowBased/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s307492428.992365
-e307492429.058697
-r1
-xCompileC
-xbuild/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o
-x/Users/dagreg/Documents/GoingSlowWindowBased/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@59"Compile /Users/dagreg/Documents/GoingSlowWindowBased/main.m307492428#307492429#0(0"0(0#0#51"/Users/dagreg/Documents/GoingSlowWindowBased/main.m8614362080#2240"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -include /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch -c /Users/dagreg/Documents/GoingSlowWindowBased/main.m -o /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib
-s307492427.870164
-e307492428.203231
-r1
-xCompileXIB
-x/Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib307492427#307492428#0(0"0(0#0#59"/Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib8615563712#601"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/MainWindow.nib /Users/dagreg/Documents/GoingSlowWindowBased/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
-
-CGenerateDSYMFile /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app.dSYM /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased
-r0
-
-CLd /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/GoingSlowWindowBased normal i386
-r0
-
-CProcessInfoPlistFile /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist GoingSlowWindowBased-Info.plist
-s307492427.863465
-e307492427.870089
-r1
-xProcessInfoPlistFile
-x/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist
-xGoingSlowWindowBased-Info.plist
-lSLF07#2@39"Process GoingSlowWindowBased-Info.plist307492427#307492427#0(0"0(0#0#76"/Users/dagreg/Documents/GoingSlowWindowBased/GoingSlowWindowBased-Info.plist27303270315982948#536"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility GoingSlowWindowBased-Info.plist -genpkginfo /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app/Info.plist0#
-
-CProcessPCH /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch GoingSlowWindowBased_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s307492428.203500
-e307492428.992204
-r1
-xProcessPCH
-x/var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch
-xGoingSlowWindowBased_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@42"Precompile GoingSlowWindowBased_Prefix.pch307492428#307492428#0(0"0(0#0#76"/Users/dagreg/Documents/GoingSlowWindowBased/GoingSlowWindowBased_Prefix.pch7594869363256026112#2113"    cd /Users/dagreg/Documents/GoingSlowWindowBased    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-generated-files.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-own-target-headers.hmap -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-all-target-headers.hmap -iquote /Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/GoingSlowWindowBased-project-headers.hmap -F/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator -I/Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/include -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources/i386 -I/Users/dagreg/Documents/GoingSlowWindowBased/build/GoingSlowWindowBased.build/Debug-iphonesimulator/GoingSlowWindowBased.build/DerivedSources -c /Users/dagreg/Documents/GoingSlowWindowBased/GoingSlowWindowBased_Prefix.pch -o /var/folders/mG/mGAAXMeqHgqqDwhARRSWK++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/GoingSlowWindowBased_Prefix-enraujuafifopedjwiydxwzrezpq/GoingSlowWindowBased_Prefix.pch.gch0#
-
-CTouch /Users/dagreg/Documents/GoingSlowWindowBased/build/Debug-iphonesimulator/GoingSlowWindowBased.app
-r0
-
