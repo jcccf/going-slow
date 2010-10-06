@@ -29,12 +29,7 @@
 	NSString *secondSetPath = @"PocketCards_SecondSet";
 	for(int i = 1; i <= 20; i++){
 		NSString *path;
-		if(i != 1){
 		path = [NSString stringWithFormat:@"%@%d%@", firstSetPath, i ,@".jpg" ];
-		}
-		else{
-		path = [NSString stringWithFormat:@"%@%d%@", firstSetPath, i ,@".png" ];
-		}
 		UIImage *myImage = [UIImage imageNamed:path];
 		[cardImages insertObject:myImage atIndex:i-1];
 	}
