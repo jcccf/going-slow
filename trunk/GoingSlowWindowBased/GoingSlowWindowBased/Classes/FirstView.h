@@ -16,13 +16,15 @@
 	GoingSlowWindowBasedAppDelegate *delegateReference;
 	UIButton *button;
 	UIView *myView;
+	UIImageView *landScapeView;
 	UIImageView *cardView;
-	NSArray *cardImages;
+	NSMutableArray *cardImages;
 	int displayIndex;
 }
 
 @property (nonatomic, assign) GoingSlowWindowBasedAppDelegate *delegateReference;
 @property (nonatomic, assign) UIButton *button;
  @property (nonatomic, assign)    UIView                        *myView;
+ @property (nonatomic, assign)    UIImageView                        *landScapeView;
 @property (nonatomic, assign) UIImageView *cardView;
 @end

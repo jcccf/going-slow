@@ -34,6 +34,8 @@
 	
 	thirdView.delegateRef = self;
 	
+	
+	
 	tabBarController.viewControllers = [NSArray arrayWithObjects:firstView,secondView,thirdView,nil];
 	
 	[window addSubview:tabBarController.view];
@@ -41,6 +43,9 @@
     [window makeKeyAndVisible];
     
     return YES;
+}
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	return YES;
 }
 
 

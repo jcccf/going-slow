@@ -16,16 +16,33 @@
 @synthesize button;
 @synthesize myView;
 @synthesize cardView;
+@synthesize landScapeView;
 -(id)init{
 	myView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
 	myView.autoresizesSubviews = YES;
-	myView.backgroundColor = [UIColor cyanColor];
+	myView.backgroundColor = [UIColor whiteColor];
 	self.view = myView;
 	displayIndex = 0;
-	UIImage *image0 = [UIImage imageNamed:@"breathe.png"];
-	UIImage *image1 = [UIImage imageNamed:@"TestImage5150.png"];	
 	[self setTitle:@"Home"];
-	cardImages = [[NSArray alloc] initWithObjects:image0,image1,nil];
+	cardImages = [[NSMutableArray alloc] init];
+	NSString *firstSetPath = @"PocketCards_FirstSet";
+	NSString *secondSetPath = @"PocketCards_SecondSet";
+	for(int i = 1; i <= 20; i++){
+		NSString *path;
+		if(i != 1){
+		path = [NSString stringWithFormat:@"%@%d%@", firstSetPath, i ,@".jpg" ];
+		}
+		else{
+		path = [NSString stringWithFormat:@"%@%d%@", firstSetPath, i ,@".png" ];
+		}
+		UIImage *myImage = [UIImage imageNamed:path];
+		[cardImages insertObject:myImage atIndex:i-1];
+	}
+	for(int i = 1; i <= 22; i++){
+		NSString *path = [NSString stringWithFormat:@"%@%d%@", secondSetPath, i ,@".jpg" ];
+		UIImage *myImage = [UIImage imageNamed:path];
+		[cardImages insertObject:myImage atIndex:i+19];
+	}
 	
 	button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	button.frame = CGRectMake(0, 0, 320, 480);
@@ -35,19 +52,25 @@
 	
 	cardView = [[UIImageView alloc] init];
 	cardView.image = [cardImages objectAtIndex:displayIndex];
-	cardView.frame = CGRectMake(0, 0, 320, 480);
+	cardView.frame = CGRectMake(32,140, 252,144);
 	
 	[self.view addSubview:cardView];
+	
 	
 	
 	[self.view addSubview:button];
 	return self;
 }
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	return YES;
+}
+					
 
 -(void)changePic:(id)sender
 {
-	if(displayIndex == 0)
+	if(displayIndex <41){
 		displayIndex++;
+	}
 	else {
 		displayIndex = 0;
 	}
