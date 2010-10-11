@@ -13,6 +13,7 @@
 	UILabel *label;
 	UIButton *button;
 	UIImageView *imageViewPicture;
+	// Hello!
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *label;
