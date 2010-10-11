@@ -1,0 +1,345 @@
+Tgoslowtest2
+v7
+r0
+t308506356.932884
+cCheck dependencies
+cProcessInfoPlistFile /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/Info.plist goslowtest2-Info.plist
+cCompileXIB /Users/Kevin/Desktop/goslowtest2/MainWindow.xib
+cCompileXIB /Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.xib
+cCompileXIB /Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.xib
+cProcessPCH /var/folders/Ai/AiyPMmYHExaBHkXqBukmLE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/goslowtest2_Prefix-ehusxbpuioyhezeamtgpyfljrsin/goslowtest2_Prefix.pch.gch goslowtest2_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cDataModelVersionCompile /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/goslowtest2.momd /Users/Kevin/Desktop/goslowtest2/goslowtest2.xcdatamodeld
+cCompileC build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/main.o /Users/Kevin/Desktop/goslowtest2/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/goslowtest2AppDelegate.o /Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen1ViewController.o /Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen2ViewController.o /Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk
+c000000004CACED1F0000000000000110
+t1286401311
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c000000004C5A4E0B00000000001D2EC0
+t1280986635
+s1912512
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.h
+c000000004C5A4DED000000000000046B
+t1280986605
+s1131
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C5A4DB60000000000295900
+t1280986550
+s2709760
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C5A4DB0000000000029D580
+t1280986544
+s2741632
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C5A4DA10000000000001466
+t1280986529
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C6241ED00000000000009CD
+t1281507821
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C6242840000000001E228C0
+t1281507972
+s31598784
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/usr/include/Availability.h
+c000000004C57A0390000000000001A5C
+t1280811065
+s6748
+
+N/Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.h
+c000000004CB333DD00000000000000F0
+t1286812637
+s240
+i<UIKit/UIKit.h>
+
+N/Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.m
+c000000004CB333DD00000000000005AD
+t1286812637
+s1453
+i"Screen1ViewController.h"
+
+N/Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.xib
+c000000004CB3376E0000000000004114
+t1286813550
+s16660
+
+N/Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.h
+c000000004CB333F300000000000000F0
+t1286812659
+s240
+i<UIKit/UIKit.h>
+
+N/Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.m
+c000000004CB333F300000000000005AD
+t1286812659
+s1453
+i"Screen2ViewController.h"
+
+N/Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.xib
+c000000004CB337650000000000004112
+t1286813541
+s16658
+
+N/Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.h
+c000000004CB3371900000000000003DD
+t1286813465
+s989
+i<UIKit/UIKit.h>
+i<CoreData/CoreData.h>
+
+N/Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m
+c000000004CB334810000000000001E01
+t1286812801
+s7681
+i"goslowtest2AppDelegate.h"
+
+N/Users/Kevin/Desktop/goslowtest2/FirstView.xib
+c000000004CB331410000000000001643
+t1286811969
+s5699
+
+N/Users/Kevin/Desktop/goslowtest2/MainWindow.xib
+c000000004CB335B40000000000005D5A
+t1286813108
+s23898
+
+N/Users/Kevin/Desktop/goslowtest2/SecondView.xib
+c000000004CB3326A0000000000001643
+t1286812266
+s5699
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app
+t2
+s0
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app.dSYM
+t2
+s0
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/FirstView.nib
+t2
+s0
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/Info.plist
+t1286813554
+s607
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/MainWindow.nib
+t1286813555
+s2951
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/PkgInfo
+t1286813554
+s8
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/Screen1ViewController.nib
+t1286813555
+s1953
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/Screen2ViewController.nib
+t1286813555
+s1953
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/SecondView.nib
+t2
+s0
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/goslowtest2
+t2
+s0
+
+N/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/goslowtest2.momd
+t1286813556
+s136
+
+N/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen1ViewController.o
+t1286813556
+s34640
+
+N/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen2ViewController.o
+t1286813556
+s34640
+
+N/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/goslowtest2.LinkFileList
+c000000004CB337720000000000000224
+t1286813554
+s548
+
+N/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/goslowtest2AppDelegate.o
+t2
+s0
+
+N/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/main.o
+t1286813556
+s6292
+
+N/Users/Kevin/Desktop/goslowtest2/goslowtest2.xcdatamodeld
+c000000004CB330F60000000000000088
+t1286811894
+s136
+
+N/Users/Kevin/Desktop/goslowtest2/goslowtest2_Prefix.pch
+c000000004CB330F6000000000000016A
+t1286811894
+s362
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+i<CoreData/CoreData.h>
+
+N/Users/Kevin/Desktop/goslowtest2/main.m
+c000000004CB330F6000000000000016B
+t1286811894
+s363
+i<UIKit/UIKit.h>
+
+N/var/folders/Ai/AiyPMmYHExaBHkXqBukmLE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/goslowtest2_Prefix-ehusxbpuioyhezeamtgpyfljrsin/goslowtest2_Prefix.pch.gch
+t1286813556
+s16080688
+
+Ngoslowtest2-Info.plist
+c000000004CB33772000000000000038E
+t1286813554
+s910
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies308506354#308506354#0(0"0(0#1#0"8632124416#0"0#
+
+CCompileC build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen1ViewController.o /Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s308506356.822575
+e308506356.909965
+r1
+xCompileC
+xbuild/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen1ViewController.o
+x/Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.m308506356#308506356#0(0"0(0#0#64"/Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.m8631005248#1970"    cd /Users/Kevin/Desktop/goslowtest2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-generated-files.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-own-target-headers.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-all-target-headers.hmap -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-project-headers.hmap -F/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator -I/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/include -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources/i386 -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources -include /var/folders/Ai/AiyPMmYHExaBHkXqBukmLE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/goslowtest2_Prefix-ehusxbpuioyhezeamtgpyfljrsin/goslowtest2_Prefix.pch -c /Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.m -o /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen1ViewController.o0#
+
+CCompileC build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen2ViewController.o /Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s308506356.863785
+e308506356.932801
+r1
+xCompileC
+xbuild/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen2ViewController.o
+x/Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.m308506356#308506356#0(0"0(0#0#64"/Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.m8625521408#1970"    cd /Users/Kevin/Desktop/goslowtest2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-generated-files.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-own-target-headers.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-all-target-headers.hmap -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-project-headers.hmap -F/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator -I/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/include -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources/i386 -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources -include /var/folders/Ai/AiyPMmYHExaBHkXqBukmLE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/goslowtest2_Prefix-ehusxbpuioyhezeamtgpyfljrsin/goslowtest2_Prefix.pch -c /Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.m -o /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/Screen2ViewController.o0#
+
+CCompileC build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/goslowtest2AppDelegate.o /Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s308506356.803937
+e308506356.863684
+r0
+xCompileC
+xbuild/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/goslowtest2AppDelegate.o
+x/Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m: In function '-[goslowtest2AppDelegate application:didFinishLaunchingWithOptions:]':
+o/Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m:22: error: request for member 'addSubview' in something not a structure or union
+lSLF07#2@73"Compile /Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m308506356#308506356#0(298"/Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m: In function '-[goslowtest2AppDelegate application:didFinishLaunchingWithOptions:]':/Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m:22: error: request for member 'addSubview' in something not a structure or union1(4@69"Request for member 'addSubview' in something not a structure or union308506356#151#147#0(6@65"/Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m308505601#22#0#22#0#0"0(0#0#65"/Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m8624394080#1972"    cd /Users/Kevin/Desktop/goslowtest2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-generated-files.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-own-target-headers.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-all-target-headers.hmap -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-project-headers.hmap -F/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator -I/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/include -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources/i386 -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources -include /var/folders/Ai/AiyPMmYHExaBHkXqBukmLE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/goslowtest2_Prefix-ehusxbpuioyhezeamtgpyfljrsin/goslowtest2_Prefix.pch -c /Users/Kevin/Desktop/goslowtest2/Classes/goslowtest2AppDelegate.m -o /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/goslowtest2AppDelegate.o1#
+
+CCompileC build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/main.o /Users/Kevin/Desktop/goslowtest2/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s308506356.748849
+e308506356.803838
+r1
+xCompileC
+xbuild/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/main.o
+x/Users/Kevin/Desktop/goslowtest2/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@47"Compile /Users/Kevin/Desktop/goslowtest2/main.m308506356#308506356#0(0"0(0#0#39"/Users/Kevin/Desktop/goslowtest2/main.m8631463648#1928"    cd /Users/Kevin/Desktop/goslowtest2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-generated-files.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-own-target-headers.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-all-target-headers.hmap -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-project-headers.hmap -F/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator -I/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/include -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources/i386 -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources -include /var/folders/Ai/AiyPMmYHExaBHkXqBukmLE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/goslowtest2_Prefix-ehusxbpuioyhezeamtgpyfljrsin/goslowtest2_Prefix.pch -c /Users/Kevin/Desktop/goslowtest2/main.m -o /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.xib
+s308506354.828954
+e308506355.289949
+r1
+xCompileXIB
+x/Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.xib
+lSLF07#2@44"CompileXIB Classes/Screen1ViewController.xib308506354#308506355#0(0"0(0#0#66"/Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.xib8631080128#586"    cd /Users/Kevin/Desktop/goslowtest2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/Screen1ViewController.nib /Users/Kevin/Desktop/goslowtest2/Classes/Screen1ViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB /Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.xib
+s308506355.290039
+e308506355.666385
+r1
+xCompileXIB
+x/Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.xib
+lSLF07#2@44"CompileXIB Classes/Screen2ViewController.xib308506355#308506355#0(0"0(0#0#66"/Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.xib8629351168#586"    cd /Users/Kevin/Desktop/goslowtest2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/Screen2ViewController.nib /Users/Kevin/Desktop/goslowtest2/Classes/Screen2ViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB /Users/Kevin/Desktop/goslowtest2/FirstView.xib
+r0
+
+CCompileXIB /Users/Kevin/Desktop/goslowtest2/MainWindow.xib
+s308506354.821774
+e308506355.304763
+r1
+xCompileXIB
+x/Users/Kevin/Desktop/goslowtest2/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib308506354#308506355#0(0"0(0#0#47"/Users/Kevin/Desktop/goslowtest2/MainWindow.xib8626184992#556"    cd /Users/Kevin/Desktop/goslowtest2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.1    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/MainWindow.nib /Users/Kevin/Desktop/goslowtest2/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB /Users/Kevin/Desktop/goslowtest2/SecondView.xib
+r0
+
+CDataModelVersionCompile /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/goslowtest2.momd /Users/Kevin/Desktop/goslowtest2/goslowtest2.xcdatamodeld
+s308506356.747479
+e308506356.822455
+r1
+xDataModelVersionCompile
+x/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/goslowtest2.momd
+x/Users/Kevin/Desktop/goslowtest2/goslowtest2.xcdatamodeld
+lSLF07#2@109"DataModelVersionCompile build/Debug-iphonesimulator/goslowtest2.app/goslowtest2.momd goslowtest2.xcdatamodeld308506356#308506356#0(0"0(0#0#57"/Users/Kevin/Desktop/goslowtest2/goslowtest2.xcdatamodeld8632779616#380"    cd /Users/Kevin/Desktop/goslowtest2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/momc -XD_MOMC_TARGET_VERSION=10.6 /Users/Kevin/Desktop/goslowtest2/goslowtest2.xcdatamodeld /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/goslowtest2.momd0#
+
+CGenerateDSYMFile /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app.dSYM /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/goslowtest2
+r0
+
+CLd /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/goslowtest2 normal i386
+r0
+
+CProcessInfoPlistFile /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/Info.plist goslowtest2-Info.plist
+s308506354.817789
+e308506354.821685
+r1
+xProcessInfoPlistFile
+x/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/Info.plist
+xgoslowtest2-Info.plist
+lSLF07#2@30"Process goslowtest2-Info.plist308506354#308506354#0(0"0(0#0#55"/Users/Kevin/Desktop/goslowtest2/goslowtest2-Info.plist8631140512#473"    cd /Users/Kevin/Desktop/goslowtest2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility goslowtest2-Info.plist -genpkginfo /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app/Info.plist0#
+
+CProcessPCH /var/folders/Ai/AiyPMmYHExaBHkXqBukmLE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/goslowtest2_Prefix-ehusxbpuioyhezeamtgpyfljrsin/goslowtest2_Prefix.pch.gch goslowtest2_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s308506355.666510
+e308506356.747094
+r1
+xProcessPCH
+x/var/folders/Ai/AiyPMmYHExaBHkXqBukmLE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/goslowtest2_Prefix-ehusxbpuioyhezeamtgpyfljrsin/goslowtest2_Prefix.pch.gch
+xgoslowtest2_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile goslowtest2_Prefix.pch308506355#308506356#0(0"0(0#0#55"/Users/Kevin/Desktop/goslowtest2/goslowtest2_Prefix.pch8628007520#1822"    cd /Users/Kevin/Desktop/goslowtest2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40100 -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-generated-files.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-own-target-headers.hmap -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-all-target-headers.hmap -iquote /Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/goslowtest2-project-headers.hmap -F/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator -I/Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/include -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources/i386 -I/Users/Kevin/Desktop/goslowtest2/build/goslowtest2.build/Debug-iphonesimulator/goslowtest2.build/DerivedSources -c /Users/Kevin/Desktop/goslowtest2/goslowtest2_Prefix.pch -o /var/folders/Ai/AiyPMmYHExaBHkXqBukmLE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/goslowtest2_Prefix-ehusxbpuioyhezeamtgpyfljrsin/goslowtest2_Prefix.pch.gch0#
+
+CTouch /Users/Kevin/Desktop/goslowtest2/build/Debug-iphonesimulator/goslowtest2.app
+r0
+
