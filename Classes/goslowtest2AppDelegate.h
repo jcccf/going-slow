@@ -12,6 +12,8 @@
 @interface goslowtest2AppDelegate : NSObject <UIApplicationDelegate> {
     UITabBarController *tabController;
     UIWindow *window;
+	UILocalNotification *suggestionNotification;
+	UILocalNotification *reflectionNotification;
     
 @private
     NSManagedObjectContext *managedObjectContext_;
@@ -21,13 +23,18 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabController;
-
+@property (nonatomic, retain) IBOutlet UILocalNotification *suggestionNotification;
+@property (nonatomic, retain) IBOutlet UILocalNotification *reflectionNotification;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (NSString *)applicationDocumentsDirectory;
 - (void)saveContext;
+- (void) setReflectionNotificationTime:(NSDate *)d;
+- (void) setSuggestionNotificationTime:(NSDate *)d;
+- (void) removeSuggestionTime;
+- (void) removeReflectionTime;
 
 @end
 
