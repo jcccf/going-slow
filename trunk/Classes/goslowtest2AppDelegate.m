@@ -12,19 +12,59 @@
 @implementation goslowtest2AppDelegate
 @synthesize tabController;
 @synthesize window;
+@synthesize reflectionNotification;
+@synthesize suggestionNotification;
 
 
 #pragma mark -
 #pragma mark Application lifecycle
 
+-(void) setReflectionNotificationTime:(NSDate *)d{
+	[[UIApplication sharedApplication] cancelLocalNotification:reflectionNotification];
+	
+}
+-(void) setSuggestionNotificationTime:(NSDate *)d{
+	[[UIApplication sharedApplication] cancelLocalNotification:suggestionNotification];
+}
+-(void) removeReflectionTime{
+	
+}
+
+-(void) removeSuggestionTime{
+	
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
+
     [window addSubview:tabController.view];
     [window makeKeyAndVisible];
+	
+	application.applicationIconBadgeNumber = 0;
+	
+    // Handle launching from a notification
+    UILocalNotification *localNotif =
+    [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotif) {
+		tabController.selectedIndex = 0;
+		[[UIApplication sharedApplication] cancelLocalNotification:localNotif];
+        NSLog(@"Recieved Notification %@",localNotif);
+    }
+	
     
     return YES;
 }
 
+- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif {
+    // Handle the notificaton when the app is running
+	
+	//set the selected index to the home screen (or based on the user data in the local notification
+	tabController.selectedIndex = 0;
+	app.applicationIconBadgeNumber = 0;
+	[[UIApplication sharedApplication] cancelLocalNotification:notif];
+    NSLog(@"Recieved Notification %@",notif);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
