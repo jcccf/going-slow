@@ -7,17 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CoreData/CoreData.h>
+#import "goslowtest2AppDelegate.h"
+#import "Suggestion.h"
 
 @interface Screen1ViewController : UIViewController {
 	UILabel *label;
 	UIButton *button;
 	UIImageView *imageViewPicture;
-	// Hello!
+	
+	NSMutableArray *suggestionsArray;
+	NSManagedObjectContext *managedObjectContext;
+	
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *label;
 @property (nonatomic, retain) IBOutlet UIImageView *imageViewPicture;
+
+@property (nonatomic, retain) NSMutableArray *suggestionsArray;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 -(IBAction)sayHello:(id) sender;
 

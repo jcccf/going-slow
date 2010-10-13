@@ -51,8 +51,7 @@
 		[[UIApplication sharedApplication] cancelLocalNotification:localNotif];
         NSLog(@"Recieved Notification %@",localNotif);
     }
-	
-    
+	    
     return YES;
 }
 
