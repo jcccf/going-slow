@@ -62,7 +62,6 @@
 	[self setTimeEvening:(NSInteger *)[defaults integerForKey:@"time_evening"]];
 	NSLog(@"Time of Morning Suggestion is %d", timeMorning);
 	NSLog(@"Time of Evening Suggestion is %d", timeEvening);
-	[defaults setBool:YES forKey:@"is_not_first_run"];
 	if( (void *)[defaults boolForKey:@"is_not_first_run"] == nil){
 		NSLog(@"First Time Executing");
 		[defaults setBool:YES forKey:@"is_not_first_run"];
