@@ -17,7 +17,7 @@
 	
 	NSInteger *timeMorning;
 	NSInteger *timeEvening;
-	bool *isNotFirstRun;
+	bool isNotFirstRun;
     
 @private
     NSManagedObjectContext *managedObjectContext_;
@@ -32,7 +32,7 @@
 
 @property (nonatomic) NSInteger *timeMorning;
 @property (nonatomic) NSInteger *timeEvening;
-@property (nonatomic) bool *isNotFirstRun;
+@property (nonatomic) bool isNotFirstRun;
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
