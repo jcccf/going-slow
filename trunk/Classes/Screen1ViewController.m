@@ -23,6 +23,27 @@
 	label.text = @"Hello World!";
 }
 
+//Deletes all objects in the sqllite database
+- (void) deleteAllObjects: (NSString *) entityDescription  {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+	
+    NSError *error;
+    NSArray *items = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    [fetchRequest release];
+	
+	
+    for (NSManagedObject *managedObject in items) {
+        [managedObjectContext deleteObject:managedObject];
+        NSLog(@"%@ object deleted",entityDescription);
+    }
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+    }
+	
+}
+
 /*
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -32,6 +53,7 @@
     return self;
 }
  */
+
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -53,15 +75,14 @@
 	// Get the Managed Object Context from the root delegate
 	managedObjectContext = [(goslowtest2AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	isNotFirstRun = [(goslowtest2AppDelegate*)[[UIApplication sharedApplication] delegate] isNotFirstRun];
-	
-	
 
+	//[self deleteAllObjects:@"Suggestion"];
 	// TODO: Import All Suggestions, and only ONCE, since it keeps adding to the database now
 	if (!isNotFirstRun) {
 		// Create a New Suggestion Card
 		Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
-		[newSuggestion setTheme:@"Sleep"];
-		[newSuggestion setPicturePath:@"cards/sleep.jpg"];
+		[newSuggestion setTheme:@"Exercise"];
+		[newSuggestion setPicturePath:@"exercise.jpg"];
 		NSError *error;
 		if(![managedObjectContext save:&error])
 			NSLog(@"Error on Saving New Suggestion");
@@ -87,13 +108,13 @@
 	assert(mutableFetchResults != nil);
 	[self setSuggestionsArray:mutableFetchResults];
 	
+	int fetchResultsLength = [mutableFetchResults count];
 	int suggestionsArrayLength = [suggestionsArray count];
 	int randomIndex = arc4random() % suggestionsArrayLength;
 	
 	// Read from Suggestions Array and Set View Items Appropriately
-	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:randomIndex];
+	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:suggestionsArrayLength-1];
 	label.text = [suggestion theme];
-	
 	
 	//TODO: where does sleep.png come from?
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -104,18 +125,19 @@
 		NSLog(@"Picture Path: %@", [s picturePath]);
 		NSString *stringFromDate = [formatter stringFromDate:[s lastSeen]];
 		NSLog(@"date: %@",  stringFromDate);
-		
-	}
+	}	
+	
 	[formatter release];
+	
+	//TODO: Set Image Path and More Info, and update lastSeen
+	UIImage *newImage = [UIImage imageNamed:[suggestion picturePath]];
+	assert(newImage != nil);
+	//imageViewPicture.image = newImage;
+	[newImage release];
 	
 	//TODO: save the suggestion back to Core Data
 	//Set last seen to today's date
 	[suggestion setLastSeen:[NSDate date]];
-	
-	UIImage *newImage = [UIImage imageNamed:[suggestion picturePath]];
-	imageViewPicture.image = newImage;
-	//TODO: Set Image Path and More Info, and update lastSeen
-	
 }
 
 /*
