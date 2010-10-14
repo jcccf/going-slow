@@ -7,6 +7,7 @@
 //
 
 #import "Screen1ViewController.h"
+#include <stdlib.h>
 
 @implementation Screen1ViewController
 
@@ -54,15 +55,19 @@
 	isNotFirstRun = [(goslowtest2AppDelegate*)[[UIApplication sharedApplication] delegate] isNotFirstRun];
 	
 	
-	// Create a New Suggestion Card
-	Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
-	[newSuggestion setTheme:@"Sleep"];
-	[newSuggestion setPicturePath:@"sleep.png"];
-	NSError *error;
-	if(![managedObjectContext save:&error])
-		NSLog(@"Error on Saving New Suggestion");
+
 	// TODO: Import All Suggestions, and only ONCE, since it keeps adding to the database now
+	if (!isNotFirstRun) {
+		// Create a New Suggestion Card
+		Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
+		[newSuggestion setTheme:@"Sleep"];
+		[newSuggestion setPicturePath:@"cards/sleep.jpg"];
+		NSError *error;
+		if(![managedObjectContext save:&error])
+			NSLog(@"Error on Saving New Suggestion");
 		
+	}
+	
 	// Fetch Suggestions From Data Store
 	// TODO: Only fetch suggestions once a day
 	// Create Request
@@ -82,9 +87,33 @@
 	assert(mutableFetchResults != nil);
 	[self setSuggestionsArray:mutableFetchResults];
 	
+	int suggestionsArrayLength = [suggestionsArray count];
+	int randomIndex = arc4random() % suggestionsArrayLength;
+	
 	// Read from Suggestions Array and Set View Items Appropriately
-	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:0];
+	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:randomIndex];
 	label.text = [suggestion theme];
+	
+	
+	//TODO: where does sleep.png come from?
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zz"];
+	
+	for (Suggestion* s in suggestionsArray) {
+		NSLog(@"Theme: %@", [s theme]);
+		NSLog(@"Picture Path: %@", [s picturePath]);
+		NSString *stringFromDate = [formatter stringFromDate:[s lastSeen]];
+		NSLog(@"date: %@",  stringFromDate);
+		
+	}
+	[formatter release];
+	
+	//TODO: save the suggestion back to Core Data
+	//Set last seen to today's date
+	[suggestion setLastSeen:[NSDate date]];
+	
+	UIImage *newImage = [UIImage imageNamed:[suggestion picturePath]];
+	imageViewPicture.image = newImage;
 	//TODO: Set Image Path and More Info, and update lastSeen
 	
 }
