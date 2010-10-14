@@ -65,10 +65,12 @@
 		NSLog(@"First Time Executing");
 		[defaults setBool:YES forKey:@"is_not_first_run"];
 		[defaults synchronize];
-		[self setIsNotFirstRun:NO];
+		//[self setIsNotFirstRun:NO];
+		isNotFirstRun = NO;
 	}
 	else{
-		[self setIsNotFirstRun:YES];
+		//[self setIsNotFirstRun:YES];
+		isNotFirstRun = YES;
 	}
 	    
 	if(isNotFirstRun){

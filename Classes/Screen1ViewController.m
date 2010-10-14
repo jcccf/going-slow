@@ -16,6 +16,8 @@
 @synthesize suggestionsArray;
 @synthesize managedObjectContext;
 
+@synthesize isNotFirstRun;
+
 - (IBAction) sayHello:(id) sender {
 	label.text = @"Hello World!";
 }
@@ -49,6 +51,8 @@
 	
 	// Get the Managed Object Context from the root delegate
 	managedObjectContext = [(goslowtest2AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+	isNotFirstRun = [(goslowtest2AppDelegate*)[[UIApplication sharedApplication] delegate] isNotFirstRun];
+	
 	
 	// Create a New Suggestion Card
 	Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];

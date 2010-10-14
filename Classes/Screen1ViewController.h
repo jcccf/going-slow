@@ -19,6 +19,8 @@
 	NSMutableArray *suggestionsArray;
 	NSManagedObjectContext *managedObjectContext;
 	
+	bool isNotFirstRun;
+	
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *label;
@@ -26,6 +28,8 @@
 
 @property (nonatomic, retain) NSMutableArray *suggestionsArray;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
+@property (nonatomic) bool isNotFirstRun;
 
 -(IBAction)sayHello:(id) sender;
 
