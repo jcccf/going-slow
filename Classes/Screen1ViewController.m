@@ -54,6 +54,27 @@
 }
  */
 
+-(void)addAllSuggestions{
+	[self deleteAllObjects:@"Suggestion"];
+	
+	NSString *picturePathsString = @"breathe.jpg,choose_consciously.jpg,connect_with_nature.jpg,connect_with_others.jpg,control_worry.jpg,eat_well.jpg,exercise.jpg,express_gratitude.jpg,get_more_sleep.jpg,grow_from_mistakes.jpg,laugh.jpg,listen_to_music.jpg,meditate.jpg,play.jpg,power_nap.jpg,reflect.jpg,relax_your_body.jpg,think_positively.jpg,thoughts_matter.jpg,use_resources.jpg,visualize.jpg";
+	
+	NSArray *picturePaths = [picturePathsString componentsSeparatedByString:@","];
+	
+	NSString *themeString = @"Breathe,Choose Consciously,Connect With Nature,Connect With Others,Control Worry,Eat Well,Exercise,Express Gratitude,Get More Sleep,Grow From Mistakes,Laugh,Listen To Music,Meditate,Play,Power Nap,Reflect,Relax Your Body,Think Positively,Thoughts Matter,Use Resources,Visualize";
+	NSArray *themes = [themeString componentsSeparatedByString:@","];	
+	int arrayCount = [picturePaths count];
+	
+	for(int i = 0; i < arrayCount; i++){
+		Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
+		NSString* theme = [themes objectAtIndex:i];
+		NSString* picturePath = [picturePaths objectAtIndex:i];
+		[newSuggestion setTheme:theme];
+		[newSuggestion setPicturePath:picturePath];
+	}
+	
+}
+
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -80,9 +101,7 @@
 	// TODO: Import All Suggestions, and only ONCE, since it keeps adding to the database now
 	if (!isNotFirstRun) {
 		// Create a New Suggestion Card
-		Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
-		[newSuggestion setTheme:@"Exercise"];
-		[newSuggestion setPicturePath:@"exercise.jpg"];
+		[self addAllSuggestions];
 		NSError *error;
 		if(![managedObjectContext save:&error])
 			NSLog(@"Error on Saving New Suggestion");
@@ -113,7 +132,7 @@
 	int randomIndex = arc4random() % suggestionsArrayLength;
 	
 	// Read from Suggestions Array and Set View Items Appropriately
-	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:suggestionsArrayLength-1];
+	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:randomIndex];
 	label.text = [suggestion theme];
 	
 	//TODO: where does sleep.png come from?
@@ -130,9 +149,11 @@
 	[formatter release];
 	
 	//TODO: Set Image Path and More Info, and update lastSeen
+
 	UIImage *newImage = [UIImage imageNamed:[suggestion picturePath]];
+	NSLog([suggestion picturePath]);
 	assert(newImage != nil);
-	//imageViewPicture.image = newImage;
+	imageViewPicture.image = newImage;
 	[newImage release];
 	
 	//TODO: save the suggestion back to Core Data
