@@ -16,8 +16,11 @@
 	UIButton *button;
 	UIImageView *imageViewPicture;
 	
+	UIImage *currentImage;
+	UIImage *currentImageText;
 	NSMutableArray *suggestionsArray;
 	NSManagedObjectContext *managedObjectContext;
+	int switchText;
 	
 	bool isNotFirstRun;
 	
