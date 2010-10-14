@@ -49,7 +49,7 @@
 	localNotifEvening.repeatInterval = NSDayCalendarUnit;
 	localNotifMorning.repeatInterval = NSDayCalendarUnit;
 	
-	localNotifMorning.alertBody = @"Theme of suggestion";
+	localNotifMorning.alertBody = @"Would you like a suggestion?";
 	localNotifMorning.alertAction = @"See More";
 	localNotifEvening.alertBody = @"How was your day?";
 	localNotifEvening.alertAction = @"Reflect";
@@ -140,6 +140,7 @@
     [dateComps setYear:[dateComponents year]];
     [dateComps setHour:10];
 	[dateComps setMinute:0];
+	[dateComps setSecond:0];
 	
 	//[dateComp1 setHour:22];
 	//[dateComp1 setMinute:0];
