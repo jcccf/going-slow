@@ -7,7 +7,7 @@
 //
 
 #import "goslowtest2AppDelegate.h"
-
+#import "NotificationTime.h"
 
 @implementation goslowtest2AppDelegate
 @synthesize tabController;
@@ -40,18 +40,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-
-    [window addSubview:tabController.view];
-    [window makeKeyAndVisible];
+	NotificationTime *chooseNotificationTimes = [[NotificationTime alloc] init];
+	chooseNotificationTimes.delegateReference = self;
 	
-	application.applicationIconBadgeNumber = 0;
 	
     // Handle launching from a notification
     UILocalNotification *localNotif =
     [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotif) {
+		application.applicationIconBadgeNumber = 0;
 		tabController.selectedIndex = 0;
-		[[UIApplication sharedApplication] cancelLocalNotification:localNotif];
+		//[[UIApplication sharedApplication] cancelLocalNotification:localNotif];
         NSLog(@"Recieved Notification %@",localNotif);
     }
 	
@@ -65,12 +64,23 @@
 	if( (void *)[defaults boolForKey:@"is_not_first_run"] == nil){
 		NSLog(@"First Time Executing");
 		[defaults setBool:YES forKey:@"is_not_first_run"];
+		[defaults synchronize];
 		[self setIsNotFirstRun:NO];
 	}
 	else{
 		[self setIsNotFirstRun:YES];
 	}
 	    
+	if(isNotFirstRun){
+	   [window addSubview:tabController.view];
+	}
+	else {
+		[window addSubview:chooseNotificationTimes.view];
+	}
+
+	   [window makeKeyAndVisible];
+	
+	
     return YES;
 }
 
@@ -80,7 +90,7 @@
 	//set the selected index to the home screen (or based on the user data in the local notification
 	tabController.selectedIndex = 0;
 	app.applicationIconBadgeNumber = 0;
-	[[UIApplication sharedApplication] cancelLocalNotification:notif];
+	//[[UIApplication sharedApplication] cancelLocalNotification:notif];
     NSLog(@"Recieved Notification %@",notif);
 }
 
