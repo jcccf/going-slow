@@ -50,6 +50,7 @@
     if (localNotif) {
 		application.applicationIconBadgeNumber = 0;
 		tabController.selectedIndex = 0;
+		isNotFirstRun = YES;
 		//[[UIApplication sharedApplication] cancelLocalNotification:localNotif];
         NSLog(@"Recieved Notification %@",localNotif);
     }
@@ -74,7 +75,9 @@
 	}
 	    
 	if(isNotFirstRun){
+		//tabController.view.hidden = YES;
 	   [window addSubview:tabController.view];
+		
 	}
 	else {
 		[window addSubview:chooseNotificationTimes.view];
@@ -90,6 +93,7 @@
     // Handle the notificaton when the app is running
 	
 	//set the selected index to the home screen (or based on the user data in the local notification
+	isNotFirstRun = YES;
 	tabController.selectedIndex = 0;
 	app.applicationIconBadgeNumber = 0;
 	//[[UIApplication sharedApplication] cancelLocalNotification:notif];

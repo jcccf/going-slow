@@ -20,8 +20,18 @@
 @synthesize isNotFirstRun;
 
 - (IBAction) sayHello:(id) sender {
-	label.text = @"Hello World!";
+	if(switchText == 0){
+		imageViewPicture.image = currentImageText;	
+		switchText = 1;
+	}
+	else {
+		imageViewPicture.image = currentImage;
+		switchText = 0;
+	}
+	
+
 }
+
 
 //Deletes all objects in the sqllite database
 - (void) deleteAllObjects: (NSString *) entityDescription  {
@@ -57,6 +67,9 @@
 -(void)addAllSuggestions{
 	[self deleteAllObjects:@"Suggestion"];
 	
+	NSString *textPaths = @"back deep breathe.jpg,back of Choose Consciously.jpg,backof Connect with Nature.jpg,backof connect with others.jpg,backof Control worry.jpg,backof Eat Well.jpg,backof Exercise.jpg,backof Express Gratitude.jpg,backof Get more sleep.jpg,backof Grow from mistakes.jpg,backof Laughter.jpg,backof Music.jpg,backof Meditation.jpg,backof Play.jpg,backof Powernap.jpg,backof reflect.jpg,backof Relax your Body.jpg,backof Think Positively.jpg,backof Thoughts matter.jpg,backof Use Resources.jpg,backof Visualization.jpg";
+	NSArray *textPicturePaths = [textPaths componentsSeparatedByString:@","];
+	
 	NSString *picturePathsString = @"breathe.jpg,choose_consciously.jpg,connect_with_nature.jpg,connect_with_others.jpg,control_worry.jpg,eat_well.jpg,exercise.jpg,express_gratitude.jpg,get_more_sleep.jpg,grow_from_mistakes.jpg,laugh.jpg,listen_to_music.jpg,meditate.jpg,play.jpg,power_nap.jpg,reflect.jpg,relax_your_body.jpg,think_positively.jpg,thoughts_matter.jpg,use_resources.jpg,visualize.jpg";
 	
 	NSArray *picturePaths = [picturePathsString componentsSeparatedByString:@","];
@@ -69,8 +82,10 @@
 		Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
 		NSString* theme = [themes objectAtIndex:i];
 		NSString* picturePath = [picturePaths objectAtIndex:i];
+		NSString* infoPath = [textPicturePaths objectAtIndex:i];
 		[newSuggestion setTheme:theme];
 		[newSuggestion setPicturePath:picturePath];
+		[newSuggestion setMoreInfo:infoPath];
 	}
 	
 }
@@ -79,6 +94,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	switchText = 0;
 	assert(label != nil);
 	label.text = @"Hello W-w-world!";
 	UIImage *i = [UIImage imageNamed:@"breathe.png"];
@@ -150,11 +166,21 @@
 	
 	//TODO: Set Image Path and More Info, and update lastSeen
 
-	UIImage *newImage = [UIImage imageNamed:[suggestion picturePath]];
+	currentImage = [UIImage imageNamed:[suggestion picturePath]];
 	NSLog([suggestion picturePath]);
-	assert(newImage != nil);
-	imageViewPicture.image = newImage;
-	[newImage release];
+	//assert(newImage != nil);
+	imageViewPicture.image = currentImage;
+	//currentImage = newImage;
+	[currentImage retain];
+	
+	
+	//Add logic that gets the current image text 
+	//[pathTextByTheme ad
+	
+	
+	currentImageText = [UIImage imageNamed:[suggestion moreInfo]];
+	[currentImageText retain];
+	//[newImage release];
 	
 	//TODO: save the suggestion back to Core Data
 	//Set last seen to today's date
