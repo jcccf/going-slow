@@ -91,6 +91,31 @@
 }
 
 
+//From Stack Overflow
+-(bool) didDayChange:(NSDate) refDate {
+	
+	// Your dates:
+	NSDate *today = [NSDate date];
+	
+	// 10 first characters of description is the calendar date:
+	NSString *todayString = [[today description] substringToIndex:10];
+	NSString *refDateString = [[refDate description] substringToIndex:10];
+	
+	if ([refDateString isEqualToString:todayString]) {
+		[todayString release];
+		[refDateString release];
+		return NO;
+	}
+	else {
+		[todayString release];
+		[refDateString release];
+		return YES;
+	}
+	
+	
+}
+
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
