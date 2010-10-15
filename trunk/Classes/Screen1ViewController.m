@@ -184,7 +184,16 @@
 	
 	//TODO: save the suggestion back to Core Data
 	//Set last seen to today's date
+	
+	NSError *saveError;
 	[suggestion setLastSeen:[NSDate date]];
+	if (![managedObjectContext save:&saveError]) {
+		NSLog(@"Saving changes to current suggestion failed: %@", saveError);
+	} else {
+		// The changes to suggestion have been persisted.
+	}
+	
+	[NSError release];
 }
 
 /*
