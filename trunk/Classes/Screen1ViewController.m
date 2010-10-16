@@ -21,12 +21,20 @@
 
 - (IBAction) sayHello:(id) sender {
 	if(switchText == 0){
-		imageViewPicture.image = currentImageText;	
+		imageViewPicture.hidden = true;
+		backText.hidden = false;
+		label.hidden = true;
 		switchText = 1;
+		firstView.backgroundColor = [UIColor whiteColor];
+		
+		
 	}
 	else {
-		imageViewPicture.image = currentImage;
+		backText.hidden = true;
+		label.hidden = false;
+		imageViewPicture.hidden = false;
 		switchText = 0;
+		firstView.backgroundColor = [UIColor blackColor];
 	}
 	
 
@@ -71,10 +79,11 @@
 	NSArray *textPicturePaths = [textPaths componentsSeparatedByString:@","];
 	
 	NSString *picturePathsString = @"breathe.jpg,choose_consciously.jpg,connect_with_nature.jpg,connect_with_others.jpg,control_worry.jpg,eat_well.jpg,exercise.jpg,express_gratitude.jpg,get_more_sleep.jpg,grow_from_mistakes.jpg,laugh.jpg,listen_to_music.jpg,meditate.jpg,play.jpg,power_nap.jpg,reflect.jpg,relax_your_body.jpg,think_positively.jpg,thoughts_matter.jpg,use_resources.jpg,visualize.jpg";
-	
+
 	NSArray *picturePaths = [picturePathsString componentsSeparatedByString:@","];
 	
 	NSString *themeString = @"Breathe,Choose Consciously,Connect With Nature,Connect With Others,Control Worry,Eat Well,Exercise,Express Gratitude,Get More Sleep,Grow From Mistakes,Laugh,Listen To Music,Meditate,Play,Power Nap,Reflect,Relax Your Body,Think Positively,Thoughts Matter,Use Resources,Visualize";
+
 	NSArray *themes = [themeString componentsSeparatedByString:@","];	
 	int arrayCount = [picturePaths count];
 	
@@ -94,6 +103,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	switchText = 0;
+	backText.hidden = TRUE;
 	assert(label != nil);
 	label.text = @"Hello W-w-world!";
 	UIImage *i = [UIImage imageNamed:@"breathe.png"];
@@ -149,7 +159,7 @@
 	// Read from Suggestions Array and Set View Items Appropriately
 	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:randomIndex];
 	label.text = [suggestion theme];
-	
+	backText.text = [suggestion moreInfo];
 	//TODO: where does sleep.png come from?
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 	[formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zz"];
