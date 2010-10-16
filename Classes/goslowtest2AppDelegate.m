@@ -17,7 +17,7 @@
 @synthesize timeMorning;
 @synthesize timeEvening;
 @synthesize isNotFirstRun;
-
+@synthesize backText;
 
 #pragma mark -
 #pragma mark Application lifecycle

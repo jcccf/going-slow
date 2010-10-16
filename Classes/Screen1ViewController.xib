@@ -2,17 +2,17 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1024</int>
-		<string key="IBDocument.SystemVersion">10F569</string>
+		<string key="IBDocument.SystemVersion">10C540</string>
 		<string key="IBDocument.InterfaceBuilderVersion">804</string>
-		<string key="IBDocument.AppKitVersion">1038.29</string>
-		<string key="IBDocument.HIToolboxVersion">461.00</string>
+		<string key="IBDocument.AppKitVersion">1038.25</string>
+		<string key="IBDocument.HIToolboxVersion">458.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">123</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="15"/>
+			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -81,7 +81,7 @@
 					<object class="IBUIButton" id="902668204">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, -1}, {320, 461}}</string>
+						<string key="NSFrame">{{27, -5}, {320, 461}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<float key="IBUIAlpha">0.021126760169863701</float>
@@ -104,13 +104,38 @@
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
 					</object>
+					<object class="IBUILabel" id="986407655">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">-2147483356</int>
+						<string key="NSFrame">{{20, 20}, {280, 420}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="IBUIBackgroundColor" ref="601836885"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<string key="IBUIText">Deep breathing can reduce anxiety and disrupt repetitive or negative thoughts by focusing awareness on the present moment. Changing your breathing can shift your mood and perspective. Try taking a deep breath in through the nose for 3 seconds... hold for 2 seconds... breathe out through the mouth for 6 seconds...</string>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">17</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<object class="NSColor" key="IBUITextColor" id="931175360">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MCAwIDAAA</bytes>
+						</object>
+						<reference key="IBUIHighlightedColor" ref="601836885"/>
+						<reference key="IBUIShadowColor" ref="931175360"/>
+						<string key="IBUIShadowOffset">{0, 0}</string>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUINumberOfLines">50</int>
+					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
-				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MCAwIDAAA</bytes>
-				</object>
+				<reference key="IBUIBackgroundColor" ref="931175360"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
@@ -151,6 +176,22 @@
 					</object>
 					<int key="connectionID">17</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">backText</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="986407655"/>
+					</object>
+					<int key="connectionID">21</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">firstView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="191373211"/>
+					</object>
+					<int key="connectionID">22</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -169,6 +210,7 @@
 							<reference ref="556970999"/>
 							<reference ref="671265432"/>
 							<reference ref="902668204"/>
+							<reference ref="986407655"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -198,6 +240,12 @@
 						<reference key="object" ref="902668204"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">19</int>
+						<reference key="object" ref="986407655"/>
+						<reference key="parent" ref="191373211"/>
+						<string key="objectName">labelBack</string>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -209,6 +257,9 @@
 					<string>1.IBEditorWindowLastContentRect</string>
 					<string>1.IBPluginDependency</string>
 					<string>15.IBPluginDependency</string>
+					<string>15.IBViewBoundsToFrameTransform</string>
+					<string>19.IBPluginDependency</string>
+					<string>19.IBViewBoundsToFrameTransform</string>
 					<string>4.IBPluginDependency</string>
 					<string>4.IBViewBoundsToFrameTransform</string>
 					<string>5.IBPluginDependency</string>
@@ -218,9 +269,16 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>Screen1ViewController</string>
 					<string>UIResponder</string>
-					<string>{{339, 276}, {320, 480}}</string>
+					<string>{{991, 324}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAw+UAAA</bytes>
+					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABC2gAAw6QAAA</bytes>
+					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAwgAAAA</bytes>
@@ -247,7 +305,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">17</int>
+			<int key="maxID">22</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -270,11 +328,15 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>backText</string>
+							<string>firstView</string>
 							<string>imageViewPicture</string>
 							<string>label</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UILabel</string>
+							<string>UIView</string>
 							<string>UIImageView</string>
 							<string>UILabel</string>
 						</object>
@@ -283,11 +345,21 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>backText</string>
+							<string>firstView</string>
 							<string>imageViewPicture</string>
 							<string>label</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">backText</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">firstView</string>
+								<string key="candidateClassName">UIView</string>
+							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">imageViewPicture</string>
 								<string key="candidateClassName">UIImageView</string>
