@@ -15,7 +15,7 @@
 	//UILabel *label;file://localhost/Users/svp/Documents/GoogleCode/Classes/Screen1ViewController.xib
 	UIButton *button;
 	UIImageView *imageViewPicture;
-	UILabel *backText;
+	UIWebView *backText;
 	UIImage *currentImage;
 	UIImage *currentImageText;
 	UIView *firstView;
@@ -28,7 +28,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *label;
-@property (nonatomic, retain) IBOutlet UILabel *backText;
+@property (nonatomic, retain) IBOutlet UIWebView *backText;
 @property (nonatomic, retain) IBOutlet UIImageView *imageViewPicture;
 @property (nonatomic, retain) IBOutlet UIView *firstView;
 
