@@ -19,7 +19,6 @@
 	NSInteger *timeEvening;
 	bool isNotFirstRun;
 	
-	UILabel *backText;
 	UILabel *labelTheme;
     
 @private
@@ -41,7 +40,6 @@
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (nonatomic, retain) IBOutlet UILabel *backText;
 @property (nonatomic, retain) IBOutlet UILabel *labelTheme;
 
 - (NSString *)applicationDocumentsDirectory;
