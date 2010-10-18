@@ -2,8 +2,8 @@
 //  Screen2ViewController.m
 //  goslowtest2
 //
-//  Created by Kevin Tse on 10/11/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by Gregory Thomas on 10/18/10.
+//  Copyright 2010 Cornell University. All rights reserved.
 //
 
 #import "Screen2ViewController.h"
