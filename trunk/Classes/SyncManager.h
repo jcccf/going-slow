@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Reflection.h"
 
 
 @interface SyncManager : NSObject {
 
+	NSMutableArray *bufferedReflections;
 }
 
+@property (nonatomic,retain) NSMutableArray *bufferedReflections;
+
+- (void) bufferReflection: (Reflection *)r;
+- (void) syncData;
++(SyncManager*) getSyncManagerInstance;
 @end

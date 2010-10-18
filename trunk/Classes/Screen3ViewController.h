@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Reflection.h"
 
 @interface Screen3ViewController : UIViewController {
 
 }
+
+-(void)storeReflection:(Reflection *)r;
 
 @end

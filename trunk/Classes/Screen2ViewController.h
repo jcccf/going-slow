@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Reflection.h",
 
 @interface Screen2ViewController : UIViewController {
 
 }
+
+-(void)showReflection:(Reflection *)r;
 
 @end

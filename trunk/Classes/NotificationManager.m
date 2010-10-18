@@ -11,4 +11,30 @@
 
 @implementation NotificationManager
 
+@synthesize eveningTime;
+@synthesize morningTime;
+@synthesize eveningNotification;
+@synthesize morningNotification;
+@synthesize suggestion;
+
+static NotificationManager *sharedInstance = nil;
+
++(NotificationManager *)getNotificationManagerInstance{
+	@synchronized(self) {
+        if (sharedInstance == nil) {
+            [[self alloc] init]; // assignment not done here
+        }
+    }
+    return sharedInstance;
+}
+
+-(void)scheduleNotificationEvening{
+	
+}
+
+-(void)scheduleNotificationMorning{
+	
+}
+
+
 @end

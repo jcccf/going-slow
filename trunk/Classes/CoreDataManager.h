@@ -7,10 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Suggestion.h"
+#import "Reflection.h"
+#import "goslowtest2AppDelegate.h"
 
 
 @interface CoreDataManager : NSObject {
-
+	goslowtest2AppDelegate *appDelegateReference;
+	NSManagedObjectContext *managedObjectContext;
 }
+
+@property (nonatomic,retain) goslowtest2AppDelegate *appDelegateReference;
+@property (nonatomic,retain) NSManagedObjectContext *managedObjectContext;
+
+-(void)addSuggestion:(Suggestion *)s;
+-(void)updateSuggestion:(NSDate *) date:(int)index;
+-(void)addReflection:(Reflection *)r;
++(CoreDataManager *)getCoreDataManagerInstance;
 
 @end
