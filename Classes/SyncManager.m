@@ -11,4 +11,24 @@
 
 @implementation SyncManager
 
+static SyncManager *sharedInstance = nil;
+
+@synthesize bufferedReflections;
+
++(SyncManager*)getSyncManagerInstance{
+	@synchronized(self){
+		if(sharedInstance == nil){
+			[[self alloc] init];
+		}
+	}
+	return sharedInstance;
+}
+
+-(void)bufferReflection:(Reflection*) r{
+	
+}
+
+-(void)syncData{
+	
+}
 @end

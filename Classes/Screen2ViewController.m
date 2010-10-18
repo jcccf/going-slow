@@ -7,6 +7,7 @@
 //
 
 #import "Screen2ViewController.h"
+#import "CoreDataManager.h"
 
 
 @implementation Screen2ViewController
@@ -24,6 +25,8 @@
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	
+	
     [super viewDidLoad];
 }
 */
@@ -35,6 +38,10 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
+-(void)showReflection:(Reflection *)r{
+	
+}
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
