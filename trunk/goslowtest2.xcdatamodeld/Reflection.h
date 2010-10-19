@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic,retain) NSString *reflectionPicturePath;
-@property (nonatomic,retain) int colorDayRed;
-@property (nonatomic,retain) int colorDayGreen;
-@property (nonatomic,retain) int colorDayBlue;
+@property (nonatomic) int colorDayRed;
+@property (nonatomic) int colorDayGreen;
+@property (nonatomic) int colorDayBlue;
 @property (nonatomic,retain) NSString *reflectionText;
 @property (nonatomic,retain) NSDate *timeStamp;
 @end
