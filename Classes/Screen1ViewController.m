@@ -18,6 +18,7 @@
 @synthesize managedObjectContext;
 
 @synthesize isNotFirstRun;
+@synthesize coreDataManager;
 
 - (IBAction) sayHello:(id) sender {
 	if(switchText == 0){
@@ -40,28 +41,6 @@
 
 }
 
-
-//Deletes all objects in the sqllite database
-- (void) deleteAllObjects: (NSString *) entityDescription  {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-	
-    NSError *error;
-    NSArray *items = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    [fetchRequest release];
-	
-	
-    for (NSManagedObject *managedObject in items) {
-        [managedObjectContext deleteObject:managedObject];
-        NSLog(@"%@ object deleted",entityDescription);
-    }
-    if (![managedObjectContext save:&error]) {
-        NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
-    }
-	
-}
-
 /*
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -72,8 +51,10 @@
 }
  */
 
+
+
 -(void)addAllSuggestions{
-	[self deleteAllObjects:@"Suggestion"];
+	[coreDataManager deleteAllObjects:@"Suggestion"];
 	
 	//NSString *textPaths = @"<b>Deep breathing</b> can reduce anxiety and disrupt repetitive or negative thoughts by focusing awareness on the present moment. Changing your breathing can shift your mood and perspective. <i>Try taking a deep breath in through the nose for 3 seconds... hold for 2 seconds... breathe out through the mouth for 6 seconds...</i>,back of Choose Consciously.jpg,backof Connect with Nature.jpg,backof connect with others.jpg,backof Control worry.jpg,backof Eat Well.jpg,backof Exercise.jpg,backof Express Gratitude.jpg,backof Get more sleep.jpg,backof Grow from mistakes.jpg,backof Laughter.jpg,backof Music.jpg,backof Meditation.jpg,backof Play.jpg,backof Powernap.jpg,backof reflect.jpg,backof Relax your Body.jpg,backof Think Positively.jpg,backof Thoughts matter.jpg,backof Use Resources.jpg,backof Visualization.jpg";
 	NSArray *textPicturePaths = [NSMutableArray array];
@@ -118,6 +99,7 @@
 		[newSuggestion setTheme:theme];
 		[newSuggestion setPicturePath:picturePath];
 		[newSuggestion setMoreInfo:infoPath];
+		
 	}
 	
 }
@@ -125,6 +107,9 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	coreDataManager = [[CoreDataManager alloc] init];
+	
 	switchText = 0;
 	//backText.hidden = TRUE;
 	assert(label != nil);
@@ -150,32 +135,34 @@
 	if (!isNotFirstRun) {
 		// Create a New Suggestion Card
 		[self addAllSuggestions];
-		NSError *error;
-		if(![managedObjectContext save:&error])
-			NSLog(@"Error on Saving New Suggestion");
+		[coreDataManager saveChanges];
+		//NSError *error;
+//		if(![managedObjectContext save:&error])
+//			NSLog(@"Error on Saving New Suggestion");
 		
 	}
 	
 	// Fetch Suggestions From Data Store
 	// TODO: Only fetch suggestions once a day
 	// Create Request
-	NSFetchRequest *request = [[NSFetchRequest alloc] init];
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
-	[request setEntity:entity];
-	// Set Sort Descriptors
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"theme" ascending:NO];
-	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-	[request setSortDescriptors:sortDescriptors];
-	[sortDescriptors release];
-	[sortDescriptor release];
-	//TODO: Get a Random Suggestion
-	// Fetch Results
-	NSError *error2;
-	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error2] mutableCopy];
-	assert(mutableFetchResults != nil);
+//	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
+//	[request setEntity:entity];
+//	// Set Sort Descriptors
+//	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"theme" ascending:NO];
+//	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+//	[request setSortDescriptors:sortDescriptors];
+//	[sortDescriptors release];
+//	[sortDescriptor release];
+//	//TODO: Get a Random Suggestion
+//	// Fetch Results
+//	NSError *error2;
+//	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error2] mutableCopy];
+//	assert(mutableFetchResults != nil);
+	
+	NSMutableArray *mutableFetchResults = [coreDataManager fetchSuggestions];
 	[self setSuggestionsArray:mutableFetchResults];
 	
-	int fetchResultsLength = [mutableFetchResults count];
 	int suggestionsArrayLength = [suggestionsArray count];
 	int randomIndex = arc4random() % suggestionsArrayLength;
 	
@@ -191,7 +178,6 @@
 					 html1, html2, html3];
 	[backText loadHTMLString:html baseURL:[NSURL URLWithString:@"http://www.hitchhiker.com/message"]];  
 	
-	//TODO: where does sleep.png come from?
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 	[formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zz"];
 	
@@ -204,8 +190,8 @@
 	
 	[formatter release];
 	
-	//TODO: Set Image Path and More Info, and update lastSeen
-
+	
+	//Set current image to the suggestion selected
 	currentImage = [UIImage imageNamed:[suggestion picturePath]];
 	NSLog([suggestion picturePath]);
 	//assert(newImage != nil);
@@ -213,27 +199,15 @@
 	//currentImage = newImage;
 	[currentImage retain];
 	
-	
-	//Add logic that gets the current image text 
-	//[pathTextByTheme ad
-	
-	
+	//Set current text to the selected image text
 	currentImageText = [UIImage imageNamed:[suggestion moreInfo]];
 	[currentImageText retain];
 	//[newImage release];
 	
-	//TODO: save the suggestion back to Core Data
 	//Set last seen to today's date
-	
-	NSError *saveError;
 	[suggestion setLastSeen:[NSDate date]];
-	if (![managedObjectContext save:&saveError]) {
-		NSLog(@"Saving changes to current suggestion failed: %@", saveError);
-	} else {
-		// The changes to suggestion have been persisted.
-	}
 	
-	[NSError release];
+	[coreDataManager saveChanges];
 }
 
 /*
@@ -264,6 +238,7 @@
 	[imageViewPicture release];
 	[suggestionsArray release];
 	[managedObjectContext release];
+	[coreDataManager release];
     [super dealloc];
 }
 

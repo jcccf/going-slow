@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0A3601111263874D0093D5B2 /* breathe.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3601101263874D0093D5B2 /* breathe.png */; };
+		0A4DC338126EAEF0008445A5 /* Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC337126EAEF0008445A5 /* Reflection.m */; };
+		0A4DC38E126EAF8A008445A5 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC386126EAF8A008445A5 /* CoreDataManager.m */; };
+		0A4DC38F126EAF8A008445A5 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC388126EAF8A008445A5 /* NotificationManager.m */; };
+		0A4DC390126EAF8A008445A5 /* Screen3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC38A126EAF8A008445A5 /* Screen3ViewController.m */; };
+		0A4DC391126EAF8A008445A5 /* Screen3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */; };
+		0A4DC392126EAF8A008445A5 /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC38D126EAF8A008445A5 /* SyncManager.m */; };
 		0A54948612636B5D00FA89FD /* Screen1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A54948412636B5D00FA89FD /* Screen1ViewController.m */; };
 		0A54948712636B5D00FA89FD /* Screen1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A54948512636B5D00FA89FD /* Screen1ViewController.xib */; };
 		1D3623260D0F684500981E51 /* goslowtest2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* goslowtest2AppDelegate.m */; };
@@ -112,6 +118,17 @@
 
 /* Begin PBXFileReference section */
 		0A3601101263874D0093D5B2 /* breathe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = breathe.png; path = goslowtest2.xcdatamodeld/breathe.png; sourceTree = "<group>"; };
+		0A4DC336126EAEF0008445A5 /* Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reflection.h; sourceTree = "<group>"; };
+		0A4DC337126EAEF0008445A5 /* Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reflection.m; sourceTree = "<group>"; };
+		0A4DC385126EAF8A008445A5 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		0A4DC386126EAF8A008445A5 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		0A4DC387126EAF8A008445A5 /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
+		0A4DC388126EAF8A008445A5 /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
+		0A4DC389126EAF8A008445A5 /* Screen3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen3ViewController.h; sourceTree = "<group>"; };
+		0A4DC38A126EAF8A008445A5 /* Screen3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen3ViewController.m; sourceTree = "<group>"; };
+		0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen3ViewController.xib; sourceTree = "<group>"; };
+		0A4DC38C126EAF8A008445A5 /* SyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncManager.h; sourceTree = "<group>"; };
+		0A4DC38D126EAF8A008445A5 /* SyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncManager.m; sourceTree = "<group>"; };
 		0A54948312636B5D00FA89FD /* Screen1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen1ViewController.h; sourceTree = "<group>"; };
 		0A54948412636B5D00FA89FD /* Screen1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen1ViewController.m; sourceTree = "<group>"; };
 		0A54948512636B5D00FA89FD /* Screen1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen1ViewController.xib; sourceTree = "<group>"; };
@@ -240,6 +257,15 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A4DC385126EAF8A008445A5 /* CoreDataManager.h */,
+				0A4DC386126EAF8A008445A5 /* CoreDataManager.m */,
+				0A4DC387126EAF8A008445A5 /* NotificationManager.h */,
+				0A4DC388126EAF8A008445A5 /* NotificationManager.m */,
+				0A4DC389126EAF8A008445A5 /* Screen3ViewController.h */,
+				0A4DC38A126EAF8A008445A5 /* Screen3ViewController.m */,
+				0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */,
+				0A4DC38C126EAF8A008445A5 /* SyncManager.h */,
+				0A4DC38D126EAF8A008445A5 /* SyncManager.m */,
 				1D3623240D0F684500981E51 /* goslowtest2AppDelegate.h */,
 				D023B4C81265396A00575359 /* NotificationTime.h */,
 				D023B4C91265396A00575359 /* NotificationTime.m */,
@@ -533,6 +559,7 @@
 				DFC05DD6126CD1E600B8987D /* backof Thoughts matter.jpg in Resources */,
 				DFC05DD7126CD1E600B8987D /* backof Use Resources.jpg in Resources */,
 				DFC05DD8126CD1E600B8987D /* backof Visualization.jpg in Resources */,
+				0A4DC391126EAF8A008445A5 /* Screen3ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +577,11 @@
 				D023B4CB1265396A00575359 /* NotificationTime.m in Sources */,
 				D00C842612656A37000DD3A9 /* Suggestion.m in Sources */,
 				DFC05D7F126CD19000B8987D /* Screen2ViewController.m in Sources */,
+				0A4DC338126EAEF0008445A5 /* Reflection.m in Sources */,
+				0A4DC38E126EAF8A008445A5 /* CoreDataManager.m in Sources */,
+				0A4DC38F126EAF8A008445A5 /* NotificationManager.m in Sources */,
+				0A4DC390126EAF8A008445A5 /* Screen3ViewController.m in Sources */,
+				0A4DC392126EAF8A008445A5 /* SyncManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +670,8 @@
 			isa = XCVersionGroup;
 			children = (
 				D00C842412656A37000DD3A9 /* Suggestion.h */,
+				0A4DC336126EAEF0008445A5 /* Reflection.h */,
+				0A4DC337126EAEF0008445A5 /* Reflection.m */,
 				D00C842512656A37000DD3A9 /* Suggestion.m */,
 				28C3AD890F43EF2300507BA6 /* goslowtest2.xcdatamodel */,
 			);

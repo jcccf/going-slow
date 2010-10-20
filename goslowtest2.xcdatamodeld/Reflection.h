@@ -10,7 +10,7 @@
 
 
 @interface Reflection : NSManagedObject {
-
+	
 }
 
 @property (nonatomic,retain) NSString *reflectionPicturePath;
