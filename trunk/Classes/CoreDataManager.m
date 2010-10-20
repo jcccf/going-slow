@@ -48,7 +48,7 @@ static CoreDataManager *sharedInstance = nil;
 }
 
 
--(NSMutableArray*) fetchSuggestions {
+-(Suggestion*) fetchSuggestion {
 	
 	// Fetch Suggestions From Data Store
 	// TODO: Only fetch suggestions once a day
@@ -68,7 +68,13 @@ static CoreDataManager *sharedInstance = nil;
 	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error2] mutableCopy];
 	assert(mutableFetchResults != nil);
 	
-	return mutableFetchResults;
+	int suggestionsArrayLength = [mutableFetchResults count];
+	int randomIndex = arc4random() % suggestionsArrayLength;
+	
+	// Read from Suggestions Array and Set View Items Appropriately
+	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];
+	
+	return suggestion;
 	
 }
 

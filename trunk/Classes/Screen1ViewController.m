@@ -160,14 +160,15 @@
 //	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error2] mutableCopy];
 //	assert(mutableFetchResults != nil);
 	
-	NSMutableArray *mutableFetchResults = [coreDataManager fetchSuggestions];
-	[self setSuggestionsArray:mutableFetchResults];
-	
-	int suggestionsArrayLength = [suggestionsArray count];
-	int randomIndex = arc4random() % suggestionsArrayLength;
+//	NSMutableArray *mutableFetchResults = [coreDataManager fetchSuggestions];
+//	[self setSuggestionsArray:mutableFetchResults];
+//	
+//	int suggestionsArrayLength = [suggestionsArray count];
+//	int randomIndex = arc4random() % suggestionsArrayLength;
 	
 	// Read from Suggestions Array and Set View Items Appropriately
-	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:randomIndex];
+//	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:randomIndex];
+	Suggestion *suggestion = [coreDataManager fetchSuggestion];
 	label.text = [suggestion theme];
 	//TODO: Pick an appropriate font.
 	
