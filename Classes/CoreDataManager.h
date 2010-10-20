@@ -24,7 +24,7 @@
 -(void)updateSuggestion:(NSDate *) date:(int)index;
 -(void)addReflection:(Reflection *)r;
 -(void)saveChanges;
--(NSMutableArray*)fetchSuggestions;
+-(Suggestion*)fetchSuggestion;
 -(void)deleteAllObjects: (NSString *) entityDescription;
 +(CoreDataManager *)getCoreDataManagerInstance;
 
