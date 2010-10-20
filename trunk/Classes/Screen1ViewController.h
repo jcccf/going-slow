@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "goslowtest2AppDelegate.h"
 #import "Suggestion.h"
+#import "CoreDataManager.h"
 
 @interface Screen1ViewController : UIViewController {
 	//UILabel *label;file://localhost/Users/svp/Documents/GoogleCode/Classes/Screen1ViewController.xib
@@ -23,6 +24,8 @@
 	NSManagedObjectContext *managedObjectContext;
 	int switchText;
 	
+	
+	CoreDataManager *coreDataManager;
 	bool isNotFirstRun;
 	
 }
@@ -36,6 +39,7 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic) bool isNotFirstRun;
+@property (nonatomic, retain) CoreDataManager *coreDataManager;
 
 -(IBAction)sayHello:(id) sender;
 
