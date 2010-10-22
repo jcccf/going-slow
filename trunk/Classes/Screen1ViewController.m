@@ -57,7 +57,7 @@
 	[coreDataManager deleteAllObjects:@"Suggestion"];
 	
 	//NSString *textPaths = @"<b>Deep breathing</b> can reduce anxiety and disrupt repetitive or negative thoughts by focusing awareness on the present moment. Changing your breathing can shift your mood and perspective. <i>Try taking a deep breath in through the nose for 3 seconds... hold for 2 seconds... breathe out through the mouth for 6 seconds...</i>,back of Choose Consciously.jpg,backof Connect with Nature.jpg,backof connect with others.jpg,backof Control worry.jpg,backof Eat Well.jpg,backof Exercise.jpg,backof Express Gratitude.jpg,backof Get more sleep.jpg,backof Grow from mistakes.jpg,backof Laughter.jpg,backof Music.jpg,backof Meditation.jpg,backof Play.jpg,backof Powernap.jpg,backof reflect.jpg,backof Relax your Body.jpg,backof Think Positively.jpg,backof Thoughts matter.jpg,backof Use Resources.jpg,backof Visualization.jpg";
-	NSArray *textPicturePaths = [NSMutableArray array];
+	NSMutableArray *textPicturePaths = [NSMutableArray array];
 
 	[textPicturePaths addObject:@"<b>Deep breathing</b> can reduce anxiety and disrupt repetitive or negative thoughts by focusing awareness on the present moment. Changing your breathing can shift your mood and perspective. <i>Try taking a deep breath in through the nose for 3 seconds... hold for 2 seconds... breathe out through the mouth for 6 seconds...</i>"];
 	[textPicturePaths addObject:@"<b>Choose consciously.</b> Making conscious choices based on your personal values and priorities means living with intention. It can increase your power over how you spend your time, respond to others, and react to situations.<br /><b>Try this:</b> <i>Think of one thing you want to accomplish today. Focus your mind on this intention. Notice the increased sense of control and clarity on how to proceed.</i>"];
@@ -92,13 +92,16 @@
 	int arrayCount = [picturePaths count];
 	
 	for(int i = 0; i < arrayCount; i++){
-		Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
+		//Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
 		NSString* theme = [themes objectAtIndex:i];
 		NSString* picturePath = [picturePaths objectAtIndex:i];
 		NSString* infoPath = [textPicturePaths objectAtIndex:i];
-		[newSuggestion setTheme:theme];
-		[newSuggestion setPicturePath:picturePath];
-		[newSuggestion setMoreInfo:infoPath];
+		
+		[coreDataManager addSuggestion:theme picturePath:picturePath infoPath:infoPath];
+		
+//		[newSuggestion setTheme:theme];
+//		[newSuggestion setPicturePath:picturePath];
+//		[newSuggestion setMoreInfo:infoPath];
 		
 	}
 	
@@ -168,6 +171,8 @@
 	
 	// Read from Suggestions Array and Set View Items Appropriately
 //	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:randomIndex];
+	
+	// Read from Suggestions Array and Set View Items Appropriately
 	Suggestion *suggestion = [coreDataManager fetchSuggestion];
 	label.text = [suggestion theme];
 	//TODO: Pick an appropriate font.
