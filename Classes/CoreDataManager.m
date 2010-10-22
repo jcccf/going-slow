@@ -38,16 +38,39 @@ static CoreDataManager *sharedInstance = nil;
 	
 }
 
--(void)addSuggestion:(Suggestion *)s{
+-(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath{
+	Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
+	[newSuggestion setTheme:theme];
+	[newSuggestion setPicturePath:picturePath];
+	[newSuggestion setMoreInfo:infoPath];
+	
+	[self saveChanges];
 	
 }
+
 
 //Irrelevant; just make changes to the original suggestion and use saveChanges to update it to Core Data
 -(void)updateSuggestion:(NSDate *)date :(int)index{
 	
 }
 
+//TODO: change this to date difference
+-(bool)compareDate {
 
+	NSString *date = @"2009-05-11";
+	NSString *nowDate = [[[NSDate date]description]substringToIndex: 10];
+	
+	// same day
+	if([date isEqualToString: nowDate]) {
+		// your code
+		return YES;
+	}
+	else {
+		return NO;
+	}
+}
+// record that user fetched the date in the method
+// look to NSPredicate for SQL-like queries
 -(Suggestion*) fetchSuggestion {
 	
 	// Fetch Suggestions From Data Store
@@ -62,17 +85,23 @@ static CoreDataManager *sharedInstance = nil;
 	[request setSortDescriptors:sortDescriptors];
 	[sortDescriptors release];
 	[sortDescriptor release];
-	//TODO: Get a Random Suggestion
+	
 	// Fetch Results
 	NSError *error2;
 	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error2] mutableCopy];
 	assert(mutableFetchResults != nil);
 	
 	int suggestionsArrayLength = [mutableFetchResults count];
+	//Get a Random Suggestion
 	int randomIndex = arc4random() % suggestionsArrayLength;
-	
-	// Read from Suggestions Array and Set View Items Appropriately
 	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];
+	
+	//Set last seen to today's date
+	[suggestion setLastSeen:[NSDate date]];
+	
+	NSLog(@"Date: %@", [suggestion lastSeen]);
+	
+	[self saveChanges];
 	
 	return suggestion;
 	

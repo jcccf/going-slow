@@ -20,7 +20,7 @@
 @property (nonatomic,retain) goslowtest2AppDelegate *appDelegateReference;
 @property (nonatomic,retain) NSManagedObjectContext *managedObjectContext;
 
--(void)addSuggestion:(Suggestion *)s;
+-(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath;
 -(void)updateSuggestion:(NSDate *) date:(int)index;
 -(void)addReflection:(Reflection *)r;
 -(void)saveChanges;
