@@ -14,7 +14,7 @@
 
 @interface Screen3ViewController : UIViewController {
 
-	IBOutlet UIView *reflectView;
+	IBOutlet UIView *colorBox;
 	IBOutlet UIButton *textButton;
 	IBOutlet UIButton *cameraButton;
 	IBOutlet UIButton *colorButton;
@@ -23,12 +23,25 @@
 	IBOutlet ReflectColorView *colorView;
 	IBOutlet ReflectCameraView *cameraView;
 	IBOutlet UITextView *textView;
+	IBOutlet UILabel *red;
+	IBOutlet UILabel *green;
+	IBOutlet UILabel *blue;
+	IBOutlet UISlider *redSlider;
+	IBOutlet UISlider *greenSlider;
+	IBOutlet UISlider *blueSlider;
+
 	
 }
 
 -(void)storeReflection:(Reflection *)r;
 
-@property(nonatomic,retain) UIView *reflectView;
+@property(nonatomic,retain) UILabel *red;
+@property(nonatomic,retain) UILabel *green;
+@property(nonatomic,retain) UILabel *blue;
+@property(nonatomic,retain) UISlider *redSlider;
+@property(nonatomic,retain) UISlider *greenSlider;
+@property(nonatomic,retain) UISlider *blueSlider;
+@property(nonatomic,retain) UIView *colorBox;
 @property(nonatomic,retain) UIButton *textButton;
 @property(nonatomic,retain) UIButton *cameraButton;
 @property(nonatomic,retain) UIButton *colorButton;
