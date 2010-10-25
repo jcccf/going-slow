@@ -38,6 +38,7 @@
 	greenSlider.hidden = YES;
 	blueSlider.hidden = YES;
 	colorBox.hidden = YES;
+	colorBox.backgroundColor = [UIColor colorWithRed:redSlider.value green:greenSlider.value blue:blueSlider.value alpha:1];
 	
 	textView.hidden = YES;
 	textView.delegate = self;
