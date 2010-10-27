@@ -7,10 +7,12 @@
 //
 
 #import "ReflectColorViewController.h"
+#import <CoreGraphics/CoreGraphics.h>
+#import <QuartzCore/CoreAnimation.h>
 
 
 @implementation ReflectColorViewController
-@synthesize navigationItem, saveButton;
+@synthesize navigationItem, saveButton, colorWheel, tapMeButton, colorButton;
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -21,13 +23,62 @@
     return self;
 }
 
-
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[self animateColorWheelToShow:YES duration:0.3];
+	colorWheel.pickedColorDelegate = self;
+	[[colorButton layer] setCornerRadius:8.0f];
+	[[colorButton layer] setMasksToBounds:YES];
+	[[colorButton layer] setBorderWidth:1.0f];
 }
-*/
+
+- (IBAction) tapMe: (id)sender {
+	[self animateColorWheelToShow:YES duration:0.3];
+}
+
+- (void) pickedColor:(UIColor *)color {
+	//[self animateColorWheelToShow:NO duration:0.3];
+	NSLog(@"My Color was Changed.");
+	//self.view.backgroundColor = color;
+	colorButton.backgroundColor = color;
+	CGColorRef c = [color CGColor];
+	CGFloat *components = CGColorGetComponents(c);
+	CGFloat red = components[0];
+	CGFloat green = components[1];
+	CGFloat blue = components[2];
+	UIColor *newC = [UIColor colorWithRed:1-red green:1-green blue:1-blue alpha:1];
+	[colorButton setTitleColor:newC forState:UIControlStateNormal];
+	[self.view setNeedsDisplay];
+}
+
+- (void) animateColorWheelToShow:(BOOL)show duration:(NSTimeInterval)duration {
+	int x;
+	float angle;
+	float scale;
+	if (show==NO) { 
+		x = -320;
+		angle = -3.12;
+		scale = 0.01;
+		self.colorWheel.hidden=YES;
+	} else {
+		x=0;
+		angle = 0;
+		scale = 1;
+		[self.colorWheel setNeedsDisplay];
+		self.colorWheel.hidden=NO;
+	}
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:duration];
+	
+	CATransform3D transform = CATransform3DMakeTranslation(0,0,0);
+	//transform = CATransform3DTranslate(transform,x,0,0);
+	//transform = CATransform3DRotate(transform, angle,0,0,1);
+	transform = CATransform3DScale(transform, scale,scale,1);
+	self.colorWheel.transform=CATransform3DGetAffineTransform(transform);
+	self.colorWheel.layer.transform=transform;
+	[UIView commitAnimations];
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.
