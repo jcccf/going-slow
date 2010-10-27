@@ -7,14 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ColorPickerImageView.h"
 
 
 @interface ReflectColorViewController : UIViewController {
 
 	UINavigationItem *navigationItem;
 	UIBarButtonItem *saveButton;
+	
+	ColorPickerImageView* colorWheel;
+	UIButton* tapMeButton;
+	UIButton* colorButton;
 }
 @property (nonatomic,retain) IBOutlet UINavigationItem *navigationItem;
 @property (nonatomic,retain) IBOutlet UIBarButtonItem *saveButton;
+
+@property (nonatomic,retain) IBOutlet ColorPickerImageView* colorWheel;
+@property (nonatomic,retain) IBOutlet UIButton* tapMeButton;
+@property (nonatomic,retain) IBOutlet UIButton* colorButton;
+
+- (IBAction) tapMe: (id)sender;
+- (void) pickedColor: (UIColor*) color;
+- (void) animateColorWheelToShow:(BOOL)show duration:(NSTimeInterval)duration;
 
 @end
