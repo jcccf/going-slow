@@ -16,6 +16,18 @@
 		0A4DC392126EAF8A008445A5 /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC38D126EAF8A008445A5 /* SyncManager.m */; };
 		0A54948612636B5D00FA89FD /* Screen1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A54948412636B5D00FA89FD /* Screen1ViewController.m */; };
 		0A54948712636B5D00FA89FD /* Screen1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A54948512636B5D00FA89FD /* Screen1ViewController.xib */; };
+		0A5EA3771277F79500B6B9A8 /* ReflectCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA3691277F79500B6B9A8 /* ReflectCameraView.m */; };
+		0A5EA3781277F79500B6B9A8 /* ReflectCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA36B1277F79500B6B9A8 /* ReflectCameraViewController.m */; };
+		0A5EA3791277F79500B6B9A8 /* ReflectCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5EA36C1277F79500B6B9A8 /* ReflectCameraViewController.xib */; };
+		0A5EA37A1277F79500B6B9A8 /* ReflectColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA36E1277F79500B6B9A8 /* ReflectColorView.m */; };
+		0A5EA37B1277F79500B6B9A8 /* ReflectColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA3701277F79500B6B9A8 /* ReflectColorViewController.m */; };
+		0A5EA37C1277F79500B6B9A8 /* ReflectColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5EA3711277F79500B6B9A8 /* ReflectColorViewController.xib */; };
+		0A5EA37D1277F79500B6B9A8 /* ReflectTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA3731277F79500B6B9A8 /* ReflectTextView.m */; };
+		0A5EA37E1277F79500B6B9A8 /* ReflectTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA3751277F79500B6B9A8 /* ReflectTextViewController.m */; };
+		0A5EA37F1277F79500B6B9A8 /* ReflectTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5EA3761277F79500B6B9A8 /* ReflectTextViewController.xib */; };
+		0AEB28F61278C87E004C2629 /* ColorReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB28F51278C87E004C2629 /* ColorReflection.m */; };
+		0AEB29E41278D0FE004C2629 /* TextReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB29E31278D0FE004C2629 /* TextReflection.m */; };
+		0AEB2A1A1278D2F7004C2629 /* PhotoReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB2A191278D2F7004C2629 /* PhotoReflection.m */; };
 		1D3623260D0F684500981E51 /* goslowtest2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* goslowtest2AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -132,6 +144,27 @@
 		0A54948312636B5D00FA89FD /* Screen1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen1ViewController.h; sourceTree = "<group>"; };
 		0A54948412636B5D00FA89FD /* Screen1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen1ViewController.m; sourceTree = "<group>"; };
 		0A54948512636B5D00FA89FD /* Screen1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen1ViewController.xib; sourceTree = "<group>"; };
+		0A5EA3681277F79500B6B9A8 /* ReflectCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectCameraView.h; sourceTree = "<group>"; };
+		0A5EA3691277F79500B6B9A8 /* ReflectCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectCameraView.m; sourceTree = "<group>"; };
+		0A5EA36A1277F79500B6B9A8 /* ReflectCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectCameraViewController.h; sourceTree = "<group>"; };
+		0A5EA36B1277F79500B6B9A8 /* ReflectCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectCameraViewController.m; sourceTree = "<group>"; };
+		0A5EA36C1277F79500B6B9A8 /* ReflectCameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectCameraViewController.xib; sourceTree = "<group>"; };
+		0A5EA36D1277F79500B6B9A8 /* ReflectColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectColorView.h; sourceTree = "<group>"; };
+		0A5EA36E1277F79500B6B9A8 /* ReflectColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectColorView.m; sourceTree = "<group>"; };
+		0A5EA36F1277F79500B6B9A8 /* ReflectColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectColorViewController.h; sourceTree = "<group>"; };
+		0A5EA3701277F79500B6B9A8 /* ReflectColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectColorViewController.m; sourceTree = "<group>"; };
+		0A5EA3711277F79500B6B9A8 /* ReflectColorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectColorViewController.xib; sourceTree = "<group>"; };
+		0A5EA3721277F79500B6B9A8 /* ReflectTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectTextView.h; sourceTree = "<group>"; };
+		0A5EA3731277F79500B6B9A8 /* ReflectTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectTextView.m; sourceTree = "<group>"; };
+		0A5EA3741277F79500B6B9A8 /* ReflectTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectTextViewController.h; sourceTree = "<group>"; };
+		0A5EA3751277F79500B6B9A8 /* ReflectTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectTextViewController.m; sourceTree = "<group>"; };
+		0A5EA3761277F79500B6B9A8 /* ReflectTextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectTextViewController.xib; sourceTree = "<group>"; };
+		0AEB28F41278C87E004C2629 /* ColorReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorReflection.h; sourceTree = "<group>"; };
+		0AEB28F51278C87E004C2629 /* ColorReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorReflection.m; sourceTree = "<group>"; };
+		0AEB29E21278D0FE004C2629 /* TextReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextReflection.h; sourceTree = "<group>"; };
+		0AEB29E31278D0FE004C2629 /* TextReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextReflection.m; sourceTree = "<group>"; };
+		0AEB2A181278D2F7004C2629 /* PhotoReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoReflection.h; sourceTree = "<group>"; };
+		0AEB2A191278D2F7004C2629 /* PhotoReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoReflection.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* goslowtest2AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goslowtest2AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* goslowtest2AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = goslowtest2AppDelegate.m; sourceTree = "<group>"; };
@@ -257,6 +290,21 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A5EA3681277F79500B6B9A8 /* ReflectCameraView.h */,
+				0A5EA3691277F79500B6B9A8 /* ReflectCameraView.m */,
+				0A5EA36A1277F79500B6B9A8 /* ReflectCameraViewController.h */,
+				0A5EA36B1277F79500B6B9A8 /* ReflectCameraViewController.m */,
+				0A5EA36C1277F79500B6B9A8 /* ReflectCameraViewController.xib */,
+				0A5EA36D1277F79500B6B9A8 /* ReflectColorView.h */,
+				0A5EA36E1277F79500B6B9A8 /* ReflectColorView.m */,
+				0A5EA36F1277F79500B6B9A8 /* ReflectColorViewController.h */,
+				0A5EA3701277F79500B6B9A8 /* ReflectColorViewController.m */,
+				0A5EA3711277F79500B6B9A8 /* ReflectColorViewController.xib */,
+				0A5EA3721277F79500B6B9A8 /* ReflectTextView.h */,
+				0A5EA3731277F79500B6B9A8 /* ReflectTextView.m */,
+				0A5EA3741277F79500B6B9A8 /* ReflectTextViewController.h */,
+				0A5EA3751277F79500B6B9A8 /* ReflectTextViewController.m */,
+				0A5EA3761277F79500B6B9A8 /* ReflectTextViewController.xib */,
 				0A4DC385126EAF8A008445A5 /* CoreDataManager.h */,
 				0A4DC386126EAF8A008445A5 /* CoreDataManager.m */,
 				0A4DC387126EAF8A008445A5 /* NotificationManager.h */,
@@ -560,6 +608,9 @@
 				DFC05DD7126CD1E600B8987D /* backof Use Resources.jpg in Resources */,
 				DFC05DD8126CD1E600B8987D /* backof Visualization.jpg in Resources */,
 				0A4DC391126EAF8A008445A5 /* Screen3ViewController.xib in Resources */,
+				0A5EA3791277F79500B6B9A8 /* ReflectCameraViewController.xib in Resources */,
+				0A5EA37C1277F79500B6B9A8 /* ReflectColorViewController.xib in Resources */,
+				0A5EA37F1277F79500B6B9A8 /* ReflectTextViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +633,15 @@
 				0A4DC38F126EAF8A008445A5 /* NotificationManager.m in Sources */,
 				0A4DC390126EAF8A008445A5 /* Screen3ViewController.m in Sources */,
 				0A4DC392126EAF8A008445A5 /* SyncManager.m in Sources */,
+				0A5EA3771277F79500B6B9A8 /* ReflectCameraView.m in Sources */,
+				0A5EA3781277F79500B6B9A8 /* ReflectCameraViewController.m in Sources */,
+				0A5EA37A1277F79500B6B9A8 /* ReflectColorView.m in Sources */,
+				0A5EA37B1277F79500B6B9A8 /* ReflectColorViewController.m in Sources */,
+				0A5EA37D1277F79500B6B9A8 /* ReflectTextView.m in Sources */,
+				0A5EA37E1277F79500B6B9A8 /* ReflectTextViewController.m in Sources */,
+				0AEB28F61278C87E004C2629 /* ColorReflection.m in Sources */,
+				0AEB29E41278D0FE004C2629 /* TextReflection.m in Sources */,
+				0AEB2A1A1278D2F7004C2629 /* PhotoReflection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +731,12 @@
 			children = (
 				D00C842412656A37000DD3A9 /* Suggestion.h */,
 				0A4DC336126EAEF0008445A5 /* Reflection.h */,
+				0AEB28F41278C87E004C2629 /* ColorReflection.h */,
+				0AEB29E21278D0FE004C2629 /* TextReflection.h */,
+				0AEB2A181278D2F7004C2629 /* PhotoReflection.h */,
+				0AEB2A191278D2F7004C2629 /* PhotoReflection.m */,
+				0AEB29E31278D0FE004C2629 /* TextReflection.m */,
+				0AEB28F51278C87E004C2629 /* ColorReflection.m */,
 				0A4DC337126EAEF0008445A5 /* Reflection.m */,
 				D00C842512656A37000DD3A9 /* Suggestion.m */,
 				28C3AD890F43EF2300507BA6 /* goslowtest2.xcdatamodel */,
