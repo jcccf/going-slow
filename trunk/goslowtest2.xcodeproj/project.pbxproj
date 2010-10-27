@@ -36,96 +36,41 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
-		8C8578D51269D4330090D122 /* breathe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C01269D4330090D122 /* breathe.jpg */; };
-		8C8578D61269D4330090D122 /* choose_consciously.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C11269D4330090D122 /* choose_consciously.jpg */; };
-		8C8578D71269D4330090D122 /* connect_with_nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C21269D4330090D122 /* connect_with_nature.jpg */; };
-		8C8578D81269D4330090D122 /* connect_with_others.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C31269D4330090D122 /* connect_with_others.jpg */; };
-		8C8578D91269D4330090D122 /* control_worry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C41269D4330090D122 /* control_worry.jpg */; };
-		8C8578DA1269D4330090D122 /* eat_well.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C51269D4330090D122 /* eat_well.jpg */; };
-		8C8578DB1269D4330090D122 /* exercise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C61269D4330090D122 /* exercise.jpg */; };
-		8C8578DC1269D4330090D122 /* express_gratitude.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C71269D4330090D122 /* express_gratitude.jpg */; };
-		8C8578DD1269D4330090D122 /* get_more_sleep.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C81269D4330090D122 /* get_more_sleep.jpg */; };
-		8C8578DE1269D4330090D122 /* grow_from_mistakes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578C91269D4330090D122 /* grow_from_mistakes.jpg */; };
-		8C8578DF1269D4330090D122 /* laugh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578CA1269D4330090D122 /* laugh.jpg */; };
-		8C8578E01269D4330090D122 /* listen_to_music.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578CB1269D4330090D122 /* listen_to_music.jpg */; };
-		8C8578E11269D4330090D122 /* meditate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578CC1269D4330090D122 /* meditate.jpg */; };
-		8C8578E21269D4330090D122 /* play.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578CD1269D4330090D122 /* play.jpg */; };
-		8C8578E31269D4330090D122 /* power_nap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578CE1269D4330090D122 /* power_nap.jpg */; };
-		8C8578E41269D4330090D122 /* reflect.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578CF1269D4330090D122 /* reflect.jpg */; };
-		8C8578E51269D4330090D122 /* relax_your_body.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578D01269D4330090D122 /* relax_your_body.jpg */; };
-		8C8578E61269D4330090D122 /* think_positively.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578D11269D4330090D122 /* think_positively.jpg */; };
-		8C8578E71269D4330090D122 /* thoughts_matter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578D21269D4330090D122 /* thoughts_matter.jpg */; };
-		8C8578E81269D4330090D122 /* use_resources.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578D31269D4330090D122 /* use_resources.jpg */; };
-		8C8578E91269D4330090D122 /* visualize.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578D41269D4330090D122 /* visualize.jpg */; };
-		8C8579011269D4A30090D122 /* back deep breathe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578EC1269D4A30090D122 /* back deep breathe.jpg */; };
-		8C8579021269D4A30090D122 /* backof Choose Consciously.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578ED1269D4A30090D122 /* backof Choose Consciously.jpg */; };
-		8C8579031269D4A30090D122 /* backof Connect with Nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578EE1269D4A30090D122 /* backof Connect with Nature.jpg */; };
-		8C8579041269D4A30090D122 /* backof connect with others.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578EF1269D4A30090D122 /* backof connect with others.jpg */; };
-		8C8579051269D4A30090D122 /* backof Control worry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F01269D4A30090D122 /* backof Control worry.jpg */; };
-		8C8579061269D4A30090D122 /* backof Eat Well.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F11269D4A30090D122 /* backof Eat Well.jpg */; };
-		8C8579071269D4A30090D122 /* backof Exercise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F21269D4A30090D122 /* backof Exercise.jpg */; };
-		8C8579081269D4A30090D122 /* backof Express Gratitude.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F31269D4A30090D122 /* backof Express Gratitude.jpg */; };
-		8C8579091269D4A30090D122 /* backof Get more sleep.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F41269D4A30090D122 /* backof Get more sleep.jpg */; };
-		8C85790A1269D4A30090D122 /* backof Grow from mistakes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F51269D4A30090D122 /* backof Grow from mistakes.jpg */; };
-		8C85790B1269D4A30090D122 /* backof Laughter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F61269D4A30090D122 /* backof Laughter.jpg */; };
-		8C85790C1269D4A30090D122 /* backof Meditation.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F71269D4A30090D122 /* backof Meditation.jpg */; };
-		8C85790D1269D4A30090D122 /* backof Music.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F81269D4A30090D122 /* backof Music.jpg */; };
-		8C85790E1269D4A30090D122 /* backof Play.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578F91269D4A30090D122 /* backof Play.jpg */; };
-		8C85790F1269D4A30090D122 /* backof Powernap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578FA1269D4A30090D122 /* backof Powernap.jpg */; };
-		8C8579101269D4A30090D122 /* backof reflect.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578FB1269D4A30090D122 /* backof reflect.jpg */; };
-		8C8579111269D4A30090D122 /* backof Relax your Body.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578FC1269D4A30090D122 /* backof Relax your Body.jpg */; };
-		8C8579121269D4A30090D122 /* backof Think Positively.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578FD1269D4A30090D122 /* backof Think Positively.jpg */; };
-		8C8579131269D4A30090D122 /* backof Thoughts matter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578FE1269D4A30090D122 /* backof Thoughts matter.jpg */; };
-		8C8579141269D4A30090D122 /* backof Use Resources.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8578FF1269D4A30090D122 /* backof Use Resources.jpg */; };
-		8C8579151269D4A30090D122 /* backof Visualization.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C8579001269D4A30090D122 /* backof Visualization.jpg */; };
 		D00C842612656A37000DD3A9 /* Suggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = D00C842512656A37000DD3A9 /* Suggestion.m */; };
 		D023B4CB1265396A00575359 /* NotificationTime.m in Sources */ = {isa = PBXBuildFile; fileRef = D023B4C91265396A00575359 /* NotificationTime.m */; };
 		D023B4CC1265396A00575359 /* NotificationTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = D023B4CA1265396A00575359 /* NotificationTime.xib */; };
 		D08CD45712664DCB00E30523 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D08CD45612664DCB00E30523 /* Settings.bundle */; };
+		DF74D5F71278D98D00E92851 /* breathe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E21278D98D00E92851 /* breathe.jpg */; };
+		DF74D5F81278D98D00E92851 /* choose_consciously.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E31278D98D00E92851 /* choose_consciously.jpg */; };
+		DF74D5F91278D98D00E92851 /* connect_with_nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E41278D98D00E92851 /* connect_with_nature.jpg */; };
+		DF74D5FA1278D98D00E92851 /* connect_with_others.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E51278D98D00E92851 /* connect_with_others.jpg */; };
+		DF74D5FB1278D98D00E92851 /* control_worry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E61278D98D00E92851 /* control_worry.jpg */; };
+		DF74D5FC1278D98D00E92851 /* eat_well.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E71278D98D00E92851 /* eat_well.jpg */; };
+		DF74D5FD1278D98D00E92851 /* exercise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E81278D98D00E92851 /* exercise.jpg */; };
+		DF74D5FE1278D98D00E92851 /* express_gratitude.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E91278D98D00E92851 /* express_gratitude.jpg */; };
+		DF74D5FF1278D98D00E92851 /* get_more_sleep.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5EA1278D98D00E92851 /* get_more_sleep.jpg */; };
+		DF74D6001278D98D00E92851 /* grow_from_mistakes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5EB1278D98D00E92851 /* grow_from_mistakes.jpg */; };
+		DF74D6011278D98D00E92851 /* laugh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5EC1278D98D00E92851 /* laugh.jpg */; };
+		DF74D6021278D98D00E92851 /* listen_to_music.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5ED1278D98D00E92851 /* listen_to_music.jpg */; };
+		DF74D6031278D98D00E92851 /* meditate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5EE1278D98D00E92851 /* meditate.jpg */; };
+		DF74D6041278D98D00E92851 /* play.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5EF1278D98D00E92851 /* play.jpg */; };
+		DF74D6051278D98D00E92851 /* power_nap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5F01278D98D00E92851 /* power_nap.jpg */; };
+		DF74D6061278D98D00E92851 /* reflect.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5F11278D98D00E92851 /* reflect.jpg */; };
+		DF74D6071278D98D00E92851 /* relax_your_body.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5F21278D98D00E92851 /* relax_your_body.jpg */; };
+		DF74D6081278D98D00E92851 /* think_positively.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5F31278D98D00E92851 /* think_positively.jpg */; };
+		DF74D6091278D98D00E92851 /* thoughts_matter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5F41278D98D00E92851 /* thoughts_matter.jpg */; };
+		DF74D60A1278D98D00E92851 /* use_resources.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5F51278D98D00E92851 /* use_resources.jpg */; };
+		DF74D60B1278D98D00E92851 /* visualize.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5F61278D98D00E92851 /* visualize.jpg */; };
+		DF74D60D1278D9B900E92851 /* colorWheel1.png in Resources */ = {isa = PBXBuildFile; fileRef = DF74D60C1278D9B900E92851 /* colorWheel1.png */; };
+		DF74D6201278DA1600E92851 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF74D61F1278DA1600E92851 /* QuartzCore.framework */; };
+		DF74D6321278DA7C00E92851 /* CameraReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = DF74D62A1278DA7B00E92851 /* CameraReflect.png */; };
+		DF74D6331278DA7C00E92851 /* ColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF74D62C1278DA7C00E92851 /* ColorPickerImageView.m */; };
+		DF74D6341278DA7C00E92851 /* ReflectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */; };
+		DF74D6351278DA7C00E92851 /* ReflectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */; };
+		DF74D6361278DA7C00E92851 /* ColorReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = DF74D6301278DA7C00E92851 /* ColorReflect.png */; };
+		DF74D6371278DA7C00E92851 /* TextReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = DF74D6311278DA7C00E92851 /* TextReflect.png */; };
 		DFC05D7F126CD19000B8987D /* Screen2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC05D7D126CD19000B8987D /* Screen2ViewController.m */; };
 		DFC05D80126CD19000B8987D /* Screen2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D7E126CD19000B8987D /* Screen2ViewController.xib */; };
-		DFC05D9A126CD1D700B8987D /* breathe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D85126CD1D700B8987D /* breathe.jpg */; };
-		DFC05D9B126CD1D700B8987D /* choose_consciously.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D86126CD1D700B8987D /* choose_consciously.jpg */; };
-		DFC05D9C126CD1D700B8987D /* connect_with_nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D87126CD1D700B8987D /* connect_with_nature.jpg */; };
-		DFC05D9D126CD1D700B8987D /* connect_with_others.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D88126CD1D700B8987D /* connect_with_others.jpg */; };
-		DFC05D9E126CD1D700B8987D /* control_worry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D89126CD1D700B8987D /* control_worry.jpg */; };
-		DFC05D9F126CD1D700B8987D /* eat_well.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D8A126CD1D700B8987D /* eat_well.jpg */; };
-		DFC05DA0126CD1D700B8987D /* exercise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D8B126CD1D700B8987D /* exercise.jpg */; };
-		DFC05DA1126CD1D700B8987D /* express_gratitude.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D8C126CD1D700B8987D /* express_gratitude.jpg */; };
-		DFC05DA2126CD1D700B8987D /* get_more_sleep.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D8D126CD1D700B8987D /* get_more_sleep.jpg */; };
-		DFC05DA3126CD1D700B8987D /* grow_from_mistakes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D8E126CD1D700B8987D /* grow_from_mistakes.jpg */; };
-		DFC05DA4126CD1D700B8987D /* laugh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D8F126CD1D700B8987D /* laugh.jpg */; };
-		DFC05DA5126CD1D700B8987D /* listen_to_music.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D90126CD1D700B8987D /* listen_to_music.jpg */; };
-		DFC05DA6126CD1D700B8987D /* meditate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D91126CD1D700B8987D /* meditate.jpg */; };
-		DFC05DA7126CD1D700B8987D /* play.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D92126CD1D700B8987D /* play.jpg */; };
-		DFC05DA8126CD1D700B8987D /* power_nap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D93126CD1D700B8987D /* power_nap.jpg */; };
-		DFC05DA9126CD1D700B8987D /* reflect.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D94126CD1D700B8987D /* reflect.jpg */; };
-		DFC05DAA126CD1D700B8987D /* relax_your_body.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D95126CD1D700B8987D /* relax_your_body.jpg */; };
-		DFC05DAB126CD1D700B8987D /* think_positively.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D96126CD1D700B8987D /* think_positively.jpg */; };
-		DFC05DAC126CD1D700B8987D /* thoughts_matter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D97126CD1D700B8987D /* thoughts_matter.jpg */; };
-		DFC05DAD126CD1D700B8987D /* use_resources.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D98126CD1D700B8987D /* use_resources.jpg */; };
-		DFC05DAE126CD1D700B8987D /* visualize.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D99126CD1D700B8987D /* visualize.jpg */; };
-		DFC05DC4126CD1E600B8987D /* back deep breathe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DAF126CD1E600B8987D /* back deep breathe.jpg */; };
-		DFC05DC5126CD1E600B8987D /* backof Choose Consciously.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB0126CD1E600B8987D /* backof Choose Consciously.jpg */; };
-		DFC05DC6126CD1E600B8987D /* backof Connect with Nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB1126CD1E600B8987D /* backof Connect with Nature.jpg */; };
-		DFC05DC7126CD1E600B8987D /* backof connect with others.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB2126CD1E600B8987D /* backof connect with others.jpg */; };
-		DFC05DC8126CD1E600B8987D /* backof Control worry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB3126CD1E600B8987D /* backof Control worry.jpg */; };
-		DFC05DC9126CD1E600B8987D /* backof Eat Well.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB4126CD1E600B8987D /* backof Eat Well.jpg */; };
-		DFC05DCA126CD1E600B8987D /* backof Exercise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB5126CD1E600B8987D /* backof Exercise.jpg */; };
-		DFC05DCB126CD1E600B8987D /* backof Express Gratitude.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB6126CD1E600B8987D /* backof Express Gratitude.jpg */; };
-		DFC05DCC126CD1E600B8987D /* backof Get more sleep.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB7126CD1E600B8987D /* backof Get more sleep.jpg */; };
-		DFC05DCD126CD1E600B8987D /* backof Grow from mistakes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB8126CD1E600B8987D /* backof Grow from mistakes.jpg */; };
-		DFC05DCE126CD1E600B8987D /* backof Laughter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DB9126CD1E600B8987D /* backof Laughter.jpg */; };
-		DFC05DCF126CD1E600B8987D /* backof Meditation.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DBA126CD1E600B8987D /* backof Meditation.jpg */; };
-		DFC05DD0126CD1E600B8987D /* backof Music.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DBB126CD1E600B8987D /* backof Music.jpg */; };
-		DFC05DD1126CD1E600B8987D /* backof Play.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DBC126CD1E600B8987D /* backof Play.jpg */; };
-		DFC05DD2126CD1E600B8987D /* backof Powernap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DBD126CD1E600B8987D /* backof Powernap.jpg */; };
-		DFC05DD3126CD1E600B8987D /* backof reflect.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DBE126CD1E600B8987D /* backof reflect.jpg */; };
-		DFC05DD4126CD1E600B8987D /* backof Relax your Body.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DBF126CD1E600B8987D /* backof Relax your Body.jpg */; };
-		DFC05DD5126CD1E600B8987D /* backof Think Positively.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DC0126CD1E600B8987D /* backof Think Positively.jpg */; };
-		DFC05DD6126CD1E600B8987D /* backof Thoughts matter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DC1126CD1E600B8987D /* backof Thoughts matter.jpg */; };
-		DFC05DD7126CD1E600B8987D /* backof Use Resources.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DC2126CD1E600B8987D /* backof Use Resources.jpg */; };
-		DFC05DD8126CD1E600B8987D /* backof Visualization.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFC05DC3126CD1E600B8987D /* backof Visualization.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,48 +120,6 @@
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* goslowtest2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goslowtest2_Prefix.pch; sourceTree = "<group>"; };
-		8C8578C01269D4330090D122 /* breathe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = breathe.jpg; sourceTree = "<group>"; };
-		8C8578C11269D4330090D122 /* choose_consciously.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = choose_consciously.jpg; sourceTree = "<group>"; };
-		8C8578C21269D4330090D122 /* connect_with_nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = connect_with_nature.jpg; sourceTree = "<group>"; };
-		8C8578C31269D4330090D122 /* connect_with_others.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = connect_with_others.jpg; sourceTree = "<group>"; };
-		8C8578C41269D4330090D122 /* control_worry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = control_worry.jpg; sourceTree = "<group>"; };
-		8C8578C51269D4330090D122 /* eat_well.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eat_well.jpg; sourceTree = "<group>"; };
-		8C8578C61269D4330090D122 /* exercise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = exercise.jpg; sourceTree = "<group>"; };
-		8C8578C71269D4330090D122 /* express_gratitude.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = express_gratitude.jpg; sourceTree = "<group>"; };
-		8C8578C81269D4330090D122 /* get_more_sleep.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = get_more_sleep.jpg; sourceTree = "<group>"; };
-		8C8578C91269D4330090D122 /* grow_from_mistakes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grow_from_mistakes.jpg; sourceTree = "<group>"; };
-		8C8578CA1269D4330090D122 /* laugh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = laugh.jpg; sourceTree = "<group>"; };
-		8C8578CB1269D4330090D122 /* listen_to_music.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = listen_to_music.jpg; sourceTree = "<group>"; };
-		8C8578CC1269D4330090D122 /* meditate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meditate.jpg; sourceTree = "<group>"; };
-		8C8578CD1269D4330090D122 /* play.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = play.jpg; sourceTree = "<group>"; };
-		8C8578CE1269D4330090D122 /* power_nap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = power_nap.jpg; sourceTree = "<group>"; };
-		8C8578CF1269D4330090D122 /* reflect.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reflect.jpg; sourceTree = "<group>"; };
-		8C8578D01269D4330090D122 /* relax_your_body.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = relax_your_body.jpg; sourceTree = "<group>"; };
-		8C8578D11269D4330090D122 /* think_positively.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = think_positively.jpg; sourceTree = "<group>"; };
-		8C8578D21269D4330090D122 /* thoughts_matter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thoughts_matter.jpg; sourceTree = "<group>"; };
-		8C8578D31269D4330090D122 /* use_resources.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = use_resources.jpg; sourceTree = "<group>"; };
-		8C8578D41269D4330090D122 /* visualize.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = visualize.jpg; sourceTree = "<group>"; };
-		8C8578EC1269D4A30090D122 /* back deep breathe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "back deep breathe.jpg"; sourceTree = "<group>"; };
-		8C8578ED1269D4A30090D122 /* backof Choose Consciously.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Choose Consciously.jpg"; sourceTree = "<group>"; };
-		8C8578EE1269D4A30090D122 /* backof Connect with Nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Connect with Nature.jpg"; sourceTree = "<group>"; };
-		8C8578EF1269D4A30090D122 /* backof connect with others.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof connect with others.jpg"; sourceTree = "<group>"; };
-		8C8578F01269D4A30090D122 /* backof Control worry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Control worry.jpg"; sourceTree = "<group>"; };
-		8C8578F11269D4A30090D122 /* backof Eat Well.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Eat Well.jpg"; sourceTree = "<group>"; };
-		8C8578F21269D4A30090D122 /* backof Exercise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Exercise.jpg"; sourceTree = "<group>"; };
-		8C8578F31269D4A30090D122 /* backof Express Gratitude.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Express Gratitude.jpg"; sourceTree = "<group>"; };
-		8C8578F41269D4A30090D122 /* backof Get more sleep.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Get more sleep.jpg"; sourceTree = "<group>"; };
-		8C8578F51269D4A30090D122 /* backof Grow from mistakes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Grow from mistakes.jpg"; sourceTree = "<group>"; };
-		8C8578F61269D4A30090D122 /* backof Laughter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Laughter.jpg"; sourceTree = "<group>"; };
-		8C8578F71269D4A30090D122 /* backof Meditation.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Meditation.jpg"; sourceTree = "<group>"; };
-		8C8578F81269D4A30090D122 /* backof Music.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Music.jpg"; sourceTree = "<group>"; };
-		8C8578F91269D4A30090D122 /* backof Play.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Play.jpg"; sourceTree = "<group>"; };
-		8C8578FA1269D4A30090D122 /* backof Powernap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Powernap.jpg"; sourceTree = "<group>"; };
-		8C8578FB1269D4A30090D122 /* backof reflect.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof reflect.jpg"; sourceTree = "<group>"; };
-		8C8578FC1269D4A30090D122 /* backof Relax your Body.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Relax your Body.jpg"; sourceTree = "<group>"; };
-		8C8578FD1269D4A30090D122 /* backof Think Positively.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Think Positively.jpg"; sourceTree = "<group>"; };
-		8C8578FE1269D4A30090D122 /* backof Thoughts matter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Thoughts matter.jpg"; sourceTree = "<group>"; };
-		8C8578FF1269D4A30090D122 /* backof Use Resources.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Use Resources.jpg"; sourceTree = "<group>"; };
-		8C8579001269D4A30090D122 /* backof Visualization.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Visualization.jpg"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* goslowtest2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "goslowtest2-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D00C842412656A37000DD3A9 /* Suggestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Suggestion.h; sourceTree = "<group>"; };
 		D00C842512656A37000DD3A9 /* Suggestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Suggestion.m; sourceTree = "<group>"; };
@@ -225,51 +128,40 @@
 		D023B4CA1265396A00575359 /* NotificationTime.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTime.xib; sourceTree = "<group>"; };
 		D08CD44012664D9200E30523 /* goslowtest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goslowtest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08CD45612664DCB00E30523 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		DF74D5E21278D98D00E92851 /* breathe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = breathe.jpg; sourceTree = "<group>"; };
+		DF74D5E31278D98D00E92851 /* choose_consciously.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = choose_consciously.jpg; sourceTree = "<group>"; };
+		DF74D5E41278D98D00E92851 /* connect_with_nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = connect_with_nature.jpg; sourceTree = "<group>"; };
+		DF74D5E51278D98D00E92851 /* connect_with_others.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = connect_with_others.jpg; sourceTree = "<group>"; };
+		DF74D5E61278D98D00E92851 /* control_worry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = control_worry.jpg; sourceTree = "<group>"; };
+		DF74D5E71278D98D00E92851 /* eat_well.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eat_well.jpg; sourceTree = "<group>"; };
+		DF74D5E81278D98D00E92851 /* exercise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = exercise.jpg; sourceTree = "<group>"; };
+		DF74D5E91278D98D00E92851 /* express_gratitude.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = express_gratitude.jpg; sourceTree = "<group>"; };
+		DF74D5EA1278D98D00E92851 /* get_more_sleep.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = get_more_sleep.jpg; sourceTree = "<group>"; };
+		DF74D5EB1278D98D00E92851 /* grow_from_mistakes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grow_from_mistakes.jpg; sourceTree = "<group>"; };
+		DF74D5EC1278D98D00E92851 /* laugh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = laugh.jpg; sourceTree = "<group>"; };
+		DF74D5ED1278D98D00E92851 /* listen_to_music.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = listen_to_music.jpg; sourceTree = "<group>"; };
+		DF74D5EE1278D98D00E92851 /* meditate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meditate.jpg; sourceTree = "<group>"; };
+		DF74D5EF1278D98D00E92851 /* play.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = play.jpg; sourceTree = "<group>"; };
+		DF74D5F01278D98D00E92851 /* power_nap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = power_nap.jpg; sourceTree = "<group>"; };
+		DF74D5F11278D98D00E92851 /* reflect.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reflect.jpg; sourceTree = "<group>"; };
+		DF74D5F21278D98D00E92851 /* relax_your_body.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = relax_your_body.jpg; sourceTree = "<group>"; };
+		DF74D5F31278D98D00E92851 /* think_positively.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = think_positively.jpg; sourceTree = "<group>"; };
+		DF74D5F41278D98D00E92851 /* thoughts_matter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thoughts_matter.jpg; sourceTree = "<group>"; };
+		DF74D5F51278D98D00E92851 /* use_resources.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = use_resources.jpg; sourceTree = "<group>"; };
+		DF74D5F61278D98D00E92851 /* visualize.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = visualize.jpg; sourceTree = "<group>"; };
+		DF74D60C1278D9B900E92851 /* colorWheel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorWheel1.png; sourceTree = "<group>"; };
+		DF74D61F1278DA1600E92851 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DF74D62A1278DA7B00E92851 /* CameraReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CameraReflect.png; path = Classes/CameraReflect.png; sourceTree = "<group>"; };
+		DF74D62B1278DA7B00E92851 /* ColorPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerImageView.h; sourceTree = "<group>"; };
+		DF74D62C1278DA7C00E92851 /* ColorPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerImageView.m; sourceTree = "<group>"; };
+		DF74D62D1278DA7C00E92851 /* ReflectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectTableViewController.h; sourceTree = "<group>"; };
+		DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectTableViewController.m; sourceTree = "<group>"; };
+		DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectTableViewController.xib; sourceTree = "<group>"; };
+		DF74D6301278DA7C00E92851 /* ColorReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ColorReflect.png; path = Classes/ColorReflect.png; sourceTree = "<group>"; };
+		DF74D6311278DA7C00E92851 /* TextReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TextReflect.png; path = Classes/TextReflect.png; sourceTree = "<group>"; };
 		DFC05D7C126CD19000B8987D /* Screen2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen2ViewController.h; sourceTree = "<group>"; };
 		DFC05D7D126CD19000B8987D /* Screen2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen2ViewController.m; sourceTree = "<group>"; };
 		DFC05D7E126CD19000B8987D /* Screen2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen2ViewController.xib; sourceTree = "<group>"; };
-		DFC05D85126CD1D700B8987D /* breathe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = breathe.jpg; sourceTree = "<group>"; };
-		DFC05D86126CD1D700B8987D /* choose_consciously.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = choose_consciously.jpg; sourceTree = "<group>"; };
-		DFC05D87126CD1D700B8987D /* connect_with_nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = connect_with_nature.jpg; sourceTree = "<group>"; };
-		DFC05D88126CD1D700B8987D /* connect_with_others.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = connect_with_others.jpg; sourceTree = "<group>"; };
-		DFC05D89126CD1D700B8987D /* control_worry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = control_worry.jpg; sourceTree = "<group>"; };
-		DFC05D8A126CD1D700B8987D /* eat_well.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eat_well.jpg; sourceTree = "<group>"; };
-		DFC05D8B126CD1D700B8987D /* exercise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = exercise.jpg; sourceTree = "<group>"; };
-		DFC05D8C126CD1D700B8987D /* express_gratitude.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = express_gratitude.jpg; sourceTree = "<group>"; };
-		DFC05D8D126CD1D700B8987D /* get_more_sleep.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = get_more_sleep.jpg; sourceTree = "<group>"; };
-		DFC05D8E126CD1D700B8987D /* grow_from_mistakes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grow_from_mistakes.jpg; sourceTree = "<group>"; };
-		DFC05D8F126CD1D700B8987D /* laugh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = laugh.jpg; sourceTree = "<group>"; };
-		DFC05D90126CD1D700B8987D /* listen_to_music.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = listen_to_music.jpg; sourceTree = "<group>"; };
-		DFC05D91126CD1D700B8987D /* meditate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meditate.jpg; sourceTree = "<group>"; };
-		DFC05D92126CD1D700B8987D /* play.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = play.jpg; sourceTree = "<group>"; };
-		DFC05D93126CD1D700B8987D /* power_nap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = power_nap.jpg; sourceTree = "<group>"; };
-		DFC05D94126CD1D700B8987D /* reflect.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reflect.jpg; sourceTree = "<group>"; };
-		DFC05D95126CD1D700B8987D /* relax_your_body.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = relax_your_body.jpg; sourceTree = "<group>"; };
-		DFC05D96126CD1D700B8987D /* think_positively.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = think_positively.jpg; sourceTree = "<group>"; };
-		DFC05D97126CD1D700B8987D /* thoughts_matter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thoughts_matter.jpg; sourceTree = "<group>"; };
-		DFC05D98126CD1D700B8987D /* use_resources.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = use_resources.jpg; sourceTree = "<group>"; };
-		DFC05D99126CD1D700B8987D /* visualize.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = visualize.jpg; sourceTree = "<group>"; };
-		DFC05DAF126CD1E600B8987D /* back deep breathe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "back deep breathe.jpg"; sourceTree = "<group>"; };
-		DFC05DB0126CD1E600B8987D /* backof Choose Consciously.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Choose Consciously.jpg"; sourceTree = "<group>"; };
-		DFC05DB1126CD1E600B8987D /* backof Connect with Nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Connect with Nature.jpg"; sourceTree = "<group>"; };
-		DFC05DB2126CD1E600B8987D /* backof connect with others.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof connect with others.jpg"; sourceTree = "<group>"; };
-		DFC05DB3126CD1E600B8987D /* backof Control worry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Control worry.jpg"; sourceTree = "<group>"; };
-		DFC05DB4126CD1E600B8987D /* backof Eat Well.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Eat Well.jpg"; sourceTree = "<group>"; };
-		DFC05DB5126CD1E600B8987D /* backof Exercise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Exercise.jpg"; sourceTree = "<group>"; };
-		DFC05DB6126CD1E600B8987D /* backof Express Gratitude.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Express Gratitude.jpg"; sourceTree = "<group>"; };
-		DFC05DB7126CD1E600B8987D /* backof Get more sleep.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Get more sleep.jpg"; sourceTree = "<group>"; };
-		DFC05DB8126CD1E600B8987D /* backof Grow from mistakes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Grow from mistakes.jpg"; sourceTree = "<group>"; };
-		DFC05DB9126CD1E600B8987D /* backof Laughter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Laughter.jpg"; sourceTree = "<group>"; };
-		DFC05DBA126CD1E600B8987D /* backof Meditation.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Meditation.jpg"; sourceTree = "<group>"; };
-		DFC05DBB126CD1E600B8987D /* backof Music.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Music.jpg"; sourceTree = "<group>"; };
-		DFC05DBC126CD1E600B8987D /* backof Play.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Play.jpg"; sourceTree = "<group>"; };
-		DFC05DBD126CD1E600B8987D /* backof Powernap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Powernap.jpg"; sourceTree = "<group>"; };
-		DFC05DBE126CD1E600B8987D /* backof reflect.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof reflect.jpg"; sourceTree = "<group>"; };
-		DFC05DBF126CD1E600B8987D /* backof Relax your Body.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Relax your Body.jpg"; sourceTree = "<group>"; };
-		DFC05DC0126CD1E600B8987D /* backof Think Positively.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Think Positively.jpg"; sourceTree = "<group>"; };
-		DFC05DC1126CD1E600B8987D /* backof Thoughts matter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Thoughts matter.jpg"; sourceTree = "<group>"; };
-		DFC05DC2126CD1E600B8987D /* backof Use Resources.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Use Resources.jpg"; sourceTree = "<group>"; };
-		DFC05DC3126CD1E600B8987D /* backof Visualization.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "backof Visualization.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +173,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
+				DF74D6201278DA1600E92851 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +183,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DF74D62B1278DA7B00E92851 /* ColorPickerImageView.h */,
+				DF74D62C1278DA7C00E92851 /* ColorPickerImageView.m */,
+				DF74D62D1278DA7C00E92851 /* ReflectTableViewController.h */,
+				DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */,
+				DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */,
 				0A5EA3681277F79500B6B9A8 /* ReflectCameraView.h */,
 				0A5EA3691277F79500B6B9A8 /* ReflectCameraView.m */,
 				0A5EA36A1277F79500B6B9A8 /* ReflectCameraViewController.h */,
@@ -346,6 +244,7 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				D08CD45612664DCB00E30523 /* Settings.bundle */,
+				DF74D61F1278DA1600E92851 /* QuartzCore.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -362,90 +261,31 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DFC05DAF126CD1E600B8987D /* back deep breathe.jpg */,
-				DFC05DB0126CD1E600B8987D /* backof Choose Consciously.jpg */,
-				DFC05DB1126CD1E600B8987D /* backof Connect with Nature.jpg */,
-				DFC05DB2126CD1E600B8987D /* backof connect with others.jpg */,
-				DFC05DB3126CD1E600B8987D /* backof Control worry.jpg */,
-				DFC05DB4126CD1E600B8987D /* backof Eat Well.jpg */,
-				DFC05DB5126CD1E600B8987D /* backof Exercise.jpg */,
-				DFC05DB6126CD1E600B8987D /* backof Express Gratitude.jpg */,
-				DFC05DB7126CD1E600B8987D /* backof Get more sleep.jpg */,
-				DFC05DB8126CD1E600B8987D /* backof Grow from mistakes.jpg */,
-				DFC05DB9126CD1E600B8987D /* backof Laughter.jpg */,
-				DFC05DBA126CD1E600B8987D /* backof Meditation.jpg */,
-				DFC05DBB126CD1E600B8987D /* backof Music.jpg */,
-				DFC05DBC126CD1E600B8987D /* backof Play.jpg */,
-				DFC05DBD126CD1E600B8987D /* backof Powernap.jpg */,
-				DFC05DBE126CD1E600B8987D /* backof reflect.jpg */,
-				DFC05DBF126CD1E600B8987D /* backof Relax your Body.jpg */,
-				DFC05DC0126CD1E600B8987D /* backof Think Positively.jpg */,
-				DFC05DC1126CD1E600B8987D /* backof Thoughts matter.jpg */,
-				DFC05DC2126CD1E600B8987D /* backof Use Resources.jpg */,
-				DFC05DC3126CD1E600B8987D /* backof Visualization.jpg */,
-				DFC05D85126CD1D700B8987D /* breathe.jpg */,
-				DFC05D86126CD1D700B8987D /* choose_consciously.jpg */,
-				DFC05D87126CD1D700B8987D /* connect_with_nature.jpg */,
-				DFC05D88126CD1D700B8987D /* connect_with_others.jpg */,
-				DFC05D89126CD1D700B8987D /* control_worry.jpg */,
-				DFC05D8A126CD1D700B8987D /* eat_well.jpg */,
-				DFC05D8B126CD1D700B8987D /* exercise.jpg */,
-				DFC05D8C126CD1D700B8987D /* express_gratitude.jpg */,
-				DFC05D8D126CD1D700B8987D /* get_more_sleep.jpg */,
-				DFC05D8E126CD1D700B8987D /* grow_from_mistakes.jpg */,
-				DFC05D8F126CD1D700B8987D /* laugh.jpg */,
-				DFC05D90126CD1D700B8987D /* listen_to_music.jpg */,
-				DFC05D91126CD1D700B8987D /* meditate.jpg */,
-				DFC05D92126CD1D700B8987D /* play.jpg */,
-				DFC05D93126CD1D700B8987D /* power_nap.jpg */,
-				DFC05D94126CD1D700B8987D /* reflect.jpg */,
-				DFC05D95126CD1D700B8987D /* relax_your_body.jpg */,
-				DFC05D96126CD1D700B8987D /* think_positively.jpg */,
-				DFC05D97126CD1D700B8987D /* thoughts_matter.jpg */,
-				DFC05D98126CD1D700B8987D /* use_resources.jpg */,
-				DFC05D99126CD1D700B8987D /* visualize.jpg */,
-				8C8578EC1269D4A30090D122 /* back deep breathe.jpg */,
-				8C8578ED1269D4A30090D122 /* backof Choose Consciously.jpg */,
-				8C8578EE1269D4A30090D122 /* backof Connect with Nature.jpg */,
-				8C8578EF1269D4A30090D122 /* backof connect with others.jpg */,
-				8C8578F01269D4A30090D122 /* backof Control worry.jpg */,
-				8C8578F11269D4A30090D122 /* backof Eat Well.jpg */,
-				8C8578F21269D4A30090D122 /* backof Exercise.jpg */,
-				8C8578F31269D4A30090D122 /* backof Express Gratitude.jpg */,
-				8C8578F41269D4A30090D122 /* backof Get more sleep.jpg */,
-				8C8578F51269D4A30090D122 /* backof Grow from mistakes.jpg */,
-				8C8578F61269D4A30090D122 /* backof Laughter.jpg */,
-				8C8578F71269D4A30090D122 /* backof Meditation.jpg */,
-				8C8578F81269D4A30090D122 /* backof Music.jpg */,
-				8C8578F91269D4A30090D122 /* backof Play.jpg */,
-				8C8578FA1269D4A30090D122 /* backof Powernap.jpg */,
-				8C8578FB1269D4A30090D122 /* backof reflect.jpg */,
-				8C8578FC1269D4A30090D122 /* backof Relax your Body.jpg */,
-				8C8578FD1269D4A30090D122 /* backof Think Positively.jpg */,
-				8C8578FE1269D4A30090D122 /* backof Thoughts matter.jpg */,
-				8C8578FF1269D4A30090D122 /* backof Use Resources.jpg */,
-				8C8579001269D4A30090D122 /* backof Visualization.jpg */,
-				8C8578C01269D4330090D122 /* breathe.jpg */,
-				8C8578C11269D4330090D122 /* choose_consciously.jpg */,
-				8C8578C21269D4330090D122 /* connect_with_nature.jpg */,
-				8C8578C31269D4330090D122 /* connect_with_others.jpg */,
-				8C8578C41269D4330090D122 /* control_worry.jpg */,
-				8C8578C51269D4330090D122 /* eat_well.jpg */,
-				8C8578C61269D4330090D122 /* exercise.jpg */,
-				8C8578C71269D4330090D122 /* express_gratitude.jpg */,
-				8C8578C81269D4330090D122 /* get_more_sleep.jpg */,
-				8C8578C91269D4330090D122 /* grow_from_mistakes.jpg */,
-				8C8578CA1269D4330090D122 /* laugh.jpg */,
-				8C8578CB1269D4330090D122 /* listen_to_music.jpg */,
-				8C8578CC1269D4330090D122 /* meditate.jpg */,
-				8C8578CD1269D4330090D122 /* play.jpg */,
-				8C8578CE1269D4330090D122 /* power_nap.jpg */,
-				8C8578CF1269D4330090D122 /* reflect.jpg */,
-				8C8578D01269D4330090D122 /* relax_your_body.jpg */,
-				8C8578D11269D4330090D122 /* think_positively.jpg */,
-				8C8578D21269D4330090D122 /* thoughts_matter.jpg */,
-				8C8578D31269D4330090D122 /* use_resources.jpg */,
-				8C8578D41269D4330090D122 /* visualize.jpg */,
+				DF74D62A1278DA7B00E92851 /* CameraReflect.png */,
+				DF74D6301278DA7C00E92851 /* ColorReflect.png */,
+				DF74D6311278DA7C00E92851 /* TextReflect.png */,
+				DF74D60C1278D9B900E92851 /* colorWheel1.png */,
+				DF74D5E21278D98D00E92851 /* breathe.jpg */,
+				DF74D5E31278D98D00E92851 /* choose_consciously.jpg */,
+				DF74D5E41278D98D00E92851 /* connect_with_nature.jpg */,
+				DF74D5E51278D98D00E92851 /* connect_with_others.jpg */,
+				DF74D5E61278D98D00E92851 /* control_worry.jpg */,
+				DF74D5E71278D98D00E92851 /* eat_well.jpg */,
+				DF74D5E81278D98D00E92851 /* exercise.jpg */,
+				DF74D5E91278D98D00E92851 /* express_gratitude.jpg */,
+				DF74D5EA1278D98D00E92851 /* get_more_sleep.jpg */,
+				DF74D5EB1278D98D00E92851 /* grow_from_mistakes.jpg */,
+				DF74D5EC1278D98D00E92851 /* laugh.jpg */,
+				DF74D5ED1278D98D00E92851 /* listen_to_music.jpg */,
+				DF74D5EE1278D98D00E92851 /* meditate.jpg */,
+				DF74D5EF1278D98D00E92851 /* play.jpg */,
+				DF74D5F01278D98D00E92851 /* power_nap.jpg */,
+				DF74D5F11278D98D00E92851 /* reflect.jpg */,
+				DF74D5F21278D98D00E92851 /* relax_your_body.jpg */,
+				DF74D5F31278D98D00E92851 /* think_positively.jpg */,
+				DF74D5F41278D98D00E92851 /* thoughts_matter.jpg */,
+				DF74D5F51278D98D00E92851 /* use_resources.jpg */,
+				DF74D5F61278D98D00E92851 /* visualize.jpg */,
 				2819305F112F816700ECF9B4 /* goslowtest2.xcdatamodeld */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				0A3601101263874D0093D5B2 /* breathe.png */,
@@ -522,95 +362,37 @@
 				0A3601111263874D0093D5B2 /* breathe.png in Resources */,
 				D023B4CC1265396A00575359 /* NotificationTime.xib in Resources */,
 				D08CD45712664DCB00E30523 /* Settings.bundle in Resources */,
-				8C8578D51269D4330090D122 /* breathe.jpg in Resources */,
-				8C8578D61269D4330090D122 /* choose_consciously.jpg in Resources */,
-				8C8578D71269D4330090D122 /* connect_with_nature.jpg in Resources */,
-				8C8578D81269D4330090D122 /* connect_with_others.jpg in Resources */,
-				8C8578D91269D4330090D122 /* control_worry.jpg in Resources */,
-				8C8578DA1269D4330090D122 /* eat_well.jpg in Resources */,
-				8C8578DB1269D4330090D122 /* exercise.jpg in Resources */,
-				8C8578DC1269D4330090D122 /* express_gratitude.jpg in Resources */,
-				8C8578DD1269D4330090D122 /* get_more_sleep.jpg in Resources */,
-				8C8578DE1269D4330090D122 /* grow_from_mistakes.jpg in Resources */,
-				8C8578DF1269D4330090D122 /* laugh.jpg in Resources */,
-				8C8578E01269D4330090D122 /* listen_to_music.jpg in Resources */,
-				8C8578E11269D4330090D122 /* meditate.jpg in Resources */,
-				8C8578E21269D4330090D122 /* play.jpg in Resources */,
-				8C8578E31269D4330090D122 /* power_nap.jpg in Resources */,
-				8C8578E41269D4330090D122 /* reflect.jpg in Resources */,
-				8C8578E51269D4330090D122 /* relax_your_body.jpg in Resources */,
-				8C8578E61269D4330090D122 /* think_positively.jpg in Resources */,
-				8C8578E71269D4330090D122 /* thoughts_matter.jpg in Resources */,
-				8C8578E81269D4330090D122 /* use_resources.jpg in Resources */,
-				8C8578E91269D4330090D122 /* visualize.jpg in Resources */,
-				8C8579011269D4A30090D122 /* back deep breathe.jpg in Resources */,
-				8C8579021269D4A30090D122 /* backof Choose Consciously.jpg in Resources */,
-				8C8579031269D4A30090D122 /* backof Connect with Nature.jpg in Resources */,
-				8C8579041269D4A30090D122 /* backof connect with others.jpg in Resources */,
-				8C8579051269D4A30090D122 /* backof Control worry.jpg in Resources */,
-				8C8579061269D4A30090D122 /* backof Eat Well.jpg in Resources */,
-				8C8579071269D4A30090D122 /* backof Exercise.jpg in Resources */,
-				8C8579081269D4A30090D122 /* backof Express Gratitude.jpg in Resources */,
-				8C8579091269D4A30090D122 /* backof Get more sleep.jpg in Resources */,
-				8C85790A1269D4A30090D122 /* backof Grow from mistakes.jpg in Resources */,
-				8C85790B1269D4A30090D122 /* backof Laughter.jpg in Resources */,
-				8C85790C1269D4A30090D122 /* backof Meditation.jpg in Resources */,
-				8C85790D1269D4A30090D122 /* backof Music.jpg in Resources */,
-				8C85790E1269D4A30090D122 /* backof Play.jpg in Resources */,
-				8C85790F1269D4A30090D122 /* backof Powernap.jpg in Resources */,
-				8C8579101269D4A30090D122 /* backof reflect.jpg in Resources */,
-				8C8579111269D4A30090D122 /* backof Relax your Body.jpg in Resources */,
-				8C8579121269D4A30090D122 /* backof Think Positively.jpg in Resources */,
-				8C8579131269D4A30090D122 /* backof Thoughts matter.jpg in Resources */,
-				8C8579141269D4A30090D122 /* backof Use Resources.jpg in Resources */,
-				8C8579151269D4A30090D122 /* backof Visualization.jpg in Resources */,
 				DFC05D80126CD19000B8987D /* Screen2ViewController.xib in Resources */,
-				DFC05D9A126CD1D700B8987D /* breathe.jpg in Resources */,
-				DFC05D9B126CD1D700B8987D /* choose_consciously.jpg in Resources */,
-				DFC05D9C126CD1D700B8987D /* connect_with_nature.jpg in Resources */,
-				DFC05D9D126CD1D700B8987D /* connect_with_others.jpg in Resources */,
-				DFC05D9E126CD1D700B8987D /* control_worry.jpg in Resources */,
-				DFC05D9F126CD1D700B8987D /* eat_well.jpg in Resources */,
-				DFC05DA0126CD1D700B8987D /* exercise.jpg in Resources */,
-				DFC05DA1126CD1D700B8987D /* express_gratitude.jpg in Resources */,
-				DFC05DA2126CD1D700B8987D /* get_more_sleep.jpg in Resources */,
-				DFC05DA3126CD1D700B8987D /* grow_from_mistakes.jpg in Resources */,
-				DFC05DA4126CD1D700B8987D /* laugh.jpg in Resources */,
-				DFC05DA5126CD1D700B8987D /* listen_to_music.jpg in Resources */,
-				DFC05DA6126CD1D700B8987D /* meditate.jpg in Resources */,
-				DFC05DA7126CD1D700B8987D /* play.jpg in Resources */,
-				DFC05DA8126CD1D700B8987D /* power_nap.jpg in Resources */,
-				DFC05DA9126CD1D700B8987D /* reflect.jpg in Resources */,
-				DFC05DAA126CD1D700B8987D /* relax_your_body.jpg in Resources */,
-				DFC05DAB126CD1D700B8987D /* think_positively.jpg in Resources */,
-				DFC05DAC126CD1D700B8987D /* thoughts_matter.jpg in Resources */,
-				DFC05DAD126CD1D700B8987D /* use_resources.jpg in Resources */,
-				DFC05DAE126CD1D700B8987D /* visualize.jpg in Resources */,
-				DFC05DC4126CD1E600B8987D /* back deep breathe.jpg in Resources */,
-				DFC05DC5126CD1E600B8987D /* backof Choose Consciously.jpg in Resources */,
-				DFC05DC6126CD1E600B8987D /* backof Connect with Nature.jpg in Resources */,
-				DFC05DC7126CD1E600B8987D /* backof connect with others.jpg in Resources */,
-				DFC05DC8126CD1E600B8987D /* backof Control worry.jpg in Resources */,
-				DFC05DC9126CD1E600B8987D /* backof Eat Well.jpg in Resources */,
-				DFC05DCA126CD1E600B8987D /* backof Exercise.jpg in Resources */,
-				DFC05DCB126CD1E600B8987D /* backof Express Gratitude.jpg in Resources */,
-				DFC05DCC126CD1E600B8987D /* backof Get more sleep.jpg in Resources */,
-				DFC05DCD126CD1E600B8987D /* backof Grow from mistakes.jpg in Resources */,
-				DFC05DCE126CD1E600B8987D /* backof Laughter.jpg in Resources */,
-				DFC05DCF126CD1E600B8987D /* backof Meditation.jpg in Resources */,
-				DFC05DD0126CD1E600B8987D /* backof Music.jpg in Resources */,
-				DFC05DD1126CD1E600B8987D /* backof Play.jpg in Resources */,
-				DFC05DD2126CD1E600B8987D /* backof Powernap.jpg in Resources */,
-				DFC05DD3126CD1E600B8987D /* backof reflect.jpg in Resources */,
-				DFC05DD4126CD1E600B8987D /* backof Relax your Body.jpg in Resources */,
-				DFC05DD5126CD1E600B8987D /* backof Think Positively.jpg in Resources */,
-				DFC05DD6126CD1E600B8987D /* backof Thoughts matter.jpg in Resources */,
-				DFC05DD7126CD1E600B8987D /* backof Use Resources.jpg in Resources */,
-				DFC05DD8126CD1E600B8987D /* backof Visualization.jpg in Resources */,
 				0A4DC391126EAF8A008445A5 /* Screen3ViewController.xib in Resources */,
 				0A5EA3791277F79500B6B9A8 /* ReflectCameraViewController.xib in Resources */,
 				0A5EA37C1277F79500B6B9A8 /* ReflectColorViewController.xib in Resources */,
 				0A5EA37F1277F79500B6B9A8 /* ReflectTextViewController.xib in Resources */,
+				DF74D5F71278D98D00E92851 /* breathe.jpg in Resources */,
+				DF74D5F81278D98D00E92851 /* choose_consciously.jpg in Resources */,
+				DF74D5F91278D98D00E92851 /* connect_with_nature.jpg in Resources */,
+				DF74D5FA1278D98D00E92851 /* connect_with_others.jpg in Resources */,
+				DF74D5FB1278D98D00E92851 /* control_worry.jpg in Resources */,
+				DF74D5FC1278D98D00E92851 /* eat_well.jpg in Resources */,
+				DF74D5FD1278D98D00E92851 /* exercise.jpg in Resources */,
+				DF74D5FE1278D98D00E92851 /* express_gratitude.jpg in Resources */,
+				DF74D5FF1278D98D00E92851 /* get_more_sleep.jpg in Resources */,
+				DF74D6001278D98D00E92851 /* grow_from_mistakes.jpg in Resources */,
+				DF74D6011278D98D00E92851 /* laugh.jpg in Resources */,
+				DF74D6021278D98D00E92851 /* listen_to_music.jpg in Resources */,
+				DF74D6031278D98D00E92851 /* meditate.jpg in Resources */,
+				DF74D6041278D98D00E92851 /* play.jpg in Resources */,
+				DF74D6051278D98D00E92851 /* power_nap.jpg in Resources */,
+				DF74D6061278D98D00E92851 /* reflect.jpg in Resources */,
+				DF74D6071278D98D00E92851 /* relax_your_body.jpg in Resources */,
+				DF74D6081278D98D00E92851 /* think_positively.jpg in Resources */,
+				DF74D6091278D98D00E92851 /* thoughts_matter.jpg in Resources */,
+				DF74D60A1278D98D00E92851 /* use_resources.jpg in Resources */,
+				DF74D60B1278D98D00E92851 /* visualize.jpg in Resources */,
+				DF74D60D1278D9B900E92851 /* colorWheel1.png in Resources */,
+				DF74D6321278DA7C00E92851 /* CameraReflect.png in Resources */,
+				DF74D6351278DA7C00E92851 /* ReflectTableViewController.xib in Resources */,
+				DF74D6361278DA7C00E92851 /* ColorReflect.png in Resources */,
+				DF74D6371278DA7C00E92851 /* TextReflect.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +424,8 @@
 				0AEB28F61278C87E004C2629 /* ColorReflection.m in Sources */,
 				0AEB29E41278D0FE004C2629 /* TextReflection.m in Sources */,
 				0AEB2A1A1278D2F7004C2629 /* PhotoReflection.m in Sources */,
+				DF74D6331278DA7C00E92851 /* ColorPickerImageView.m in Sources */,
+				DF74D6341278DA7C00E92851 /* ReflectTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
