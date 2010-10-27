@@ -21,7 +21,6 @@
 	UIImage *currentImageText;
 	UIView *firstView;
 	NSMutableArray *suggestionsArray;
-	NSManagedObjectContext *managedObjectContext;
 	int switchText;
 	
 	
@@ -36,8 +35,6 @@
 @property (nonatomic, retain) IBOutlet UIView *firstView;
 
 @property (nonatomic, retain) NSMutableArray *suggestionsArray;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-
 @property (nonatomic) bool isNotFirstRun;
 @property (nonatomic, retain) CoreDataManager *coreDataManager;
 

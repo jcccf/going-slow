@@ -15,7 +15,6 @@
 @synthesize imageViewPicture;
 
 @synthesize suggestionsArray;
-@synthesize managedObjectContext;
 
 @synthesize isNotFirstRun;
 @synthesize coreDataManager;
@@ -92,16 +91,11 @@
 	int arrayCount = [picturePaths count];
 	
 	for(int i = 0; i < arrayCount; i++){
-		//Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
 		NSString* theme = [themes objectAtIndex:i];
 		NSString* picturePath = [picturePaths objectAtIndex:i];
 		NSString* infoPath = [textPicturePaths objectAtIndex:i];
 		
 		[coreDataManager addSuggestion:theme picturePath:picturePath infoPath:infoPath];
-		
-//		[newSuggestion setTheme:theme];
-//		[newSuggestion setPicturePath:picturePath];
-//		[newSuggestion setMoreInfo:infoPath];
 		
 	}
 	
@@ -129,48 +123,15 @@
 	// Based on http://developer.apple.com/library/ios/#documentation/DataManagement/Conceptual/iPhoneCoreData01/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008305-CH1-SW1
 	// Read it before editing!
 	
-	// Get the Managed Object Context from the root delegate
-	managedObjectContext = [(goslowtest2AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	isNotFirstRun = [(goslowtest2AppDelegate*)[[UIApplication sharedApplication] delegate] isNotFirstRun];
 
-	//[self deleteAllObjects:@"Suggestion"];
-	// TODO: Import All Suggestions, and only ONCE, since it keeps adding to the database now
+	// Import All Suggestions, and only ONCE
 	if (!isNotFirstRun) {
 		// Create a New Suggestion Card
 		[self addAllSuggestions];
 		[coreDataManager saveChanges];
-		//NSError *error;
-//		if(![managedObjectContext save:&error])
-//			NSLog(@"Error on Saving New Suggestion");
 		
 	}
-	
-	// Fetch Suggestions From Data Store
-	// TODO: Only fetch suggestions once a day
-	// Create Request
-//	NSFetchRequest *request = [[NSFetchRequest alloc] init];
-//	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
-//	[request setEntity:entity];
-//	// Set Sort Descriptors
-//	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"theme" ascending:NO];
-//	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-//	[request setSortDescriptors:sortDescriptors];
-//	[sortDescriptors release];
-//	[sortDescriptor release];
-//	//TODO: Get a Random Suggestion
-//	// Fetch Results
-//	NSError *error2;
-//	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error2] mutableCopy];
-//	assert(mutableFetchResults != nil);
-	
-//	NSMutableArray *mutableFetchResults = [coreDataManager fetchSuggestions];
-//	[self setSuggestionsArray:mutableFetchResults];
-//	
-//	int suggestionsArrayLength = [suggestionsArray count];
-//	int randomIndex = arc4random() % suggestionsArrayLength;
-	
-	// Read from Suggestions Array and Set View Items Appropriately
-//	Suggestion *suggestion = (Suggestion*)[suggestionsArray objectAtIndex:randomIndex];
 	
 	// Read from Suggestions Array and Set View Items Appropriately
 	Suggestion *suggestion = [coreDataManager fetchSuggestion];
@@ -199,7 +160,7 @@
 	
 	//Set current image to the suggestion selected
 	currentImage = [UIImage imageNamed:[suggestion picturePath]];
-	NSLog([suggestion picturePath]);
+	NSLog(@"Picture Path: %@", [suggestion picturePath]);
 	//assert(newImage != nil);
 	imageViewPicture.image = currentImage;
 	//currentImage = newImage;
@@ -243,7 +204,6 @@
 	[button release];
 	[imageViewPicture release];
 	[suggestionsArray release];
-	[managedObjectContext release];
 	[coreDataManager release];
     [super dealloc];
 }
