@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "Suggestion.h"
-#import "Reflection.h"
+//#import "Reflection.h"
+#import "ColorReflection.h"
+#import "PhotoReflection.h"
+#import "TextReflection.h"
 #import "goslowtest2AppDelegate.h"
 
 
@@ -21,10 +24,16 @@
 @property (nonatomic,retain) NSManagedObjectContext *managedObjectContext;
 
 -(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath;
-//-(void)updateSuggestion:(NSDate *) date:(int)index;
--(void)addReflection:(NSString *)reflectionText reflectionPicturePath:(NSString *)reflectionPicturePath reflectionColors:(NSArray *)colors;
--(void)saveChanges;
 -(Suggestion*)fetchSuggestion;
+//-(void)updateSuggestion:(NSDate *) date:(int)index;
+
+//-(void)addReflection:(NSString *)reflectionText reflectionPicturePath:(NSString *)reflectionPicturePath reflectionColors:(NSArray *)colors;
+-(void)addColorReflection:(NSArray *)colors;
+-(void)addPhotoReflection:(NSString *)filepath;
+-(void)addTextReflection:(NSString *)reflectionText;
+
+
+-(void)saveChanges;
 -(void)deleteAllObjects: (NSString *) entityDescription;
 +(CoreDataManager *)getCoreDataManagerInstance;
 
