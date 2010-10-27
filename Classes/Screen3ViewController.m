@@ -11,7 +11,7 @@
 
 @implementation Screen3ViewController
 
-@synthesize colorBox, textButton, cameraButton, colorButton, saveButton, backButton, colorView, textView, cameraView,red,blue,green,redSlider,blueSlider,greenSlider;
+@synthesize reflectCameraViewController, reflectTextViewController;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -26,23 +26,38 @@
 
 
 
+-(IBAction)goToCamera:(id)sender{
+	if(reflectCameraViewController == nil){
+	reflectCameraViewController = [[UIImagePickerController alloc] init];
+	reflectCameraViewController.sourceType = UIImagePickerControllerCameraDeviceRear;
+	reflectCameraViewController.allowsEditing = YES;
+	reflectCameraViewController.delegate = self;
+	reflectTextViewController.title = @"Reflection Pictures";
 
+	}
+	[[self navigationController] presentModalViewController:reflectCameraViewController animated:YES];
+	
+	}
+
+-(IBAction)goToText:(id)sender{
+	if(reflectTextViewController == nil){
+		reflectTextViewController = [[ReflectTextViewController alloc] initWithNibName:@"ReflectTextViewController" bundle:nil];
+		
+	}
+	[[self navigationController] pushViewController:reflectTextViewController animated:YES];
+}
+
+-(IBAction)goToColor:(id)sender{
+	if(reflectColorViewController == nil){
+		reflectColorViewController = [[ReflectColorViewController alloc] initWithNibName:@"ReflectColorViewController" bundle:nil];
+	}
+	[[self navigationController] pushViewController:reflectColorViewController animated:YES];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-
-	red.hidden = YES;
-	blue.hidden = YES;
-	green.hidden = YES;
-	redSlider.hidden = YES;
-	greenSlider.hidden = YES;
-	blueSlider.hidden = YES;
-	colorBox.hidden = YES;
-	colorBox.backgroundColor = [UIColor colorWithRed:redSlider.value green:greenSlider.value blue:blueSlider.value alpha:1];
 	
-	textView.hidden = YES;
-	textView.delegate = self;
-    [super viewDidLoad];
+	    [super viewDidLoad];
 }
 
 
@@ -54,65 +69,6 @@
 }
 */
 
--(IBAction)changeColor:(id)sender{
-	CGFloat r = redSlider.value;
-	CGFloat g = greenSlider.value;
-	CGFloat b = blueSlider.value;
-	colorBox.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:1];
-}
-- (BOOL)textView:(UITextView *)textV shouldChangeTextInRange:(NSRange)range 
- replacementText:(NSString *)text
-{
-    // Any new character added is passed in as the "text" parameter
-    if ([text isEqualToString:@"\n"]) {
-        // Be sure to test for equality using the "isEqualToString" message
-        [textV resignFirstResponder];
-		
-        // Return FALSE so that the final '\n' character doesn't get added
-        return FALSE;
-    }
-    // For any other character return TRUE so that the text gets added to the view
-    return TRUE;
-}
-
--(IBAction)goToText:(id)sender{
-	
-	textView.hidden = NO;
-	cameraButton.hidden= YES;
-	colorButton.hidden = YES;
-	textButton.hidden = YES;
-}
--(IBAction)goToCamera:(id)sender{
-	
-}
--(IBAction)goToColor:(id)sender{
-	cameraButton.hidden= YES;
-	colorButton.hidden = YES;
-	textButton.hidden = YES;
-	colorBox.hidden = NO;
-	red.hidden = NO;
-	blue.hidden= NO;
-	green.hidden = NO;
-	redSlider.hidden = NO;
-	greenSlider.hidden = NO;
-	blueSlider.hidden = NO;
-	
-}
-
--(IBAction)goBack:(id)sender{
-	textView.hidden = YES;
-	red.hidden = YES;
-	blue.hidden= YES;
-	green.hidden = YES;
-	colorBox.hidden = YES;
-	redSlider.hidden = YES;
-	greenSlider.hidden = YES;
-	blueSlider.hidden = YES;
-	cameraButton.hidden= NO;
-	colorButton.hidden = NO;
-	textButton.hidden = NO;
-	[textView resignFirstResponder];
-}
 -(void)storeReflection:(Reflection *)r{
 	
 }
