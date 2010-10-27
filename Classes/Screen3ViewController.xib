@@ -45,7 +45,7 @@
 					<object class="IBUIButton" id="234934604">
 						<reference key="NSNextResponder" ref="143252455"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrameSize">{320, 117}</string>
+						<string key="NSFrameSize">{135, 117}</string>
 						<reference key="NSSuperview" ref="143252455"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -77,7 +77,7 @@
 					<object class="IBUIButton" id="419256611">
 						<reference key="NSNextResponder" ref="143252455"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{-5, 125}, {320, 117}}</string>
+						<string key="NSFrame">{{-5, 119}, {140, 117}}</string>
 						<reference key="NSSuperview" ref="143252455"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -99,7 +99,7 @@
 					<object class="IBUIButton" id="998485046">
 						<reference key="NSNextResponder" ref="143252455"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 250}, {320, 117}}</string>
+						<string key="NSFrame">{{0, 237}, {135, 117}}</string>
 						<reference key="NSSuperview" ref="143252455"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -243,11 +243,11 @@
 					<object class="NSAffineTransform"/>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">AcCgAABC+gAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAADAoAAAw3AAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAADBMAAAw7aAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAw7OAAA</bytes>
 					</object>
 				</object>
 			</object>
@@ -267,7 +267,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">152</int>
+			<int key="maxID">155</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
