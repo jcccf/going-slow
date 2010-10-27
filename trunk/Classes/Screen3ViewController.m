@@ -11,7 +11,7 @@
 
 @implementation Screen3ViewController
 
-@synthesize reflectCameraViewController, reflectTextViewController;
+@synthesize reflectCameraViewController, reflectTextViewController, tableView;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -28,11 +28,15 @@
 
 -(IBAction)goToCamera:(id)sender{
 	if(reflectCameraViewController == nil){
-	reflectCameraViewController = [[UIImagePickerController alloc] init];
-	reflectCameraViewController.sourceType = UIImagePickerControllerSourceTypeCamera;
-	reflectCameraViewController.allowsEditing = NO;
-	reflectCameraViewController.delegate = self;
-	reflectTextViewController.title = @"Reflection Pictures";
+		reflectCameraViewController = [[UIImagePickerController alloc] init];
+		if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+			reflectCameraViewController.sourceType = UIImagePickerControllerSourceTypeCamera;}
+		else {
+			reflectCameraViewController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+		}
+		reflectCameraViewController.allowsEditing = NO;
+		reflectCameraViewController.delegate = self;
+		reflectTextViewController.title = @"Reflection Pictures";
 
 	}
 	[[self navigationController] presentModalViewController:reflectCameraViewController animated:YES];
@@ -46,7 +50,7 @@
 	// Save image
 	UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	
-	[picker release];
+	//[picker release];
 }
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
