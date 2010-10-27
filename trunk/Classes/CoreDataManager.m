@@ -35,22 +35,65 @@ static CoreDataManager *sharedInstance = nil;
 }
 
 
--(void)addReflection:(NSString *)reflectionText reflectionPicturePath:(NSString *)reflectionPicturePath reflectionColors:(NSArray *)colors{
-	Reflection *newReflection = (Reflection*)[NSEntityDescription insertNewObjectForEntityForName:@"Reflection" inManagedObjectContext:managedObjectContext];
+//-(void)addReflection:(NSString *)reflectionText reflectionPicturePath:(NSString *)reflectionPicturePath reflectionColors:(NSArray *)colors{
+//	Reflection *newReflection = (Reflection*)[NSEntityDescription insertNewObjectForEntityForName:@"Reflection" inManagedObjectContext:managedObjectContext];
+//	
+//	[newReflection setReflectionText:reflectionText];
+//	[newReflection setReflectionPicturePath:reflectionPicturePath];
+//	int red = (int)[colors objectAtIndex:(NSUInteger)0];
+//	int green = (int)[colors objectAtIndex:(NSUInteger)1];
+//	int blue = (int)[colors objectAtIndex:(NSUInteger)2];
+//	
+//	[newReflection setColorDayRed:red];
+//	[newReflection setColorDayGreen:green];
+//	[newReflection setColorDayBlue:blue];
+//	[newReflection setTimeStamp:[NSDate date]];
+//	
+//	[self saveChanges];	
+//}
+
+-(void)addColorReflection:(NSArray *)colors{
+	ColorReflection *newReflection = (ColorReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"ColorReflection" inManagedObjectContext:managedObjectContext];
 	
-	[newReflection setReflectionText:reflectionText];
-	[newReflection setReflectionPicturePath:reflectionPicturePath];
-	int red = (int)[colors objectAtIndex:(NSUInteger)0];
-	int green = (int)[colors objectAtIndex:(NSUInteger)1];
-	int blue = (int)[colors objectAtIndex:(NSUInteger)2];
+	NSNumber *red = [colors objectAtIndex:(NSUInteger)0];
+	NSNumber *green = [colors objectAtIndex:(NSUInteger)1];
+	NSNumber *blue = [colors objectAtIndex:(NSUInteger)2];
 	
-	[newReflection setColorDayRed:red];
-	[newReflection setColorDayGreen:green];
-	[newReflection setColorDayBlue:blue];
-	[newReflection setTimeStamp:[NSDate date]];
+	[newReflection setColorRed:red];
+	[newReflection setColorGreen:green];
+	[newReflection setColorBlue:blue];
+	[newReflection setCreatedAt:[NSDate date]];
 	
 	[self saveChanges];	
+	
+	//NSLog(@"Red: %@", [newReflection colorRed]);
+	
 }
+
+-(void)addPhotoReflection:(NSString *)filepath{
+	PhotoReflection *newReflection = (PhotoReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"PhotoReflection" inManagedObjectContext:managedObjectContext];
+	
+	[newReflection setFilepath:filepath];
+	[newReflection setCreatedAt:[NSDate date]];
+	
+	[self saveChanges];	
+	
+	//NSLog(@"Filepath to file: %@", [newReflection filepath]);
+	
+}
+
+-(void)addTextReflection:(NSString *)reflectionText{
+	TextReflection *newReflection = (TextReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"TextReflection" inManagedObjectContext:managedObjectContext];
+	
+	[newReflection setReflectionText:reflectionText];
+	[newReflection setCreatedAt:[NSDate date]];
+	
+	[self saveChanges];	
+	
+	//NSLog(@"Reflection text: %@", [newReflection reflectionText]);
+	
+}
+
 
 -(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath{
 	Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
