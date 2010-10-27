@@ -34,8 +34,22 @@ static CoreDataManager *sharedInstance = nil;
     return sharedInstance;
 }
 
--(void)addReflection:(Reflection *)r{
+
+-(void)addReflection:(NSString *)reflectionText reflectionPicturePath:(NSString *)reflectionPicturePath reflectionColors:(NSArray *)colors{
+	Reflection *newReflection = (Reflection*)[NSEntityDescription insertNewObjectForEntityForName:@"Reflection" inManagedObjectContext:managedObjectContext];
 	
+	[newReflection setReflectionText:reflectionText];
+	[newReflection setReflectionPicturePath:reflectionPicturePath];
+	int red = (int)[colors objectAtIndex:(NSUInteger)0];
+	int green = (int)[colors objectAtIndex:(NSUInteger)1];
+	int blue = (int)[colors objectAtIndex:(NSUInteger)2];
+	
+	[newReflection setColorDayRed:red];
+	[newReflection setColorDayGreen:green];
+	[newReflection setColorDayBlue:blue];
+	[newReflection setTimeStamp:[NSDate date]];
+	
+	[self saveChanges];	
 }
 
 -(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath{
@@ -50,9 +64,9 @@ static CoreDataManager *sharedInstance = nil;
 
 
 //Irrelevant; just make changes to the original suggestion and use saveChanges to update it to Core Data
--(void)updateSuggestion:(NSDate *)date :(int)index{
-	
-}
+//-(void)updateSuggestion:(NSDate *)date :(int)index{
+//	
+//}
 
 //TODO: change this to date difference
 -(bool)compareDate {
