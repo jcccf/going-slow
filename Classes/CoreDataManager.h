@@ -21,8 +21,8 @@
 @property (nonatomic,retain) NSManagedObjectContext *managedObjectContext;
 
 -(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath;
--(void)updateSuggestion:(NSDate *) date:(int)index;
--(void)addReflection:(Reflection *)r;
+//-(void)updateSuggestion:(NSDate *) date:(int)index;
+-(void)addReflection:(NSString *)reflectionText reflectionPicturePath:(NSString *)reflectionPicturePath reflectionColors:(NSArray *)colors;
 -(void)saveChanges;
 -(Suggestion*)fetchSuggestion;
 -(void)deleteAllObjects: (NSString *) entityDescription;
