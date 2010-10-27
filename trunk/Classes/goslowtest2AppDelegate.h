@@ -15,6 +15,8 @@
 	UILocalNotification *suggestionNotification;
 	UILocalNotification *reflectionNotification;
 	
+	UINavigationController *navigationController;
+	
 	NSInteger *timeMorning;
 	NSInteger *timeEvening;
 	bool isNotFirstRun;
@@ -31,6 +33,7 @@
 @property (nonatomic, retain) IBOutlet UITabBarController *tabController;
 @property (nonatomic, retain) IBOutlet UILocalNotification *suggestionNotification;
 @property (nonatomic, retain) IBOutlet UILocalNotification *reflectionNotification;
+@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
 @property (nonatomic) NSInteger *timeMorning;
 @property (nonatomic) NSInteger *timeEvening;

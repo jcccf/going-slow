@@ -17,6 +17,7 @@
 @synthesize timeMorning;
 @synthesize timeEvening;
 @synthesize isNotFirstRun;
+@synthesize navigationController;
 
 #pragma mark -
 #pragma mark Application lifecycle
