@@ -29,8 +29,8 @@
 -(IBAction)goToCamera:(id)sender{
 	if(reflectCameraViewController == nil){
 	reflectCameraViewController = [[UIImagePickerController alloc] init];
-	reflectCameraViewController.sourceType = UIImagePickerControllerCameraDeviceRear;
-	reflectCameraViewController.allowsEditing = YES;
+	reflectCameraViewController.sourceType = UIImagePickerControllerSourceTypeCamera;
+	reflectCameraViewController.allowsEditing = NO;
 	reflectCameraViewController.delegate = self;
 	reflectTextViewController.title = @"Reflection Pictures";
 
@@ -38,6 +38,35 @@
 	[[self navigationController] presentModalViewController:reflectCameraViewController animated:YES];
 	
 	}
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	// Access the uncropped image from info dictionary
+	UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+	
+	// Save image
+	UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+	
+	[picker release];
+}
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+	UIAlertView *alert;
+	
+	// Unable to save the image  
+	if (error)
+		alert = [[UIAlertView alloc] initWithTitle:@"Error" 
+										   message:@"Unable to save image to Photo Album." 
+										  delegate:self cancelButtonTitle:@"Ok" 
+								 otherButtonTitles:nil];
+	else // All is well
+		alert = [[UIAlertView alloc] initWithTitle:@"Success" 
+										   message:@"Image saved to Photo Album." 
+										  delegate:self cancelButtonTitle:@"Ok" 
+								 otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+	[[self navigationController] dismissModalViewControllerAnimated:YES];
+}
 
 -(IBAction)goToText:(id)sender{
 	if(reflectTextViewController == nil){
