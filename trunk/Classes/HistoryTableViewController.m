@@ -80,7 +80,10 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
+	
 	cell.textLabel.textAlignment = UITextAlignmentCenter;
+	
+	//Here make the text the date of the reflection or type, or whatever is right for the cell's text
 	cell.textLabel.text = [NSString stringWithFormat:@"Reflection date %d",[indexPath row]];
     // Configure the cell...
     
