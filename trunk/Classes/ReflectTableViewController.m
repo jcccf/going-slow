@@ -77,21 +77,21 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		if([indexPath row] == 0){
-			cell.imageView.image = [UIImage imageNamed:@"CameraReflect.png"];
+			cell.imageView.image = [UIImage imageNamed:@"27.png"];
 			cell.textLabel.text = @"Add Photo";
-			cell.textLabel.textAlignment = UITextAlignmentCenter;
+			cell.textLabel.textAlignment = UITextAlignmentLeft;
 		}
 		
 		else {
 			if([indexPath row] == 1){
-				cell.imageView.image = [UIImage imageNamed:@"TextReflect.png"];
+				cell.imageView.image = [UIImage imageNamed:@"2.png"];
 				cell.textLabel.text = @"Add Text";
-				cell.textLabel.textAlignment = UITextAlignmentCenter;
+				cell.textLabel.textAlignment = UITextAlignmentLeft;
 			}
 			else {
-				cell.imageView.image = [UIImage imageNamed:@"ColorReflect.png"];
+				cell.imageView.image = [UIImage imageNamed:@"38new.png"];
 				cell.textLabel.text = @"Add Color";
-				cell.textLabel.textAlignment = UITextAlignmentCenter;
+				cell.textLabel.textAlignment = UITextAlignmentLeft;
 			}
 
 		}

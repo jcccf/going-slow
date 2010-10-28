@@ -21,20 +21,30 @@
 
 - (IBAction) sayHello:(id) sender {
 	if(switchText == 0){
+		[UIView beginAnimations:@"flipping view" context:nil];
+		[UIView setAnimationDuration:1];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight 
+							   forView:self.view cache:YES];
 		imageViewPicture.hidden = true;
 		backText.hidden = false;
 		label.hidden = true;
 		switchText = 1;
 		firstView.backgroundColor = [UIColor whiteColor];
-		
-		
+		[UIView commitAnimations];
 	}
 	else {
+		[UIView beginAnimations:@"flipping view" context:nil];
+		[UIView setAnimationDuration:1];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft 
+							   forView:self.view cache:YES];
 		backText.hidden = true;
 		label.hidden = false;
 		imageViewPicture.hidden = false;
 		switchText = 0;
 		firstView.backgroundColor = [UIColor blackColor];
+		[UIView commitAnimations];
 	}
 	
 
@@ -138,9 +148,9 @@
 	label.text = [suggestion theme];
 	//TODO: Pick an appropriate font.
 	
-	NSString *html1 = @"<font size=\"4\" face = \"helvetica\" color = 000000>";
+	NSString *html1 = @"<div style=\"font-family: Helvetica; font-size: larger; margin: 10px;\">";
 	NSString *html2 = [suggestion moreInfo];
-	NSString *html3 = @"</font>";
+	NSString *html3 = @"</div>";
 	NSString *html = [NSString stringWithFormat:@"%@ %@ %@",
 					 html1, html2, html3];
 	[backText loadHTMLString:html baseURL:[NSURL URLWithString:@"http://www.hitchhiker.com/message"]];  
