@@ -105,16 +105,10 @@ static CoreDataManager *sharedInstance = nil;
 	
 }
 
-
-//Irrelevant; just make changes to the original suggestion and use saveChanges to update it to Core Data
-//-(void)updateSuggestion:(NSDate *)date :(int)index{
-//	
-//}
-
 //TODO: change this to date difference
--(bool)compareDate {
+-(bool)isToday:(NSDate*)refDate {
 
-	NSString *date = @"2009-05-11";
+	NSString *date = [[refDate description]substringToIndex: 10];
 	NSString *nowDate = [[[NSDate date]description]substringToIndex: 10];
 	
 	// same day
@@ -131,27 +125,63 @@ static CoreDataManager *sharedInstance = nil;
 -(Suggestion*) fetchSuggestion {
 	
 	// Fetch Suggestions From Data Store
-	// TODO: Only fetch suggestions once a day
 	// Create Request
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
 	[request setEntity:entity];
+	
 	// Set Sort Descriptors
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"theme" ascending:NO];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastSeen" ascending:NO];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+	
 	[request setSortDescriptors:sortDescriptors];
 	[sortDescriptors release];
 	[sortDescriptor release];
 	
 	// Fetch Results
-	NSError *error2;
-	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error2] mutableCopy];
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
 	assert(mutableFetchResults != nil);
 	
-	int suggestionsArrayLength = [mutableFetchResults count];
-	//Get a Random Suggestion
-	int randomIndex = arc4random() % suggestionsArrayLength;
-	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];
+//	NSEnumerator *enumerator = [mutableFetchResults objectEnumerator];
+//	id element;
+//	
+//	while(element = [enumerator nextObject]) {
+//		Suggestion *suggestion = (Suggestion*) element;
+//		// Do your thing with the object.
+//		NSLog(@"Date: %@", [suggestion lastSeen]);
+//    }
+	
+	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:0];
+	NSDate *latestDate = [suggestion lastSeen];
+	
+	//Get a Random Suggestion if it's a new day
+	if(![self isToday:latestDate]) {
+		
+		NSCalendar *calendar = [NSCalendar currentCalendar];
+		NSDateComponents *offset = [[NSDateComponents alloc] init];
+		[offset setDay:-14];
+		// Return the date that was 14 days ago
+		NSDate *cutoffDate = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
+		
+		[offset release];
+		
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastSeen <= %@) || (lastSeen = nil)", cutoffDate];
+		[request setPredicate:predicate];
+		
+		// Fetch Results
+		NSError *error;
+//		[mutableFetchResults release];
+		mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+		assert(mutableFetchResults != nil);
+		
+		int suggestionsArrayLength = [mutableFetchResults count];
+		//Get a Random Suggestion
+		int randomIndex = arc4random() % suggestionsArrayLength;
+		
+		suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];		
+		
+	}
 	
 	//Set last seen to today's date
 	[suggestion setLastSeen:[NSDate date]];
@@ -159,6 +189,7 @@ static CoreDataManager *sharedInstance = nil;
 	NSLog(@"Date: %@", [suggestion lastSeen]);
 	
 	[self saveChanges];
+	[request release];
 	
 	return suggestion;
 	
