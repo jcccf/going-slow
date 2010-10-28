@@ -69,6 +69,10 @@
 		DF74D6351278DA7C00E92851 /* ReflectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */; };
 		DF74D6361278DA7C00E92851 /* ColorReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = DF74D6301278DA7C00E92851 /* ColorReflect.png */; };
 		DF74D6371278DA7C00E92851 /* TextReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = DF74D6311278DA7C00E92851 /* TextReflect.png */; };
+		DFACCC1A12790089004CE2ED /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFACCC1812790089004CE2ED /* HistoryTableViewController.m */; };
+		DFACCC1B12790089004CE2ED /* HistoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFACCC1912790089004CE2ED /* HistoryTableViewController.xib */; };
+		DFACCC491279029D004CE2ED /* HistoryReflectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFACCC471279029D004CE2ED /* HistoryReflectionViewController.m */; };
+		DFACCC4A1279029D004CE2ED /* HistoryReflectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFACCC481279029D004CE2ED /* HistoryReflectionViewController.xib */; };
 		DFC05D7F126CD19000B8987D /* Screen2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC05D7D126CD19000B8987D /* Screen2ViewController.m */; };
 		DFC05D80126CD19000B8987D /* Screen2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFC05D7E126CD19000B8987D /* Screen2ViewController.xib */; };
 /* End PBXBuildFile section */
@@ -159,6 +163,12 @@
 		DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectTableViewController.xib; sourceTree = "<group>"; };
 		DF74D6301278DA7C00E92851 /* ColorReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ColorReflect.png; path = Classes/ColorReflect.png; sourceTree = "<group>"; };
 		DF74D6311278DA7C00E92851 /* TextReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TextReflect.png; path = Classes/TextReflect.png; sourceTree = "<group>"; };
+		DFACCC1712790089004CE2ED /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
+		DFACCC1812790089004CE2ED /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
+		DFACCC1912790089004CE2ED /* HistoryTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewController.xib; sourceTree = "<group>"; };
+		DFACCC461279029D004CE2ED /* HistoryReflectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryReflectionViewController.h; sourceTree = "<group>"; };
+		DFACCC471279029D004CE2ED /* HistoryReflectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryReflectionViewController.m; sourceTree = "<group>"; };
+		DFACCC481279029D004CE2ED /* HistoryReflectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryReflectionViewController.xib; sourceTree = "<group>"; };
 		DFC05D7C126CD19000B8987D /* Screen2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen2ViewController.h; sourceTree = "<group>"; };
 		DFC05D7D126CD19000B8987D /* Screen2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen2ViewController.m; sourceTree = "<group>"; };
 		DFC05D7E126CD19000B8987D /* Screen2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen2ViewController.xib; sourceTree = "<group>"; };
@@ -223,6 +233,12 @@
 				DFC05D7C126CD19000B8987D /* Screen2ViewController.h */,
 				DFC05D7D126CD19000B8987D /* Screen2ViewController.m */,
 				DFC05D7E126CD19000B8987D /* Screen2ViewController.xib */,
+				DFACCC1712790089004CE2ED /* HistoryTableViewController.h */,
+				DFACCC1812790089004CE2ED /* HistoryTableViewController.m */,
+				DFACCC1912790089004CE2ED /* HistoryTableViewController.xib */,
+				DFACCC461279029D004CE2ED /* HistoryReflectionViewController.h */,
+				DFACCC471279029D004CE2ED /* HistoryReflectionViewController.m */,
+				DFACCC481279029D004CE2ED /* HistoryReflectionViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -393,6 +409,8 @@
 				DF74D6351278DA7C00E92851 /* ReflectTableViewController.xib in Resources */,
 				DF74D6361278DA7C00E92851 /* ColorReflect.png in Resources */,
 				DF74D6371278DA7C00E92851 /* TextReflect.png in Resources */,
+				DFACCC1B12790089004CE2ED /* HistoryTableViewController.xib in Resources */,
+				DFACCC4A1279029D004CE2ED /* HistoryReflectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +444,8 @@
 				0AEB2A1A1278D2F7004C2629 /* PhotoReflection.m in Sources */,
 				DF74D6331278DA7C00E92851 /* ColorPickerImageView.m in Sources */,
 				DF74D6341278DA7C00E92851 /* ReflectTableViewController.m in Sources */,
+				DFACCC1A12790089004CE2ED /* HistoryTableViewController.m in Sources */,
+				DFACCC491279029D004CE2ED /* HistoryReflectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
