@@ -17,4 +17,6 @@
 @property (nonatomic,retain) IBOutlet UITextView *tView;
 @property (nonatomic,retain) IBOutlet UINavigationItem *navigationItem;
 @property (nonatomic,retain) IBOutlet UIBarButtonItem *saveButton;
+
+-(IBAction)saveText;
 @end

@@ -25,9 +25,8 @@
 
 -(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath;
 -(Suggestion*)fetchSuggestion;
-//-(void)updateSuggestion:(NSDate *) date:(int)index;
+-(NSMutableArray*) fetchReflections:(NSString*) reflectionType;
 
-//-(void)addReflection:(NSString *)reflectionText reflectionPicturePath:(NSString *)reflectionPicturePath reflectionColors:(NSArray *)colors;
 -(void)addColorReflection:(NSArray *)colors;
 -(void)addPhotoReflection:(NSString *)filepath;
 -(void)addTextReflection:(NSString *)reflectionText;
