@@ -39,16 +39,19 @@
 
 - (void) pickedColor:(UIColor *)color {
 	//[self animateColorWheelToShow:NO duration:0.3];
-	NSLog(@"My Color was Changed.");
 	//self.view.backgroundColor = color;
-	colorButton.backgroundColor = color;
 	CGColorRef c = [color CGColor];
 	CGFloat *components = CGColorGetComponents(c);
 	CGFloat red = components[0];
 	CGFloat green = components[1];
 	CGFloat blue = components[2];
-	UIColor *newC = [UIColor colorWithRed:1-red green:1-green blue:1-blue alpha:1];
-	[colorButton setTitleColor:newC forState:UIControlStateNormal];
+	CGFloat alpha = components[3];
+	
+	if(alpha > 0){
+		colorButton.backgroundColor = color;
+		UIColor *newC = [UIColor colorWithRed:1-red green:1-green blue:1-blue alpha:1];
+		[colorButton setTitleColor:newC forState:UIControlStateNormal];
+	}
 	[self.view setNeedsDisplay];
 }
 
