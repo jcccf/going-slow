@@ -86,7 +86,7 @@
 	if (data != NULL) {
 		//offset locates the pixel in the data from x,y. 
 		//4 for 4 bytes of data per pixel, w is width of one row of data.
-		int offset = 4*((w*round(point.y))+round(point.x));
+		int offset = 4*((w*round(point.y))+round(point.x)) + 60; // HACK Somehow adding 60 fixes tap location
 		int alpha =  data[offset]; 
 		int red = data[offset+1]; 
 		int green = data[offset+2]; 
