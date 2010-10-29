@@ -13,6 +13,7 @@
 
 @synthesize label;
 @synthesize imageViewPicture;
+@synthesize infoButton;
 
 @synthesize suggestionsArray;
 
@@ -29,6 +30,7 @@
 		imageViewPicture.hidden = true;
 		backText.hidden = false;
 		label.hidden = true;
+		infoButton.hidden = true;
 		switchText = 1;
 		firstView.backgroundColor = [UIColor whiteColor];
 		[UIView commitAnimations];
@@ -42,6 +44,7 @@
 		backText.hidden = true;
 		label.hidden = false;
 		imageViewPicture.hidden = false;
+		infoButton.hidden = false;
 		switchText = 0;
 		firstView.backgroundColor = [UIColor blackColor];
 		[UIView commitAnimations];
@@ -145,8 +148,7 @@
 	
 	// Read from Suggestions Array and Set View Items Appropriately
 	Suggestion *suggestion = [coreDataManager fetchSuggestion];
-	label.text = [suggestion theme];
-	//TODO: Pick an appropriate font.
+	label.text = [NSString stringWithFormat:@"%@%@", @" ", [suggestion theme]]; //HACK To space the text correctly on the screen
 	
 	NSString *html1 = @"<div style=\"font-family: Helvetica; font-size: larger; margin: 10px;\">";
 	NSString *html2 = [suggestion moreInfo];

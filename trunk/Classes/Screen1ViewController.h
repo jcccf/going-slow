@@ -15,6 +15,7 @@
 @interface Screen1ViewController : UIViewController {
 	//UILabel *label;file://localhost/Users/svp/Documents/GoogleCode/Classes/Screen1ViewController.xib
 	UIButton *button;
+	UIButton *infoButton;
 	UIImageView *imageViewPicture;
 	UIWebView *backText;
 	UIImage *currentImage;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) IBOutlet UIWebView *backText;
 @property (nonatomic, retain) IBOutlet UIImageView *imageViewPicture;
 @property (nonatomic, retain) IBOutlet UIView *firstView;
+@property (nonatomic, retain) IBOutlet UIButton *infoButton;
 
 @property (nonatomic, retain) NSMutableArray *suggestionsArray;
 @property (nonatomic) bool isNotFirstRun;
