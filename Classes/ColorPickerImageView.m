@@ -33,6 +33,37 @@
 }
 
 
+//Remove the next two methods if you only want the color to change when you let go of the iPhone.
+- (void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
+	NSLog(@"A Touch Ended.");
+	if (self.hidden==YES) {
+		//color wheel is hidden, so don't handle  this as a color wheel event.
+		[[self nextResponder] touchesEnded:touches withEvent:event];
+		return;
+	}
+	
+	UITouch* touch = [touches anyObject];
+	CGPoint point = [touch locationInView:self]; //where image was tapped
+	self.lastColor = [self getPixelColorAtLocation:point]; 
+	NSLog(@"color %@",lastColor);
+	[pickedColorDelegate pickedColor:(UIColor*)self.lastColor];
+}
+
+- (void) touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event {
+	NSLog(@"A Touch Ended.");
+	if (self.hidden==YES) {
+		//color wheel is hidden, so don't handle  this as a color wheel event.
+		[[self nextResponder] touchesEnded:touches withEvent:event];
+		return;
+	}
+	
+	UITouch* touch = [touches anyObject];
+	CGPoint point = [touch locationInView:self]; //where image was tapped
+	self.lastColor = [self getPixelColorAtLocation:point]; 
+	NSLog(@"color %@",lastColor);
+	[pickedColorDelegate pickedColor:(UIColor*)self.lastColor];
+}
+
 - (UIColor*) getPixelColorAtLocation:(CGPoint)point {
 	UIColor* color = nil;
 	CGImageRef inImage = self.image.CGImage;
