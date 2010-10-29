@@ -10,7 +10,7 @@
 
 
 @implementation ReflectTextViewController
-@synthesize navigationItem, saveButton;
+@synthesize navigationItem, saveButton, tView;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -20,12 +20,20 @@
     return self;
 }
 
-
+-(IBAction)saveText{
+		
+	NSString *theTestToSave = tView.text;
+	
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	tView.delegate = self;
+
     [super viewDidLoad];
+	self.navigationItem.title = @"Add Text";
+	self.navigationItem.leftBarButtonItem.title = @"Back";
+	tView.delegate = self;
+	[tView becomeFirstResponder];
 }
 
 

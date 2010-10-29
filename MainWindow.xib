@@ -128,7 +128,7 @@
 						</object>
 					</object>
 					<object class="IBUINavigationController" id="224292624">
-						<string key="IBUITitle">Reflection</string>
+						<string key="IBUITitle">How was your day?</string>
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="184681622">
 							<string key="IBUITitle">Reflect</string>
 							<object class="NSCustomResource" key="IBUIImage">
@@ -157,6 +157,7 @@
 						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIViewController" id="848057245">
+								<string key="IBUITitle">How was your day?</string>
 								<object class="IBUINavigationItem" key="IBUINavigationItem" id="719906821">
 									<string key="IBUITitle">Reflect</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -394,7 +395,7 @@
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAw+8AAA</bytes>
 					</object>
-					<string>{{492, 371}, {320, 480}}</string>
+					<string>{{492, 276}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>Screen1ViewController</string>

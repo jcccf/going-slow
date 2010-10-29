@@ -12,14 +12,14 @@
 
 @interface ReflectColorViewController : UIViewController {
 
-	UINavigationItem *navigationItem;
+	//UINavigationItem *navigationItem;
 	UIBarButtonItem *saveButton;
 	
 	ColorPickerImageView* colorWheel;
 	UIButton* tapMeButton;
 	UIButton* colorButton;
 }
-@property (nonatomic,retain) IBOutlet UINavigationItem *navigationItem;
+//@property (nonatomic,retain) IBOutlet UINavigationItem *navigationItem;
 @property (nonatomic,retain) IBOutlet UIBarButtonItem *saveButton;
 
 @property (nonatomic,retain) IBOutlet ColorPickerImageView* colorWheel;
@@ -29,5 +29,7 @@
 - (IBAction) tapMe: (id)sender;
 - (void) pickedColor: (UIColor*) color;
 - (void) animateColorWheelToShow:(BOOL)show duration:(NSTimeInterval)duration;
+
+-(IBAction)saveColor;
 
 @end

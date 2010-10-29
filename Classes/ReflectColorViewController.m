@@ -12,7 +12,7 @@
 
 
 @implementation ReflectColorViewController
-@synthesize navigationItem, saveButton, colorWheel, tapMeButton, colorButton;
+@synthesize saveButton, colorWheel, tapMeButton, colorButton;
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -23,6 +23,11 @@
     return self;
 }
 
+-(IBAction)saveColor{
+	colorButton.backgroundColor;
+	
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +36,9 @@
 	[[colorButton layer] setCornerRadius:8.0f];
 	[[colorButton layer] setMasksToBounds:YES];
 	[[colorButton layer] setBorderWidth:1.0f];
+	self.navigationItem.title = @"Add Color";
+	self.navigationItem.rightBarButtonItem = saveButton;
+	//self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (IBAction) tapMe: (id)sender {

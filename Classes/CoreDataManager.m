@@ -34,24 +34,6 @@ static CoreDataManager *sharedInstance = nil;
     return sharedInstance;
 }
 
-
-//-(void)addReflection:(NSString *)reflectionText reflectionPicturePath:(NSString *)reflectionPicturePath reflectionColors:(NSArray *)colors{
-//	Reflection *newReflection = (Reflection*)[NSEntityDescription insertNewObjectForEntityForName:@"Reflection" inManagedObjectContext:managedObjectContext];
-//	
-//	[newReflection setReflectionText:reflectionText];
-//	[newReflection setReflectionPicturePath:reflectionPicturePath];
-//	int red = (int)[colors objectAtIndex:(NSUInteger)0];
-//	int green = (int)[colors objectAtIndex:(NSUInteger)1];
-//	int blue = (int)[colors objectAtIndex:(NSUInteger)2];
-//	
-//	[newReflection setColorDayRed:red];
-//	[newReflection setColorDayGreen:green];
-//	[newReflection setColorDayBlue:blue];
-//	[newReflection setTimeStamp:[NSDate date]];
-//	
-//	[self saveChanges];	
-//}
-
 -(void)addColorReflection:(NSArray *)colors{
 	ColorReflection *newReflection = (ColorReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"ColorReflection" inManagedObjectContext:managedObjectContext];
 	
@@ -166,7 +148,7 @@ static CoreDataManager *sharedInstance = nil;
 		
 		[offset release];
 		
-		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastSeen <= %@) || (lastSeen = nil)", cutoffDate];
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastSeen <= %@) || (lastSeen == nil)", cutoffDate];
 		[request setPredicate:predicate];
 		
 		// Fetch Results
@@ -192,6 +174,44 @@ static CoreDataManager *sharedInstance = nil;
 	[request release];
 	
 	return suggestion;
+	
+}
+
+
+-(NSMutableArray*) fetchReflections:(NSString*) reflectionType {
+	
+	// Fetch Suggestions From Data Store
+	// Create Request
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:reflectionType inManagedObjectContext:managedObjectContext];
+	[request setEntity:entity];
+	
+	// Set Sort Descriptors
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+	
+	[request setSortDescriptors:sortDescriptors];
+	[sortDescriptors release];
+	[sortDescriptor release];
+	
+	// Fetch Results
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+	assert(mutableFetchResults != nil);
+	
+	//	NSEnumerator *enumerator = [mutableFetchResults objectEnumerator];
+	//	id element;
+	//	
+	//	while(element = [enumerator nextObject]) {
+	//		Suggestion *suggestion = (Suggestion*) element;
+	//		// Do your thing with the object.
+	//		NSLog(@"Date: %@", [suggestion lastSeen]);
+	//    }
+
+	
+	[request release];
+	
+	return mutableFetchResults;
 	
 }
 

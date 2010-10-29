@@ -15,14 +15,17 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+	self.navigationItem.title = @"How was your day?";
+	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+	self.navigationItem.backBarButtonItem = backButton;
+	[backButton release];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
+
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -76,7 +79,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		if([indexPath row] == 0){
+		if([indexPath row] == 2){
 			cell.imageView.image = [UIImage imageNamed:@"27.png"];
 			cell.textLabel.text = @"Add Photo";
 			cell.textLabel.textAlignment = UITextAlignmentLeft;
@@ -157,11 +160,11 @@
 	 [detailViewController release];
 	 */
 	
-	if([indexPath row] == 0)
+	if([indexPath row] == 2)
 		[self goToCamera];
 	if([indexPath row] == 1)
 		[self goToText];
-	if([indexPath row] == 2)
+	if([indexPath row] == 0)
 		[self goToColor];
 }
 
@@ -248,10 +251,7 @@
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-	
-	[super viewDidLoad];
-}
+
 
 
 /*
