@@ -84,7 +84,7 @@
 	cell.textLabel.textAlignment = UITextAlignmentCenter;
 	
 	//Here make the text the date of the reflection or type, or whatever is right for the cell's text
-	cell.textLabel.text = [NSString stringWithFormat:@"Reflection date %d",[indexPath row]];
+	cell.textLabel.text = [NSString stringWithFormat:@"Section %d Row %d",[indexPath section],[indexPath row]];
     // Configure the cell...
     
     return cell;
