@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 	self.navigationItem.title = @"Diary";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -59,7 +58,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return 5;
 }
 
 
@@ -67,7 +66,7 @@
     // Return the number of rows in the section.
 	
 	//This needs to be changed to the number of reflections stored on the phone to date
-    return 10;
+    return 5;
 }
 
 
@@ -90,7 +89,10 @@
     
     return cell;
 }
-
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	
+	return [NSString stringWithFormat:@"Section %d",section];
+}
 
 /*
 // Override to support conditional editing of the table view.

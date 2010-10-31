@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HistoryReflectionViewController.h"
+#import "CoreDataManager.h"
+#import "Reflection.h"
 
 @interface HistoryTableViewController : UITableViewController {
 	HistoryReflectionViewController *histRefViewCont;
