@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ColorPickerImageView.h"
-
+#import "CoreDataManager.h"
 
 @interface ReflectColorViewController : UIViewController {
 
@@ -18,6 +18,8 @@
 	ColorPickerImageView* colorWheel;
 	UIButton* tapMeButton;
 	UIButton* colorButton;
+	
+	CoreDataManager *coreDataManager;
 }
 //@property (nonatomic,retain) IBOutlet UINavigationItem *navigationItem;
 @property (nonatomic,retain) IBOutlet UIBarButtonItem *saveButton;
@@ -25,6 +27,7 @@
 @property (nonatomic,retain) IBOutlet ColorPickerImageView* colorWheel;
 @property (nonatomic,retain) IBOutlet UIButton* tapMeButton;
 @property (nonatomic,retain) IBOutlet UIButton* colorButton;
+@property (nonatomic,retain) CoreDataManager *coreDataManager;
 
 - (IBAction) tapMe: (id)sender;
 - (void) pickedColor: (UIColor*) color;
