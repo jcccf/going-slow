@@ -187,6 +187,21 @@
 	[suggestion setLastSeen:[NSDate date]];
 	
 	[coreDataManager saveChanges];
+	
+	//TEST
+	NSMutableArray *textReflections = [coreDataManager fetchReflections:@"TextReflection"];
+	for (TextReflection *tr in textReflections) {
+		NSLog(@"Text: %@", [tr reflectionText]);
+	}
+	
+	NSMutableArray *colorReflections = [coreDataManager fetchReflections:@"ColorReflection"];
+	for (ColorReflection *cr in colorReflections) {
+		NSLog(@"Red: %@", [cr colorRed]);
+		NSLog(@"Green: %@", [cr colorGreen]);
+		NSLog(@"Blue: %@", [cr colorBlue]);
+		NSLog(@"Created At: %@", [cr createdAt]);
+	}
+	
 }
 
 /*

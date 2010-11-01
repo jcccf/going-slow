@@ -12,19 +12,33 @@
 
 
 @implementation ReflectColorViewController
-@synthesize saveButton, colorWheel, tapMeButton, colorButton;
+@synthesize saveButton, colorWheel, tapMeButton, colorButton, coreDataManager;
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
+		coreDataManager = [[CoreDataManager alloc] init];
     }
     return self;
 }
 
 -(IBAction)saveColor{
-	colorButton.backgroundColor;
+	UIColor *color = colorButton.backgroundColor;
+	CGColorRef c = [color CGColor];
+	CGFloat *components = CGColorGetComponents(c);
+	
+	NSNumber *red = [NSNumber numberWithFloat:components[0]];
+	NSNumber *green = [NSNumber numberWithFloat:components[1]];
+	NSNumber *blue = [NSNumber numberWithFloat:components[2]];
+	CGFloat alpha = components[3];
+	
+	NSArray *colors = [NSArray arrayWithObjects:red, green, blue, nil];
+	
+	if(alpha > 0){
+		[coreDataManager addColorReflection:colors];
+	}
 	
 }
 
@@ -114,6 +128,7 @@
 
 
 - (void)dealloc {
+	[coreDataManager release];
     [super dealloc];
 }
 

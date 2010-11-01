@@ -48,7 +48,10 @@ static CoreDataManager *sharedInstance = nil;
 	
 	[self saveChanges];	
 	
-	//NSLog(@"Red: %@", [newReflection colorRed]);
+	NSLog(@"Red: %@", [newReflection colorRed]);
+	NSLog(@"Green: %@", [newReflection colorGreen]);
+	NSLog(@"Blue: %@", [newReflection colorBlue]);
+	NSLog(@"Created At: %@", [newReflection createdAt]);
 	
 }
 
@@ -72,7 +75,7 @@ static CoreDataManager *sharedInstance = nil;
 	
 	[self saveChanges];	
 	
-	//NSLog(@"Reflection text: %@", [newReflection reflectionText]);
+	NSLog(@"Reflection text: %@", [newReflection reflectionText]);
 	
 }
 
