@@ -24,8 +24,6 @@
 	NSMutableArray *suggestionsArray;
 	int switchText;
 	
-	
-	CoreDataManager *coreDataManager;
 	bool isNotFirstRun;
 	
 }
@@ -38,7 +36,6 @@
 
 @property (nonatomic, retain) NSMutableArray *suggestionsArray;
 @property (nonatomic) bool isNotFirstRun;
-@property (nonatomic, retain) CoreDataManager *coreDataManager;
 
 -(IBAction)sayHello:(id) sender;
 

@@ -8,13 +8,11 @@
 
 #import "ReflectCameraViewController.h"
 @implementation ReflectCameraViewController
-@synthesize coreDataManager;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
-		coreDataManager = [CoreDataManager getCoreDataManagerInstance];
     }
     return self;
 }
@@ -29,7 +27,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-	[coreDataManager addLog:[NSNumber numberWithInt:6]];
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:6]];
 }
 
 /*
@@ -55,7 +53,6 @@
 
 
 - (void)dealloc {
-	[coreDataManager release];
     [super dealloc];
 }
 

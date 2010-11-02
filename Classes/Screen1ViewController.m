@@ -18,7 +18,6 @@
 @synthesize suggestionsArray;
 
 @synthesize isNotFirstRun;
-@synthesize coreDataManager;
 
 - (IBAction) sayHello:(id) sender {
 	if(switchText == 0){
@@ -66,10 +65,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
-	
-	coreDataManager = [CoreDataManager getCoreDataManagerInstance];
-	
+    [super viewDidLoad];	
 	
 	switchText = 0;
 	//backText.hidden = TRUE;
@@ -93,13 +89,13 @@
 	if (!isNotFirstRun) {
 		// Create a New Suggestion Card
 		//system("mkdir ~/goslowImages");
-		[coreDataManager addAllSuggestions];
-		[coreDataManager addScreenIds];
+		[[CoreDataManager getCoreDataManagerInstance] addAllSuggestions];
+		[[CoreDataManager getCoreDataManagerInstance] addScreenIds];
 		
 	}
 	
 	// Read from Suggestions Array and Set View Items Appropriately
-	Suggestion *suggestion = [coreDataManager fetchSuggestion];
+	Suggestion *suggestion = [[CoreDataManager getCoreDataManagerInstance] fetchSuggestion];
 	label.text = [NSString stringWithFormat:@"%@%@", @" ", [suggestion theme]]; //HACK To space the text correctly on the screen
 	
 	NSString *html1 = @"<div style=\"font-family: Helvetica; font-size: larger; margin: 10px;\">";
@@ -138,15 +134,15 @@
 	//Set last seen to today's date
 	[suggestion setLastSeen:[NSDate date]];
 	
-	[coreDataManager saveChanges];
+	[[CoreDataManager getCoreDataManagerInstance] saveChanges];
 	
 	//TEST
-	NSMutableArray *textReflections = [coreDataManager fetchReflections:@"TextReflection"];
+	NSMutableArray *textReflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"TextReflection"];
 	for (TextReflection *tr in textReflections) {
 		NSLog(@"Text: %@", [tr reflectionText]);
 	}
 	
-	NSMutableArray *colorReflections = [coreDataManager fetchReflections:@"ColorReflection"];
+	NSMutableArray *colorReflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"ColorReflection"];
 	for (ColorReflection *cr in colorReflections) {
 		NSLog(@"Red: %@", [cr colorRed]);
 		NSLog(@"Green: %@", [cr colorGreen]);
@@ -173,7 +169,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	[coreDataManager addLog:[NSNumber numberWithInt:1]];
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:1]];
 }
 
 - (void)viewDidUnload {
@@ -188,7 +184,6 @@
 	[button release];
 	[imageViewPicture release];
 	[suggestionsArray release];
-	[coreDataManager release];
     [super dealloc];
 }
 

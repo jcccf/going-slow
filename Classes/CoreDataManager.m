@@ -276,7 +276,7 @@ static CoreDataManager *sharedInstance = nil;
 
 -(NSMutableArray*) fetchReflections:(NSString*) reflectionType {
 	
-	// Fetch Suggestions From Data Store
+	// Fetch Reflections From Data Store
 	// Create Request
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	NSEntityDescription *entity = [NSEntityDescription entityForName:reflectionType inManagedObjectContext:managedObjectContext];
@@ -304,6 +304,33 @@ static CoreDataManager *sharedInstance = nil;
 	//		NSLog(@"Date: %@", [suggestion lastSeen]);
 	//    }
 
+	
+	[request release];
+	
+	return mutableFetchResults;
+	
+}
+
+-(NSMutableArray*)fetchLogs:(NSDate*) startDate {
+
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"LogScreen" inManagedObjectContext:managedObjectContext];
+	[request setEntity:entity];
+	
+	// Set Sort Descriptors
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastSeen > %@)", startDate];
+	[request setPredicate:predicate];
+	
+	[request setSortDescriptors:sortDescriptors];
+	[sortDescriptors release];
+	[sortDescriptor release];
+	
+	// Fetch Results
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
 	
 	[request release];
 	

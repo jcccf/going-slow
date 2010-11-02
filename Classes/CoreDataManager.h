@@ -36,7 +36,7 @@
 -(void)addColorReflection:(NSArray *)colors;
 -(void)addPhotoReflection:(NSString *)filepath;
 -(void)addTextReflection:(NSString *)reflectionText;
-
+-(NSMutableArray*)fetchLogs:(NSDate*) startDate;
 
 -(void)saveChanges;
 -(void)deleteAllObjects: (NSString *) entityDescription;

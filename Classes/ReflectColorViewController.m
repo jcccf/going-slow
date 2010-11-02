@@ -12,14 +12,13 @@
 
 
 @implementation ReflectColorViewController
-@synthesize saveButton, colorWheel, tapMeButton, colorButton, coreDataManager;
+@synthesize saveButton, colorWheel, tapMeButton, colorButton;
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
-		coreDataManager = [CoreDataManager getCoreDataManagerInstance];
     }
     return self;
 }
@@ -37,7 +36,7 @@
 	NSArray *colors = [NSArray arrayWithObjects:red, green, blue, nil];
 	
 	if(alpha > 0){
-		[coreDataManager addColorReflection:colors];
+		[[CoreDataManager getCoreDataManagerInstance] addColorReflection:colors];
 	}
 	
 }
@@ -57,7 +56,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-	[coreDataManager addLog:[NSNumber numberWithInt:4]];
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:4]];
 }
 
 - (IBAction) tapMe: (id)sender {
@@ -133,7 +132,6 @@
 
 
 - (void)dealloc {
-	[coreDataManager release];
     [super dealloc];
 }
 
