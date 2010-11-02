@@ -114,6 +114,27 @@
 	
 }
 
+-(void)addScreenIds{
+	[coreDataManager deleteAllObjects:@"LogScreen"];
+	[coreDataManager deleteAllObjects:@"Screen"];
+	
+	NSArray *screenIds = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], nil];
+	
+	NSString *screenNameString = @"Suggestion,Diary,Reflection,ColorReflection,TextReflection,PhotoReflection";
+	NSArray *screenNames = [screenNameString componentsSeparatedByString:@","];
+	
+	int arrayCount = [screenIds count];
+	
+	for(int i = 0; i < arrayCount; i++){
+		NSNumber* screenId = [screenIds objectAtIndex:i];
+		NSString* screenName = [screenNames objectAtIndex:i];
+		
+		[coreDataManager addScreen:screenId screenName:screenName];
+		
+	}
+	
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
