@@ -19,6 +19,7 @@
 	NSMutableArray *photoReflectionsToDate;
 	NSMutableArray *reflectionsPutInTable;
 	NSMutableDictionary *reflectionIndexTable;
+	CoreDataManager *coreDataManager;
 }
 
 @property(nonatomic,retain) HistoryReflectionViewController *histRefViewCont;
@@ -28,5 +29,5 @@
 @property(nonatomic,retain) NSMutableArray *photoReflectionsToDate;
 @property(nonatomic,retain) NSMutableArray *reflectionsPutInTable;
 @property(nonatomic,retain) NSMutableDictionary *reflectionIndexTable;
-
+@property(nonatomic,retain) CoreDataManager *coreDataManager;
 @end

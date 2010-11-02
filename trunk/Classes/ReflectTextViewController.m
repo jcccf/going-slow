@@ -37,6 +37,11 @@
 	[tView becomeFirstResponder];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+	[coreDataManager addLog:[NSNumber numberWithInt:5]];
+}
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.

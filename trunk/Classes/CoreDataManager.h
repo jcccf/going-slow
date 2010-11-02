@@ -26,6 +26,8 @@
 @property (nonatomic,retain) NSManagedObjectContext *managedObjectContext;
 
 -(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath;
+-(void)addAllSuggestions;
+-(void)addScreenIds;
 -(void)addLog:(NSNumber *)screenId;
 -(void)addScreen:(NSNumber *)screenId screenName:(NSString*) screenName;
 -(Suggestion*)fetchSuggestion;
