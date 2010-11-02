@@ -10,7 +10,7 @@
 
 
 @implementation HistoryTableViewController
-@synthesize histRefViewCont;
+@synthesize histRefViewCont, dates, textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate, reflectionsPutInTable, reflectionIndexTable;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -19,21 +19,76 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.navigationItem.title = @"Diary";
+	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
+-(void)populateArrysAndSortDates{
+	dates = [[NSMutableArray alloc] init];
+	textReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"TextReflection"];
+	photoReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"PhotoReflection"];
+	colorReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"ColorReflection"];
+	
+	
+	//NSLog([NSString stringWithFormat:@"We got %i text reflections from database", [textReflectionsToDate size]]);
+	for(TextReflection *t in textReflectionsToDate){
+		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
+			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
+			NSLog([NSString stringWithFormat:@"Added Text  Date %@ to date array", [[t createdAt] description]]);
+		}
+		else{
+			NSLog(@"Duplicate Date Text");
+		}
+	}
+	
+	for(ColorReflection *t in colorReflectionsToDate){
+		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
+			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
+			NSLog([NSString stringWithFormat:@"Added Color Date %@ to date array", [[t createdAt] description]]);
+		}
+		else{
+			NSLog(@"Duplicate Date Color");
+		}
+	}
+	for(PhotoReflection *t in photoReflectionsToDate){
+		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
+			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
+			NSLog([NSString stringWithFormat:@"Added Photo Date %@ to date array", [[t createdAt] description]]);
+		}
+		else{
+			NSLog(@"Duplicate Date Photo");
+		}
+	}
+	
+	NSLog(@"There are %i dates in dates", [dates count]);
+	
+	[dates sortUsingSelector:@selector(compare:)];
+	
+	
+	for(NSString *s in dates){
+		NSLog([NSString stringWithFormat:@"Date : %@", s]);	
+		
+	}
+	
+}
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 */
-/*
+
 - (void)viewDidAppear:(BOOL)animated {
+	
+	//[self populateArrysAndSortDates];
+	reflectionsPutInTable = [[NSMutableArray alloc] init];
+	reflectionIndexTable = [[NSMutableDictionary alloc] init];
+	[[self view] reloadData];
     [super viewDidAppear:animated];
 }
-*/
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -58,15 +113,32 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 5;
+	[self populateArrysAndSortDates];
+	NSLog([NSString stringWithFormat:@"Dates count when determining section number %i", [dates count]]);
+    return [dates count];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
 	
+	NSString *dateCompareString = [dates objectAtIndex:section];
+	int count = 0;
+	
+	for(TextReflection *t in textReflectionsToDate){
+		if([[[[t createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+			count++;
+	}
+	for(ColorReflection *c in colorReflectionsToDate){
+		if([[[[c createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+			count++;
+	}
+	for(PhotoReflection *p in photoReflectionsToDate){
+		if([[[[p createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+			count++;
+	}
 	//This needs to be changed to the number of reflections stored on the phone to date
-    return 5;
+    return count;
 }
 
 
@@ -74,24 +146,81 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
+	BOOL keepLooping = YES;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
+	NSString *dateCompareString = [dates objectAtIndex:[indexPath section]];
 	
-	cell.textLabel.textAlignment = UITextAlignmentCenter;
+
+	for(TextReflection *t in textReflectionsToDate){
+		if(keepLooping){
+		if([[[[t createdAt] description] substringToIndex :10] isEqualToString:dateCompareString]){
+			if(![reflectionsPutInTable containsObject:t]){
+				[reflectionsPutInTable addObject:t];
+				[reflectionIndexTable setObject:t forKey:indexPath];
+				int min = [[t reflectionText] length];
+						   if(min >= 30){
+							   min = 30;   
+						   }
+				NSLog([NSString stringWithFormat:@"Adding text %@ to Cell %i::%i", [t reflectionText], [indexPath section], [indexPath row]]);
+				cell.textLabel.text = [[t reflectionText] substringToIndex:min];
+				cell.backgroundView = nil;
+				keepLooping = NO;
+			}
+		}
+		}
+	}
+	
+
+	for(ColorReflection *c in colorReflectionsToDate){
+		if(keepLooping){
+		if([[[[c createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+			if(![reflectionsPutInTable containsObject:c]){
+				[reflectionsPutInTable addObject:c];
+				[reflectionIndexTable setObject:c forKey:indexPath];
+				//cell.textLabel.text = [[c reflectionText] substringToIndex:15];
+				keepLooping = NO;
+				UIView *vi = [[UIView alloc] init];
+				vi.backgroundColor = [UIColor redColor];
+				cell.backgroundView = vi;		
+			}}
+	}
+	
+
+	for(PhotoReflection *p in photoReflectionsToDate){
+		if(keepLooping){
+		if([[[[p createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+			if(![reflectionsPutInTable containsObject:p]){
+				[reflectionsPutInTable addObject:p];
+				[reflectionIndexTable setObject:p forKey:indexPath];
+				UIImage *im = [UIImage imageWithContentsOfFile:[p filepath]];
+				cell.backgroundView = [[UIImageView alloc] initWithImage:im];
+				//cell.textLabel.text = [[p reflectionText] substringToIndex:15];
+				keepLooping = NO;
+			}
+		}
+	}
+	
+	//cell.accessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+	cell.textLabel.textAlignment = UITextAlignmentLeft;
 	
 	//Here make the text the date of the reflection or type, or whatever is right for the cell's text
-	cell.textLabel.text = [NSString stringWithFormat:@"Section %d Row %d",[indexPath section],[indexPath row]];
+	//cell.textLabel.text = [NSString stringWithFormat:@"Section %d Row %d",[indexPath section],[indexPath row]];
     // Configure the cell...
     
     return cell;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	
-	return [NSString stringWithFormat:@"Section %d",section];
+	return [dates objectAtIndex:section];
+}
+
+-(UITableViewCellAccessoryType)tableView:(UITableView*)tv accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath{
+	return UITableViewCellAccessoryDisclosureIndicator;
 }
 
 /*
@@ -153,9 +282,44 @@
 	//2)Based on that reflection, display the appropriate views in histRefViewCont
 	if (histRefViewCont == nil) {
 		histRefViewCont = [[HistoryReflectionViewController alloc] initWithNibName:@"HistoryReflectionViewController" bundle:nil];
+		
 	}
-	histRefViewCont.navigationItem.title = ([tableView cellForRowAtIndexPath:indexPath].textLabel.text);
-	[[self navigationController] pushViewController:histRefViewCont animated:YES];
+	
+	NSObject *ob = [reflectionIndexTable objectForKey:indexPath];
+	
+	
+	
+	if([ob isKindOfClass:[TextReflection class]]){
+		TextReflection *r = (TextReflection*)ob;
+		histRefViewCont.navigationItem.title = [NSString stringWithFormat:@"Text for day %@", [[[r createdAt] description] substringToIndex:10]];
+		histRefViewCont.t.hidden = NO;
+		histRefViewCont.i.hidden = YES;
+		histRefViewCont.te = [r reflectionText];
+		histRefViewCont.t.text = [r reflectionText];
+		[[self navigationController] pushViewController:histRefViewCont animated:NO];
+	}
+	else{
+		if([ob isKindOfClass:[ColorReflection class]]){
+			
+		}
+		else{
+			PhotoReflection *p = (PhotoReflection*)ob;
+			histRefViewCont.navigationItem.title = [NSString stringWithFormat:@"Photo for date %@",[[[p createdAt] description] substringToIndex:10]];
+			histRefViewCont.t.hidden = YES;
+			histRefViewCont.i.hidden = NO;
+			NSLog([NSString stringWithFormat:@"%@", [p filepath]]);
+			histRefViewCont.im = [UIImage imageWithContentsOfFile:[p filepath]];
+			//UIImage *image = [UIImage imageWithContentsOfFile:[p filepath]];
+			//assert(image != nil);
+			//histRefViewCont.view = histRefViewCont.i;
+			[[histRefViewCont i] setImage:[UIImage imageWithContentsOfFile:[p filepath]]];
+			[[self navigationController] pushViewController:histRefViewCont animated:NO];
+			//[image release];
+		}
+	}
+	
+	//histRefViewCont.navigationItem.title = ([tableView cellForRowAtIndexPath:indexPath].textLabel.text);
+	//[[self navigationController] pushViewController:histRefViewCont animated:NO];
 }
 
 

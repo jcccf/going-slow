@@ -28,7 +28,7 @@ static CoreDataManager *sharedInstance = nil;
 	
 	@synchronized(self) {
         if (sharedInstance == nil) {
-            [[self alloc] init]; // assignment not done here
+            sharedInstance = [[CoreDataManager alloc] init]; // assignment not done here
         }
     }
     return sharedInstance;

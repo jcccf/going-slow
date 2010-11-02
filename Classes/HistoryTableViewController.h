@@ -13,7 +13,20 @@
 
 @interface HistoryTableViewController : UITableViewController {
 	HistoryReflectionViewController *histRefViewCont;
+	NSMutableArray *dates;
+	NSMutableArray *colorReflectionsToDate;
+	NSMutableArray *textReflectionsToDate;
+	NSMutableArray *photoReflectionsToDate;
+	NSMutableArray *reflectionsPutInTable;
+	NSMutableDictionary *reflectionIndexTable;
 }
 
 @property(nonatomic,retain) HistoryReflectionViewController *histRefViewCont;
+@property(nonatomic,retain) NSMutableArray *dates;
+@property(nonatomic,retain) NSMutableArray *colorReflectionsToDate;
+@property(nonatomic,retain) NSMutableArray *textReflectionsToDate;
+@property(nonatomic,retain) NSMutableArray *photoReflectionsToDate;
+@property(nonatomic,retain) NSMutableArray *reflectionsPutInTable;
+@property(nonatomic,retain) NSMutableDictionary *reflectionIndexTable;
+
 @end
