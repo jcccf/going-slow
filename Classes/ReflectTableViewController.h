@@ -11,11 +11,13 @@
 #import "ReflectColorViewController.h"
 #import "ReflectCameraViewController.h"
 #import "ReflectTextViewController.h"
+#import "CoreDataManager.h"
 
 @interface ReflectTableViewController : UITableViewController {
 	ReflectColorViewController *reflectColorViewController;
 	UIImagePickerController *reflectCameraViewController;
 	ReflectTextViewController *reflectTextViewController;
+	CoreDataManager *coreDataManager;
 }
 
 -(void)storeReflection:(Reflection *)r;
@@ -23,5 +25,5 @@
 @property (nonatomic,retain) UIImagePickerController *reflectCameraViewController;
 @property (nonatomic,retain) ReflectTextViewController *reflectTextViewController;
 @property (nonatomic,retain) ReflectColorViewController *reflectColorViewController;
-
+@property (nonatomic,retain) CoreDataManager *coreDataManager;
 @end

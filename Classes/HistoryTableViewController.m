@@ -10,7 +10,7 @@
 
 
 @implementation HistoryTableViewController
-@synthesize histRefViewCont, dates, textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate, reflectionsPutInTable, reflectionIndexTable;
+@synthesize histRefViewCont, dates, textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate, reflectionsPutInTable, reflectionIndexTable, coreDataManager;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.navigationItem.title = @"Diary";
+	coreDataManager = [CoreDataManager getCoreDataManagerInstance];
+	
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -87,6 +89,7 @@
 	reflectionIndexTable = [[NSMutableDictionary alloc] init];
 	[[self view] reloadData];
     [super viewDidAppear:animated];
+	[coreDataManager addLog:[NSNumber numberWithInt:2]];
 }
 
 /*
@@ -340,6 +343,7 @@
 
 
 - (void)dealloc {
+	[coreDataManager release];
     [super dealloc];
 }
 

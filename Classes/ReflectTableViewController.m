@@ -22,6 +22,9 @@
 	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 	self.navigationItem.backBarButtonItem = backButton;
 	[backButton release];
+	
+	coreDataManager = [CoreDataManager getCoreDataManagerInstance];
+	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -32,11 +35,12 @@
     [super viewWillAppear:animated];
 }
 */
-/*
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+	[coreDataManager addLog:[NSNumber numberWithInt:3]];
 }
-*/
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -303,6 +307,7 @@
 
 
 - (void)dealloc {
+	[coreDataManager release];
     [super dealloc];
 }
 

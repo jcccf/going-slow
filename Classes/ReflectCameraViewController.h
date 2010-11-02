@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CoreDataManager.h"
 
 @interface ReflectCameraViewController : UIImagePickerController {
-
+	CoreDataManager *coreDataManager;
 }
+@property (nonatomic,retain) CoreDataManager *coreDataManager;
 
 @end

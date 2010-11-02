@@ -19,7 +19,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
-		coreDataManager = [[CoreDataManager alloc] init];
+		coreDataManager = [CoreDataManager getCoreDataManagerInstance];
     }
     return self;
 }
@@ -53,6 +53,11 @@
 	self.navigationItem.title = @"Add Color";
 	self.navigationItem.rightBarButtonItem = saveButton;
 	//self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+	[coreDataManager addLog:[NSNumber numberWithInt:4]];
 }
 
 - (IBAction) tapMe: (id)sender {
