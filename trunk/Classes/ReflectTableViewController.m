@@ -229,7 +229,7 @@
 		NSLog(@"Image saved!");
 	}
 
-	
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:6]];
 	[[CoreDataManager getCoreDataManagerInstance] addPhotoReflection:fullPath];
 	
 

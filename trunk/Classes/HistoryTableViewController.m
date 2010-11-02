@@ -10,7 +10,7 @@
 
 
 @implementation HistoryTableViewController
-@synthesize histRefViewCont, dates, textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate, reflectionsPutInTable, reflectionIndexTable, coreDataManager;
+@synthesize histRefViewCont, dates, textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate, reflectionsPutInTable, reflectionIndexTable;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.navigationItem.title = @"Diary";
-	coreDataManager = [CoreDataManager getCoreDataManagerInstance];
 	
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -38,7 +37,7 @@
 	for(TextReflection *t in textReflectionsToDate){
 		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
 			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
-			NSLog([NSString stringWithFormat:@"Added Text  Date %@ to date array", [[t createdAt] description]]);
+			NSLog([NSString stringWithFormat:@"Added Text Date %@ to date array", [[t createdAt] description]]);
 		}
 		else{
 			NSLog(@"Duplicate Date Text");
@@ -89,7 +88,7 @@
 	reflectionIndexTable = [[NSMutableDictionary alloc] init];
 	[[self view] reloadData];
     [super viewDidAppear:animated];
-	[coreDataManager addLog:[NSNumber numberWithInt:2]];
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:2]];
 }
 
 /*
@@ -343,7 +342,7 @@
 
 
 - (void)dealloc {
-	[coreDataManager release];
+	[[CoreDataManager getCoreDataManagerInstance] release];
     [super dealloc];
 }
 
