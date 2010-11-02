@@ -11,13 +11,20 @@
 
 
 @interface SyncManager : NSObject {
-
+	int userId;
 	NSMutableArray *bufferedReflections;
 }
 
 @property (nonatomic,retain) NSMutableArray *bufferedReflections;
 
-- (void) bufferReflection: (Reflection *)r;
+- (void) setUserId:(int)uid;
+- (void) bufferTextReflection:(NSString*)text;
+- (void) bufferPhotoReflection:(UIImage*)image;
+- (void) bufferColorReflectionWithRed:(int)r andGreen:(int)g andBlue:(int)b;
+
 - (void) syncData;
+
+- (void) cleanup: (NSString *) output;
+
 +(SyncManager*) getSyncManagerInstance;
 @end
