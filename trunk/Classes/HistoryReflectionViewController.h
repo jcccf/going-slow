@@ -11,7 +11,15 @@
 
 @interface HistoryReflectionViewController : UIViewController {
 	//UINavigationItem *navigationItem;
+	UITextView *t;
+	UIImageView *i;
+	NSString *te;
+	UIImage *im;
 }
 
 //@property(nonatomic,retain) IBOutlet UINavigationItem *navigationItem;
+@property(nonatomic,retain) IBOutlet UITextView *t;
+@property(nonatomic,retain) IBOutlet UIImageView *i;
+@property(nonatomic,retain) NSString *te;
+@property(nonatomic,retain) UIImage *im;
 @end

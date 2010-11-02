@@ -118,7 +118,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	coreDataManager = [[CoreDataManager alloc] init];
+	coreDataManager = [CoreDataManager getCoreDataManagerInstance];
+	
 	
 	switchText = 0;
 	//backText.hidden = TRUE;
@@ -141,6 +142,7 @@
 	// Import All Suggestions, and only ONCE
 	if (!isNotFirstRun) {
 		// Create a New Suggestion Card
+		//system("mkdir ~/goslowImages");
 		[self addAllSuggestions];
 		[coreDataManager saveChanges];
 		

@@ -197,7 +197,7 @@
 		}
 		reflectCameraViewController.allowsEditing = NO;
 		reflectCameraViewController.delegate = self;
-		reflectTextViewController.title = @"Reflection Pictures";
+		//reflectTextViewController.title = @"Reflection Pictures";
 		
 	}
 	[[self navigationController] presentModalViewController:reflectCameraViewController animated:YES];
@@ -208,8 +208,30 @@
 	// Access the uncropped image from info dictionary
 	UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 	
+	//Save image to disk
+	
+	NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(image, 0.25f)];
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	
+	NSString *imagePath = [paths objectAtIndex:0];
+	NSString *fullPath = [NSString stringWithFormat:@"%@/%@.jpg",imagePath,[[NSDate date] description]];
+	
+	
+	BOOL f = [imageData writeToFile:fullPath atomically:YES];
+	
+	if(!f)
+		NSLog(@"Image save fail");
+	else {
+		NSLog(@"Image saved!");
+	}
+
+	
+	[[CoreDataManager getCoreDataManagerInstance] addPhotoReflection:fullPath];
+	
+
+	[[self navigationController] dismissModalViewControllerAnimated:YES];
 	// Save image
-	UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+	//UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	
 	//[picker release];
 }
