@@ -90,6 +90,28 @@ static CoreDataManager *sharedInstance = nil;
 	
 }
 
+-(void)addLog:(NSNumber *)screenId {
+	LogScreen *newLog = (LogScreen*)[NSEntityDescription insertNewObjectForEntityForName:@"LogScreen" inManagedObjectContext:managedObjectContext];
+	[newLog setScreenId:screenId];
+	[newLog setCreatedAt:[NSDate date]];
+	
+	[self saveChanges];	
+	
+	NSLog(@"Screen %@ accessed at %@", [newLog screenId], [newLog createdAt]);
+	
+}
+
+-(void)addScreen:(NSNumber *)screenId screenName:(NSString*) screenName {
+	Screen *newScreen = (Screen*)[NSEntityDescription insertNewObjectForEntityForName:@"Screen" inManagedObjectContext:managedObjectContext];
+	[newScreen setScreenId:screenId];
+	[newScreen setName:screenName];
+	
+	[self saveChanges];	
+	
+	NSLog(@"Screen %@ has name: %@", [newScreen screenId], [newScreen name]);
+	
+}
+
 //TODO: change this to date difference
 -(bool)isToday:(NSDate*)refDate {
 

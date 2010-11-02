@@ -12,6 +12,8 @@
 #import "ColorReflection.h"
 #import "PhotoReflection.h"
 #import "TextReflection.h"
+#import "LogScreen.h"
+#import "Screen.h"
 #import "goslowtest2AppDelegate.h"
 
 
@@ -24,6 +26,8 @@
 @property (nonatomic,retain) NSManagedObjectContext *managedObjectContext;
 
 -(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath;
+-(void)addLog:(NSNumber *)screenId;
+-(void)addScreen:(NSNumber *)screenId screenName:(NSString*) screenName;
 -(Suggestion*)fetchSuggestion;
 -(NSMutableArray*) fetchReflections:(NSString*) reflectionType;
 
