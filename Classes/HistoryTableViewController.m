@@ -187,7 +187,7 @@
 				//cell.textLabel.text = [[c reflectionText] substringToIndex:15];
 				keepLooping = NO;
 				UIView *vi = [[UIView alloc] init];
-				vi.backgroundColor = [UIColor redColor];
+				vi.backgroundColor = [UIColor colorWithRed:[[c colorRed]floatValue] green:[[c colorGreen]floatValue] blue:[[c colorBlue]floatValue] alpha:1];
 				cell.backgroundView = vi;		
 			}}
 	}
