@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	imageFilePathDict = [[NSMutableDictionary alloc] init];
 	self.navigationItem.title = @"Diary";
 	
 	
@@ -86,6 +87,7 @@
 	//[self populateArrysAndSortDates];
 	reflectionsPutInTable = [[NSMutableArray alloc] init];
 	reflectionIndexTable = [[NSMutableDictionary alloc] init];
+	numPhotos = 1;
 	[[self view] reloadData];
     [super viewDidAppear:animated];
 	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:2]];
@@ -187,6 +189,8 @@
 				//cell.textLabel.text = [[c reflectionText] substringToIndex:15];
 				keepLooping = NO;
 				UIView *vi = [[UIView alloc] init];
+				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+				cell.text = @"";
 				vi.backgroundColor = [UIColor colorWithRed:[[c colorRed]floatValue] green:[[c colorGreen]floatValue] blue:[[c colorBlue]floatValue] alpha:1];
 				cell.backgroundView = vi;		
 			}}
@@ -199,9 +203,11 @@
 			if(![reflectionsPutInTable containsObject:p]){
 				[reflectionsPutInTable addObject:p];
 				[reflectionIndexTable setObject:p forKey:indexPath];
-				UIImage *im = [UIImage imageWithContentsOfFile:[p filepath]];
-				cell.backgroundView = [[UIImageView alloc] initWithImage:im];
-				//cell.textLabel.text = [[p reflectionText] substringToIndex:15];
+				//UIImage *im = [UIImage imageWithContentsOfFile:[p filepath]];
+				//cell.backgroundView = [[UIImageView alloc] initWithImage:im];
+				cell.textLabel.text = [NSString stringWithFormat:@"Photo %i", numPhotos];
+				numPhotos++;
+				cell.backgroundView = nil;
 				keepLooping = NO;
 			}
 		}
@@ -297,8 +303,8 @@
 		histRefViewCont.t.hidden = NO;
 		histRefViewCont.i.hidden = YES;
 		histRefViewCont.te = [r reflectionText];
-		histRefViewCont.t.text = [r reflectionText];
-		[[self navigationController] pushViewController:histRefViewCont animated:NO];
+		//histRefViewCont.t.text = [r reflectionText];
+		[[self navigationController] pushViewController:histRefViewCont animated:YES];
 	}
 	else{
 		if([ob isKindOfClass:[ColorReflection class]]){
@@ -314,7 +320,6 @@
 			//UIImage *image = [UIImage imageWithContentsOfFile:[p filepath]];
 			//assert(image != nil);
 			//histRefViewCont.view = histRefViewCont.i;
-			[[histRefViewCont i] setImage:[UIImage imageWithContentsOfFile:[p filepath]]];
 			[[self navigationController] pushViewController:histRefViewCont animated:NO];
 			//[image release];
 		}
