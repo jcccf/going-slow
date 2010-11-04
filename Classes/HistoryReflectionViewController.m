@@ -39,6 +39,12 @@
     [super viewDidLoad];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+		
+	i.image = im;
+	t.text = te;
+	
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.
