@@ -232,8 +232,11 @@
 	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:6]];
 	[[CoreDataManager getCoreDataManagerInstance] addPhotoReflection:fullPath];
 	
-
+	
 	[[self navigationController] dismissModalViewControllerAnimated:YES];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your photo reflection was saved to your diary!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 	// Save image
 	//UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	
