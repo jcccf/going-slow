@@ -48,8 +48,6 @@
 		firstView.backgroundColor = [UIColor blackColor];
 		[UIView commitAnimations];
 	}
-	
-
 }
 
 /*
@@ -96,7 +94,19 @@
 	
 	// Read from Suggestions Array and Set View Items Appropriately
 	Suggestion *suggestion = [[CoreDataManager getCoreDataManagerInstance] fetchSuggestion];
-	label.text = [NSString stringWithFormat:@"%@%@", @" ", [suggestion theme]]; //HACK To space the text correctly on the screen
+	
+	// Set text and align top
+	CGSize maximumSize = CGSizeMake(270, 9999);
+    NSString *themeString = [suggestion theme];
+    UIFont *themeFont = [UIFont fontWithName:@"Helvetica" size:40];
+    CGSize themeStringSize = [themeString sizeWithFont:themeFont 
+								   constrainedToSize:maximumSize 
+									   lineBreakMode:self.label.lineBreakMode];
+    CGRect themeFrame = CGRectMake(10, 10, 270, themeStringSize.height);
+	self.label.text = themeString;
+    self.label.frame = themeFrame;
+	
+	//label.text = [NSString stringWithFormat:@"%@%@", @" ", [suggestion theme]]; //HACK To space the text correctly on the screen
 	
 	NSString *html1 = @"<div style=\"font-family: Helvetica; font-size: larger; margin: 10px;\">";
 	NSString *html2 = [suggestion moreInfo];
