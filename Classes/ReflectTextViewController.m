@@ -20,10 +20,10 @@
 }
 
 -(IBAction)saveText{
-		
+	//TODO Check for empty text
 	NSString *text = tView.text;
 	[[CoreDataManager getCoreDataManagerInstance] addTextReflection:text];
-		
+	[[self navigationController] popViewControllerAnimated:YES];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
