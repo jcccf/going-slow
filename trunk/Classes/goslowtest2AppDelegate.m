@@ -8,6 +8,7 @@
 
 #import "goslowtest2AppDelegate.h"
 #import "NotificationTime.h"
+#import "Reachability.h"
 
 @implementation goslowtest2AppDelegate
 @synthesize tabController;
@@ -22,6 +23,18 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
+
+- (void) reachabilityChanged: (NSNotification* )note
+
+{
+	
+    Reachability* curReach = [note object];
+	
+    NSParameterAssert([curReach isKindOfClass: [Reachability class]]);
+	
+    [self updateInterfaceWithReachability: curReach];
+	
+}
 -(void) setReflectionNotificationTime:(NSDate *)d{
 	[[UIApplication sharedApplication] cancelLocalNotification:reflectionNotification];
 	
@@ -42,6 +55,20 @@
     
 	NotificationTime *chooseNotificationTimes = [[NotificationTime alloc] init];
 	chooseNotificationTimes.delegateReference = self;
+	
+	
+	wifiReach = [[Reachability reachabilityForLocalWiFi] retain];
+	[wifiReach startNotifier];
+	
+	NetworkStatus netStatus = [wifiReach currentReachabilityStatus];
+	
+	if(netStatus == ReachableViaWiFi){
+		NSLog(@"Wifi connection is turned on!!");
+	}
+	else {
+		NSLog(@"NO WIFI CONNECTION!!");
+	}
+
 	
 	
     // Handle launching from a notification

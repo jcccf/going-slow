@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+@class Reachability;
+
 @interface goslowtest2AppDelegate : NSObject <UIApplicationDelegate> {
     UITabBarController *tabController;
     UIWindow *window;
@@ -22,6 +24,11 @@
 	bool isNotFirstRun;
 	
 	UILabel *labelTheme;
+	Reachability* hostReach;
+	
+    Reachability* internetReach;
+	
+    Reachability* wifiReach;
     
 @private
     NSManagedObjectContext *managedObjectContext_;
