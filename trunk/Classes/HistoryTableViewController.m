@@ -173,6 +173,7 @@
 				NSLog([NSString stringWithFormat:@"Adding text %@ to Cell %i::%i", [t reflectionText], [indexPath section], [indexPath row]]);
 				cell.textLabel.text = [[t reflectionText] substringToIndex:min];
 				cell.backgroundView = nil;
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 				keepLooping = NO;
 			}
 		}
@@ -207,6 +208,7 @@
 				//cell.backgroundView = [[UIImageView alloc] initWithImage:im];
 				cell.textLabel.text = [NSString stringWithFormat:@"Photo %i", numPhotos];
 				numPhotos++;
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 				cell.backgroundView = nil;
 				keepLooping = NO;
 			}
