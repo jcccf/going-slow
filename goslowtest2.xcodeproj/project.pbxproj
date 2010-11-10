@@ -82,6 +82,10 @@
 		DF74D6331278DA7C00E92851 /* ColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF74D62C1278DA7C00E92851 /* ColorPickerImageView.m */; };
 		DF74D6341278DA7C00E92851 /* ReflectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */; };
 		DF74D6351278DA7C00E92851 /* ReflectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */; };
+		DF7B131E128313E00029443C /* LogScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B131B128313DB0029443C /* LogScreen.m */; };
+		DF7B131F128313E00029443C /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B131D128313E00029443C /* Screen.m */; };
+		DFAB0E30128A3FCA000392F4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAB0E2F128A3FCA000392F4 /* Reachability.m */; };
+		DFAB0E5A128A4378000392F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */; };
 		DFACCC1A12790089004CE2ED /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFACCC1812790089004CE2ED /* HistoryTableViewController.m */; };
 		DFACCC1B12790089004CE2ED /* HistoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFACCC1912790089004CE2ED /* HistoryTableViewController.xib */; };
 		DFACCC491279029D004CE2ED /* HistoryReflectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFACCC471279029D004CE2ED /* HistoryReflectionViewController.m */; };
@@ -189,6 +193,13 @@
 		DF74D62D1278DA7C00E92851 /* ReflectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectTableViewController.h; sourceTree = "<group>"; };
 		DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectTableViewController.m; sourceTree = "<group>"; };
 		DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectTableViewController.xib; sourceTree = "<group>"; };
+		DF7B131A128313DA0029443C /* LogScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogScreen.h; path = ../../Downloads/Archive/LogScreen.h; sourceTree = SOURCE_ROOT; };
+		DF7B131B128313DB0029443C /* LogScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogScreen.m; path = ../../Downloads/Archive/LogScreen.m; sourceTree = SOURCE_ROOT; };
+		DF7B131C128313DC0029443C /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Screen.h; path = ../../Downloads/Archive/Screen.h; sourceTree = SOURCE_ROOT; };
+		DF7B131D128313E00029443C /* Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Screen.m; path = ../../Downloads/Archive/Screen.m; sourceTree = SOURCE_ROOT; };
+		DFAB0E2E128A3FCA000392F4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DFAB0E2F128A3FCA000392F4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DFACCC1712790089004CE2ED /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		DFACCC1812790089004CE2ED /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
 		DFACCC1912790089004CE2ED /* HistoryTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewController.xib; sourceTree = "<group>"; };
@@ -210,6 +221,7 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
 				DF74D6201278DA1600E92851 /* QuartzCore.framework in Frameworks */,
+				DFAB0E5A128A4378000392F4 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +277,8 @@
 				DFACCC461279029D004CE2ED /* HistoryReflectionViewController.h */,
 				DFACCC471279029D004CE2ED /* HistoryReflectionViewController.m */,
 				DFACCC481279029D004CE2ED /* HistoryReflectionViewController.xib */,
+				DFAB0E2E128A3FCA000392F4 /* Reachability.h */,
+				DFAB0E2F128A3FCA000392F4 /* Reachability.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -356,6 +370,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				28D801B30F44B63D00FB423F /* CoreData.framework */,
+				DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -498,6 +513,9 @@
 				DF74D6341278DA7C00E92851 /* ReflectTableViewController.m in Sources */,
 				DFACCC1A12790089004CE2ED /* HistoryTableViewController.m in Sources */,
 				DFACCC491279029D004CE2ED /* HistoryReflectionViewController.m in Sources */,
+				DF7B131E128313E00029443C /* LogScreen.m in Sources */,
+				DF7B131F128313E00029443C /* Screen.m in Sources */,
+				DFAB0E30128A3FCA000392F4 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +603,10 @@
 		2819305F112F816700ECF9B4 /* goslowtest2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DF7B131A128313DA0029443C /* LogScreen.h */,
+				DF7B131B128313DB0029443C /* LogScreen.m */,
+				DF7B131C128313DC0029443C /* Screen.h */,
+				DF7B131D128313E00029443C /* Screen.m */,
 				D00C842412656A37000DD3A9 /* Suggestion.h */,
 				0A4DC336126EAEF0008445A5 /* Reflection.h */,
 				0AEB28F41278C87E004C2629 /* ColorReflection.h */,
