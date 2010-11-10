@@ -38,7 +38,15 @@
 	if(alpha > 0){
 		[[CoreDataManager getCoreDataManagerInstance] addColorReflection:colors];
 	}
+//<<<<<<< .mine
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your color reflection was saved to your diary!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 	[[self navigationController] popViewControllerAnimated:YES];
+	
+//=======
+//	[[self navigationController] popViewControllerAnimated:YES];
+//>>>>>>> .r141
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
