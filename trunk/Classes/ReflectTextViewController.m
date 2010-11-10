@@ -23,7 +23,16 @@
 	//TODO Check for empty text
 	NSString *text = tView.text;
 	[[CoreDataManager getCoreDataManagerInstance] addTextReflection:text];
+//<<<<<<< .mine
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your text reflection was saved to your diary!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 	[[self navigationController] popViewControllerAnimated:YES];
+	tView.text = @"";
+		
+//=======
+//	[[self navigationController] popViewControllerAnimated:YES];
+//>>>>>>> .r141
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
