@@ -10,7 +10,8 @@
 
 
 @implementation HistoryTableViewController
-@synthesize histRefViewCont, dates, reflectionsToDate, textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate, reflectionsPutInTable, reflectionIndexTable;
+@synthesize histRefViewCont, dates, reflectionsToDate, reflectionsPutInTable, reflectionIndexTable;
+//@synthesize textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -27,41 +28,52 @@
 }
 
 
--(void)populateArrysAndSortDates{
+-(void)populateArraysAndSortDates{
 	dates = [[NSMutableArray alloc] init];
-	textReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"TextReflection"];
-	photoReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"PhotoReflection"];
-	colorReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"ColorReflection"];
+	reflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"Reflection"];
+//	textReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"TextReflection"];
+//	photoReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"PhotoReflection"];
+//	colorReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"ColorReflection"];
+	
+	for(Reflection *r in reflectionsToDate){
+		if(![dates containsObject:[[[r createdAt] description] substringToIndex: 10]]){	
+			[dates addObject:[[[r createdAt] description] substringToIndex: 10]];
+			NSLog([NSString stringWithFormat:@"Added Reflection %@ to date array", [[r createdAt] description]]);
+		}
+		else{
+			NSLog(@"Duplicate Reflection");
+		}
+	}
 	
 	//NSLog([NSString stringWithFormat:@"We got %i text reflections from database", [textReflectionsToDate size]]);
-	for(TextReflection *t in textReflectionsToDate){
-		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
-			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
-			NSLog([NSString stringWithFormat:@"Added Text Date %@ to date array", [[t createdAt] description]]);
-		}
-		else{
-			NSLog(@"Duplicate Date Text");
-		}
-	}
-	
-	for(ColorReflection *t in colorReflectionsToDate){
-		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
-			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
-			NSLog([NSString stringWithFormat:@"Added Color Date %@ to date array", [[t createdAt] description]]);
-		}
-		else{
-			NSLog(@"Duplicate Date Color");
-		}
-	}
-	for(PhotoReflection *t in photoReflectionsToDate){
-		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
-			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
-			NSLog([NSString stringWithFormat:@"Added Photo Date %@ to date array", [[t createdAt] description]]);
-		}
-		else{
-			NSLog(@"Duplicate Date Photo");
-		}
-	}
+//	for(TextReflection *t in textReflectionsToDate){
+//		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
+//			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
+//			NSLog([NSString stringWithFormat:@"Added Text Date %@ to date array", [[t createdAt] description]]);
+//		}
+//		else{
+//			NSLog(@"Duplicate Date Text");
+//		}
+//	}
+//	
+//	for(ColorReflection *t in colorReflectionsToDate){
+//		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
+//			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
+//			NSLog([NSString stringWithFormat:@"Added Color Date %@ to date array", [[t createdAt] description]]);
+//		}
+//		else{
+//			NSLog(@"Duplicate Date Color");
+//		}
+//	}
+//	for(PhotoReflection *t in photoReflectionsToDate){
+//		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
+//			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
+//			NSLog([NSString stringWithFormat:@"Added Photo Date %@ to date array", [[t createdAt] description]]);
+//		}
+//		else{
+//			NSLog(@"Duplicate Date Photo");
+//		}
+//	}
 	
 	NSLog(@"There are %i dates in dates", [dates count]);
 	
@@ -83,7 +95,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	
-	//[self populateArrysAndSortDates];
+	//[self populateArraysAndSortDates];
 	reflectionsPutInTable = [[NSMutableArray alloc] init];
 	reflectionIndexTable = [[NSMutableDictionary alloc] init];
 	numPhotos = 1;
@@ -116,7 +128,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-	[self populateArrysAndSortDates];
+	[self populateArraysAndSortDates];
 	NSLog([NSString stringWithFormat:@"Dates count when determining section number %i", [dates count]]);
     return [dates count];
 }
@@ -128,18 +140,23 @@
 	NSString *dateCompareString = [dates objectAtIndex:section];
 	int count = 0;
 	
-	for(TextReflection *t in textReflectionsToDate){
-		if([[[[t createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+	for(Reflection *r in reflectionsToDate){
+		if([[[[r createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
 			count++;
 	}
-	for(ColorReflection *c in colorReflectionsToDate){
-		if([[[[c createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
-			count++;
-	}
-	for(PhotoReflection *p in photoReflectionsToDate){
-		if([[[[p createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
-			count++;
-	}
+	
+//	for(TextReflection *t in textReflectionsToDate){
+//		if([[[[t createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+//			count++;
+//	}
+//	for(ColorReflection *c in colorReflectionsToDate){
+//		if([[[[c createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+//			count++;
+//	}
+//	for(PhotoReflection *p in photoReflectionsToDate){
+//		if([[[[p createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+//			count++;
+//	}
 	//This needs to be changed to the number of reflections stored on the phone to date
     return count;
 }
@@ -157,8 +174,6 @@
     }
     
 	NSString *dateCompareString = [dates objectAtIndex:[indexPath section]];
-	
-	reflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"Reflection"];
 	
 	for(Reflection *r in reflectionsToDate){
 		if(keepLooping){

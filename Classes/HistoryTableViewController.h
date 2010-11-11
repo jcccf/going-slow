@@ -15,9 +15,9 @@
 	HistoryReflectionViewController *histRefViewCont;
 	NSMutableArray *dates;
 	NSMutableArray *reflectionsToDate;
-	NSMutableArray *colorReflectionsToDate;
-	NSMutableArray *textReflectionsToDate;
-	NSMutableArray *photoReflectionsToDate;
+//	NSMutableArray *colorReflectionsToDate;
+//	NSMutableArray *textReflectionsToDate;
+//	NSMutableArray *photoReflectionsToDate;
 	NSMutableArray *reflectionsPutInTable;
 	NSMutableDictionary *reflectionIndexTable;
 	NSMutableDictionary *imageFilePathDict;
@@ -27,9 +27,9 @@
 @property(nonatomic,retain) HistoryReflectionViewController *histRefViewCont;
 @property(nonatomic,retain) NSMutableArray *dates;
 @property(nonatomic,retain) NSMutableArray *reflectionsToDate;
-@property(nonatomic,retain) NSMutableArray *colorReflectionsToDate;
-@property(nonatomic,retain) NSMutableArray *textReflectionsToDate;
-@property(nonatomic,retain) NSMutableArray *photoReflectionsToDate;
+//@property(nonatomic,retain) NSMutableArray *colorReflectionsToDate;
+//@property(nonatomic,retain) NSMutableArray *textReflectionsToDate;
+//@property(nonatomic,retain) NSMutableArray *photoReflectionsToDate;
 @property(nonatomic,retain) NSMutableArray *reflectionsPutInTable;
 @property(nonatomic,retain) NSMutableDictionary *reflectionIndexTable;
 @property(nonatomic,retain) NSMutableDictionary *imageFilePathDict;
