@@ -14,6 +14,5 @@
 @dynamic colorRed;
 @dynamic colorGreen;
 @dynamic colorBlue;
-@dynamic createdAt;
 
 @end

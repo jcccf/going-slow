@@ -147,17 +147,23 @@
 	[[CoreDataManager getCoreDataManagerInstance] saveChanges];
 	
 	//TEST
-	NSMutableArray *textReflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"TextReflection"];
-	for (TextReflection *tr in textReflections) {
-		NSLog(@"Text: %@", [tr reflectionText]);
-	}
+//	NSMutableArray *textReflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"TextReflection"];
+//	for (TextReflection *tr in textReflections) {
+//		NSLog(@"Text: %@", [tr reflectionText]);
+//	}
+//	
+//	NSMutableArray *colorReflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"ColorReflection"];
+//	for (ColorReflection *cr in colorReflections) {
+//		NSLog(@"Red: %@", [cr colorRed]);
+//		NSLog(@"Green: %@", [cr colorGreen]);
+//		NSLog(@"Blue: %@", [cr colorBlue]);
+//		NSLog(@"Created At: %@", [cr createdAt]);
+//	}
 	
-	NSMutableArray *colorReflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"ColorReflection"];
-	for (ColorReflection *cr in colorReflections) {
-		NSLog(@"Red: %@", [cr colorRed]);
-		NSLog(@"Green: %@", [cr colorGreen]);
-		NSLog(@"Blue: %@", [cr colorBlue]);
-		NSLog(@"Created At: %@", [cr createdAt]);
+	NSMutableArray *reflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"Reflection"];
+	for (Reflection	*r in reflections) {
+		NSLog(@"Class: %@", [r class]);
+		NSLog(@"Created At: %@", [r createdAt]);
 	}
 	
 }

@@ -12,6 +12,5 @@
 @implementation PhotoReflection
 
 @dynamic filepath;
-@dynamic createdAt;
 
 @end
