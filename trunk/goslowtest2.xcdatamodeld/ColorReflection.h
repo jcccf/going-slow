@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Reflection.h"
 
-
-@interface ColorReflection : NSManagedObject {
+@interface ColorReflection : Reflection {
 	
 }
 
 @property (nonatomic, retain) NSNumber *colorRed;
 @property (nonatomic, retain) NSNumber *colorGreen;
 @property (nonatomic, retain) NSNumber *colorBlue;
-@property (nonatomic, retain) NSDate *createdAt;
 @end

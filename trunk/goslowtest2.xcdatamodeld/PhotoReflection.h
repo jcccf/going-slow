@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Reflection.h"
 
-
-@interface PhotoReflection : NSManagedObject {
+@interface PhotoReflection : Reflection {
 	
 }
 
 @property (nonatomic,retain) NSString *filepath;
-@property (nonatomic,retain) NSDate *createdAt;
 @end

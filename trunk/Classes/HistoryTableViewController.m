@@ -10,7 +10,7 @@
 
 
 @implementation HistoryTableViewController
-@synthesize histRefViewCont, dates, textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate, reflectionsPutInTable, reflectionIndexTable;
+@synthesize histRefViewCont, dates, reflectionsToDate, textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate, reflectionsPutInTable, reflectionIndexTable;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -32,7 +32,6 @@
 	textReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"TextReflection"];
 	photoReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"PhotoReflection"];
 	colorReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"ColorReflection"];
-	
 	
 	//NSLog([NSString stringWithFormat:@"We got %i text reflections from database", [textReflectionsToDate size]]);
 	for(TextReflection *t in textReflectionsToDate){
@@ -159,61 +158,110 @@
     
 	NSString *dateCompareString = [dates objectAtIndex:[indexPath section]];
 	
-
-	for(TextReflection *t in textReflectionsToDate){
+	reflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"Reflection"];
+	
+	for(Reflection *r in reflectionsToDate){
 		if(keepLooping){
-		if([[[[t createdAt] description] substringToIndex :10] isEqualToString:dateCompareString]){
-			if(![reflectionsPutInTable containsObject:t]){
-				[reflectionsPutInTable addObject:t];
-				[reflectionIndexTable setObject:t forKey:indexPath];
-				int min = [[t reflectionText] length];
-						   if(min >= 30){
-							   min = 30;   
-						   }
-				NSLog([NSString stringWithFormat:@"Adding text %@ to Cell %i::%i", [t reflectionText], [indexPath section], [indexPath row]]);
-				cell.textLabel.text = [[t reflectionText] substringToIndex:min];
-				cell.backgroundView = nil;
-				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-				keepLooping = NO;
+			if([[[[r createdAt] description] substringToIndex :10] isEqualToString:dateCompareString]){
+				if(![reflectionsPutInTable containsObject:r]){
+					[reflectionsPutInTable addObject:r];
+					[reflectionIndexTable setObject:r forKey:indexPath];
+					
+					if ([r class] == [TextReflection class]) {
+						
+						TextReflection *t = (TextReflection *) r;
+						
+						int min = [[t reflectionText] length];
+						if(min >= 30){
+							min = 30;   
+						}
+						NSLog([NSString stringWithFormat:@"Adding text %@ to Cell %i::%i", [t reflectionText], [indexPath section], [indexPath row]]);
+						cell.textLabel.text = [[t reflectionText] substringToIndex:min];
+						cell.backgroundView = nil;
+						cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+						keepLooping = NO;						
+						
+						
+					}
+					else if ([r class] == [ColorReflection class]) {
+						ColorReflection *c = (ColorReflection*) r;
+						keepLooping = NO;
+						UIView *vi = [[UIView alloc] init];
+						cell.selectionStyle = UITableViewCellSelectionStyleNone;
+						cell.text = @"";
+						vi.backgroundColor = [UIColor colorWithRed:[[c colorRed]floatValue] green:[[c colorGreen]floatValue] blue:[[c colorBlue]floatValue] alpha:1];
+						cell.backgroundView = vi;		
+						
+					}
+					
+					else if([r class] == [PhotoReflection class]) {
+						cell.textLabel.text = [NSString stringWithFormat:@"Photo %i", numPhotos];
+						numPhotos++;
+						cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+						cell.backgroundView = nil;
+						keepLooping = NO;
+					}
+					
+				}
 			}
-		}
 		}
 	}
 	
 
-	for(ColorReflection *c in colorReflectionsToDate){
-		if(keepLooping){
-		if([[[[c createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
-			if(![reflectionsPutInTable containsObject:c]){
-				[reflectionsPutInTable addObject:c];
-				[reflectionIndexTable setObject:c forKey:indexPath];
-				//cell.textLabel.text = [[c reflectionText] substringToIndex:15];
-				keepLooping = NO;
-				UIView *vi = [[UIView alloc] init];
-				cell.selectionStyle = UITableViewCellSelectionStyleNone;
-				cell.text = @"";
-				vi.backgroundColor = [UIColor colorWithRed:[[c colorRed]floatValue] green:[[c colorGreen]floatValue] blue:[[c colorBlue]floatValue] alpha:1];
-				cell.backgroundView = vi;		
-			}}
-	}
-	
-
-	for(PhotoReflection *p in photoReflectionsToDate){
-		if(keepLooping){
-		if([[[[p createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
-			if(![reflectionsPutInTable containsObject:p]){
-				[reflectionsPutInTable addObject:p];
-				[reflectionIndexTable setObject:p forKey:indexPath];
-				//UIImage *im = [UIImage imageWithContentsOfFile:[p filepath]];
-				//cell.backgroundView = [[UIImageView alloc] initWithImage:im];
-				cell.textLabel.text = [NSString stringWithFormat:@"Photo %i", numPhotos];
-				numPhotos++;
-				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-				cell.backgroundView = nil;
-				keepLooping = NO;
-			}
-		}
-	}
+//	for(TextReflection *t in textReflectionsToDate){
+//		if(keepLooping){
+//		if([[[[t createdAt] description] substringToIndex :10] isEqualToString:dateCompareString]){
+//			if(![reflectionsPutInTable containsObject:t]){
+//				[reflectionsPutInTable addObject:t];
+//				[reflectionIndexTable setObject:t forKey:indexPath];
+//				int min = [[t reflectionText] length];
+//						   if(min >= 30){
+//							   min = 30;   
+//						   }
+//				NSLog([NSString stringWithFormat:@"Adding text %@ to Cell %i::%i", [t reflectionText], [indexPath section], [indexPath row]]);
+//				cell.textLabel.text = [[t reflectionText] substringToIndex:min];
+//				cell.backgroundView = nil;
+//				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+//				keepLooping = NO;
+//			}
+//		}
+//		}
+//	}
+//	
+//
+//	for(ColorReflection *c in colorReflectionsToDate){
+//		if(keepLooping){
+//		if([[[[c createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+//			if(![reflectionsPutInTable containsObject:c]){
+//				[reflectionsPutInTable addObject:c];
+//				[reflectionIndexTable setObject:c forKey:indexPath];
+//				//cell.textLabel.text = [[c reflectionText] substringToIndex:15];
+//				keepLooping = NO;
+//				UIView *vi = [[UIView alloc] init];
+//				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//				cell.text = @"";
+//				vi.backgroundColor = [UIColor colorWithRed:[[c colorRed]floatValue] green:[[c colorGreen]floatValue] blue:[[c colorBlue]floatValue] alpha:1];
+//				cell.backgroundView = vi;		
+//			}}
+//	}
+//	
+//
+//	for(PhotoReflection *p in photoReflectionsToDate){
+//		if(keepLooping){
+//		if([[[[p createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
+//			if(![reflectionsPutInTable containsObject:p]){
+//				[reflectionsPutInTable addObject:p];
+//				[reflectionIndexTable setObject:p forKey:indexPath];
+//				//UIImage *im = [UIImage imageWithContentsOfFile:[p filepath]];
+//				//cell.backgroundView = [[UIImageView alloc] initWithImage:im];
+//				cell.textLabel.text = [NSString stringWithFormat:@"Photo %i", numPhotos];
+//				numPhotos++;
+//				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+//				cell.backgroundView = nil;
+//				keepLooping = NO;
+//			}
+//		}
+//	}
 	
 	//cell.accessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 	cell.textLabel.textAlignment = UITextAlignmentLeft;

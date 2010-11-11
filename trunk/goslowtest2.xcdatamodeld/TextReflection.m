@@ -12,6 +12,5 @@
 @implementation TextReflection
 
 @dynamic reflectionText;
-@dynamic createdAt;
 
 @end

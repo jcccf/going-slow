@@ -12,11 +12,5 @@
 @interface Reflection : NSManagedObject {
 	
 }
-
-@property (nonatomic,retain) NSString *reflectionPicturePath;
-@property (nonatomic) int colorDayRed;
-@property (nonatomic) int colorDayGreen;
-@property (nonatomic) int colorDayBlue;
-@property (nonatomic,retain) NSString *reflectionText;
-@property (nonatomic,retain) NSDate *timeStamp;
+@property (nonatomic,retain) NSDate *createdAt;
 @end

@@ -11,11 +11,6 @@
 
 @implementation Reflection
 
-@dynamic reflectionPicturePath;
-@dynamic colorDayRed;
-@dynamic colorDayGreen;
-@dynamic colorDayBlue;
-@dynamic reflectionText;
-@dynamic timeStamp;
+@dynamic createdAt;
 
 @end

@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Reflection.h"
 
-
-@interface TextReflection : NSManagedObject {
+@interface TextReflection : Reflection {
 	
 }
 
 @property (nonatomic,retain) NSString *reflectionText;
-@property (nonatomic,retain) NSDate *createdAt;
 @end
