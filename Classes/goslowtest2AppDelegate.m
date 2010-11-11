@@ -101,15 +101,15 @@
 		isNotFirstRun = YES;
 	}
 	    
-	if(isNotFirstRun){
+	if(!isNotFirstRun){
 		//tabController.view.hidden = YES;
-	   [window addSubview:tabController.view];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Setup" message:@"Go to the Setup Screen to update your notification times" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+		[alert show];
+		[alert release];
 		
 	}
-	else {
-		[window addSubview:chooseNotificationTimes.view];
-	}
 
+       [window addSubview:tabController.view];
 	   [window makeKeyAndVisible];
 	
 	

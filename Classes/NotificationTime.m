@@ -31,7 +31,7 @@
 
 
 -(IBAction)goToHomeScreen:(id)sender{
-	[self.view removeFromSuperview];
+	//[self.view removeFromSuperview];
 	
 	UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
 	UILocalNotification *localNotifEvening = [[UILocalNotification alloc] init];
@@ -83,8 +83,10 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
     [localNotif release];*/
 	
-
-	[delegateReference.window addSubview:delegateReference.tabController.view];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your notifications times have been updated" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
+	//[delegateReference.window addSubview:delegateReference.tabController.view];
 	
 }
 
