@@ -50,6 +50,12 @@
 	
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+	if(buttonIndex == 1){
+		tabController.selectedIndex = 3;
+	}
+	
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
@@ -103,8 +109,9 @@
 	    
 	if(!isNotFirstRun){
 		//tabController.view.hidden = YES;
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Setup" message:@"Go to the Setup Screen to update your notification times" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Setup" message:@"Go to the Setup Screen to update your notification times" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Setup",nil];
 		[alert show];
+		alert.delegate = self;
 		[alert release];
 		
 	}
