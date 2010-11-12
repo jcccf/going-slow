@@ -11,7 +11,7 @@
 
 @implementation ReflectTableViewController
 
-@synthesize reflectCameraViewController, reflectTextViewController;
+@synthesize reflectCameraViewController, reflectTextViewController, savedLabel;
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -22,7 +22,6 @@
 	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 	self.navigationItem.backBarButtonItem = backButton;
 	[backButton release];
-	
 	coreDataManager = [CoreDataManager getCoreDataManagerInstance];
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -275,6 +274,7 @@
 {
 	if(reflectColorViewController == nil){
 		reflectColorViewController = [[ReflectColorViewController alloc] initWithNibName:@"ReflectColorViewController" bundle:nil];
+		reflectColorViewController.rtv = self;
 	}
 	[[self navigationController] pushViewController:reflectColorViewController animated:YES];
 }
@@ -312,6 +312,19 @@
 - (void)dealloc {
 	[coreDataManager release];
     [super dealloc];
+}
+
+- (void)setSaveText:(NSString *)s {
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:0.5f];
+	savedLabel.text = s;
+	savedLabel.alpha = 1.0f;
+	[UIView commitAnimations];
+	/*[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:1.5f];
+	savedLabel.text = s;
+	savedLabel.alpha = 0.0f;
+	[UIView commitAnimations];*/
 }
 
 
