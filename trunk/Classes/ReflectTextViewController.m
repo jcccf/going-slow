@@ -7,6 +7,9 @@
 //
 
 #import "ReflectTextViewController.h"
+#import "SyncManager.h"
+#include <unistd.h>
+
 
 
 @implementation ReflectTextViewController
@@ -23,11 +26,16 @@
 	//TODO Check for empty text
 	NSString *text = tView.text;
 	[[CoreDataManager getCoreDataManagerInstance] addTextReflection:text];
+	
+	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:text];
+	[[SyncManager getSyncManagerInstance] syncData];
+	
 //<<<<<<< .mine
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your text reflection was saved to your diary!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your text reflection was saved to your diary!" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
 	[alert show];
 	[alert release];
 	[[self navigationController] popViewControllerAnimated:YES];
+	[alert dismissWithClickedButtonIndex:0 animated:YES];
 	tView.text = @"";
 		
 //=======

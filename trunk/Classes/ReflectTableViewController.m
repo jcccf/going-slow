@@ -7,6 +7,7 @@
 //
 
 #import "ReflectTableViewController.h"
+#import "SyncManager.h"
 
 
 @implementation ReflectTableViewController
@@ -211,6 +212,11 @@
 	// Access the uncropped image from info dictionary
 	UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 	
+	//save image to syncdatamanager
+	
+	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:image];
+	[[SyncManager getSyncManagerInstance] syncData];
+	
 	//Save image to disk
 	
 	NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(image, 0.25f)];
@@ -269,6 +275,7 @@
 	}
 	[[self navigationController] pushViewController:reflectTextViewController animated:YES];
 }
+
 
 -(void)goToColor
 {

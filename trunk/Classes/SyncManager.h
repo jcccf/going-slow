@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Reflection.h"
 
+@class Reachability;
 
 @interface SyncManager : NSObject {
 	int userId;
 	NSMutableArray *bufferedReflections;
+	Reachability* wifiReach;
 }
 
 @property (nonatomic,retain) NSMutableArray *bufferedReflections;

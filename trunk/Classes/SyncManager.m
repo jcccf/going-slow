@@ -7,6 +7,7 @@
 //
 
 #import "SyncManager.h"
+#import "Reachability.h"
 
 // Posting constants
 #define NOTIFY_AND_LEAVE(X) {[self cleanup:X]; return;}
@@ -25,6 +26,7 @@ static SyncManager *sharedInstance = nil;
 	@synchronized(self){
 		if(sharedInstance == nil){
 			sharedInstance = [[self alloc] init];
+			sharedInstance.bufferedReflections = [[[NSMutableArray alloc] init] retain];
 		}
 	}
 	return sharedInstance;
@@ -164,6 +166,43 @@ static SyncManager *sharedInstance = nil;
 	// 2. Pass it the user id of this device
 	// 3. Call the appropriate buffer functions
 	// 4. Call syncData whenever we can
+	
+	
+	wifiReach = [[Reachability reachabilityForLocalWiFi] retain];
+	[wifiReach startNotifier];
+	
+	NetworkStatus netStatus = [wifiReach currentReachabilityStatus];
+	
+	[self setUserId:1];
+	if(netStatus == ReachableViaWiFi){
+		NSLog(@"Wifi connection is turned on!!");
+		NSLog(@"Syncing Data");
+		NSMutableArray *ar = [[SyncManager getSyncManagerInstance] bufferedReflections];
+		for(NSObject* o in ar){
+			NSLog(@"Syncing object...");
+			if([o isKindOfClass:[NSString class]]){
+				NSString *s = (NSString*)o;
+				[self bufferTextReflection:s];
+			}
+			if([o isKindOfClass:[NSArray class]]){
+				NSArray *d = (NSArray*)o;
+				//int r = (int)((float)(*([d objectAtIndex:0])*255);
+				//[self bufferColorReflectionWithRed:r andGreen:g andBlue:b];
+			}
+			if([o isKindOfClass:[UIImage class]]){
+				UIImage *i = (UIImage*)o;
+				[self bufferPhotoReflection:i];
+			}
+		}
+			
+	}
+		
+	else {
+		NSLog(@"NO WIFI CONNECTION!!");
+		
+	}
+	
+	
 }
 
 - (void) cleanup: (NSString *) output
