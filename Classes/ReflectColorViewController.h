@@ -10,6 +10,8 @@
 #import "ColorPickerImageView.h"
 #import "CoreDataManager.h"
 
+@class ReflectTableViewController;
+
 @interface ReflectColorViewController : UIViewController {
 
 	//UINavigationItem *navigationItem;
@@ -18,11 +20,12 @@
 	ColorPickerImageView* colorWheel;
 	UIButton* tapMeButton;
 	UIButton* colorButton;
-	
+	ReflectTableViewController* rtv;
 }
+
 //@property (nonatomic,retain) IBOutlet UINavigationItem *navigationItem;
 @property (nonatomic,retain) IBOutlet UIBarButtonItem *saveButton;
-
+@property (nonatomic,retain) ReflectTableViewController* rtv;
 @property (nonatomic,retain) IBOutlet ColorPickerImageView* colorWheel;
 @property (nonatomic,retain) IBOutlet UIButton* tapMeButton;
 @property (nonatomic,retain) IBOutlet UIButton* colorButton;

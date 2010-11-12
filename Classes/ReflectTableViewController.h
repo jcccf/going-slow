@@ -18,9 +18,13 @@
 	UIImagePickerController *reflectCameraViewController;
 	ReflectTextViewController *reflectTextViewController;
 	CoreDataManager *coreDataManager;
+	UILabel* savedLabel;
 }
 
 -(void)storeReflection:(Reflection *)r;
+-(void)setSaveText:(NSString *)s;
+
+@property (nonatomic,retain) IBOutlet UILabel* savedLabel;
 
 @property (nonatomic,retain) UIImagePickerController *reflectCameraViewController;
 @property (nonatomic,retain) ReflectTextViewController *reflectTextViewController;
