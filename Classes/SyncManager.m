@@ -183,6 +183,7 @@ static SyncManager *sharedInstance = nil;
 			if([o isKindOfClass:[NSString class]]){
 				NSString *s = (NSString*)o;
 				[self bufferTextReflection:s];
+				[ar removeObject:o];
 			}
 			if([o isKindOfClass:[NSArray class]]){
 				NSArray *d = (NSArray*)o;
