@@ -11,7 +11,7 @@
 
 @implementation Screen1ViewController
 
-@synthesize label;
+@synthesize label, labelBack;
 @synthesize imageViewPicture;
 @synthesize infoButton;
 
@@ -29,6 +29,7 @@
 		imageViewPicture.hidden = true;
 		backText.hidden = false;
 		label.hidden = true;
+		labelBack.hidden = true;
 		infoButton.hidden = true;
 		switchText = 1;
 		firstView.backgroundColor = [UIColor whiteColor];
@@ -42,6 +43,7 @@
 							   forView:self.view cache:YES];
 		backText.hidden = true;
 		label.hidden = false;
+		labelBack.hidden = false;
 		imageViewPicture.hidden = false;
 		infoButton.hidden = false;
 		switchText = 0;
@@ -105,6 +107,8 @@
     CGRect themeFrame = CGRectMake(10, 10, 270, themeStringSize.height);
 	self.label.text = themeString;
     self.label.frame = themeFrame;
+	CGRect themeFrameBack = CGRectMake(0, 0, 320, themeStringSize.height + 20);
+	self.labelBack.frame = themeFrameBack;
 	
 	//label.text = [NSString stringWithFormat:@"%@%@", @" ", [suggestion theme]]; //HACK To space the text correctly on the screen
 	

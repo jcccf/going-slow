@@ -43,6 +43,9 @@
 		1082E6241278DC3100A7701A /* CameraReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1082E6211278DC3100A7701A /* CameraReflect.png */; };
 		1082E6251278DC3100A7701A /* ColorReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1082E6221278DC3100A7701A /* ColorReflect.png */; };
 		1082E6261278DC3100A7701A /* TextReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1082E6231278DC3100A7701A /* TextReflect.png */; };
+		10BFF65C128DAC7D00B58E2C /* LogScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BFF659128DAC7D00B58E2C /* LogScreen.m */; };
+		10BFF65D128DAC7D00B58E2C /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BFF65B128DAC7D00B58E2C /* Screen.m */; };
+		10BFF661128DACF300B58E2C /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10BFF660128DACF300B58E2C /* 19-gear.png */; };
 		1D3623260D0F684500981E51 /* goslowtest2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* goslowtest2AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -82,8 +85,6 @@
 		DF74D6331278DA7C00E92851 /* ColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF74D62C1278DA7C00E92851 /* ColorPickerImageView.m */; };
 		DF74D6341278DA7C00E92851 /* ReflectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */; };
 		DF74D6351278DA7C00E92851 /* ReflectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */; };
-		DF7B131E128313E00029443C /* LogScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B131B128313DB0029443C /* LogScreen.m */; };
-		DF7B131F128313E00029443C /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B131D128313E00029443C /* Screen.m */; };
 		DFAB0E30128A3FCA000392F4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAB0E2F128A3FCA000392F4 /* Reachability.m */; };
 		DFAB0E5A128A4378000392F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */; };
 		DFACCC1A12790089004CE2ED /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFACCC1812790089004CE2ED /* HistoryTableViewController.m */; };
@@ -146,6 +147,11 @@
 		1082E6211278DC3100A7701A /* CameraReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CameraReflect.png; sourceTree = "<group>"; };
 		1082E6221278DC3100A7701A /* ColorReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColorReflect.png; sourceTree = "<group>"; };
 		1082E6231278DC3100A7701A /* TextReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextReflect.png; sourceTree = "<group>"; };
+		10BFF658128DAC7D00B58E2C /* LogScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogScreen.h; path = Classes/LogScreen.h; sourceTree = "<group>"; };
+		10BFF659128DAC7D00B58E2C /* LogScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogScreen.m; path = Classes/LogScreen.m; sourceTree = "<group>"; };
+		10BFF65A128DAC7D00B58E2C /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Screen.h; path = Classes/Screen.h; sourceTree = "<group>"; };
+		10BFF65B128DAC7D00B58E2C /* Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Screen.m; path = Classes/Screen.m; sourceTree = "<group>"; };
+		10BFF660128DACF300B58E2C /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* goslowtest2AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goslowtest2AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* goslowtest2AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = goslowtest2AppDelegate.m; sourceTree = "<group>"; };
@@ -193,10 +199,6 @@
 		DF74D62D1278DA7C00E92851 /* ReflectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectTableViewController.h; sourceTree = "<group>"; };
 		DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectTableViewController.m; sourceTree = "<group>"; };
 		DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectTableViewController.xib; sourceTree = "<group>"; };
-		DF7B131A128313DA0029443C /* LogScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogScreen.h; path = ../../Downloads/Archive/LogScreen.h; sourceTree = SOURCE_ROOT; };
-		DF7B131B128313DB0029443C /* LogScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogScreen.m; path = ../../Downloads/Archive/LogScreen.m; sourceTree = SOURCE_ROOT; };
-		DF7B131C128313DC0029443C /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Screen.h; path = ../../Downloads/Archive/Screen.h; sourceTree = SOURCE_ROOT; };
-		DF7B131D128313E00029443C /* Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Screen.m; path = ../../Downloads/Archive/Screen.m; sourceTree = SOURCE_ROOT; };
 		DFAB0E2E128A3FCA000392F4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		DFAB0E2F128A3FCA000392F4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -317,6 +319,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10BFF660128DACF300B58E2C /* 19-gear.png */,
+				10BFF658128DAC7D00B58E2C /* LogScreen.h */,
+				10BFF659128DAC7D00B58E2C /* LogScreen.m */,
+				10BFF65A128DAC7D00B58E2C /* Screen.h */,
+				10BFF65B128DAC7D00B58E2C /* Screen.m */,
 				1050BEBF127BA4D9001C5640 /* icon_digital_camera2.png */,
 				1050BEB7127BA330001C5640 /* icon_color_wheel.png */,
 				1050BEB8127BA330001C5640 /* icon_digital_camera.png */,
@@ -478,6 +485,7 @@
 				1050BEBB127BA330001C5640 /* icon_digital_camera.png in Resources */,
 				1050BEBC127BA330001C5640 /* icon_document_pen.png in Resources */,
 				1050BEC0127BA4D9001C5640 /* icon_digital_camera2.png in Resources */,
+				10BFF661128DACF300B58E2C /* 19-gear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,9 +521,9 @@
 				DF74D6341278DA7C00E92851 /* ReflectTableViewController.m in Sources */,
 				DFACCC1A12790089004CE2ED /* HistoryTableViewController.m in Sources */,
 				DFACCC491279029D004CE2ED /* HistoryReflectionViewController.m in Sources */,
-				DF7B131E128313E00029443C /* LogScreen.m in Sources */,
-				DF7B131F128313E00029443C /* Screen.m in Sources */,
 				DFAB0E30128A3FCA000392F4 /* Reachability.m in Sources */,
+				10BFF65C128DAC7D00B58E2C /* LogScreen.m in Sources */,
+				10BFF65D128DAC7D00B58E2C /* Screen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,10 +611,6 @@
 		2819305F112F816700ECF9B4 /* goslowtest2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DF7B131A128313DA0029443C /* LogScreen.h */,
-				DF7B131B128313DB0029443C /* LogScreen.m */,
-				DF7B131C128313DC0029443C /* Screen.h */,
-				DF7B131D128313E00029443C /* Screen.m */,
 				D00C842412656A37000DD3A9 /* Suggestion.h */,
 				0A4DC336126EAEF0008445A5 /* Reflection.h */,
 				0AEB28F41278C87E004C2629 /* ColorReflection.h */,

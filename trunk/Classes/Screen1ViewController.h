@@ -22,12 +22,14 @@
 	UIImage *currentImageText;
 	UIView *firstView;
 	NSMutableArray *suggestionsArray;
+	UILabel *labelBack;
 	int switchText;
 	
 	bool isNotFirstRun;
 	
 }
 
+@property (nonatomic, retain) IBOutlet UILabel *labelBack;
 @property (nonatomic, retain) IBOutlet UILabel *label;
 @property (nonatomic, retain) IBOutlet UIWebView *backText;
 @property (nonatomic, retain) IBOutlet UIImageView *imageViewPicture;
