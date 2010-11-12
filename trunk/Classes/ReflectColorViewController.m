@@ -12,7 +12,7 @@
 
 
 @implementation ReflectColorViewController
-@synthesize saveButton, colorWheel, tapMeButton, colorButton;
+@synthesize saveButton, colorWheel, tapMeButton, colorButton, rtv;
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -38,15 +38,12 @@
 	if(alpha > 0){
 		[[CoreDataManager getCoreDataManagerInstance] addColorReflection:colors];
 	}
-//<<<<<<< .mine
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your color reflection was saved to your diary!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-	[alert show];
-	[alert release];
-	[[self navigationController] popViewControllerAnimated:YES];
 	
-//=======
-//	[[self navigationController] popViewControllerAnimated:YES];
-//>>>>>>> .r141
+	//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your color reflection was saved to your diary!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	//[alert show];
+	//[alert release];
+	[[self navigationController] popViewControllerAnimated:YES];
+	[rtv setSaveText:@"Saved Color!"];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
