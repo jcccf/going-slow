@@ -76,16 +76,13 @@ static SyncManager *sharedInstance = nil;
 	return [NSString stringWithFormat: @"%d", userId];
 }
 
--(NSString*)getIntAsString:(int)i{
-	return [NSString stringWithFormat: @"%d", i];
-}
-
--(void) bufferTextReflection:(NSString *)text{
+-(void) sendTextReflection:(NSString *)text{
 	NSLog(@"Buffering Text Reflection");
 	assert(text != nil);
 	NSMutableDictionary* post_dict = [[NSMutableDictionary alloc] init];
     [post_dict setObject:text forKey:@"text_reflection[text]"];
-	[post_dict setObject:[self getUserIdAsString] forKey:@"text_reflection[user_id]"];
+	[post_dict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"text_reflection[udid]"];
+	//[post_dict setObject:[self getUserIdAsString] forKey:@"text_reflection[user_id]"];
 	NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
 	[post_dict release];
 	
@@ -104,13 +101,13 @@ static SyncManager *sharedInstance = nil;
 	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
 }
 
--(void) bufferPhotoReflection:(UIImage *)image{
+-(void) sendPhotoReflection:(UIImage *)image{
 	NSLog(@"Buffering Photo Reflection");
 	assert(image != nil);
 	NSMutableDictionary* post_dict = [[NSMutableDictionary alloc] init];
 	[post_dict setObject:UIImageJPEGRepresentation(image, 0.75f) forKey:@"photo_reflection[uploaded_picture]"];
-	[post_dict setObject:[self getUserIdAsString] forKey:@"photo_reflection[user_id]"];
-    NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
+	[post_dict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"photo_reflection[udid]"];
+	NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
 	[post_dict release];
 	
 	// Establish the API request. Use upload vs uploadAndPost for skip tweet
@@ -128,16 +125,13 @@ static SyncManager *sharedInstance = nil;
 	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
 }
 
--(void) bufferColorReflectionWithRed:(int)r andGreen:(int)g andBlue:(int)b{
+-(void) sendColorReflectionWithRed:(NSNumber*)r andGreen:(NSNumber*)g andBlue:(NSNumber*)b{
 	NSLog(@"Buffering Color Reflection");
-	assert(r >= 0 && r <=255);
-	assert(g >= 0 && g <=255);
-	assert(b >= 0 && b <=255);
 	NSMutableDictionary* post_dict = [[NSMutableDictionary alloc] init];
-    [post_dict setObject:[self getIntAsString:r] forKey:@"color_reflection[red]"];
-	[post_dict setObject:[self getIntAsString:g] forKey:@"color_reflection[blue]"];
-	[post_dict setObject:[self getIntAsString:b] forKey:@"color_reflection[green]"];
-	[post_dict setObject:[self getUserIdAsString] forKey:@"color_reflection[user_id]"];
+    [post_dict setObject:[r stringValue] forKey:@"color_reflection[red]"];
+	[post_dict setObject:[g stringValue] forKey:@"color_reflection[green]"];
+	[post_dict setObject:[b stringValue] forKey:@"color_reflection[blue]"];
+	[post_dict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"color_reflection[udid]"];
 	NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
 	[post_dict release];
 	
@@ -156,24 +150,67 @@ static SyncManager *sharedInstance = nil;
 	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
 }
 
--(void)syncData{
-	// TODO
-	// So we would most likely want to buffer urlRequest objects in an array
-	// And only when we have an internet connection (WiFi only), we execute all the urlRequests
-	// All the requests above are asynchronous, i.e. they automatically create an upload thread.
-	// And how to use this class:
-	// 1. Get the singleton instance
-	// 2. Pass it the user id of this device
-	// 3. Call the appropriate buffer functions
-	// 4. Call syncData whenever we can
+-(void) sendDailySuggestion:(int)i andTime:(NSString *)timestamp{
+	assert([timestamp length] == 19); //Timestamps must be in yyyy-mm-dd hh:mm:ss format
+	NSLog(@"Buffering Daily Suggestion");
+	NSMutableDictionary* post_dict = [[NSMutableDictionary alloc] init];
+    [post_dict setObject:[NSString stringWithFormat: @"%d", i] forKey:@"daily_suggestion[suggestion_id]"];
+	[post_dict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"daily_suggestion[udid]"];
+	[post_dict setObject:timestamp forKey:@"daily_suggestion[time_entered]"];
+	NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
+	[post_dict release];
 	
+	// Establish the API request. Use upload vs uploadAndPost for skip tweet
+    NSString *baseurl = @"http://wl58-rails.cac.cornell.edu/app/daily_suggestions"; 
+    NSURL *url = [NSURL URLWithString:baseurl];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    if (!urlRequest) NOTIFY_AND_LEAVE(@"Error creating the URL Request");
+	
+    [urlRequest setHTTPMethod: @"POST"];
+	[urlRequest setValue:MULTIPART forHTTPHeaderField: @"Content-Type"];
+    [urlRequest setHTTPBody:postData];
+	
+	// Submit & retrieve results
+	NSLog(@"Contacting Rails....");
+	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+}
+
+-(void) sendLogScreen:(int)screen_id andTime:(NSString *)timestamp{
+	assert([timestamp length] == 19); //Timestamps must be in yyyy-mm-dd hh:mm:ss format
+	NSLog(@"Sending Log Screen");
+	NSMutableDictionary* post_dict = [[NSMutableDictionary alloc] init];
+    [post_dict setObject:[NSString stringWithFormat: @"%d", screen_id] forKey:@"log_screen[screen_id]"];
+	[post_dict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"log_screen[udid]"];
+	[post_dict setObject:timestamp forKey:@"log_screen[time_entered]"];
+	NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
+	[post_dict release];
+	
+	// Establish the API request. Use upload vs uploadAndPost for skip tweet
+    NSString *baseurl = @"http://wl58-rails.cac.cornell.edu/app/log_screens"; 
+    NSURL *url = [NSURL URLWithString:baseurl];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    if (!urlRequest) NOTIFY_AND_LEAVE(@"Error creating the URL Request");
+	
+    [urlRequest setHTTPMethod: @"POST"];
+	[urlRequest setValue:MULTIPART forHTTPHeaderField: @"Content-Type"];
+    [urlRequest setHTTPBody:postData];
+	
+	// Submit & retrieve results
+	NSLog(@"Contacting Rails....");
+	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+}
+
+-(void)syncData{
+	
+	// TODO Ensure that buffered stuff is preserved even when you exit the application
+	
+	// TODO Sync Log Screens and Suggestion of the Day
 	
 	wifiReach = [[Reachability reachabilityForLocalWiFi] retain];
 	[wifiReach startNotifier];
 	
 	NetworkStatus netStatus = [wifiReach currentReachabilityStatus];
 	
-	[self setUserId:1];
 	if(netStatus == ReachableViaWiFi){
 		NSLog(@"Wifi connection is turned on!!");
 		NSLog(@"Syncing Data");
@@ -182,17 +219,19 @@ static SyncManager *sharedInstance = nil;
 			NSLog(@"Syncing object...");
 			if([o isKindOfClass:[NSString class]]){
 				NSString *s = (NSString*)o;
-				[self bufferTextReflection:s];
+				[self sendTextReflection:s];
 				[ar removeObject:o];
 			}
 			if([o isKindOfClass:[NSArray class]]){
 				NSArray *d = (NSArray*)o;
-				//int r = (int)((float)(*([d objectAtIndex:0])*255);
-				//[self bufferColorReflectionWithRed:r andGreen:g andBlue:b];
+				NSNumber* r = [d objectAtIndex:0];
+				NSNumber* g = [d objectAtIndex:1];
+				NSNumber* b = [d objectAtIndex:2];
+				[self sendColorReflectionWithRed:r andGreen:g andBlue:b];
 			}
 			if([o isKindOfClass:[UIImage class]]){
 				UIImage *i = (UIImage*)o;
-				[self bufferPhotoReflection:i];
+				[self sendPhotoReflection:i];
 			}
 		}
 			

@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataManager.h"
 
+@class ReflectTableViewController;
+
 @interface ReflectTextViewController : UIViewController {
 	UITextView *tView;
 	UINavigationItem *navigationItem;
 	UIBarButtonItem *saveButton;
+	ReflectTableViewController* rtv;
 	
 }
+@property (nonatomic,retain) ReflectTableViewController* rtv;
 @property (nonatomic,retain) IBOutlet UITextView *tView;
 @property (nonatomic,retain) IBOutlet UINavigationItem *navigationItem;
 @property (nonatomic,retain) IBOutlet UIBarButtonItem *saveButton;
