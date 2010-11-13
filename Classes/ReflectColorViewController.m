@@ -47,7 +47,7 @@
 	//[alert show];
 	//[alert release];
 	[[self navigationController] popViewControllerAnimated:YES];
-	[rtv setSaveText:@"Saved Color!"];
+	[rtv setSaveText:@"Saved Reflection"];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

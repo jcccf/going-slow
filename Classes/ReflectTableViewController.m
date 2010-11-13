@@ -271,7 +271,7 @@
 {
 	if(reflectTextViewController == nil){
 		reflectTextViewController = [[ReflectTextViewController alloc] initWithNibName:@"ReflectTextViewController" bundle:nil];
-		
+		reflectTextViewController.rtv = self;
 	}
 	[[self navigationController] pushViewController:reflectTextViewController animated:YES];
 }

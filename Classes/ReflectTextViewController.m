@@ -13,7 +13,7 @@
 
 
 @implementation ReflectTextViewController
-@synthesize navigationItem, saveButton, tView;
+@synthesize navigationItem, saveButton, tView, rtv;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -29,18 +29,14 @@
 	
 	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:text];
 	[[SyncManager getSyncManagerInstance] syncData];
-	
-//<<<<<<< .mine
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your text reflection was saved to your diary!" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+
+	/*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your text reflection was saved to your diary!" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
 	[alert show];
 	[alert release];
+	[alert dismissWithClickedButtonIndex:0 animated:YES];*/
 	[[self navigationController] popViewControllerAnimated:YES];
-	[alert dismissWithClickedButtonIndex:0 animated:YES];
 	tView.text = @"";
-		
-//=======
-//	[[self navigationController] popViewControllerAnimated:YES];
-//>>>>>>> .r141
+	[rtv setSaveText:@"Saved Reflection"];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
