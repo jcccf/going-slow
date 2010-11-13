@@ -24,7 +24,7 @@
 	self.navigationItem.backBarButtonItem = backButton;
 	[backButton release];
 	coreDataManager = [CoreDataManager getCoreDataManagerInstance];
-	
+	savedLabel.alpha = 0.0f;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -327,11 +327,11 @@
 	savedLabel.text = s;
 	savedLabel.alpha = 1.0f;
 	[UIView commitAnimations];
-	/*[UIView beginAnimations:nil context:NULL];
+	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:1.5f];
 	savedLabel.text = s;
 	savedLabel.alpha = 0.0f;
-	[UIView commitAnimations];*/
+	[UIView commitAnimations];
 }
 
 
