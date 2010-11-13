@@ -293,7 +293,12 @@
 }
 
 -(UITableViewCellAccessoryType)tableView:(UITableView*)tv accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath{
+	if([[reflectionIndexTable objectForKey:indexPath] isKindOfClass:[ColorReflection class]]){
+		return UITableViewCellAccessoryNone;
+	}
+	else{
 	return UITableViewCellAccessoryDisclosureIndicator;
+	}
 }
 
 /*
