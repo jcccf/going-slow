@@ -14,6 +14,7 @@
 		0A4DC390126EAF8A008445A5 /* Screen3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC38A126EAF8A008445A5 /* Screen3ViewController.m */; };
 		0A4DC391126EAF8A008445A5 /* Screen3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */; };
 		0A4DC392126EAF8A008445A5 /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC38D126EAF8A008445A5 /* SyncManager.m */; };
+		0A4E421C128F21A400C93BD2 /* SuggestionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E421B128F21A400C93BD2 /* SuggestionList.m */; };
 		0A54948612636B5D00FA89FD /* Screen1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A54948412636B5D00FA89FD /* Screen1ViewController.m */; };
 		0A54948712636B5D00FA89FD /* Screen1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A54948512636B5D00FA89FD /* Screen1ViewController.xib */; };
 		0A5EA3771277F79500B6B9A8 /* ReflectCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA3691277F79500B6B9A8 /* ReflectCameraView.m */; };
@@ -108,6 +109,8 @@
 		0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen3ViewController.xib; sourceTree = "<group>"; };
 		0A4DC38C126EAF8A008445A5 /* SyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncManager.h; sourceTree = "<group>"; };
 		0A4DC38D126EAF8A008445A5 /* SyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncManager.m; sourceTree = "<group>"; };
+		0A4E421A128F21A400C93BD2 /* SuggestionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionList.h; sourceTree = "<group>"; };
+		0A4E421B128F21A400C93BD2 /* SuggestionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionList.m; sourceTree = "<group>"; };
 		0A54948312636B5D00FA89FD /* Screen1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen1ViewController.h; sourceTree = "<group>"; };
 		0A54948412636B5D00FA89FD /* Screen1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen1ViewController.m; sourceTree = "<group>"; };
 		0A54948512636B5D00FA89FD /* Screen1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen1ViewController.xib; sourceTree = "<group>"; };
@@ -235,9 +238,23 @@
 			children = (
 				DF74D62B1278DA7B00E92851 /* ColorPickerImageView.h */,
 				DF74D62C1278DA7C00E92851 /* ColorPickerImageView.m */,
-				DF74D62D1278DA7C00E92851 /* ReflectTableViewController.h */,
-				DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */,
-				DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */,
+				0A4DC385126EAF8A008445A5 /* CoreDataManager.h */,
+				0A4DC386126EAF8A008445A5 /* CoreDataManager.m */,
+				1D3623240D0F684500981E51 /* goslowtest2AppDelegate.h */,
+				1D3623250D0F684500981E51 /* goslowtest2AppDelegate.m */,
+				DFACCC461279029D004CE2ED /* HistoryReflectionViewController.h */,
+				DFACCC471279029D004CE2ED /* HistoryReflectionViewController.m */,
+				DFACCC481279029D004CE2ED /* HistoryReflectionViewController.xib */,
+				DFACCC1712790089004CE2ED /* HistoryTableViewController.h */,
+				DFACCC1812790089004CE2ED /* HistoryTableViewController.m */,
+				DFACCC1912790089004CE2ED /* HistoryTableViewController.xib */,
+				0A4DC387126EAF8A008445A5 /* NotificationManager.h */,
+				0A4DC388126EAF8A008445A5 /* NotificationManager.m */,
+				D023B4C81265396A00575359 /* NotificationTime.h */,
+				D023B4C91265396A00575359 /* NotificationTime.m */,
+				D023B4CA1265396A00575359 /* NotificationTime.xib */,
+				DFAB0E2E128A3FCA000392F4 /* Reachability.h */,
+				DFAB0E2F128A3FCA000392F4 /* Reachability.m */,
 				0A5EA3681277F79500B6B9A8 /* ReflectCameraView.h */,
 				0A5EA3691277F79500B6B9A8 /* ReflectCameraView.m */,
 				0A5EA36A1277F79500B6B9A8 /* ReflectCameraViewController.h */,
@@ -248,39 +265,27 @@
 				0A5EA36F1277F79500B6B9A8 /* ReflectColorViewController.h */,
 				0A5EA3701277F79500B6B9A8 /* ReflectColorViewController.m */,
 				0A5EA3711277F79500B6B9A8 /* ReflectColorViewController.xib */,
+				DF74D62D1278DA7C00E92851 /* ReflectTableViewController.h */,
+				DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */,
+				DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */,
 				0A5EA3721277F79500B6B9A8 /* ReflectTextView.h */,
 				0A5EA3731277F79500B6B9A8 /* ReflectTextView.m */,
 				0A5EA3741277F79500B6B9A8 /* ReflectTextViewController.h */,
 				0A5EA3751277F79500B6B9A8 /* ReflectTextViewController.m */,
 				0A5EA3761277F79500B6B9A8 /* ReflectTextViewController.xib */,
-				0A4DC385126EAF8A008445A5 /* CoreDataManager.h */,
-				0A4DC386126EAF8A008445A5 /* CoreDataManager.m */,
-				0A4DC387126EAF8A008445A5 /* NotificationManager.h */,
-				0A4DC388126EAF8A008445A5 /* NotificationManager.m */,
-				0A4DC389126EAF8A008445A5 /* Screen3ViewController.h */,
-				0A4DC38A126EAF8A008445A5 /* Screen3ViewController.m */,
-				0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */,
-				0A4DC38C126EAF8A008445A5 /* SyncManager.h */,
-				0A4DC38D126EAF8A008445A5 /* SyncManager.m */,
-				1D3623240D0F684500981E51 /* goslowtest2AppDelegate.h */,
-				D023B4C81265396A00575359 /* NotificationTime.h */,
-				D023B4C91265396A00575359 /* NotificationTime.m */,
-				D023B4CA1265396A00575359 /* NotificationTime.xib */,
-				1D3623250D0F684500981E51 /* goslowtest2AppDelegate.m */,
 				0A54948312636B5D00FA89FD /* Screen1ViewController.h */,
 				0A54948412636B5D00FA89FD /* Screen1ViewController.m */,
 				0A54948512636B5D00FA89FD /* Screen1ViewController.xib */,
 				DFC05D7C126CD19000B8987D /* Screen2ViewController.h */,
 				DFC05D7D126CD19000B8987D /* Screen2ViewController.m */,
 				DFC05D7E126CD19000B8987D /* Screen2ViewController.xib */,
-				DFACCC1712790089004CE2ED /* HistoryTableViewController.h */,
-				DFACCC1812790089004CE2ED /* HistoryTableViewController.m */,
-				DFACCC1912790089004CE2ED /* HistoryTableViewController.xib */,
-				DFACCC461279029D004CE2ED /* HistoryReflectionViewController.h */,
-				DFACCC471279029D004CE2ED /* HistoryReflectionViewController.m */,
-				DFACCC481279029D004CE2ED /* HistoryReflectionViewController.xib */,
-				DFAB0E2E128A3FCA000392F4 /* Reachability.h */,
-				DFAB0E2F128A3FCA000392F4 /* Reachability.m */,
+				0A4DC389126EAF8A008445A5 /* Screen3ViewController.h */,
+				0A4DC38A126EAF8A008445A5 /* Screen3ViewController.m */,
+				0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */,
+				0A4E421A128F21A400C93BD2 /* SuggestionList.h */,
+				0A4E421B128F21A400C93BD2 /* SuggestionList.m */,
+				0A4DC38C126EAF8A008445A5 /* SyncManager.h */,
+				0A4DC38D126EAF8A008445A5 /* SyncManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -524,6 +529,7 @@
 				DFAB0E30128A3FCA000392F4 /* Reachability.m in Sources */,
 				10BFF65C128DAC7D00B58E2C /* LogScreen.m in Sources */,
 				10BFF65D128DAC7D00B58E2C /* Screen.m in Sources */,
+				0A4E421C128F21A400C93BD2 /* SuggestionList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

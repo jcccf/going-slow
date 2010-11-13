@@ -34,7 +34,6 @@
 	if(te != nil){
 		t.text = te;
 	}
-		
 	
     [super viewDidLoad];
 }

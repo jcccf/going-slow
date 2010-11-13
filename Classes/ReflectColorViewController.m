@@ -25,6 +25,7 @@
 }
 
 -(IBAction)saveColor{
+	
 	UIColor *color = colorButton.backgroundColor;
 	CGColorRef c = [color CGColor];
 	CGFloat *components = CGColorGetComponents(c);
