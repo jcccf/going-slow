@@ -32,6 +32,8 @@
 -(void)addScreen:(NSNumber *)screenId screenName:(NSString*) screenName;
 -(Suggestion*)fetchSuggestion;
 -(NSMutableArray*) fetchReflections:(NSString*) reflectionType;
+-(bool)isToday:(NSDate*)refDate;
+-(int)daysElapsed:(NSDate*)refDate;
 
 -(void)addColorReflection:(NSArray *)colors;
 -(void)addPhotoReflection:(NSString *)filepath;

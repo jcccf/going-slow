@@ -11,7 +11,6 @@
 
 @implementation HistoryTableViewController
 @synthesize histRefViewCont, dates, reflectionsToDate, reflectionsPutInTable, reflectionIndexTable;
-//@synthesize textReflectionsToDate, colorReflectionsToDate, photoReflectionsToDate;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -31,9 +30,6 @@
 -(void)populateArraysAndSortDates{
 	dates = [[NSMutableArray alloc] init];
 	reflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"Reflection"];
-//	textReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"TextReflection"];
-//	photoReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"PhotoReflection"];
-//	colorReflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"ColorReflection"];
 	
 	for(Reflection *r in reflectionsToDate){
 		if(![dates containsObject:[[[r createdAt] description] substringToIndex: 10]]){	
@@ -44,36 +40,6 @@
 			NSLog(@"Duplicate Reflection");
 		}
 	}
-	
-	//NSLog([NSString stringWithFormat:@"We got %i text reflections from database", [textReflectionsToDate size]]);
-//	for(TextReflection *t in textReflectionsToDate){
-//		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
-//			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
-//			NSLog([NSString stringWithFormat:@"Added Text Date %@ to date array", [[t createdAt] description]]);
-//		}
-//		else{
-//			NSLog(@"Duplicate Date Text");
-//		}
-//	}
-//	
-//	for(ColorReflection *t in colorReflectionsToDate){
-//		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
-//			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
-//			NSLog([NSString stringWithFormat:@"Added Color Date %@ to date array", [[t createdAt] description]]);
-//		}
-//		else{
-//			NSLog(@"Duplicate Date Color");
-//		}
-//	}
-//	for(PhotoReflection *t in photoReflectionsToDate){
-//		if(![dates containsObject:[[[t createdAt] description] substringToIndex: 10]]){	
-//			[dates addObject:[[[t createdAt] description] substringToIndex: 10]];
-//			NSLog([NSString stringWithFormat:@"Added Photo Date %@ to date array", [[t createdAt] description]]);
-//		}
-//		else{
-//			NSLog(@"Duplicate Date Photo");
-//		}
-//	}
 	
 	NSLog(@"There are %i dates in dates", [dates count]);
 	
@@ -144,19 +110,7 @@
 		if([[[[r createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
 			count++;
 	}
-	
-//	for(TextReflection *t in textReflectionsToDate){
-//		if([[[[t createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
-//			count++;
-//	}
-//	for(ColorReflection *c in colorReflectionsToDate){
-//		if([[[[c createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
-//			count++;
-//	}
-//	for(PhotoReflection *p in photoReflectionsToDate){
-//		if([[[[p createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
-//			count++;
-//	}
+
 	//This needs to be changed to the number of reflections stored on the phone to date
     return count;
 }
@@ -221,62 +175,6 @@
 			}
 		}
 	}
-	
-
-//	for(TextReflection *t in textReflectionsToDate){
-//		if(keepLooping){
-//		if([[[[t createdAt] description] substringToIndex :10] isEqualToString:dateCompareString]){
-//			if(![reflectionsPutInTable containsObject:t]){
-//				[reflectionsPutInTable addObject:t];
-//				[reflectionIndexTable setObject:t forKey:indexPath];
-//				int min = [[t reflectionText] length];
-//						   if(min >= 30){
-//							   min = 30;   
-//						   }
-//				NSLog([NSString stringWithFormat:@"Adding text %@ to Cell %i::%i", [t reflectionText], [indexPath section], [indexPath row]]);
-//				cell.textLabel.text = [[t reflectionText] substringToIndex:min];
-//				cell.backgroundView = nil;
-//				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-//				keepLooping = NO;
-//			}
-//		}
-//		}
-//	}
-//	
-//
-//	for(ColorReflection *c in colorReflectionsToDate){
-//		if(keepLooping){
-//		if([[[[c createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
-//			if(![reflectionsPutInTable containsObject:c]){
-//				[reflectionsPutInTable addObject:c];
-//				[reflectionIndexTable setObject:c forKey:indexPath];
-//				//cell.textLabel.text = [[c reflectionText] substringToIndex:15];
-//				keepLooping = NO;
-//				UIView *vi = [[UIView alloc] init];
-//				cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//				cell.text = @"";
-//				vi.backgroundColor = [UIColor colorWithRed:[[c colorRed]floatValue] green:[[c colorGreen]floatValue] blue:[[c colorBlue]floatValue] alpha:1];
-//				cell.backgroundView = vi;		
-//			}}
-//	}
-//	
-//
-//	for(PhotoReflection *p in photoReflectionsToDate){
-//		if(keepLooping){
-//		if([[[[p createdAt] description] substringToIndex :10] isEqualToString:dateCompareString])
-//			if(![reflectionsPutInTable containsObject:p]){
-//				[reflectionsPutInTable addObject:p];
-//				[reflectionIndexTable setObject:p forKey:indexPath];
-//				//UIImage *im = [UIImage imageWithContentsOfFile:[p filepath]];
-//				//cell.backgroundView = [[UIImageView alloc] initWithImage:im];
-//				cell.textLabel.text = [NSString stringWithFormat:@"Photo %i", numPhotos];
-//				numPhotos++;
-//				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-//				cell.backgroundView = nil;
-//				keepLooping = NO;
-//			}
-//		}
-//	}
 	
 	//cell.accessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 	cell.textLabel.textAlignment = UITextAlignmentLeft;

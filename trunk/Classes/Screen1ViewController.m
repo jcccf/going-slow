@@ -67,14 +67,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];	
 	
-	switchText = 0;
 	//backText.hidden = TRUE;
-	assert(label != nil);
-	label.text = @"Hello W-w-world!";
-	UIImage *i = [UIImage imageNamed:@"breathe.png"];
-	assert(i != nil);
-	imageViewPicture.image = i;
-	assert(imageViewPicture != nil);
+//	assert(label != nil);
+//	label.text = @"Hello W-w-world!";
+//	UIImage *i = [UIImage imageNamed:@"breathe.png"];
+//	assert(i != nil);
+//	imageViewPicture.image = i;
+//	assert(imageViewPicture != nil);
 	
 	//
 	// Core Data Code Below
@@ -94,16 +93,39 @@
 		
 	}
 	
+}
+
+/*
+// Override to allow orientations other than the default portrait orientation.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+*/
+
+- (void)didReceiveMemoryWarning {
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:1]];
+	
+	switchText = 0;
+	
 	// Read from Suggestions Array and Set View Items Appropriately
-	Suggestion *suggestion = [[CoreDataManager getCoreDataManagerInstance] fetchSuggestion];
+	Suggestion *suggestion = [[SuggestionList getInstance] fetchSuggestion];
 	
 	// Set text and align top
 	CGSize maximumSize = CGSizeMake(270, 9999);
     NSString *themeString = [suggestion theme];
     UIFont *themeFont = [UIFont fontWithName:@"Helvetica" size:40];
     CGSize themeStringSize = [themeString sizeWithFont:themeFont 
-								   constrainedToSize:maximumSize 
-									   lineBreakMode:self.label.lineBreakMode];
+									 constrainedToSize:maximumSize 
+										 lineBreakMode:self.label.lineBreakMode];
     CGRect themeFrame = CGRectMake(10, 10, 270, themeStringSize.height);
 	self.label.text = themeString;
     self.label.frame = themeFrame;
@@ -116,7 +138,7 @@
 	NSString *html2 = [suggestion moreInfo];
 	NSString *html3 = @"</div>";
 	NSString *html = [NSString stringWithFormat:@"%@ %@ %@",
-					 html1, html2, html3];
+					  html1, html2, html3];
 	[backText loadHTMLString:html baseURL:[NSURL URLWithString:@"http://www.hitchhiker.com/message"]];  
 	
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -147,49 +169,24 @@
 	
 	//Set last seen to today's date
 	[suggestion setLastSeen:[NSDate date]];
+	NSLog(@"Date: %@", [suggestion lastSeen]);
+	[[CoreDataManager getCoreDataManagerInstance] saveChanges];	
 	
-	[[CoreDataManager getCoreDataManagerInstance] saveChanges];
 	
 	//TEST
-//	NSMutableArray *textReflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"TextReflection"];
-//	for (TextReflection *tr in textReflections) {
-//		NSLog(@"Text: %@", [tr reflectionText]);
-//	}
-//	
-//	NSMutableArray *colorReflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"ColorReflection"];
-//	for (ColorReflection *cr in colorReflections) {
-//		NSLog(@"Red: %@", [cr colorRed]);
-//		NSLog(@"Green: %@", [cr colorGreen]);
-//		NSLog(@"Blue: %@", [cr colorBlue]);
-//		NSLog(@"Created At: %@", [cr createdAt]);
-//	}
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss ZZZ"];
 	
-	NSMutableArray *reflections = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"Reflection"];
-	for (Reflection	*r in reflections) {
-		NSLog(@"Class: %@", [r class]);
-		NSLog(@"Created At: %@", [r createdAt]);
-	}
+	NSDate *testDate = [dateFormatter dateFromString:@"2010-11-18 20:00:00 GMT"];
+	NSLog(@"Current Date: %@", [NSDate date]);
+	NSLog(@"Reference Date: %@", testDate);
 	
-}
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
--(void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
-	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:1]];
+	int daysElapsed = [[CoreDataManager getCoreDataManagerInstance] daysElapsed:testDate];
+	NSLog(@"Days Elapsed: %i", daysElapsed);
+	
+	[dateFormatter release];
+	
+	
 }
 
 - (void)viewDidUnload {

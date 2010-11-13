@@ -112,7 +112,6 @@ static CoreDataManager *sharedInstance = nil;
 	
 }
 
-//TODO: change this to date difference
 -(bool)isToday:(NSDate*)refDate {
 
 	NSString *date = [[refDate description]substringToIndex: 10];
@@ -126,6 +125,28 @@ static CoreDataManager *sharedInstance = nil;
 	else {
 		return NO;
 	}
+}
+
+-(int)daysElapsed:(NSDate*)refDate {
+	
+	NSString *refDay = [[refDate description]substringToIndex: 10];
+	NSString *nowDay = [[[NSDate date]description]substringToIndex: 10];
+	
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss ZZZ"];
+	
+    NSDate *refDateAtMidnight = [dateFormatter dateFromString:[NSString stringWithFormat:@"%@ %@ %@", refDay, @"00:00:00", @"UTC"]];
+	NSDate *nowDateAtMidnight = [dateFormatter dateFromString:[NSString stringWithFormat:@"%@ %@ %@", nowDay, @"00:00:00", @"UTC"]];
+	
+	[dateFormatter release];
+	
+	NSTimeInterval timeInterval = [refDateAtMidnight timeIntervalSinceDate:nowDateAtMidnight];
+	
+	double seconds = (double) timeInterval;
+	double days = seconds / (60*60*24);
+	int daysElapsed = (int) days * -1;
+
+	return daysElapsed;
 }
 
 -(void)addAllSuggestions{
@@ -260,13 +281,6 @@ static CoreDataManager *sharedInstance = nil;
 		suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];		
 		
 	}
-	
-	//Set last seen to today's date
-	[suggestion setLastSeen:[NSDate date]];
-	
-	NSLog(@"Date: %@", [suggestion lastSeen]);
-	
-	[self saveChanges];
 	[request release];
 	
 	return suggestion;
