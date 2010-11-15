@@ -203,6 +203,7 @@ static SyncManager *sharedInstance = nil;
 }
 
 -(void)syncData{
+	
 	// Pull any unsynchronized data from NSUserDefaults
 	NSMutableArray *ar = [[SyncManager getSyncManagerInstance] bufferedReflections];
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -213,6 +214,7 @@ static SyncManager *sharedInstance = nil;
 	if(objects != nil){
 		[ar addObjectsFromArray:objects];
 	}
+	NSLog(@"Loaded Buffered Data");
 	
 	// TODO Ensure that buffered stuff is preserved even when you exit the application
 	
@@ -269,6 +271,7 @@ static SyncManager *sharedInstance = nil;
 			}
 		}
 		[ar removeObjectsInArray:objectsToDelete];
+		[objectsToDelete release];
 	}
 	else {
 		NSLog(@"NO WIFI CONNECTION!!");
@@ -315,7 +318,7 @@ static SyncManager *sharedInstance = nil;
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSLog(@"upload succeeded!");
+    NSLog(@"Upload succeeded!");
     [connection release];
 }
 @end
