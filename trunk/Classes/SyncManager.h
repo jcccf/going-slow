@@ -23,7 +23,7 @@
 - (void) sendTextReflection:(NSString*)text;
 - (void) sendPhotoReflection:(UIImage*)image;
 - (void) sendColorReflectionWithRed:(NSNumber*)r andGreen:(NSNumber*)g andBlue:(NSNumber*)b;
-- (void) sendDailySuggestion:(int)i andTime:(NSString*)timestamp;
+- (void) sendDailySuggestion:(NSString*)theme andTime:(NSString*)timestamp;
 - (void) sendLogScreen:(int)screen_id andTime:(NSString*)timestamp;
 
 - (void) syncData;

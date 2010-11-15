@@ -152,11 +152,11 @@ static SyncManager *sharedInstance = nil;
 	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
 }
 
--(void) sendDailySuggestion:(int)i andTime:(NSString *)timestamp{
+-(void) sendDailySuggestion:(NSString*)theme andTime:(NSString *)timestamp{
 	//assert([timestamp length] == 19); //Timestamps must be in yyyy-mm-dd hh:mm:ss format
 	NSLog(@"Buffering Daily Suggestion");
 	NSMutableDictionary* post_dict = [[NSMutableDictionary alloc] init];
-    [post_dict setObject:[NSString stringWithFormat: @"%d", i] forKey:@"daily_suggestion[suggestion_id]"];
+    [post_dict setObject:theme forKey:@"daily_suggestion[theme]"];
 	[post_dict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"daily_suggestion[udid]"];
 	[post_dict setObject:timestamp forKey:@"daily_suggestion[time_entered]"];
 	NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
@@ -236,10 +236,11 @@ static SyncManager *sharedInstance = nil;
 			else if([o isKindOfClass:[NSArray class]]){
 				// TODO Use this for daily suggestions instead
 				NSArray *d = (NSArray*)o;
-				int suggestionId = [(NSNumber*)[d objectAtIndex:0] intValue];
+				NSString* suggestionTheme = (NSString*) [d objectAtIndex:0];
 				NSDate* time = [d objectAtIndex:1];
 				NSString* s = [time descriptionWithCalendarFormat:@"%Y-%m-%d %H:%M:%S %z" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
-				[self sendDailySuggestion:suggestionId andTime:s];
+				NSLog(@"%@", suggestionTheme);
+				[self sendDailySuggestion:suggestionTheme andTime:s];
 				[ar removeObject:o];
 			}
 			else if([o isKindOfClass:[UIImage class]]){
