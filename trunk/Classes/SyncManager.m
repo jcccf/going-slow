@@ -8,6 +8,7 @@
 
 #import "SyncManager.h"
 #import "Reachability.h"
+#import "LogScreen.h"
 
 // Posting constants
 #define NOTIFY_AND_LEAVE(X) {[self cleanup:X]; return;}
@@ -176,7 +177,7 @@ static SyncManager *sharedInstance = nil;
 }
 
 -(void) sendLogScreen:(int)screen_id andTime:(NSString *)timestamp{
-	assert([timestamp length] == 19); //Timestamps must be in yyyy-mm-dd hh:mm:ss format
+	//assert([timestamp length] == 19); //Timestamps must be in yyyy-mm-dd hh:mm:ss format
 	NSLog(@"Sending Log Screen");
 	NSMutableDictionary* post_dict = [[NSMutableDictionary alloc] init];
     [post_dict setObject:[NSString stringWithFormat: @"%d", screen_id] forKey:@"log_screen[screen_id]"];
@@ -204,7 +205,7 @@ static SyncManager *sharedInstance = nil;
 	
 	// TODO Ensure that buffered stuff is preserved even when you exit the application
 	
-	// TODO Sync Log Screens and Suggestion of the Day
+	// TODO Sync Suggestion of the Day
 	
 	wifiReach = [[Reachability reachabilityForLocalWiFi] retain];
 	[wifiReach startNotifier];
@@ -222,16 +223,26 @@ static SyncManager *sharedInstance = nil;
 				[self sendTextReflection:s];
 				[ar removeObject:o];
 			}
-			if([o isKindOfClass:[NSArray class]]){
+			else if([o isKindOfClass:[NSArray class]]){
 				NSArray *d = (NSArray*)o;
 				NSNumber* r = [d objectAtIndex:0];
 				NSNumber* g = [d objectAtIndex:1];
 				NSNumber* b = [d objectAtIndex:2];
 				[self sendColorReflectionWithRed:r andGreen:g andBlue:b];
+				[ar removeObject:o];
 			}
-			if([o isKindOfClass:[UIImage class]]){
+			else if([o isKindOfClass:[UIImage class]]){
 				UIImage *i = (UIImage*)o;
 				[self sendPhotoReflection:i];
+				[ar removeObject:o];
+			}
+			else if([o isKindOfClass:[LogScreen class]]){
+				LogScreen* ls = (LogScreen*) o;
+				int screenId = [[ls screenId] intValue];
+				NSDate* time = [ls createdAt];
+				NSString* s = [time descriptionWithCalendarFormat:@"%Y-%m-%d %H:%M:%S %z" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+				[self sendLogScreen:screenId andTime:s];
+				[ar removeObject:o];
 			}
 		}
 			
@@ -239,9 +250,7 @@ static SyncManager *sharedInstance = nil;
 		
 	else {
 		NSLog(@"NO WIFI CONNECTION!!");
-		
 	}
-	
 	
 }
 
