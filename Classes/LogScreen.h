@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
-@interface LogScreen : NSManagedObject {
-	
+@interface LogScreen : NSManagedObject <NSCoding> {
+
 }
 
 @property (nonatomic,retain) NSNumber *screenId;

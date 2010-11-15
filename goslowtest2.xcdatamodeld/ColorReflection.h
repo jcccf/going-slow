@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Reflection.h"
 
-@interface ColorReflection : Reflection {
-	
+@interface ColorReflection : Reflection <NSCoding> {
 }
 
 @property (nonatomic, retain) NSNumber *colorRed;

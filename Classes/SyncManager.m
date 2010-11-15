@@ -203,6 +203,16 @@ static SyncManager *sharedInstance = nil;
 }
 
 -(void)syncData{
+	// Pull any unsynchronized data from NSUserDefaults
+	NSMutableArray *ar = [[SyncManager getSyncManagerInstance] bufferedReflections];
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSData *objectsData = [userDefaults objectForKey:@"savedArray"];
+	// if ([objectsData length] > 0) {
+	NSArray *objects = [NSKeyedUnarchiver unarchiveObjectWithData:objectsData];
+	// }
+	if(objects != nil){
+		[ar addObjectsFromArray:objects];
+	}
 	
 	// TODO Ensure that buffered stuff is preserved even when you exit the application
 	
@@ -213,16 +223,17 @@ static SyncManager *sharedInstance = nil;
 	
 	NetworkStatus netStatus = [wifiReach currentReachabilityStatus];
 	
+	NSMutableArray *objectsToDelete = [[NSMutableArray alloc] init];
+	
 	if(netStatus == ReachableViaWiFi){
 		NSLog(@"Wifi connection is turned on!!");
 		NSLog(@"Syncing Data");
-		NSMutableArray *ar = [[SyncManager getSyncManagerInstance] bufferedReflections];
 		for(NSObject* o in ar){
 			NSLog(@"Syncing object...");
 			if([o isKindOfClass:[NSString class]]){
 				NSString *s = (NSString*)o;
 				[self sendTextReflection:s];
-				[ar removeObject:o];
+				[objectsToDelete addObject:o];
 			}
 			else if([o isKindOfClass:[ColorReflection class]]){
 				ColorReflection* cr = (ColorReflection*) o;
@@ -231,7 +242,7 @@ static SyncManager *sharedInstance = nil;
 				NSNumber* b = [cr colorBlue];
 				NSLog(@"%f %f %f", [r floatValue], [g floatValue], [b floatValue]);
 				[self sendColorReflectionWithRed:r andGreen:g andBlue:b];
-				[ar removeObject:o];
+				[objectsToDelete addObject:o];
 			}
 			else if([o isKindOfClass:[NSArray class]]){
 				// TODO Use this for daily suggestions instead
@@ -241,12 +252,12 @@ static SyncManager *sharedInstance = nil;
 				NSString* s = [time descriptionWithCalendarFormat:@"%Y-%m-%d %H:%M:%S %z" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
 				NSLog(@"%@", suggestionTheme);
 				[self sendDailySuggestion:suggestionTheme andTime:s];
-				[ar removeObject:o];
+				[objectsToDelete addObject:o];
 			}
 			else if([o isKindOfClass:[UIImage class]]){
 				UIImage *i = (UIImage*)o;
 				[self sendPhotoReflection:i];
-				[ar removeObject:o];
+				[objectsToDelete addObject:o];
 			}
 			else if([o isKindOfClass:[LogScreen class]]){
 				LogScreen* ls = (LogScreen*) o;
@@ -254,15 +265,19 @@ static SyncManager *sharedInstance = nil;
 				NSDate* time = [ls createdAt];
 				NSString* s = [time descriptionWithCalendarFormat:@"%Y-%m-%d %H:%M:%S %z" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
 				[self sendLogScreen:screenId andTime:s];
-				[ar removeObject:o];
+				[objectsToDelete addObject:o];
 			}
 		}
-			
+		[ar removeObjectsInArray:objectsToDelete];
 	}
-		
 	else {
 		NSLog(@"NO WIFI CONNECTION!!");
 	}
+	
+	// Save to NSUserDefaults
+	[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:ar] forKey:@"savedArray"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	NSLog(@"Saved Buffered Data");
 	
 }
 
