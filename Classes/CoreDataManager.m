@@ -7,6 +7,7 @@
 //
 
 #import "CoreDataManager.h"
+#import "SyncManager.h"
 
 
 @implementation CoreDataManager
@@ -99,6 +100,8 @@ static CoreDataManager *sharedInstance = nil;
 	
 	NSLog(@"Screen %@ accessed at %@", [newLog screenId], [newLog createdAt]);
 	
+	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:newLog];
+	[[SyncManager getSyncManagerInstance] syncData];
 }
 
 -(void)addScreen:(NSNumber *)screenId screenName:(NSString*) screenName {
