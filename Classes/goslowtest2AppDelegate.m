@@ -82,7 +82,14 @@
     [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotif) {
 		application.applicationIconBadgeNumber = 0;
+		NSDictionary *ui = [localNotif userInfo];
+		NSString *f = [ui objectForKey:@"Type"];
+		if([f isEqualToString:@"Reflect"]){
+			tabController.selectedIndex = 3;
+		}
+		else{
 		tabController.selectedIndex = 0;
+		}
 		isNotFirstRun = YES;
 		//[[UIApplication sharedApplication] cancelLocalNotification:localNotif];
         NSLog(@"Recieved Notification %@",localNotif);
@@ -128,8 +135,16 @@
 	
 	//set the selected index to the home screen (or based on the user data in the local notification
 	isNotFirstRun = YES;
-	tabController.selectedIndex = 0;
-	app.applicationIconBadgeNumber = 0;
+	NSDictionary *u = [notif userInfo];
+	NSString *s = [u objectForKey:@"Type"];
+	if(s != nil && [s isEqualToString:@"Reflect"]){
+		tabController.selectedIndex = 2;
+	}
+	else{
+		tabController.selectedIndex = 0;
+	}
+	//tabController.selectedIndex = 0;
+	//app.applicationIconBadgeNumber = 0;
 	//[[UIApplication sharedApplication] cancelLocalNotification:notif];
     NSLog(@"Recieved Notification %@",notif);
 }
