@@ -10,7 +10,7 @@
 
 
 @implementation NotificationTime
-@synthesize datePicker, eventText, delegateReference, morningEvening;
+@synthesize datePicker, eventText, delegateReference, morningEvening, morningDate, eveningDate;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -32,6 +32,7 @@
 
 -(IBAction)goToHomeScreen:(id)sender{
 	//[self.view removeFromSuperview];
+	[[UIApplication sharedApplication] cancelAllLocalNotifications];
 	
 	NSMutableArray *suggestionsArray = [[SuggestionList getInstance] returnArray];
 	NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -86,6 +87,10 @@
 //	localNotifMorning.alertAction = @"See More";
 	localNotifEvening.alertBody = @"How was your day?";
 	localNotifEvening.alertAction = @"Reflect";
+	NSString *key = [NSString stringWithString:@"Type"];
+	NSString *val = [NSString stringWithString:@"Reflect"];
+	localNotifEvening.userInfo = [NSDictionary dictionaryWithObject:val forKey:key];
+	
 	
 	[[UIApplication sharedApplication] scheduleLocalNotification:localNotifEvening];
 	//[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
@@ -157,10 +162,10 @@
 	
 	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
 	
-	[[UIApplication sharedApplication] cancelAllLocalNotifications];
+	//[[UIApplication sharedApplication] cancelAllLocalNotifications];
 	
     // Get the current date
-    NSDate *pickerDate = [datePicker date];
+    NSDate *pickerDate = [NSDate date];
 	
     // Break the date up into components
     NSDateComponents *dateComponents = [calendar components:( NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit )
