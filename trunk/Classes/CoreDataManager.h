@@ -31,6 +31,9 @@
 -(void)addLog:(NSNumber *)screenId;
 -(void)addScreen:(NSNumber *)screenId screenName:(NSString*) screenName;
 -(Suggestion*)fetchSuggestion;
+-(NSMutableArray*) fetchInitialSuggestions;
+-(NSMutableArray*) fetchNextSuggestions;
+
 -(NSMutableArray*) fetchReflections:(NSString*) reflectionType;
 -(bool)isToday:(NSDate*)refDate;
 -(int)daysElapsed:(NSDate*)refDate;

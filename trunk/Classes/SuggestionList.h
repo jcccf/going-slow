@@ -14,11 +14,17 @@
 
 @interface SuggestionList: NSObject {
 	NSMutableArray* suggestions;
+	NSDate *morningDate;
+	NSDate *eveningDate;
 }
 
 @property (nonatomic, retain) NSArray *suggestions;
+@property (nonatomic,assign) NSDate *morningDate;
+@property (nonatomic,assign) NSDate *eveningDate;
 
 +(SuggestionList *)getInstance;
 -(NSMutableArray*) returnArray;
 -(Suggestion*) fetchSuggestion;
+-(void) scheduleNotifications;
+-(void) setDate:(NSDate*)morning eveningDate:(NSDate*)evening;
 @end

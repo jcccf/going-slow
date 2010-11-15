@@ -31,95 +31,97 @@
 
 
 -(IBAction)goToHomeScreen:(id)sender{
-	//[self.view removeFromSuperview];
-	[[UIApplication sharedApplication] cancelAllLocalNotifications];
-	
-	NSMutableArray *suggestionsArray = [[SuggestionList getInstance] returnArray];
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	
-	for (int i = 0; i < [suggestionsArray count]; i++) {
-
-		NSDateComponents *offset = [[NSDateComponents alloc] init];
-		[offset setDay:i];
-		//[offset setMinute:i];
-		NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:morningDate options:0];
-		//NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
-		
-		[offset release];
-		
-		Suggestion *suggestion = [suggestionsArray objectAtIndex:i]; 
-		
-		UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
-		if (localNotifMorning == nil)
-			return;
-		
-		localNotifMorning.fireDate = notificationDate;
-		localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
-		//localNotifMorning.repeatInterval = NSMinuteCalendarUnit;
-		
-		localNotifMorning.alertBody = [NSString stringWithFormat:@"Today's Suggestion: %@", [suggestion theme]];
-		localNotifMorning.alertAction = @"See More";
-		
-		[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
-		
-		[localNotifMorning release];
-		
-		
-	}
-	
-	//UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
-	UILocalNotification *localNotifEvening = [[UILocalNotification alloc] init];
-//    if (localNotifMorning == nil)
+//	//[self.view removeFromSuperview];
+//	[[UIApplication sharedApplication] cancelAllLocalNotifications];
+//	
+//	NSMutableArray *suggestionsArray = [[SuggestionList getInstance] returnArray];
+//	NSCalendar *calendar = [NSCalendar currentCalendar];
+//	
+//	for (int i = 0; i < [suggestionsArray count]; i++) {
+//
+//		NSDateComponents *offset = [[NSDateComponents alloc] init];
+//		[offset setDay:i];
+//		//[offset setMinute:i];
+//		NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:morningDate options:0];
+//		//NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
+//		
+//		[offset release];
+//		
+//		Suggestion *suggestion = [suggestionsArray objectAtIndex:i]; 
+//		
+//		UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
+//		if (localNotifMorning == nil)
+//			return;
+//		
+//		localNotifMorning.fireDate = notificationDate;
+//		localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
+//		//localNotifMorning.repeatInterval = NSMinuteCalendarUnit;
+//		
+//		localNotifMorning.alertBody = [NSString stringWithFormat:@"Today's Suggestion: %@", [suggestion theme]];
+//		localNotifMorning.alertAction = @"See More";
+//		
+//		[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
+//		
+//		[localNotifMorning release];
+//		
+//		
+//	}
+//	
+//	//UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
+//	UILocalNotification *localNotifEvening = [[UILocalNotification alloc] init];
+////    if (localNotifMorning == nil)
+////        return;
+//	if (localNotifEvening == nil)
 //        return;
-	if (localNotifEvening == nil)
-        return;
+//	
+//	localNotifEvening.fireDate = eveningDate;
+//	//localNotifMorning.fireDate = morningDate;
+//	
+//	localNotifEvening.timeZone = [NSTimeZone defaultTimeZone];
+//	//localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
+//	
+//	localNotifEvening.repeatInterval = NSDayCalendarUnit;
+////	localNotifMorning.repeatInterval = NSDayCalendarUnit;
+//	
+////	localNotifMorning.alertBody = @"Would you like a suggestion?";
+////	localNotifMorning.alertAction = @"See More";
+//	localNotifEvening.alertBody = @"How was your day?";
+//	localNotifEvening.alertAction = @"Reflect";
+//	NSString *key = [NSString stringWithString:@"Type"];
+//	NSString *val = [NSString stringWithString:@"Reflect"];
+//	localNotifEvening.userInfo = [NSDictionary dictionaryWithObject:val forKey:key];
+//	
+//	
+//	[[UIApplication sharedApplication] scheduleLocalNotification:localNotifEvening];
+//	//[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
+//	
+//	[localNotifEvening release];
+//	//[localNotifMorning release];
+//	
+//	/*localNotif.fireDate = [itemDate dateByAddingTimeInterval:1];
+//	
+//	//1 day repeat interval
+//	localNotif.repeatInterval = NSDayCalendarUnit;
+//	// localNotif.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
+//    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+//	
+//	// Notification details
+//    localNotif.alertBody = @"You should reflect";
+//	// Set the action button
+//    localNotif.alertAction = @"Reflect";
+//	
+//    localNotif.soundName = UILocalNotificationDefaultSoundName;
+//    localNotif.applicationIconBadgeNumber = 1;
+//	
+//	// Specify custom data for the notification
+//    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
+//    localNotif.userInfo = infoDict;
+//	
+//	// Schedule the notification
+//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+//    [localNotif release];*/
 	
-	localNotifEvening.fireDate = eveningDate;
-	//localNotifMorning.fireDate = morningDate;
-	
-	localNotifEvening.timeZone = [NSTimeZone defaultTimeZone];
-	//localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
-	
-	localNotifEvening.repeatInterval = NSDayCalendarUnit;
-//	localNotifMorning.repeatInterval = NSDayCalendarUnit;
-	
-//	localNotifMorning.alertBody = @"Would you like a suggestion?";
-//	localNotifMorning.alertAction = @"See More";
-	localNotifEvening.alertBody = @"How was your day?";
-	localNotifEvening.alertAction = @"Reflect";
-	NSString *key = [NSString stringWithString:@"Type"];
-	NSString *val = [NSString stringWithString:@"Reflect"];
-	localNotifEvening.userInfo = [NSDictionary dictionaryWithObject:val forKey:key];
-	
-	
-	[[UIApplication sharedApplication] scheduleLocalNotification:localNotifEvening];
-	//[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
-	
-	[localNotifEvening release];
-	//[localNotifMorning release];
-	
-	/*localNotif.fireDate = [itemDate dateByAddingTimeInterval:1];
-	
-	//1 day repeat interval
-	localNotif.repeatInterval = NSDayCalendarUnit;
-	// localNotif.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
-    localNotif.timeZone = [NSTimeZone defaultTimeZone];
-	
-	// Notification details
-    localNotif.alertBody = @"You should reflect";
-	// Set the action button
-    localNotif.alertAction = @"Reflect";
-	
-    localNotif.soundName = UILocalNotificationDefaultSoundName;
-    localNotif.applicationIconBadgeNumber = 1;
-	
-	// Specify custom data for the notification
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
-    localNotif.userInfo = infoDict;
-	
-	// Schedule the notification
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-    [localNotif release];*/
+	[[SuggestionList getInstance] scheduleNotifications];
 	
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your notifications times have been updated" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 	[alert show];
@@ -139,6 +141,8 @@
 		eveningDate = [datePicker date];
 		[eveningDate retain];
 	}
+	
+	[[SuggestionList getInstance] setDate:morningDate eveningDate: eveningDate];
 	
 }
 
@@ -193,6 +197,9 @@
 	[eveningDate retain];
 	[morningDate retain];
 	NSLog([eveningDate description]);
+	
+	[[SuggestionList getInstance] setDate:morningDate eveningDate: eveningDate];
+	
 	[datePicker setDate:morningDate];
 	[dateComps release];
 	
