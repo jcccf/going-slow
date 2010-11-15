@@ -9,6 +9,7 @@
 #import "SyncManager.h"
 #import "Reachability.h"
 #import "LogScreen.h"
+#import "ColorReflection.h"
 
 // Posting constants
 #define NOTIFY_AND_LEAVE(X) {[self cleanup:X]; return;}
@@ -152,7 +153,7 @@ static SyncManager *sharedInstance = nil;
 }
 
 -(void) sendDailySuggestion:(int)i andTime:(NSString *)timestamp{
-	assert([timestamp length] == 19); //Timestamps must be in yyyy-mm-dd hh:mm:ss format
+	//assert([timestamp length] == 19); //Timestamps must be in yyyy-mm-dd hh:mm:ss format
 	NSLog(@"Buffering Daily Suggestion");
 	NSMutableDictionary* post_dict = [[NSMutableDictionary alloc] init];
     [post_dict setObject:[NSString stringWithFormat: @"%d", i] forKey:@"daily_suggestion[suggestion_id]"];
@@ -223,12 +224,22 @@ static SyncManager *sharedInstance = nil;
 				[self sendTextReflection:s];
 				[ar removeObject:o];
 			}
-			else if([o isKindOfClass:[NSArray class]]){
-				NSArray *d = (NSArray*)o;
-				NSNumber* r = [d objectAtIndex:0];
-				NSNumber* g = [d objectAtIndex:1];
-				NSNumber* b = [d objectAtIndex:2];
+			else if([o isKindOfClass:[ColorReflection class]]){
+				ColorReflection* cr = (ColorReflection*) o;
+				NSNumber* r = [cr colorRed];
+				NSNumber* g = [cr colorGreen];
+				NSNumber* b = [cr colorBlue];
+				NSLog(@"%f %f %f", [r floatValue], [g floatValue], [b floatValue]);
 				[self sendColorReflectionWithRed:r andGreen:g andBlue:b];
+				[ar removeObject:o];
+			}
+			else if([o isKindOfClass:[NSArray class]]){
+				// TODO Use this for daily suggestions instead
+				NSArray *d = (NSArray*)o;
+				int suggestionId = [(NSNumber*)[d objectAtIndex:0] intValue];
+				NSDate* time = [d objectAtIndex:1];
+				NSString* s = [time descriptionWithCalendarFormat:@"%Y-%m-%d %H:%M:%S %z" timeZone:nil locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+				[self sendDailySuggestion:suggestionId andTime:s];
 				[ar removeObject:o];
 			}
 			else if([o isKindOfClass:[UIImage class]]){

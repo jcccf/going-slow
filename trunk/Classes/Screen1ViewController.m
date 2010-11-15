@@ -67,14 +67,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];	
 	
-	//backText.hidden = TRUE;
-//	assert(label != nil);
-//	label.text = @"Hello W-w-world!";
-//	UIImage *i = [UIImage imageNamed:@"breathe.png"];
-//	assert(i != nil);
-//	imageViewPicture.image = i;
-//	assert(imageViewPicture != nil);
-	
 	//
 	// Core Data Code Below
 	//
@@ -123,16 +115,12 @@
 	CGSize maximumSize = CGSizeMake(270, 9999);
     NSString *themeString = [suggestion theme];
     UIFont *themeFont = [UIFont fontWithName:@"Helvetica" size:40];
-    CGSize themeStringSize = [themeString sizeWithFont:themeFont 
-									 constrainedToSize:maximumSize 
-										 lineBreakMode:self.label.lineBreakMode];
+    CGSize themeStringSize = [themeString sizeWithFont:themeFont constrainedToSize:maximumSize lineBreakMode:self.label.lineBreakMode];
     CGRect themeFrame = CGRectMake(10, 10, 270, themeStringSize.height);
 	self.label.text = themeString;
     self.label.frame = themeFrame;
 	CGRect themeFrameBack = CGRectMake(0, 0, 320, themeStringSize.height + 20);
 	self.labelBack.frame = themeFrameBack;
-	
-	//label.text = [NSString stringWithFormat:@"%@%@", @" ", [suggestion theme]]; //HACK To space the text correctly on the screen
 	
 	NSString *html1 = @"<div style=\"font-family: Helvetica; font-size: larger; margin: 10px;\">";
 	NSString *html2 = [suggestion moreInfo];
