@@ -284,8 +284,13 @@ static CoreDataManager *sharedInstance = nil;
 		//Get a Random Suggestion
 		int randomIndex = arc4random() % suggestionsArrayLength;
 		
-		suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];		
+		suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];	
 		
+		// Send to Sync Manager
+		// Uncomment the below when fixed.
+		//NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
+		//[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
+		//[[SyncManager getSyncManagerInstance] syncData];
 	}
 	[request release];
 	
