@@ -37,6 +37,7 @@
 	[[self navigationController] popViewControllerAnimated:YES];
 	tView.text = @"";
 	[rtv setSaveText:@"Saved Reflection"];
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:9]];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

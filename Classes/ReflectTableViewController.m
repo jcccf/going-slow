@@ -204,6 +204,7 @@
 		//reflectTextViewController.title = @"Reflection Pictures";
 		
 	}
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:6]];
 	[[self navigationController] presentModalViewController:reflectCameraViewController animated:YES];
 	
 }
@@ -234,7 +235,7 @@
 		NSLog(@"Image saved!");
 	}
 
-	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:6]];
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:10]];
 	[[CoreDataManager getCoreDataManagerInstance] addPhotoReflection:fullPath];
 	
 	

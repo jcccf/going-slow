@@ -218,9 +218,9 @@ static CoreDataManager *sharedInstance = nil;
 	[self deleteAllObjects:@"LogScreen"];
 	[self deleteAllObjects:@"Screen"];
 	
-	NSArray *screenIds = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], nil];
+	NSArray *screenIds = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6],[NSNumber numberWithInt:7], [NSNumber numberWithInt:8],[NSNumber numberWithInt:9],[NSNumber numberWithInt:10],nil];
 	
-	NSString *screenNameString = @"Suggestion,Diary,Reflection,ColorReflection,TextReflection,PhotoReflection";
+	NSString *screenNameString = @"Suggestion,Diary,Reflection,ColorReflection,TextReflection,PhotoReflection,Close,SaveColorReflection,SaveTextReflection,SavePhotoReflection";
 	NSArray *screenNames = [screenNameString componentsSeparatedByString:@","];
 	
 	int arrayCount = [screenIds count];
