@@ -185,6 +185,8 @@
  */
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:7]];
+	
 }
 
 
