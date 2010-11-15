@@ -35,6 +35,16 @@ static CoreDataManager *sharedInstance = nil;
     return sharedInstance;
 }
 
+- (void)shuffleArray:(NSMutableArray*) shufflingArray {
+    NSUInteger count = [shufflingArray count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        int nElements = count - i;
+        int n = (arc4random() % nElements) + i;
+        [shufflingArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+}
+
 -(void)addColorReflection:(NSArray *)colors{
 	ColorReflection *newReflection = (ColorReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"ColorReflection" inManagedObjectContext:managedObjectContext];
 	
@@ -294,7 +304,80 @@ static CoreDataManager *sharedInstance = nil;
 	}
 	[request release];
 	
+	//Set last seen to today's date
+	[suggestion setLastSeen:[NSDate date]];
+	NSLog(@"Date: %@", [suggestion lastSeen]);
+	[self saveChanges];	
+	
 	return suggestion;
+	
+}
+
+-(NSMutableArray*) fetchInitialSuggestions {
+	
+	// Fetch Suggestions From Data Store
+	// Create Request
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
+	[request setEntity:entity];
+	
+	// Set Sort Descriptors
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastSeen" ascending:NO];
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+	
+	[request setSortDescriptors:sortDescriptors];
+	[sortDescriptors release];
+	[sortDescriptor release];
+	
+	// Fetch Results
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+	
+	//[self shuffleArray:mutableFetchResults];
+	
+	[request release];
+	
+	return mutableFetchResults;
+	
+}
+
+-(NSMutableArray*) fetchNextSuggestions {
+	
+	// Fetch Suggestions From Data Store
+	// Create Request
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
+	[request setEntity:entity];
+	
+	// Set Sort Descriptors
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastSeen" ascending:YES];
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+	
+	[request setSortDescriptors:sortDescriptors];
+	[sortDescriptors release];
+	[sortDescriptor release];
+	
+	// Fetch Results
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+
+	[request release];
+	
+	NSUInteger count = [mutableFetchResults count];
+	NSUInteger increment = count/3;
+	
+	for (int j = 0; j < count; j+=increment) {
+		for (NSUInteger i = j; i < j+increment; ++i) {
+			// Select a random element between i and end of array to swap with.
+			int nElements = j+increment - i;
+			int n = (arc4random() % nElements) + i;
+			[mutableFetchResults exchangeObjectAtIndex:i withObjectAtIndex:n];
+		}		
+		
+	}
+
+	
+	return mutableFetchResults;
 	
 }
 

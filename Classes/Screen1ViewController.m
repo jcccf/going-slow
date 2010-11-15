@@ -132,13 +132,6 @@
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 	[formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zz"];
 	
-	for (Suggestion* s in suggestionsArray) {
-		NSLog(@"Theme: %@", [s theme]);
-		NSLog(@"Picture Path: %@", [s picturePath]);
-		NSString *stringFromDate = [formatter stringFromDate:[s lastSeen]];
-		NSLog(@"date: %@",  stringFromDate);
-	}	
-	
 	[formatter release];
 	
 	
@@ -159,21 +152,6 @@
 	[suggestion setLastSeen:[NSDate date]];
 	NSLog(@"Date: %@", [suggestion lastSeen]);
 	[[CoreDataManager getCoreDataManagerInstance] saveChanges];	
-	
-	
-	//TEST
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss ZZZ"];
-	
-	NSDate *testDate = [dateFormatter dateFromString:@"2010-11-18 20:00:00 GMT"];
-	NSLog(@"Current Date: %@", [NSDate date]);
-	NSLog(@"Reference Date: %@", testDate);
-	
-	int daysElapsed = [[CoreDataManager getCoreDataManagerInstance] daysElapsed:testDate];
-	NSLog(@"Days Elapsed: %i", daysElapsed);
-	
-	[dateFormatter release];
-	
 	
 }
 

@@ -317,7 +317,6 @@
 
 
 - (void)dealloc {
-	[coreDataManager release];
     [super dealloc];
 }
 
