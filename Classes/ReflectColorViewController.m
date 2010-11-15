@@ -37,9 +37,6 @@
 	
 	NSArray *colors = [NSArray arrayWithObjects:red, green, blue, nil];
 	
-	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:colors];
-	[[SyncManager getSyncManagerInstance] syncData];
-	
 	if(alpha > 0){
 		[[CoreDataManager getCoreDataManagerInstance] addColorReflection:colors];
 	}

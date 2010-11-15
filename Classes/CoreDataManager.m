@@ -54,6 +54,9 @@ static CoreDataManager *sharedInstance = nil;
 	NSLog(@"Blue: %@", [newReflection colorBlue]);
 	NSLog(@"Created At: %@", [newReflection createdAt]);
 	
+	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:newReflection];
+	[[SyncManager getSyncManagerInstance] syncData];
+	
 }
 
 -(void)addPhotoReflection:(NSString *)filepath{
