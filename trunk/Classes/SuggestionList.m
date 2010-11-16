@@ -91,11 +91,15 @@ static SuggestionList *sharedInstance = nil;
 	//Reset pointer to new suggestion after adjusting the array
 	suggestion = (Suggestion*)[suggestions objectAtIndex:0];
 	
-	NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
+	if (daysElapsed > 0) {
+		NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
+		
+		[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
+		
+		[[SyncManager getSyncManagerInstance] syncData];	
+		
+	}
 	
-	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
-	
-	[[SyncManager getSyncManagerInstance] syncData];
 	
 	return suggestion;
 	
