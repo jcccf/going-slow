@@ -239,6 +239,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	[super viewDidLoad];
 	self.navigationItem.rightBarButtonItem = self.infoButton;
 	//delegateReference = [[UIApplication sharedApplication] delegate];
 	self.dataArray = [NSArray arrayWithObjects:@"Morning Reminder", @"Evening Reminder", nil];
@@ -283,8 +284,6 @@
 	NSLog([eveningDate description]);
 	[datePicker setDate:morningDate];
 	[dateComps release];
-	
-    [super viewDidLoad];
 }
 
 

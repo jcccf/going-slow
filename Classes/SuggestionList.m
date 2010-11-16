@@ -129,8 +129,13 @@ static SuggestionList *sharedInstance = nil;
 		
 		localNotifMorning.alertBody = [NSString stringWithFormat:@"Today's Suggestion: %@", [suggestion theme]];
 		localNotifMorning.alertAction = @"See More";
-		
-		[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
+	
+		// Schedule ONLY for notifications happening in the future
+		// Notifications scheduled for the past fire immediately
+		if ([[localNotifMorning fireDate] timeIntervalSinceNow] > 0) {
+			NSLog(@"Scheduling %@", [suggestion theme]);
+			[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
+		}
 		
 		[localNotifMorning release];
 		
