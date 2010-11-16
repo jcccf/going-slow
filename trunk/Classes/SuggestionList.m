@@ -49,11 +49,11 @@ static SuggestionList *sharedInstance = nil;
 
 -(Suggestion*) fetchSuggestion {
 	
-	for (Suggestion* s in suggestions) {
-		NSLog(@"Theme: %@", [s theme]);
-		NSLog(@"Picture Path: %@", [s picturePath]);
-		NSLog(@"date: %@",  [s lastSeen]);
-	}	
+//	for (Suggestion* s in suggestions) {
+//		NSLog(@"Theme: %@", [s theme]);
+//		NSLog(@"Picture Path: %@", [s picturePath]);
+//		NSLog(@"date: %@",  [s lastSeen]);
+//	}	
 	
 	
 	Suggestion *suggestion = (Suggestion*)[suggestions objectAtIndex:0];
@@ -75,13 +75,8 @@ static SuggestionList *sharedInstance = nil;
 	}
 	
 	if ([suggestions count] <= lowSuggestionThreshold) {
-		//			for (int j = 0; j < 21-lowSuggestionThreshold; j++) {
-		//				[suggestions addObject:[[CoreDataManager getCoreDataManagerInstance] fetchSuggestion]];
-		//				
-		//			}
 		
 		NSMutableArray *newSuggestions = [[CoreDataManager getCoreDataManagerInstance]fetchNextSuggestions];
-		
 		for (Suggestion *s in suggestions) {
 			[newSuggestions removeObject:s];
 		}
@@ -90,9 +85,17 @@ static SuggestionList *sharedInstance = nil;
 		
 		//Reschedule notifications
 		[self scheduleNotifications];
-		suggestion = (Suggestion*)[suggestions objectAtIndex:0];
 		
 	}
+	
+	//Reset pointer to new suggestion after adjusting the array
+	suggestion = (Suggestion*)[suggestions objectAtIndex:0];
+	
+	NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
+	
+	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
+	
+	[[SyncManager getSyncManagerInstance] syncData];
 	
 	return suggestion;
 	
