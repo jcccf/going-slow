@@ -298,9 +298,9 @@ static CoreDataManager *sharedInstance = nil;
 		
 		// Send to Sync Manager
 		// Uncomment the below when fixed.
-		//NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
-		//[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
-		//[[SyncManager getSyncManagerInstance] syncData];
+		NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
+		[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
+		[[SyncManager getSyncManagerInstance] syncData];
 	}
 	[request release];
 	
