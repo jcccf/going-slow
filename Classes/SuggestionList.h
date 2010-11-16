@@ -10,7 +10,7 @@
 #import "CoreDataManager.h"
 #import "Suggestion.h"
 #import "goslowtest2AppDelegate.h"
-
+#import "SyncManager.h"
 
 @interface SuggestionList: NSObject {
 	NSMutableArray* suggestions;
