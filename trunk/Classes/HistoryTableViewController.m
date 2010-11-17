@@ -149,6 +149,7 @@
 						cell.backgroundView = nil;
 						cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 						keepLooping = NO;						
+						cell.imageView.image = nil;
 						
 						
 					}
@@ -156,6 +157,7 @@
 						ColorReflection *c = (ColorReflection*) r;
 						keepLooping = NO;
 						UIView *vi = [[UIView alloc] init];
+						cell.imageView.image = nil;
 						cell.selectionStyle = UITableViewCellSelectionStyleNone;
 						cell.text = @"";
 						vi.backgroundColor = [UIColor colorWithRed:[[c colorRed]floatValue] green:[[c colorGreen]floatValue] blue:[[c colorBlue]floatValue] alpha:1];
@@ -164,7 +166,9 @@
 					}
 					
 					else if([r class] == [PhotoReflection class]) {
-						cell.textLabel.text = [NSString stringWithFormat:@"Photo %i", numPhotos];
+						PhotoReflection *p = (PhotoReflection*)r;
+						cell.textLabel.text = @"Photo";
+						cell.imageView.image = [UIImage imageWithContentsOfFile:[p filepath]];
 						numPhotos++;
 						cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 						cell.backgroundView = nil;
