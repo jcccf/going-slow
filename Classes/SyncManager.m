@@ -308,10 +308,10 @@ static SyncManager *sharedInstance = nil;
     // release the connection, and the data object
     [connection release];
 	
-    // inform the user
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Error" message:[NSString stringWithFormat:@"The upload failed with this error: %@", [error localizedDescription]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
+    // inform the user, but now don't!
+    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Error" message:[NSString stringWithFormat:@"The upload failed with this error: %@", [error localizedDescription]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    //[alert show];
+    //[alert release];
 	
     NSLog(@"Connection failed! Error - %@",[error localizedDescription]);
 }
