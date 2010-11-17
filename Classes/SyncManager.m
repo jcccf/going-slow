@@ -7,6 +7,7 @@
 //
 
 #import "SyncManager.h"
+#import "SyncManagerConnectionDelegate.h"
 #import "Reachability.h"
 #import "LogScreen.h"
 #import "ColorReflection.h"
@@ -22,13 +23,14 @@
 
 static SyncManager *sharedInstance = nil;
 
-@synthesize bufferedReflections;
+@synthesize bufferedReflections, urLock;
 
 +(SyncManager*)getSyncManagerInstance{
 	@synchronized(self){
 		if(sharedInstance == nil){
 			sharedInstance = [[self alloc] init];
 			sharedInstance.bufferedReflections = [[[NSMutableArray alloc] init] retain];
+			sharedInstance.urLock = [[NSLock alloc] init];
 		}
 	}
 	return sharedInstance;
@@ -100,7 +102,8 @@ static SyncManager *sharedInstance = nil;
 	
 	// Submit & retrieve results
 	NSLog(@"Contacting Rails....");
-	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+	[urlRequest retain];
+	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:[[SyncManagerConnectionDelegate alloc] set:urlRequest withLock:[self urLock] withType:@"TextReflection"]];
 }
 
 -(void) sendPhotoReflection:(UIImage *)image{
@@ -124,7 +127,8 @@ static SyncManager *sharedInstance = nil;
 	
 	// Submit & retrieve results
 	NSLog(@"Contacting Rails....");
-	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+	[urlRequest retain];
+	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:[[SyncManagerConnectionDelegate alloc] set:urlRequest withLock:[self urLock] withType:@"PhotoReflection"]];
 }
 
 -(void) sendColorReflectionWithRed:(NSNumber*)r andGreen:(NSNumber*)g andBlue:(NSNumber*)b{
@@ -149,7 +153,8 @@ static SyncManager *sharedInstance = nil;
 	
 	// Submit & retrieve results
 	NSLog(@"Contacting Rails....");
-	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+	[urlRequest retain];
+	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:[[SyncManagerConnectionDelegate alloc] set:urlRequest withLock:[self urLock] withType:@"ColorReflection"]];
 }
 
 -(void) sendDailySuggestion:(NSString*)theme andTime:(NSString *)timestamp{
@@ -174,7 +179,8 @@ static SyncManager *sharedInstance = nil;
 	
 	// Submit & retrieve results
 	NSLog(@"Contacting Rails....");
-	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+	[urlRequest retain];
+	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:[[SyncManagerConnectionDelegate alloc] set:urlRequest withLock:[self urLock] withType:@"DailySuggestion"]];
 }
 
 -(void) sendLogScreen:(int)screen_id andTime:(NSString *)timestamp{
@@ -199,7 +205,8 @@ static SyncManager *sharedInstance = nil;
 	
 	// Submit & retrieve results
 	NSLog(@"Contacting Rails....");
-	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+	[urlRequest retain];
+	[[NSURLConnection alloc] initWithRequest:urlRequest delegate:[[SyncManagerConnectionDelegate alloc] set:urlRequest withLock:[self urLock] withType:@"LogScreen"]];
 }
 
 -(void)syncData{
@@ -229,6 +236,28 @@ static SyncManager *sharedInstance = nil;
 	
 	if(netStatus == ReachableViaWiFi){
 		NSLog(@"Wifi connection is turned on!!");
+		
+		// Sync any failed URLRequests
+		NSLog(@"Trying to sync any failed URLRequests...");
+		[[self urLock] lock];
+		NSMutableArray* aru = [[NSMutableArray alloc] init];
+		NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+		NSData *objectsData = [userDefaults objectForKey:@"savedUrlRequests"];
+		NSArray *objects = [NSKeyedUnarchiver unarchiveObjectWithData:objectsData];
+		if(objects != nil){
+			[aru addObjectsFromArray:objects];
+		}
+		for(NSObject *o in aru){
+			NSMutableURLRequest* urq = (NSMutableURLRequest*) o;
+			[[NSURLConnection alloc] initWithRequest:urq delegate:[[SyncManagerConnectionDelegate alloc] set:urq withLock:[self urLock] withType:@"Retry"]];
+		}
+		[aru release];
+		[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:[[NSMutableArray alloc] init]] forKey:@"savedUrlRequests"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+		[[self urLock] unlock];
+		NSLog(@"...finished initiating retries for failed URLRequests");
+		
+		// Sync other normal stuff
 		NSLog(@"Syncing Data");
 		for(NSObject* o in ar){
 			NSLog(@"Syncing object...");
