@@ -15,9 +15,11 @@
 	int userId;
 	NSMutableArray *bufferedReflections;
 	Reachability* wifiReach;
+	NSLock* urLock;
 }
 
 @property (nonatomic,retain) NSMutableArray *bufferedReflections;
+@property (nonatomic,retain) NSLock *urLock;
 
 - (void) setUserId:(int)uid;
 - (void) sendTextReflection:(NSString*)text;

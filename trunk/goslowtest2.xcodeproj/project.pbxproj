@@ -41,6 +41,7 @@
 		1050BEBB127BA330001C5640 /* icon_digital_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 1050BEB8127BA330001C5640 /* icon_digital_camera.png */; };
 		1050BEBC127BA330001C5640 /* icon_document_pen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1050BEB9127BA330001C5640 /* icon_document_pen.png */; };
 		1050BEC0127BA4D9001C5640 /* icon_digital_camera2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1050BEBF127BA4D9001C5640 /* icon_digital_camera2.png */; };
+		10607E8F12937EE100595C5B /* SyncManagerConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10607E8E12937EE100595C5B /* SyncManagerConnectionDelegate.m */; };
 		1082E6241278DC3100A7701A /* CameraReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1082E6211278DC3100A7701A /* CameraReflect.png */; };
 		1082E6251278DC3100A7701A /* ColorReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1082E6221278DC3100A7701A /* ColorReflect.png */; };
 		1082E6261278DC3100A7701A /* TextReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1082E6231278DC3100A7701A /* TextReflect.png */; };
@@ -147,6 +148,8 @@
 		1050BEB8127BA330001C5640 /* icon_digital_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_digital_camera.png; sourceTree = "<group>"; };
 		1050BEB9127BA330001C5640 /* icon_document_pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_document_pen.png; sourceTree = "<group>"; };
 		1050BEBF127BA4D9001C5640 /* icon_digital_camera2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_digital_camera2.png; sourceTree = "<group>"; };
+		10607E8D12937EE100595C5B /* SyncManagerConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncManagerConnectionDelegate.h; sourceTree = "<group>"; };
+		10607E8E12937EE100595C5B /* SyncManagerConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncManagerConnectionDelegate.m; sourceTree = "<group>"; };
 		1082E6211278DC3100A7701A /* CameraReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CameraReflect.png; sourceTree = "<group>"; };
 		1082E6221278DC3100A7701A /* ColorReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColorReflect.png; sourceTree = "<group>"; };
 		1082E6231278DC3100A7701A /* TextReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextReflect.png; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 				0A4E421B128F21A400C93BD2 /* SuggestionList.m */,
 				0A4DC38C126EAF8A008445A5 /* SyncManager.h */,
 				0A4DC38D126EAF8A008445A5 /* SyncManager.m */,
+				10607E8D12937EE100595C5B /* SyncManagerConnectionDelegate.h */,
+				10607E8E12937EE100595C5B /* SyncManagerConnectionDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -530,6 +535,7 @@
 				10BFF65C128DAC7D00B58E2C /* LogScreen.m in Sources */,
 				10BFF65D128DAC7D00B58E2C /* Screen.m in Sources */,
 				0A4E421C128F21A400C93BD2 /* SuggestionList.m in Sources */,
+				10607E8F12937EE100595C5B /* SyncManagerConnectionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
