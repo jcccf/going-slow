@@ -168,7 +168,7 @@
 					else if([r class] == [PhotoReflection class]) {
 						PhotoReflection *p = (PhotoReflection*)r;
 						cell.textLabel.text = @"Photo";
-						cell.imageView.image = [UIImage imageWithContentsOfFile:[p filepath]];
+						//cell.imageView.image = [UIImage imageWithContentsOfFile:[p filepath]];
 						numPhotos++;
 						cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 						cell.backgroundView = nil;
