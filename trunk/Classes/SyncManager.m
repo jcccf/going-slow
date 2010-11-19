@@ -211,6 +211,11 @@ static SyncManager *sharedInstance = nil;
 
 -(void)syncData{
 	
+	wifiReach = [[Reachability reachabilityForLocalWiFi] retain];
+	[wifiReach startNotifier];
+	
+	NetworkStatus netStatus = [wifiReach currentReachabilityStatus];
+	
 	// Pull any unsynchronized data from NSUserDefaults
 	NSMutableArray *ar = [[SyncManager getSyncManagerInstance] bufferedReflections];
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -218,7 +223,7 @@ static SyncManager *sharedInstance = nil;
 	// if ([objectsData length] > 0) {
 	NSArray *objects = [NSKeyedUnarchiver unarchiveObjectWithData:objectsData];
 	// }
-	if(objects != nil){
+	if(objects != nil && netStatus == ReachableViaWiFi){
 		[ar addObjectsFromArray:objects];
 	}
 	NSLog(@"Loaded Buffered Data");
@@ -226,11 +231,6 @@ static SyncManager *sharedInstance = nil;
 	// TODO Ensure that buffered stuff is preserved even when you exit the application
 	
 	// TODO Sync Suggestion of the Day
-	
-	wifiReach = [[Reachability reachabilityForLocalWiFi] retain];
-	[wifiReach startNotifier];
-	
-	NetworkStatus netStatus = [wifiReach currentReachabilityStatus];
 	
 	NSMutableArray *objectsToDelete = [[NSMutableArray alloc] init];
 	
@@ -261,6 +261,7 @@ static SyncManager *sharedInstance = nil;
 		NSLog(@"Syncing Data");
 		for(NSObject* o in ar){
 			NSLog(@"Syncing object...");
+			NSLog([NSString stringWithFormat:@"Size of buffer array sending objects to server %i",[ar count]]);
 			if([o isKindOfClass:[NSString class]]){
 				NSString *s = (NSString*)o;
 				[self sendTextReflection:s];
@@ -301,15 +302,19 @@ static SyncManager *sharedInstance = nil;
 		}
 		[ar removeObjectsInArray:objectsToDelete];
 		[objectsToDelete release];
+		[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:ar] forKey:@"savedArray"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+		NSLog(@"Saved Buffered Data");
 	}
 	else {
 		NSLog(@"NO WIFI CONNECTION!!");
 	}
 	
+	NSLog(@"out of wifi if-then");
 	// Save to NSUserDefaults
-	[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:ar] forKey:@"savedArray"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSLog(@"Saved Buffered Data");
+	//[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:ar] forKey:@"savedArray"];
+	//[[NSUserDefaults standardUserDefaults] synchronize];
+	//NSLog(@"Saved Buffered Data");
 	
 }
 
