@@ -9,14 +9,14 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Suggestion :  NSManagedObject  
-{
+@interface Suggestion :  NSManagedObject {
 }
 
 @property (nonatomic, retain) NSString * moreInfo;
 @property (nonatomic, retain) NSString * picturePath;
 @property (nonatomic, retain) NSString * theme;
-@property (nonatomic, retain) NSDate * lastSeen;
+@property (nonatomic, retain) NSDate *lastSeen;
+@property (nonatomic, retain) NSDate *nextSeen;
 
 @end
 

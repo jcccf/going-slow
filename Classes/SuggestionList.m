@@ -105,6 +105,11 @@ static SuggestionList *sharedInstance = nil;
 	
 }
 
+-(void) scheduleSuggestions {
+	
+	
+}
+
 -(void) scheduleNotifications {
 	//[self.view removeFromSuperview];
 	[[UIApplication sharedApplication] cancelAllLocalNotifications];

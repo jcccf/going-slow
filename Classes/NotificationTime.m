@@ -8,10 +8,9 @@
 
 #import "NotificationTime.h"
 
-
 @implementation NotificationTime
 @synthesize datePicker, delegateReference, doneButton, dataArray, dateFormatter, infoButton, dataArray2;
-
+@synthesize morningDate, eveningDate;
 
 
 -(IBAction)goToHomeScreen:(id)sender{
@@ -144,6 +143,8 @@
 	
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
+	[[CoreDataManager getCoreDataManagerInstance] setMorningEveningTime:morningDate eveningDate:eveningDate];
+	
 	[[SuggestionList getInstance] setDate:morningDate eveningDate: eveningDate];
 
 	[[SuggestionList getInstance] scheduleNotifications];
@@ -167,7 +168,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *targetCell = [tableView cellForRowAtIndexPath:indexPath];
-	self.datePicker.date = [self.dateFormatter dateFromString:targetCell.detailTextLabel.text];
+	
+	MorningEveningTime* alarmTimes = [[CoreDataManager getCoreDataManagerInstance] fetchMorningEveningTime];
+	NSIndexPath* morningRow = [NSIndexPath indexPathForRow:0 inSection:0];
+	
+	if ([morningRow isEqual:indexPath]) {
+		self.datePicker.date = [alarmTimes morningDate];
+	} else {
+		self.datePicker.date = [alarmTimes eveningDate];
+	}
+	
+	//self.datePicker.date = [self.dateFormatter dateFromString:targetCell.detailTextLabel.text];
 	
 	// check if our date picker is already on screen
 	if (self.datePicker.superview == nil)
@@ -276,6 +287,9 @@
 	[morningDate retain];
 	
 	self.dataArray2=[NSArray arrayWithObjects:[self.dateFormatter stringFromDate:morningDate], [self.dateFormatter stringFromDate:eveningDate], nil];
+	
+	//TEST
+	[[CoreDataManager getCoreDataManagerInstance] setMorningEveningTime:morningDate eveningDate:eveningDate];
 	
 	[[SuggestionList getInstance] setDate:morningDate eveningDate: eveningDate];
 	

@@ -12,6 +12,7 @@
 #import "ColorReflection.h"
 #import "PhotoReflection.h"
 #import "TextReflection.h"
+#import "MorningEveningTime.h"
 #import "LogScreen.h"
 #import "Screen.h"
 #import "goslowtest2AppDelegate.h"
@@ -30,6 +31,10 @@
 -(void)addScreenIds;
 -(void)addLog:(NSNumber *)screenId;
 -(void)addScreen:(NSNumber *)screenId screenName:(NSString*) screenName;
+-(void)setMorningEveningTime:(NSDate *)morningDate eveningDate:(NSDate*) eveningDate;
+-(MorningEveningTime*)fetchMorningEveningTime;
+
+
 -(Suggestion*)fetchSuggestion;
 -(NSMutableArray*) fetchInitialSuggestions;
 -(NSMutableArray*) fetchNextSuggestions;
