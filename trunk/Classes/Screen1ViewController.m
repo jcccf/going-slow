@@ -151,7 +151,7 @@
 	//Set last seen to today's date
 	[suggestion setLastSeen:[NSDate date]];
 	NSLog(@"Date: %@", [suggestion lastSeen]);
-	[[CoreDataManager getCoreDataManagerInstance] saveChanges];	
+	[[CoreDataManager getCoreDataManagerInstance] saveChanges];
 	
 }
 

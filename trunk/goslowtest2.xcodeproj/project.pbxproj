@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A28E7F1129A24B300BC63E6 /* MorningEveningTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A28E7F0129A24B300BC63E6 /* MorningEveningTime.m */; };
 		0A3601111263874D0093D5B2 /* breathe.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3601101263874D0093D5B2 /* breathe.png */; };
 		0A4DC338126EAEF0008445A5 /* Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC337126EAEF0008445A5 /* Reflection.m */; };
 		0A4DC38E126EAF8A008445A5 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC386126EAF8A008445A5 /* CoreDataManager.m */; };
@@ -98,6 +99,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A28E7EF129A24B300BC63E6 /* MorningEveningTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorningEveningTime.h; sourceTree = "<group>"; };
+		0A28E7F0129A24B300BC63E6 /* MorningEveningTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorningEveningTime.m; sourceTree = "<group>"; };
 		0A3601101263874D0093D5B2 /* breathe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = breathe.png; path = goslowtest2.xcdatamodeld/breathe.png; sourceTree = "<group>"; };
 		0A4DC336126EAEF0008445A5 /* Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reflection.h; sourceTree = "<group>"; };
 		0A4DC337126EAEF0008445A5 /* Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reflection.m; sourceTree = "<group>"; };
@@ -536,6 +539,7 @@
 				10BFF65D128DAC7D00B58E2C /* Screen.m in Sources */,
 				0A4E421C128F21A400C93BD2 /* SuggestionList.m in Sources */,
 				10607E8F12937EE100595C5B /* SyncManagerConnectionDelegate.m in Sources */,
+				0A28E7F1129A24B300BC63E6 /* MorningEveningTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +638,8 @@
 				0A4DC337126EAEF0008445A5 /* Reflection.m */,
 				D00C842512656A37000DD3A9 /* Suggestion.m */,
 				28C3AD890F43EF2300507BA6 /* goslowtest2.xcdatamodel */,
+				0A28E7EF129A24B300BC63E6 /* MorningEveningTime.h */,
+				0A28E7F0129A24B300BC63E6 /* MorningEveningTime.m */,
 			);
 			currentVersion = 28C3AD890F43EF2300507BA6 /* goslowtest2.xcdatamodel */;
 			path = goslowtest2.xcdatamodeld;

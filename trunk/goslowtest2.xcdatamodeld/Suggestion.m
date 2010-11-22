@@ -15,5 +15,6 @@
 @dynamic picturePath;
 @dynamic theme;
 @dynamic lastSeen;
+@dynamic nextSeen;
 
 @end

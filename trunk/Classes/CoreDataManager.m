@@ -235,6 +235,46 @@ static CoreDataManager *sharedInstance = nil;
 	
 }
 
+-(void)setMorningEveningTime:(NSDate *)morningDate eveningDate:(NSDate*) eveningDate {
+	
+	// Create Request
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"MorningEveningTime" inManagedObjectContext:managedObjectContext];
+	[request setEntity:entity];
+	
+	// Fetch Results
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+	
+	[request release];
+	
+	if ([mutableFetchResults count] == 0) {
+		MorningEveningTime *newTime = (MorningEveningTime*)[NSEntityDescription insertNewObjectForEntityForName:@"MorningEveningTime" inManagedObjectContext:managedObjectContext];
+	
+		[newTime setMorningDate:morningDate];
+		[newTime setEveningDate:eveningDate];
+	
+		[self saveChanges];	
+		
+		NSLog(@"Created new time");
+		NSLog(@"Morning date: %@", [newTime morningDate]);
+		NSLog(@"Evening date: %@", [newTime eveningDate]);
+		
+	} else {
+		MorningEveningTime *oldTime = (MorningEveningTime*)[mutableFetchResults objectAtIndex:0];
+		[oldTime setMorningDate:morningDate];
+		[oldTime setEveningDate:eveningDate];
+		
+		[self saveChanges];
+		
+		NSLog(@"Changed old time");
+		NSLog(@"Morning date: %@", [oldTime morningDate]);
+		NSLog(@"Evening date: %@", [oldTime eveningDate]);
+	}
+	
+	
+}
+
 // record that user fetched the date in the method
 // look to NSPredicate for SQL-like queries
 -(Suggestion*) fetchSuggestion {
@@ -443,6 +483,28 @@ static CoreDataManager *sharedInstance = nil;
 	[request release];
 	
 	return mutableFetchResults;
+	
+}
+
+-(MorningEveningTime*)fetchMorningEveningTime {
+	// Create Request
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"MorningEveningTime" inManagedObjectContext:managedObjectContext];
+	[request setEntity:entity];
+	
+	// Fetch Results
+	NSError *error;
+	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+	
+	[request release];
+	
+	if ([mutableFetchResults count] == 0) {
+		return nil;
+		
+	} else {
+		MorningEveningTime *oldTime = (MorningEveningTime*)[mutableFetchResults objectAtIndex:0];
+		return oldTime;
+	}
 	
 }
 
