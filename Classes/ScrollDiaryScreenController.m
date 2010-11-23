@@ -30,6 +30,11 @@ static currentPage = 0;
 }
 */
 
+-(NSArray*)getColors:(NSDate*)date{
+	
+	
+}
+
 -(void)loadScrollViewWithPage:(int)page{
 	
 	if(page < 0)
@@ -38,15 +43,16 @@ static currentPage = 0;
 		return;
 	}
 	
-	NSMutableArray *i = viewControllers;
 	ScrollViewPageController *s = [viewControllers objectAtIndex:page];
 	
 	//s should never be nil
 	assert(s != nil);
 	
+	assert(s.view != nil);
+	
 	assert(s.imageView != nil);
 	
-	[scrollView addSubview:s.imageView];
+	[scrollView addSubview:s.view];
 	
 	
 	
@@ -89,6 +95,9 @@ static currentPage = 0;
 		//set image view frame etc.
 		s.imageView.frame = CGRectMake(i*scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height);
 		
+		UIView *v = [[UIView alloc] init];
+		[v addSubview:s.imageView];
+		s.view = v;
 		
 		[viewControllers addObject:s];
 		
@@ -102,8 +111,9 @@ static currentPage = 0;
 	scrollView.delegate = self;
 	scrollView.alwaysBounceHorizontal = YES;
 	scrollView.clipsToBounds = YES;
-    [self loadScrollViewWithPage:0];
-	[self loadScrollViewWithPage:1];
+	[scrollView setContentOffset:CGPointMake(scrollView.frame.size.width*kNumberOfPages, 0)];
+    [self loadScrollViewWithPage:kNumberOfPages];
+	[self loadScrollViewWithPage:kNumberOfPages-1];
 	
 	
 	
