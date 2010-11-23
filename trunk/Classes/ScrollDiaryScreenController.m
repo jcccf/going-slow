@@ -87,15 +87,14 @@ static NSArray* dates = nil;
 	
 	tableManager = [[ReflectionTableManager alloc] init];
 	
-	kNumberOfPages = [tableManager [dayToTableRepDict count]];
+	kNumberOfPages = [tableManager.dayToTableRepDict count];
 	
 	dates = [[tableManager dayToTableRepDict] allKeys];
 	
 	[dates sortUsingSelector:@selector(compare:)];
 	
 	
-	for(NSString *s in dates){
-			
+	for(int i = 0; i < kNumberOfPages; i++){
 		
 	}
 	
