@@ -8,8 +8,13 @@
 
 #import "ScrollDiaryScreenController.h"
 #import "ScrollViewPageController.h"
+#import "DayTableObject.h"
 
 #import "ReflectionTableManager.h"
+#import "ColorReflection.h"
+#import "TextReflection.h"
+#import "HistoryReflectionViewController.h"
+#import "PhotoReflection.h"
 
 
 
@@ -21,7 +26,7 @@ static NSMutableArray* dates = nil;
 
 @implementation ScrollDiaryScreenController
 
-@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict;
+@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict,histRefViewCont;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -33,8 +38,22 @@ static NSMutableArray* dates = nil;
 }
 */
 
--(NSArray*)getColors:(NSDate*)date{
+-(NSMutableArray*)getColors{
 	
+	NSString *dateKey = [dates objectAtIndex:currentPage];
+	
+	DayTableObject *d = [tableManager.dayToTableRepDict objectForKey:dateKey];
+	
+	NSMutableArray *allref = [d reflections];
+	
+	NSMutableArray *returnValue = [[NSMutableArray alloc] init];
+	
+	for(Reflection *r in allref){
+		if([r isKindOfClass:[ColorReflection class]])
+			[returnValue addObject:r];
+	}
+	
+	return returnValue;
 	
 }
 
@@ -66,7 +85,11 @@ static NSMutableArray* dates = nil;
 	if(scrollView1 = scrollView){
 		CGFloat pageWidth = scrollView.frame.size.width;
 		int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-		currentPage = page;
+		if(currentPage != page){
+			currentPage = page;
+			[dateTableView reloadData];
+			
+		}
 		
 		[self loadScrollViewWithPage:page-1];
 		[self loadScrollViewWithPage:page];
@@ -85,7 +108,10 @@ static NSMutableArray* dates = nil;
 	
 	tableManager = [[ReflectionTableManager alloc] init];
 	
+	[tableManager retain];
+	
 	kNumberOfPages = [tableManager.dayToTableRepDict count];
+	
 	
 	NSArray* s = [[tableManager dayToTableRepDict] allKeys];
 	
@@ -151,6 +177,9 @@ static NSMutableArray* dates = nil;
     [self loadScrollViewWithPage:kNumberOfPages-1];
 	[self loadScrollViewWithPage:kNumberOfPages-2];
 	
+	//CoreDataManager *c = [CoreDataManager getCoreDataManagerInstance];
+	
+	[dateTableView reloadData];
 	
 }
 
@@ -163,6 +192,7 @@ static NSMutableArray* dates = nil;
 	
 	
 }
+
 
 
 /*
@@ -191,6 +221,28 @@ static NSMutableArray* dates = nil;
     // e.g. self.myOutlet = nil;
 }
 
+-(void)makeThisDateTable{
+
+	thisDateTable = [[NSMutableArray alloc] init];
+	
+	if([dates count] > 0){
+	NSString *dateKey = [dates objectAtIndex:currentPage];
+	
+	DayTableObject *d = [tableManager.dayToTableRepDict objectForKey:dateKey];
+	
+	NSMutableArray *allref = [d reflections];
+	
+	for(Reflection *r in allref){
+		if(![r isKindOfClass:[ColorReflection class]]){
+			[thisDateTable addObject:r];
+		}
+		
+	}
+	}
+	
+	
+	
+}
 
 - (void)dealloc {
     [super dealloc];
@@ -206,7 +258,11 @@ static NSMutableArray* dates = nil;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return kNumberOfPages;
+	
+	[self makeThisDateTable];
+	
+	
+    return [thisDateTable count];
 }
 
 
@@ -219,10 +275,30 @@ static NSMutableArray* dates = nil;
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
+	
+	
+	Reflection *r = [thisDateTable objectAtIndex:[indexPath row]];
+	
+	if([r isKindOfClass:[TextReflection class]]){
+		TextReflection *t = (TextReflection*)r;
+		NSString *text = [t reflectionText];
+		if([text length] > 20){
+			text = [text substringToIndex:20];
+		}
+		cell.textLabel.text = text;
+		
+	}
+	if([r isKindOfClass:[PhotoReflection class]]){
+			
+		cell.textLabel.text = @"Photo";
+	}
+	
+	
     
     // Configure the cell...
 	
-	cell.textLabel.text = [NSString stringWithFormat:@"Cell number %i", [indexPath row]];
+	
+	//cell.textLabel.text = [NSString stringWithFormat:@"Cell number %i", [indexPath row]];
     
     return cell;
 }
@@ -232,7 +308,13 @@ static NSMutableArray* dates = nil;
 	
 	//TODO
 	//return the correct date...
-	return @"Date of the reflection...";
+	if([dates count] > 0){
+	return [dates objectAtIndex:currentPage];
+	}
+	else {
+		return @"Empty Diary";
+	}
+
 }
 
 /*
@@ -287,6 +369,41 @@ static NSMutableArray* dates = nil;
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
+	
+	Reflection *r = [thisDateTable objectAtIndex:[indexPath row]];
+	
+	if(histRefViewCont == nil){
+		histRefViewCont = [[HistoryReflectionViewController alloc] initWithNibName:@"HistoryReflectionViewController" bundle:nil];
+	}
+	
+	if([r isKindOfClass:[TextReflection class]]){
+		TextReflection *t = (TextReflection*)r;
+		histRefViewCont.navigationItem.title = [NSString stringWithFormat:@"Text for day %@", [[[t createdAt] description] substringToIndex:10]];
+		histRefViewCont.t.hidden = NO;
+		histRefViewCont.i.hidden = YES;
+		histRefViewCont.te = [t reflectionText];
+		//histRefViewCont.t.text = [r reflectionText];
+		[[self navigationController] pushViewController:histRefViewCont animated:YES];
+		
+		
+	}
+	else{
+		
+		PhotoReflection *p = (PhotoReflection*)r;
+		histRefViewCont.navigationItem.title = [NSString stringWithFormat:@"Photo for date %@",[[[p createdAt] description] substringToIndex:10]];
+		histRefViewCont.t.hidden = YES;
+		histRefViewCont.i.hidden = NO;
+		NSLog([NSString stringWithFormat:@"%@", [p filepath]]);
+		histRefViewCont.im = [UIImage imageWithContentsOfFile:[p filepath]];
+		//UIImage *image = [UIImage imageWithContentsOfFile:[p filepath]];
+		//assert(image != nil);
+		//histRefViewCont.view = histRefViewCont.i;
+		[[self navigationController] pushViewController:histRefViewCont animated:NO];
+		//[image release];
+	}
+	
+	
+	
 }
 
 

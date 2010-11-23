@@ -74,8 +74,10 @@ static CoreDataManager *sharedInstance = nil;
 -(void)addTextReflection:(NSString *)reflectionText{
 	TextReflection *newReflection = (TextReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"TextReflection" inManagedObjectContext:managedObjectContext];
 	
+
 	[newReflection setReflectionText:reflectionText];
 	[newReflection setCreatedAt:[NSDate date]];
+
 	
 	[self saveChanges];	
 	
