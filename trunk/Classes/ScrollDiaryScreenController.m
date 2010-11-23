@@ -17,7 +17,7 @@ static NSUInteger kNumberOfPages = 0;
 
 static currentPage = 0;
 
-static NSArray* dates = nil;
+static NSMutableArray* dates = nil;
 
 @implementation ScrollDiaryScreenController
 
@@ -76,11 +76,9 @@ static NSArray* dates = nil;
 	
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)viewDidAppear:(BOOL)animated{
 	
-	dateToPageDict = [[NSMutableDictionary alloc] init];
+	//dateToPageDict = [[NSMutableDictionary alloc] init];
 	
 	//set kNumberofPages here with how many dates are in coredata etc.
 	viewControllers = [[NSMutableArray alloc] init];
@@ -89,19 +87,20 @@ static NSArray* dates = nil;
 	
 	kNumberOfPages = [tableManager.dayToTableRepDict count];
 	
-	dates = [[tableManager dayToTableRepDict] allKeys];
+	NSArray* s = [[tableManager dayToTableRepDict] allKeys];
 	
-	//[dates sortUsingSelector:@selector(compare:)];
+	dates = [[NSMutableArray alloc] init];
+	
+	[dates addObjectsFromArray:s];
+	
+    [dates sortUsingSelector:@selector(compare:)];
 	
 	
-	for(int i = 0; i < kNumberOfPages; i++){
-		//[dateToPageDict setObject:[[tableManager.dayToTableRepDict forKey:i]
-	}
 	
 	
 	//add ScrolViewPageControllers here.  The imageViews are instantiated here and added to the scrollView
 	for(int i = 0; i < kNumberOfPages; i++){
-			
+		
 		ScrollViewPageController *s = [[ScrollViewPageController alloc] init];
 		
 		//right now image views are just repeat of "breathe".  
@@ -122,17 +121,25 @@ static NSArray* dates = nil;
 	}
 	
 	scrollView.pagingEnabled = YES;
-	scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages,scrollView.frame.size.height);
+	scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * (kNumberOfPages),scrollView.frame.size.height);
 	scrollView.showsVerticalScrollIndicator = NO;
 	scrollView.showsHorizontalScrollIndicator = NO;
 	scrollView.scrollsToTop = NO;
 	scrollView.delegate = self;
 	scrollView.alwaysBounceHorizontal = YES;
 	scrollView.clipsToBounds = YES;
-	[scrollView setContentOffset:CGPointMake(scrollView.frame.size.width*kNumberOfPages, 0)];
-    [self loadScrollViewWithPage:kNumberOfPages];
-	[self loadScrollViewWithPage:kNumberOfPages-1];
+	[scrollView setContentOffset:CGPointMake(scrollView.frame.size.width*(kNumberOfPages-1), 0)];
+    [self loadScrollViewWithPage:kNumberOfPages-1];
+	[self loadScrollViewWithPage:kNumberOfPages-2];
 	
+	
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+	
+	[self viewDidAppear:NO];
 	
 	
 	
