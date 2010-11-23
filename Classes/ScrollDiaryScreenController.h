@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class ReflectionTableManager;
+
 @class PageManager;
 
 
@@ -17,6 +19,8 @@
 	IBOutlet UITableView *dateTableView;
 	IBOutlet UIPageControl *pageControl;
 	
+	ReflectionTableManager *tableManager;
+	
 	NSMutableArray *viewControllers;
 }
 
@@ -24,6 +28,7 @@
 @property(nonatomic,retain) UITableView *dateTableView;
 @property(nonatomic,retain) UIPageControl *pageControl;
 @property(nonatomic,retain) NSMutableArray *viewControllers;
+@property(nonatomic,retain) ReflectionTableManager *tableManager;
 
 
 -(void)loadScrollViewWithPage:(int)page;
