@@ -36,8 +36,8 @@
 
 
 -(Suggestion*)fetchSuggestion;
--(NSMutableArray*) fetchInitialSuggestions;
--(NSMutableArray*) fetchNextSuggestions;
+-(NSMutableArray*) fetchSuggestions;
+-(NSMutableArray*) randomizeSuggestions;
 
 -(NSMutableArray*) fetchReflections:(NSString*) reflectionType;
 -(bool)isToday:(NSDate*)refDate;

@@ -109,7 +109,7 @@
 	switchText = 0;
 	
 	// Read from Suggestions Array and Set View Items Appropriately
-	Suggestion *suggestion = [[SuggestionList getInstance] fetchSuggestion];
+	Suggestion *suggestion = [[CoreDataManager getCoreDataManagerInstance] fetchSuggestion];
 	
 	// Set text and align top
 	CGSize maximumSize = CGSizeMake(270, 9999);

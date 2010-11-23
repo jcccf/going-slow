@@ -11,7 +11,6 @@
 #import "goslowtest2AppDelegate.h"
 #import "Suggestion.h"
 #import "CoreDataManager.h"
-#import "SuggestionList.h"
 
 @interface Screen1ViewController : UIViewController {
 	//UILabel *label;file://localhost/Users/svp/Documents/GoogleCode/Classes/Screen1ViewController.xib
