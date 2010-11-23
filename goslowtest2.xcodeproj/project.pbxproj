@@ -92,6 +92,8 @@
 		DF74D6331278DA7C00E92851 /* ColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF74D62C1278DA7C00E92851 /* ColorPickerImageView.m */; };
 		DF74D6341278DA7C00E92851 /* ReflectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */; };
 		DF74D6351278DA7C00E92851 /* ReflectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */; };
+		DFA1095F129C6EE800690AF4 /* ReflectionTableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA1095E129C6EE800690AF4 /* ReflectionTableManager.m */; };
+		DFA10963129C6F1700690AF4 /* DayTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA10962129C6F1700690AF4 /* DayTableObject.m */; };
 		DFAB0E30128A3FCA000392F4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAB0E2F128A3FCA000392F4 /* Reachability.m */; };
 		DFAB0E5A128A4378000392F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */; };
 		DFACCC1A12790089004CE2ED /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFACCC1812790089004CE2ED /* HistoryTableViewController.m */; };
@@ -218,6 +220,10 @@
 		DF74D62D1278DA7C00E92851 /* ReflectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectTableViewController.h; sourceTree = "<group>"; };
 		DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectTableViewController.m; sourceTree = "<group>"; };
 		DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectTableViewController.xib; sourceTree = "<group>"; };
+		DFA1095D129C6EE800690AF4 /* ReflectionTableManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionTableManager.h; sourceTree = "<group>"; };
+		DFA1095E129C6EE800690AF4 /* ReflectionTableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionTableManager.m; sourceTree = "<group>"; };
+		DFA10961129C6F1700690AF4 /* DayTableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTableObject.h; sourceTree = "<group>"; };
+		DFA10962129C6F1700690AF4 /* DayTableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTableObject.m; sourceTree = "<group>"; };
 		DFAB0E2E128A3FCA000392F4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		DFAB0E2F128A3FCA000392F4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -310,6 +316,10 @@
 				DF24EB75129BA2FF00E82F53 /* ScrollViewPageController.h */,
 				DF24EB76129BA2FF00E82F53 /* ScrollViewPageController.m */,
 				DF24EB77129BA2FF00E82F53 /* ScrollViewPageController.xib */,
+				DFA1095D129C6EE800690AF4 /* ReflectionTableManager.h */,
+				DFA1095E129C6EE800690AF4 /* ReflectionTableManager.m */,
+				DFA10961129C6F1700690AF4 /* DayTableObject.h */,
+				DFA10962129C6F1700690AF4 /* DayTableObject.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -560,6 +570,8 @@
 				0A28E7F1129A24B300BC63E6 /* MorningEveningTime.m in Sources */,
 				DF24EB73129BA2E500E82F53 /* ScrollDiaryScreenController.m in Sources */,
 				DF24EB78129BA2FF00E82F53 /* ScrollViewPageController.m in Sources */,
+				DFA1095F129C6EE800690AF4 /* ReflectionTableManager.m in Sources */,
+				DFA10963129C6F1700690AF4 /* DayTableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

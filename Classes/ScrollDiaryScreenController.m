@@ -17,10 +17,11 @@ static NSUInteger kNumberOfPages = 0;
 
 static currentPage = 0;
 
+static NSArray* dates = nil;
 
 @implementation ScrollDiaryScreenController
 
-@synthesize scrollView, dateTableView, viewControllers, tableManager;
+@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -79,13 +80,24 @@ static currentPage = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	dateToPageDict = [[NSMutableDictionary alloc] init];
+	
 	//set kNumberofPages here with how many dates are in coredata etc.
 	viewControllers = [[NSMutableArray alloc] init];
 	
 	tableManager = [[ReflectionTableManager alloc] init];
 	
-	kNumberOfPages = [tableManager count];
+	kNumberOfPages = [tableManager [dayToTableRepDict count]];
 	
+	dates = [[tableManager dayToTableRepDict] allKeys];
+	
+	[dates sortUsingSelector:@selector(compare:)];
+	
+	
+	for(NSString *s in dates){
+			
+		
+	}
 	
 	
 	//add ScrolViewPageControllers here.  The imageViews are instantiated here and added to the scrollView
