@@ -108,12 +108,22 @@ static NSMutableArray* dates = nil;
 		//TODO:
 		
 		//CHANGE THIS TO REPRESENT THE CORRECT FLOWER
-		s.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"breathe.png"]];
-		//set image view frame etc.
+		s.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"DiaryFlower.png"]];
 		s.imageView.frame = CGRectMake(i*scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height);
+		
+		// Add Left Arrow
+		UIImageView* leftArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowLeft.png"]];
+		leftArrow.frame = CGRectMake(10, 80, 25, 25);
+		
+		// Add Right Arrow
+		UIImageView* rightArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight.png"]];
+		rightArrow.frame = CGRectMake(scrollView.frame.size.width-35, 80, 25, 25);
+		
 		
 		UIView *v = [[UIView alloc] init];
 		[v addSubview:s.imageView];
+		[v addSubview:leftArrow];
+		[v addSubview:rightArrow];
 		s.view = v;
 		
 		[viewControllers addObject:s];
