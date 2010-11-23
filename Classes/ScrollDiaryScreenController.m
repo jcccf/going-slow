@@ -107,8 +107,17 @@ static NSMutableArray* dates = nil;
 		
 		//TODO:
 		
+		
+		CGFloat red = (arc4random() % 32767) / 32767.0f;
+		CGFloat green = (arc4random() % 32767) / 32767.0f;
+		CGFloat blue = (arc4random() % 32767) / 32767.0f;
+		
+		UIColor *randomColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+		UIImage *img = [UIImage imageNamed:@"DiaryFlower.png" withColor:randomColor];
+		
+		
 		//CHANGE THIS TO REPRESENT THE CORRECT FLOWER
-		s.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"DiaryFlower.png"]];
+		s.imageView = [[UIImageView alloc] initWithImage:img];
 		s.imageView.frame = CGRectMake(i*scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height);
 		
 		// Add Left Arrow
