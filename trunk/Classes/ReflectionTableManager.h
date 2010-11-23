@@ -11,6 +11,13 @@
 
 @interface ReflectionTableManager : NSObject {
 
+	//this dictionary has key NSString (substring to first 10)
+	//Value is DayTableObject (a representation of a days worth of reflections)
+	NSMutableDictionary *dayToTableRepDict;
 }
+
+
+@property(nonatomic,retain) NSMutableDictionary *dayToTableRepDict;
+
 
 @end

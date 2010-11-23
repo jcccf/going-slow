@@ -9,16 +9,18 @@
 #import "ScrollDiaryScreenController.h"
 #import "ScrollViewPageController.h"
 
+#import "ReflectionTableManager.h"
 
 
-static NSUInteger kNumberOfPages = 6;
+
+static NSUInteger kNumberOfPages = 0;
 
 static currentPage = 0;
 
 
 @implementation ScrollDiaryScreenController
 
-@synthesize scrollView, dateTableView, viewControllers;
+@synthesize scrollView, dateTableView, viewControllers, tableManager;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -79,6 +81,11 @@ static currentPage = 0;
 	
 	//set kNumberofPages here with how many dates are in coredata etc.
 	viewControllers = [[NSMutableArray alloc] init];
+	
+	tableManager = [[ReflectionTableManager alloc] init];
+	
+	kNumberOfPages = [tableManager count];
+	
 	
 	
 	//add ScrolViewPageControllers here.  The imageViews are instantiated here and added to the scrollView
