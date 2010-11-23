@@ -22,9 +22,9 @@
 	
 	dayToTableRepDict = [[NSMutableDictionary alloc] init];
 	
+	
 		
 	CoreDataManager *data = [CoreDataManager getCoreDataManagerInstance];
-	
 	
 	NSMutableArray *allReflections = [data fetchReflections:@"Reflection"];
 	
@@ -35,6 +35,8 @@
 		if([dayToTableRepDict objectForKey:subDate] == nil){
 			
 			DayTableObject *d = [[DayTableObject alloc] init];
+			
+			d.dayStringRepresentation = subDate;
 			
 			[d addReflection:r];
 			
@@ -50,6 +52,8 @@
 		}
 	}
 	
+
+
 	return self;
 }
 

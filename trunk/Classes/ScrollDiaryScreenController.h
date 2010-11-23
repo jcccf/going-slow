@@ -12,6 +12,8 @@
 
 @class PageManager;
 
+@class HistoryReflectionViewController;
+
 
 @interface ScrollDiaryScreenController : UIViewController <UIScrollViewDelegate>{
 
@@ -23,6 +25,10 @@
 	
 	ReflectionTableManager *tableManager;
 	
+	HistoryReflectionViewController *histRefViewCont;
+	
+	
+	NSMutableArray *thisDateTable;
 	NSMutableArray *viewControllers;
 }
 
@@ -32,9 +38,11 @@
 @property(nonatomic,retain) NSMutableArray *viewControllers;
 @property(nonatomic,retain) ReflectionTableManager *tableManager;
 @property(nonatomic,retain) NSMutableDictionary *dateToPageDict;
+@property(nonatomic,retain) NSMutableArray *thisDateTable;
+@property(nonatomic,retain) HistoryReflectionViewController *histRefViewCont;
 
 
 -(void)loadScrollViewWithPage:(int)page;
 
--(NSArray*)getColors:(NSDate*)date;
+-(NSMutableArray*)getColors;
 @end

@@ -28,7 +28,10 @@
 
 -(void)addReflection:(Reflection*)r{
 
+	if(reflections == nil)
+		reflections = [[NSMutableArray alloc] init];
 	[reflections addObject:r];
+	[r retain];
 	
 }
 
