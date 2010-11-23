@@ -27,4 +27,6 @@
 
 
 -(void)loadScrollViewWithPage:(int)page;
+
+-(NSArray*)getColors:(NSDate*)date;
 @end
