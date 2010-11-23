@@ -62,6 +62,10 @@
 		D023B4CB1265396A00575359 /* NotificationTime.m in Sources */ = {isa = PBXBuildFile; fileRef = D023B4C91265396A00575359 /* NotificationTime.m */; };
 		D023B4CC1265396A00575359 /* NotificationTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = D023B4CA1265396A00575359 /* NotificationTime.xib */; };
 		D08CD45712664DCB00E30523 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D08CD45612664DCB00E30523 /* Settings.bundle */; };
+		DF24EB73129BA2E500E82F53 /* ScrollDiaryScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF24EB71129BA2E500E82F53 /* ScrollDiaryScreenController.m */; };
+		DF24EB74129BA2E500E82F53 /* ScrollDiaryScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF24EB72129BA2E500E82F53 /* ScrollDiaryScreenController.xib */; };
+		DF24EB78129BA2FF00E82F53 /* ScrollViewPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF24EB76129BA2FF00E82F53 /* ScrollViewPageController.m */; };
+		DF24EB79129BA2FF00E82F53 /* ScrollViewPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF24EB77129BA2FF00E82F53 /* ScrollViewPageController.xib */; };
 		DF74D5F71278D98D00E92851 /* breathe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E21278D98D00E92851 /* breathe.jpg */; };
 		DF74D5F81278D98D00E92851 /* choose_consciously.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E31278D98D00E92851 /* choose_consciously.jpg */; };
 		DF74D5F91278D98D00E92851 /* connect_with_nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF74D5E41278D98D00E92851 /* connect_with_nature.jpg */; };
@@ -180,6 +184,12 @@
 		D023B4CA1265396A00575359 /* NotificationTime.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTime.xib; sourceTree = "<group>"; };
 		D08CD44012664D9200E30523 /* goslowtest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goslowtest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08CD45612664DCB00E30523 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		DF24EB70129BA2E500E82F53 /* ScrollDiaryScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollDiaryScreenController.h; sourceTree = "<group>"; };
+		DF24EB71129BA2E500E82F53 /* ScrollDiaryScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollDiaryScreenController.m; sourceTree = "<group>"; };
+		DF24EB72129BA2E500E82F53 /* ScrollDiaryScreenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollDiaryScreenController.xib; sourceTree = "<group>"; };
+		DF24EB75129BA2FF00E82F53 /* ScrollViewPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewPageController.h; sourceTree = "<group>"; };
+		DF24EB76129BA2FF00E82F53 /* ScrollViewPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewPageController.m; sourceTree = "<group>"; };
+		DF24EB77129BA2FF00E82F53 /* ScrollViewPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewPageController.xib; sourceTree = "<group>"; };
 		DF74D5E21278D98D00E92851 /* breathe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = breathe.jpg; sourceTree = "<group>"; };
 		DF74D5E31278D98D00E92851 /* choose_consciously.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = choose_consciously.jpg; sourceTree = "<group>"; };
 		DF74D5E41278D98D00E92851 /* connect_with_nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = connect_with_nature.jpg; sourceTree = "<group>"; };
@@ -294,6 +304,12 @@
 				0A4DC38D126EAF8A008445A5 /* SyncManager.m */,
 				10607E8D12937EE100595C5B /* SyncManagerConnectionDelegate.h */,
 				10607E8E12937EE100595C5B /* SyncManagerConnectionDelegate.m */,
+				DF24EB70129BA2E500E82F53 /* ScrollDiaryScreenController.h */,
+				DF24EB71129BA2E500E82F53 /* ScrollDiaryScreenController.m */,
+				DF24EB72129BA2E500E82F53 /* ScrollDiaryScreenController.xib */,
+				DF24EB75129BA2FF00E82F53 /* ScrollViewPageController.h */,
+				DF24EB76129BA2FF00E82F53 /* ScrollViewPageController.m */,
+				DF24EB77129BA2FF00E82F53 /* ScrollViewPageController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -499,6 +515,8 @@
 				1050BEBC127BA330001C5640 /* icon_document_pen.png in Resources */,
 				1050BEC0127BA4D9001C5640 /* icon_digital_camera2.png in Resources */,
 				10BFF661128DACF300B58E2C /* 19-gear.png in Resources */,
+				DF24EB74129BA2E500E82F53 /* ScrollDiaryScreenController.xib in Resources */,
+				DF24EB79129BA2FF00E82F53 /* ScrollViewPageController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +558,8 @@
 				0A4E421C128F21A400C93BD2 /* SuggestionList.m in Sources */,
 				10607E8F12937EE100595C5B /* SyncManagerConnectionDelegate.m in Sources */,
 				0A28E7F1129A24B300BC63E6 /* MorningEveningTime.m in Sources */,
+				DF24EB73129BA2E500E82F53 /* ScrollDiaryScreenController.m in Sources */,
+				DF24EB78129BA2FF00E82F53 /* ScrollViewPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,11 +584,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = goslowtest2_Prefix.pch;
 				INFOPLIST_FILE = "goslowtest2-Info.plist";
 				PRODUCT_NAME = goslowtest2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
