@@ -15,7 +15,6 @@
 		0A4DC390126EAF8A008445A5 /* Screen3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC38A126EAF8A008445A5 /* Screen3ViewController.m */; };
 		0A4DC391126EAF8A008445A5 /* Screen3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */; };
 		0A4DC392126EAF8A008445A5 /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4DC38D126EAF8A008445A5 /* SyncManager.m */; };
-		0A4E421C128F21A400C93BD2 /* SuggestionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E421B128F21A400C93BD2 /* SuggestionList.m */; };
 		0A54948612636B5D00FA89FD /* Screen1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A54948412636B5D00FA89FD /* Screen1ViewController.m */; };
 		0A54948712636B5D00FA89FD /* Screen1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A54948512636B5D00FA89FD /* Screen1ViewController.xib */; };
 		0A5EA3771277F79500B6B9A8 /* ReflectCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5EA3691277F79500B6B9A8 /* ReflectCameraView.m */; };
@@ -119,8 +118,6 @@
 		0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen3ViewController.xib; sourceTree = "<group>"; };
 		0A4DC38C126EAF8A008445A5 /* SyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncManager.h; sourceTree = "<group>"; };
 		0A4DC38D126EAF8A008445A5 /* SyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncManager.m; sourceTree = "<group>"; };
-		0A4E421A128F21A400C93BD2 /* SuggestionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionList.h; sourceTree = "<group>"; };
-		0A4E421B128F21A400C93BD2 /* SuggestionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionList.m; sourceTree = "<group>"; };
 		0A54948312636B5D00FA89FD /* Screen1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen1ViewController.h; sourceTree = "<group>"; };
 		0A54948412636B5D00FA89FD /* Screen1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Screen1ViewController.m; sourceTree = "<group>"; };
 		0A54948512636B5D00FA89FD /* Screen1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Screen1ViewController.xib; sourceTree = "<group>"; };
@@ -262,6 +259,8 @@
 				DF74D62C1278DA7C00E92851 /* ColorPickerImageView.m */,
 				0A4DC385126EAF8A008445A5 /* CoreDataManager.h */,
 				0A4DC386126EAF8A008445A5 /* CoreDataManager.m */,
+				DFA10961129C6F1700690AF4 /* DayTableObject.h */,
+				DFA10962129C6F1700690AF4 /* DayTableObject.m */,
 				1D3623240D0F684500981E51 /* goslowtest2AppDelegate.h */,
 				1D3623250D0F684500981E51 /* goslowtest2AppDelegate.m */,
 				DFACCC461279029D004CE2ED /* HistoryReflectionViewController.h */,
@@ -287,6 +286,8 @@
 				0A5EA36F1277F79500B6B9A8 /* ReflectColorViewController.h */,
 				0A5EA3701277F79500B6B9A8 /* ReflectColorViewController.m */,
 				0A5EA3711277F79500B6B9A8 /* ReflectColorViewController.xib */,
+				DFA1095D129C6EE800690AF4 /* ReflectionTableManager.h */,
+				DFA1095E129C6EE800690AF4 /* ReflectionTableManager.m */,
 				DF74D62D1278DA7C00E92851 /* ReflectTableViewController.h */,
 				DF74D62E1278DA7C00E92851 /* ReflectTableViewController.m */,
 				DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */,
@@ -304,22 +305,16 @@
 				0A4DC389126EAF8A008445A5 /* Screen3ViewController.h */,
 				0A4DC38A126EAF8A008445A5 /* Screen3ViewController.m */,
 				0A4DC38B126EAF8A008445A5 /* Screen3ViewController.xib */,
-				0A4E421A128F21A400C93BD2 /* SuggestionList.h */,
-				0A4E421B128F21A400C93BD2 /* SuggestionList.m */,
-				0A4DC38C126EAF8A008445A5 /* SyncManager.h */,
-				0A4DC38D126EAF8A008445A5 /* SyncManager.m */,
-				10607E8D12937EE100595C5B /* SyncManagerConnectionDelegate.h */,
-				10607E8E12937EE100595C5B /* SyncManagerConnectionDelegate.m */,
 				DF24EB70129BA2E500E82F53 /* ScrollDiaryScreenController.h */,
 				DF24EB71129BA2E500E82F53 /* ScrollDiaryScreenController.m */,
 				DF24EB72129BA2E500E82F53 /* ScrollDiaryScreenController.xib */,
 				DF24EB75129BA2FF00E82F53 /* ScrollViewPageController.h */,
 				DF24EB76129BA2FF00E82F53 /* ScrollViewPageController.m */,
 				DF24EB77129BA2FF00E82F53 /* ScrollViewPageController.xib */,
-				DFA1095D129C6EE800690AF4 /* ReflectionTableManager.h */,
-				DFA1095E129C6EE800690AF4 /* ReflectionTableManager.m */,
-				DFA10961129C6F1700690AF4 /* DayTableObject.h */,
-				DFA10962129C6F1700690AF4 /* DayTableObject.m */,
+				0A4DC38C126EAF8A008445A5 /* SyncManager.h */,
+				0A4DC38D126EAF8A008445A5 /* SyncManager.m */,
+				10607E8D12937EE100595C5B /* SyncManagerConnectionDelegate.h */,
+				10607E8E12937EE100595C5B /* SyncManagerConnectionDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -565,7 +560,6 @@
 				DFAB0E30128A3FCA000392F4 /* Reachability.m in Sources */,
 				10BFF65C128DAC7D00B58E2C /* LogScreen.m in Sources */,
 				10BFF65D128DAC7D00B58E2C /* Screen.m in Sources */,
-				0A4E421C128F21A400C93BD2 /* SuggestionList.m in Sources */,
 				10607E8F12937EE100595C5B /* SyncManagerConnectionDelegate.m in Sources */,
 				0A28E7F1129A24B300BC63E6 /* MorningEveningTime.m in Sources */,
 				DF24EB73129BA2E500E82F53 /* ScrollDiaryScreenController.m in Sources */,
@@ -661,19 +655,19 @@
 		2819305F112F816700ECF9B4 /* goslowtest2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D00C842412656A37000DD3A9 /* Suggestion.h */,
-				0A4DC336126EAEF0008445A5 /* Reflection.h */,
 				0AEB28F41278C87E004C2629 /* ColorReflection.h */,
-				0AEB29E21278D0FE004C2629 /* TextReflection.h */,
-				0AEB2A181278D2F7004C2629 /* PhotoReflection.h */,
-				0AEB2A191278D2F7004C2629 /* PhotoReflection.m */,
-				0AEB29E31278D0FE004C2629 /* TextReflection.m */,
 				0AEB28F51278C87E004C2629 /* ColorReflection.m */,
-				0A4DC337126EAEF0008445A5 /* Reflection.m */,
-				D00C842512656A37000DD3A9 /* Suggestion.m */,
 				28C3AD890F43EF2300507BA6 /* goslowtest2.xcdatamodel */,
 				0A28E7EF129A24B300BC63E6 /* MorningEveningTime.h */,
 				0A28E7F0129A24B300BC63E6 /* MorningEveningTime.m */,
+				0AEB2A181278D2F7004C2629 /* PhotoReflection.h */,
+				0AEB2A191278D2F7004C2629 /* PhotoReflection.m */,
+				0A4DC336126EAEF0008445A5 /* Reflection.h */,
+				0A4DC337126EAEF0008445A5 /* Reflection.m */,
+				D00C842412656A37000DD3A9 /* Suggestion.h */,
+				D00C842512656A37000DD3A9 /* Suggestion.m */,
+				0AEB29E21278D0FE004C2629 /* TextReflection.h */,
+				0AEB29E31278D0FE004C2629 /* TextReflection.m */,
 			);
 			currentVersion = 28C3AD890F43EF2300507BA6 /* goslowtest2.xcdatamodel */;
 			path = goslowtest2.xcdatamodeld;

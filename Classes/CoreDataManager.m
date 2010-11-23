@@ -35,16 +35,6 @@ static CoreDataManager *sharedInstance = nil;
     return sharedInstance;
 }
 
-- (void)shuffleArray:(NSMutableArray*) shufflingArray {
-    NSUInteger count = [shufflingArray count];
-    for (NSUInteger i = 0; i < count; ++i) {
-        // Select a random element between i and end of array to swap with.
-        int nElements = count - i;
-        int n = (arc4random() % nElements) + i;
-        [shufflingArray exchangeObjectAtIndex:i withObjectAtIndex:n];
-    }
-}
-
 -(void)addColorReflection:(NSArray *)colors{
 	ColorReflection *newReflection = (ColorReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"ColorReflection" inManagedObjectContext:managedObjectContext];
 	
@@ -94,7 +84,7 @@ static CoreDataManager *sharedInstance = nil;
 }
 
 
--(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath{
+-(void)addSuggestion:(NSString *)theme picturePath:(NSString *)picturePath infoPath:(NSString *)infoPath {
 	Suggestion *newSuggestion = (Suggestion*)[NSEntityDescription insertNewObjectForEntityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
 	[newSuggestion setTheme:theme];
 	[newSuggestion setPicturePath:picturePath];
@@ -212,6 +202,33 @@ static CoreDataManager *sharedInstance = nil;
 		
 	}
 	
+	NSMutableArray *suggestions = [self fetchSuggestions];
+	
+	NSUInteger count = [suggestions count];
+
+	for (NSUInteger i = 0; i < count; ++i) {
+		// Select a random element between i and end of array to swap with.
+		int nElements = count - i;
+		int n = (arc4random() % nElements) + i;
+		[suggestions exchangeObjectAtIndex:i withObjectAtIndex:n];
+	}		
+	
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSDateComponents *offset = [[NSDateComponents alloc] init];
+	
+	//Then reschedule each suggestion's nextSeen field	
+	for (int i = 0; i < [suggestions count]; i++) {
+		
+		[offset setDay:i];
+		NSDate* nextSeen = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
+		Suggestion *suggestion = [suggestions objectAtIndex:i];
+		[suggestion setNextSeen:nextSeen];
+		[self saveChanges];
+		
+	}
+	
+	[offset release];
+	
 }
 
 -(void)addScreenIds{
@@ -279,6 +296,78 @@ static CoreDataManager *sharedInstance = nil;
 // look to NSPredicate for SQL-like queries
 -(Suggestion*) fetchSuggestion {
 	
+//	// Fetch Suggestions From Data Store
+//	// Create Request
+//	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
+//	[request setEntity:entity];
+//	
+//	// Set Sort Descriptors
+//	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastSeen" ascending:NO];
+//	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+//	
+//	[request setSortDescriptors:sortDescriptors];
+//	[sortDescriptors release];
+//	[sortDescriptor release];
+//	
+//	// Fetch Results
+//	NSError *error;
+//	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+//	assert(mutableFetchResults != nil);
+//	
+////	NSEnumerator *enumerator = [mutableFetchResults objectEnumerator];
+////	id element;
+////	
+////	while(element = [enumerator nextObject]) {
+////		Suggestion *suggestion = (Suggestion*) element;
+////		// Do your thing with the object.
+////		NSLog(@"Date: %@", [suggestion lastSeen]);
+////    }
+//	
+//	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:0];
+//	NSDate *latestDate = [suggestion lastSeen];
+//	
+//	//Get a Random Suggestion if it's a new day
+//	if(![self isToday:latestDate]) {
+//		
+//		NSCalendar *calendar = [NSCalendar currentCalendar];
+//		NSDateComponents *offset = [[NSDateComponents alloc] init];
+//		[offset setDay:-14];
+//		// Return the date that was 14 days ago
+//		NSDate *cutoffDate = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
+//		
+//		[offset release];
+//		
+//		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastSeen <= %@) || (lastSeen == nil)", cutoffDate];
+//		[request setPredicate:predicate];
+//		
+//		// Fetch Results
+//		NSError *error;
+////		[mutableFetchResults release];
+//		mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+//		assert(mutableFetchResults != nil);
+//		
+//		int suggestionsArrayLength = [mutableFetchResults count];
+//		//Get a Random Suggestion
+//		int randomIndex = arc4random() % suggestionsArrayLength;
+//		
+//		suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];	
+//		
+//		// Send to Sync Manager
+//		// Uncomment the below when fixed.
+//		NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
+//		[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
+//		[[SyncManager getSyncManagerInstance] syncData];
+//	}
+//	[request release];
+//	
+//	//Set last seen to today's date
+//	[suggestion setLastSeen:[NSDate date]];
+//	NSLog(@"Date: %@", [suggestion lastSeen]);
+//	[self saveChanges];	
+//	
+//	return suggestion;
+	
 	// Fetch Suggestions From Data Store
 	// Create Request
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -286,7 +375,7 @@ static CoreDataManager *sharedInstance = nil;
 	[request setEntity:entity];
 	
 	// Set Sort Descriptors
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastSeen" ascending:NO];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"nextSeen" ascending:YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[request setSortDescriptors:sortDescriptors];
@@ -296,64 +385,46 @@ static CoreDataManager *sharedInstance = nil;
 	// Fetch Results
 	NSError *error;
 	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-	assert(mutableFetchResults != nil);
 	
-//	NSEnumerator *enumerator = [mutableFetchResults objectEnumerator];
-//	id element;
-//	
-//	while(element = [enumerator nextObject]) {
-//		Suggestion *suggestion = (Suggestion*) element;
-//		// Do your thing with the object.
-//		NSLog(@"Date: %@", [suggestion lastSeen]);
-//    }
+	for (int i = 0; i < [mutableFetchResults count]; i++) {
+		Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:i];
+		NSDate *scheduledDate = [suggestion nextSeen];
+		
+		if ([self isToday:scheduledDate]) {
+			[request release];
+			
+			//Set last seen to today's date
+			[suggestion setLastSeen:[NSDate date]];
+			NSLog(@"Date: %@", [suggestion lastSeen]);
+			[self saveChanges];	
+			
+			return suggestion;
+		}
+	}
+		
+	[request release];
+	
+	mutableFetchResults = [self randomizeSuggestions];
 	
 	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:0];
-	NSDate *latestDate = [suggestion lastSeen];
 	
-	//Get a Random Suggestion if it's a new day
-	if(![self isToday:latestDate]) {
-		
-		NSCalendar *calendar = [NSCalendar currentCalendar];
-		NSDateComponents *offset = [[NSDateComponents alloc] init];
-		[offset setDay:-14];
-		// Return the date that was 14 days ago
-		NSDate *cutoffDate = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
-		
-		[offset release];
-		
-		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastSeen <= %@) || (lastSeen == nil)", cutoffDate];
-		[request setPredicate:predicate];
-		
-		// Fetch Results
-		NSError *error;
-//		[mutableFetchResults release];
-		mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-		assert(mutableFetchResults != nil);
-		
-		int suggestionsArrayLength = [mutableFetchResults count];
-		//Get a Random Suggestion
-		int randomIndex = arc4random() % suggestionsArrayLength;
-		
-		suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];	
-		
-		// Send to Sync Manager
-		// Uncomment the below when fixed.
-		NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
-		[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
-		[[SyncManager getSyncManagerInstance] syncData];
-	}
-	[request release];
+	// Send to Sync Manager
+	// Uncomment the below when fixed.
+	NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
+	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
+	[[SyncManager getSyncManagerInstance] syncData];
 	
 	//Set last seen to today's date
 	[suggestion setLastSeen:[NSDate date]];
 	NSLog(@"Date: %@", [suggestion lastSeen]);
 	[self saveChanges];	
 	
-	return suggestion;
+	return suggestion;	
+	
 	
 }
 
--(NSMutableArray*) fetchInitialSuggestions {
+-(NSMutableArray*) fetchSuggestions {
 	
 	// Fetch Suggestions From Data Store
 	// Create Request
@@ -362,7 +433,7 @@ static CoreDataManager *sharedInstance = nil;
 	[request setEntity:entity];
 	
 	// Set Sort Descriptors
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastSeen" ascending:NO];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"nextSeen" ascending:YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[request setSortDescriptors:sortDescriptors];
@@ -372,8 +443,6 @@ static CoreDataManager *sharedInstance = nil;
 	// Fetch Results
 	NSError *error;
 	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-	
-	//[self shuffleArray:mutableFetchResults];
 	
 	[request release];
 	
@@ -381,7 +450,7 @@ static CoreDataManager *sharedInstance = nil;
 	
 }
 
--(NSMutableArray*) fetchNextSuggestions {
+-(NSMutableArray*) randomizeSuggestions {
 	
 	// Fetch Suggestions From Data Store
 	// Create Request
@@ -390,7 +459,7 @@ static CoreDataManager *sharedInstance = nil;
 	[request setEntity:entity];
 	
 	// Set Sort Descriptors
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastSeen" ascending:YES];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"nextSeen" ascending:YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[request setSortDescriptors:sortDescriptors];
@@ -403,9 +472,12 @@ static CoreDataManager *sharedInstance = nil;
 
 	[request release];
 	
+	NSDate *latestDate = [[mutableFetchResults objectAtIndex:([mutableFetchResults count]-1)] nextSeen];
+	
 	NSUInteger count = [mutableFetchResults count];
 	NSUInteger increment = count/3;
 	
+	// Shuffle the array in three chunks
 	for (int j = 0; j < count; j+=increment) {
 		for (NSUInteger i = j; i < j+increment; ++i) {
 			// Select a random element between i and end of array to swap with.
@@ -415,7 +487,26 @@ static CoreDataManager *sharedInstance = nil;
 		}		
 		
 	}
-
+	
+	//Then reschedule each suggestion's nextSeen field
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSDateComponents *offset = [[NSDateComponents alloc] init];
+	
+	for (int i = 0; i < [mutableFetchResults count]; i++) {
+		
+		[offset setDay:i+1];
+		NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:latestDate options:0];
+		Suggestion *suggestion = [mutableFetchResults objectAtIndex:i];
+		[suggestion setNextSeen:notificationDate];
+		[self saveChanges];
+		
+		NSLog(@"Theme: %@", [suggestion theme]);
+		NSLog(@"Next Seen: %@", [suggestion nextSeen]);
+		NSLog(@"Last Seen: %@", [suggestion lastSeen]);
+		
+	}
+	
+	[offset release];
 	
 	return mutableFetchResults;
 	

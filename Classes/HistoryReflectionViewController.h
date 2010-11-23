@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SuggestionList.h"
 
 @interface HistoryReflectionViewController : UIViewController {
 	//UINavigationItem *navigationItem;

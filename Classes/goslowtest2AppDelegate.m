@@ -9,6 +9,7 @@
 #import "goslowtest2AppDelegate.h"
 #import "NotificationTime.h"
 #import "Reachability.h"
+#import "CoreDataManager.h"
 
 @implementation goslowtest2AppDelegate
 @synthesize tabController;

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "goslowtest2AppDelegate.h"
-#import "SuggestionList.h"
+#import "CoreDataManager.h"
+#import "Suggestion.h"
 
 @interface NotificationTime : UITableViewController {
 	//IBOutlet UITableView *tableview;

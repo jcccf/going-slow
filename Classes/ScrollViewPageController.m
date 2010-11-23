@@ -7,7 +7,6 @@
 //
 
 #import "ScrollViewPageController.h"
-#import "PageManager.h"
 
 
 @implementation ScrollViewPageController

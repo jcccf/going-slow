@@ -11,7 +11,6 @@
 #import "CoreDataManager.h"
 #import "Reflection.h"
 #import "Suggestion.h"
-#import "SuggestionList.h"
 
 @interface HistoryTableViewController : UITableViewController {
 	HistoryReflectionViewController *histRefViewCont;
