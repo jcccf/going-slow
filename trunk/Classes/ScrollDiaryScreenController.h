@@ -19,6 +19,8 @@
 	IBOutlet UITableView *dateTableView;
 	IBOutlet UIPageControl *pageControl;
 	
+	NSMutableDictionary *dateToPageDict;
+	
 	ReflectionTableManager *tableManager;
 	
 	NSMutableArray *viewControllers;
@@ -29,6 +31,7 @@
 @property(nonatomic,retain) UIPageControl *pageControl;
 @property(nonatomic,retain) NSMutableArray *viewControllers;
 @property(nonatomic,retain) ReflectionTableManager *tableManager;
+@property(nonatomic,retain) NSMutableDictionary *dateToPageDict;
 
 
 -(void)loadScrollViewWithPage:(int)page;
