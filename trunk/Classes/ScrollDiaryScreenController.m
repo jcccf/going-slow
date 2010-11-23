@@ -91,11 +91,11 @@ static NSArray* dates = nil;
 	
 	dates = [[tableManager dayToTableRepDict] allKeys];
 	
-	[dates sortUsingSelector:@selector(compare:)];
+	//[dates sortUsingSelector:@selector(compare:)];
 	
 	
 	for(int i = 0; i < kNumberOfPages; i++){
-		
+		//[dateToPageDict setObject:[[tableManager.dayToTableRepDict forKey:i]
 	}
 	
 	
