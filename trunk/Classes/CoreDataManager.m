@@ -74,6 +74,17 @@ static CoreDataManager *sharedInstance = nil;
 -(void)addTextReflection:(NSString *)reflectionText{
 	TextReflection *newReflection = (TextReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"TextReflection" inManagedObjectContext:managedObjectContext];
 	
+	//used for table testing
+	
+	/*
+	TextReflection *newReflectionTest = (TextReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"TextReflection" inManagedObjectContext:managedObjectContext];
+	[newReflectionTest setReflectionText:@"This is a test reflection"];
+	[newReflectionTest setCreatedAt:[[NSDate date] dateByAddingTimeInterval:200000]];
+	
+	TextReflection *newReflectionTest1 = (TextReflection*)[NSEntityDescription insertNewObjectForEntityForName:@"TextReflection" inManagedObjectContext:managedObjectContext];
+	[newReflectionTest1 setReflectionText:@"This is a test reflection"];
+	[newReflectionTest1 setCreatedAt:[[NSDate date] dateByAddingTimeInterval:300000]];*/
+	//end used for table
 
 	[newReflection setReflectionText:reflectionText];
 	[newReflection setCreatedAt:[NSDate date]];

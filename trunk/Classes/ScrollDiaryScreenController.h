@@ -28,6 +28,9 @@
 	HistoryReflectionViewController *histRefViewCont;
 	
 	
+	//dictionary given a file path returns an image.  This is so we don't load from disk everytime we reload the tableView with photos
+	NSMutableDictionary *imagesForFilePath;
+	
 	NSMutableArray *thisDateTable;
 	NSMutableArray *viewControllers;
 }
@@ -40,9 +43,10 @@
 @property(nonatomic,retain) NSMutableDictionary *dateToPageDict;
 @property(nonatomic,retain) NSMutableArray *thisDateTable;
 @property(nonatomic,retain) HistoryReflectionViewController *histRefViewCont;
+@property(nonatomic,retain) NSMutableDictionary *imagesForFilePath;
 
 
 -(void)loadScrollViewWithPage:(int)page;
 
--(NSMutableArray*)getColors;
+-(NSMutableArray*)getColorsForPage:(int)page;
 @end
