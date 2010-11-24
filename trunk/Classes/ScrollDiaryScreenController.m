@@ -263,6 +263,7 @@ static BOOL firstLoad = YES;
 			text = [text substringToIndex:30];
 		}
 		cell.textLabel.text = text;
+		cell.imageView.image = nil;
 		
 	}
 	if([r isKindOfClass:[PhotoReflection class]]){
