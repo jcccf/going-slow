@@ -63,6 +63,7 @@ static BOOL firstLoad = YES;
 		int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
 		if(currentPage != page){
 			currentPage = page;
+			imagesForFilePath = nil;
 			[dateTableView reloadData];
 		}
 		
@@ -218,6 +219,15 @@ static BOOL firstLoad = YES;
 - (void)dealloc {
     [super dealloc];
 }
+
+-(UIImage*)scaleImage:(UIImage*)image toSize:(CGSize)size {
+	UIGraphicsBeginImageContext(size);
+	[image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+	UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	    return newImage;
+}
+
 #pragma mark -
 #pragma mark Table view data source
 
@@ -257,6 +267,24 @@ static BOOL firstLoad = YES;
 	}
 	if([r isKindOfClass:[PhotoReflection class]]){
 		
+		if(imagesForFilePath == nil){
+			imagesForFilePath = [[NSMutableDictionary alloc] init];
+		}
+		PhotoReflection *p = (PhotoReflection*)r;
+		
+		//file path not in dict...add it
+		if([imagesForFilePath objectForKey:[p filepath]] == nil){
+			
+			//NSData *photoData = UIImageJPEGRepresentation([UIImage imageWithContentsOfFile:[p filepath]], 0.0);
+			
+			UIImage *i = [self scaleImage:[UIImage imageWithContentsOfFile:[p filepath]] toSize:CGSizeMake(32, 44)];
+			
+			[i retain];
+			[imagesForFilePath setObject:i forKey:[p filepath]];
+			//[i release];
+		}
+		
+		cell.imageView.image = [imagesForFilePath objectForKey:[p filepath]];
 		cell.textLabel.text = @"Photo";
 	}
 	

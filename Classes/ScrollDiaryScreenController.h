@@ -49,5 +49,7 @@
 
 -(void)loadScrollViewWithPage:(int)page;
 
+-(UIImage*)scaleImage:(UIImage*)i toSize:(CGSize)size;
+
 -(NSMutableArray*)getColorsForPage:(int)page;
 @end
