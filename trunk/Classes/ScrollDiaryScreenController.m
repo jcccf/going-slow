@@ -28,40 +28,19 @@ static BOOL firstLoad = YES;
 
 @implementation ScrollDiaryScreenController
 
-@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict,histRefViewCont, imagesForFilePath;
+@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict,histRefViewCont, emptyDiaryImage, imagesForFilePath;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
--(NSMutableArray*)getColors{
-	
-	NSString *dateKey = [dates objectAtIndex:currentPage];
-	
-	DayTableObject *d = [tableManager.dayToTableRepDict objectForKey:dateKey];
-	
-	NSMutableArray *allref = [d reflections];
-	
-	NSMutableArray *returnValue = [[NSMutableArray alloc] init];
-	[returnValue retain];
-	
-	for(Reflection *r in allref){
-		if([r isKindOfClass:[ColorReflection class]])
-			[returnValue addObject:r];
-	}
-	
-	return returnValue;
-	
-}
+ - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+ if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+ // Custom initialization
+ }
+ return self;
+ }
+ */
 
 -(void)loadScrollViewWithPage:(int)page{
-	
 	if(page < 0)
 		return;
 	if(page >= kNumberOfPages){
@@ -72,15 +51,9 @@ static BOOL firstLoad = YES;
 	
 	//s should never be nil
 	assert(s != nil);
-	
 	assert(s.view != nil);
-	
 	assert(s.imageView != nil);
-	
 	[scrollView addSubview:s.view];
-	
-	
-	
 }
 
 
@@ -96,9 +69,7 @@ static BOOL firstLoad = YES;
 		[self loadScrollViewWithPage:page-1];
 		[self loadScrollViewWithPage:page];
 		[self loadScrollViewWithPage:page+1];
-			
 	}
-	
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -107,24 +78,20 @@ static BOOL firstLoad = YES;
 	
 	//set kNumberofPages here with how many dates are in coredata etc.
 	viewControllers = [[NSMutableArray alloc] init];
-	
 	tableManager = [[ReflectionTableManager alloc] init];
-	
 	[tableManager retain];
-	
 	kNumberOfPages = [tableManager.dayToTableRepDict count];
 	
+	// Show Empty Diary Screen when there are no reflections
+	emptyDiaryImage.hidden = YES;
+	if (kNumberOfPages == 0){
+		emptyDiaryImage.hidden = NO;
+	}
 	
 	NSArray* s = [[tableManager dayToTableRepDict] allKeys];
-	
 	dates = [[NSMutableArray alloc] init];
-	
 	[dates addObjectsFromArray:s];
-	
     [dates sortUsingSelector:@selector(compare:)];
-	
-	
-	
 	
 	//add ScrolViewPageControllers here.  The imageViews are instantiated here and added to the scrollView
 	for(int i = 0; i < kNumberOfPages; i++){
@@ -132,7 +99,7 @@ static BOOL firstLoad = YES;
 		ScrollViewPageController *s = [[ScrollViewPageController alloc] init];
 		UIView *v = [[UIView alloc] init];
 		
-		// Get a Random Color for a Day
+		// Get a Random Color for a Day for a Flower
 		NSString *dateKey = [dates objectAtIndex:i];
 		DayTableObject *d = [tableManager.dayToTableRepDict objectForKey:dateKey];
 		NSMutableArray *allref = [d reflections];
@@ -150,34 +117,30 @@ static BOOL firstLoad = YES;
 			green = [[cr colorGreen] floatValue];
 			blue = [[cr colorGreen] floatValue];
 		}
-//		CGFloat red = (arc4random() % 32767) / 32767.0f;
-//		CGFloat green = (arc4random() % 32767) / 32767.0f;
-//		CGFloat blue = (arc4random() % 32767) / 32767.0f;
 		UIColor *randomColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 		UIImage *img = [UIImage imageNamed:@"DiaryFlower.png" withColor:randomColor];
 		
-		//CHANGE THIS TO REPRESENT THE CORRECT FLOWER
+		// Add the flower
 		s.imageView = [[UIImageView alloc] initWithImage:img];
 		s.imageView.frame = CGRectMake(i*scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height);
 		[v addSubview:s.imageView];
 		
-		// Add Left Arrow
+		// Add Left Arrow if needed
 		if (i != 0) {
 			UIImageView* leftArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowLeft.png"]];
 			leftArrow.frame = CGRectMake(i*scrollView.frame.size.width+10, 80, 25, 25);
 			[v addSubview:leftArrow];
 		}
 		
-		// Add Right Arrow
+		// Add Right Arrow if needed
 		if (i < kNumberOfPages-1 ) {
 			UIImageView* rightArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight.png"]];
 			rightArrow.frame = CGRectMake((i+1)*scrollView.frame.size.width-35, 80, 25, 25);
 			[v addSubview:rightArrow];
 		}
-			
+		
 		s.view = v;
 		[viewControllers addObject:s];
-		
 	}
 	
 	scrollView.pagingEnabled = YES;
@@ -207,23 +170,16 @@ static BOOL firstLoad = YES;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
 	[self viewDidAppear:NO];
-	
-	
 }
-
-
 
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -234,30 +190,25 @@ static BOOL firstLoad = YES;
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-	
-	
-	
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
 -(void)makeThisDateTable{
-
 	thisDateTable = [[NSMutableArray alloc] init];
-	
 	if([dates count] > 0){
-	NSString *dateKey = [dates objectAtIndex:currentPage];
-	
-	DayTableObject *d = [tableManager.dayToTableRepDict objectForKey:dateKey];
-	
-	NSMutableArray *allref = [d reflections];
-	
-	for(Reflection *r in allref){
-		if(![r isKindOfClass:[ColorReflection class]]){
-			[thisDateTable addObject:r];
-		}
+		NSString *dateKey = [dates objectAtIndex:currentPage];
 		
-	}
+		DayTableObject *d = [tableManager.dayToTableRepDict objectForKey:dateKey];
+		
+		NSMutableArray *allref = [d reflections];
+		
+		for(Reflection *r in allref){
+			if(![r isKindOfClass:[ColorReflection class]]){
+				[thisDateTable addObject:r];
+			}
+			
+		}
 	}
 	
 	
@@ -278,13 +229,9 @@ static BOOL firstLoad = YES;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-	
 	[self makeThisDateTable];
-	
-	
     return [thisDateTable count];
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -309,15 +256,11 @@ static BOOL firstLoad = YES;
 		
 	}
 	if([r isKindOfClass:[PhotoReflection class]]){
-			
+		
 		cell.textLabel.text = @"Photo";
 	}
 	
-	
-    
     // Configure the cell...
-	
-	
 	//cell.textLabel.text = [NSString stringWithFormat:@"Cell number %i", [indexPath row]];
     
     return cell;
@@ -329,12 +272,12 @@ static BOOL firstLoad = YES;
 	//TODO
 	//return the correct date...
 	if([dates count] > 0){
-	return [dates objectAtIndex:currentPage];
+		return [dates objectAtIndex:currentPage];
 	}
 	else {
 		return @"Empty Diary";
 	}
-
+	
 }
 
 /*

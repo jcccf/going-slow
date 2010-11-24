@@ -10,7 +10,6 @@
 
 @interface ScrollViewPageController : UIViewController {
 	UIImageView *imageView;
-	
 }
 
 @property(nonatomic,retain) IBOutlet UIImageView *imageView;

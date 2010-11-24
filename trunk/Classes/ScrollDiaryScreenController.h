@@ -14,7 +14,6 @@
 
 @class HistoryReflectionViewController;
 
-
 @interface ScrollDiaryScreenController : UIViewController <UIScrollViewDelegate>{
 
 	IBOutlet UIScrollView *scrollView;
@@ -33,6 +32,8 @@
 	
 	NSMutableArray *thisDateTable;
 	NSMutableArray *viewControllers;
+	
+	UIImageView *emptyDiaryImage;
 }
 
 @property(nonatomic,retain) UIScrollView *scrollView;
@@ -43,8 +44,8 @@
 @property(nonatomic,retain) NSMutableDictionary *dateToPageDict;
 @property(nonatomic,retain) NSMutableArray *thisDateTable;
 @property(nonatomic,retain) HistoryReflectionViewController *histRefViewCont;
+@property(nonatomic,retain) IBOutlet UIImageView* emptyDiaryImage;
 @property(nonatomic,retain) NSMutableDictionary *imagesForFilePath;
-
 
 -(void)loadScrollViewWithPage:(int)page;
 
