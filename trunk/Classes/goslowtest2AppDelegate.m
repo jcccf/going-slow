@@ -117,6 +117,34 @@
 	    
 	if(!isNotFirstRun){
 		//tabController.view.hidden = YES;
+		NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+		
+		// Get the current date
+		NSDate *pickerDate = [NSDate date];
+		// Break the date up into components
+		NSDateComponents *dateComponents = [calendar components:( NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit )
+													   fromDate:pickerDate];
+		NSDateComponents *timeComponents = [calendar components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit )
+													   fromDate:pickerDate];
+		// Set up the fire time
+		NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+		//NSDateComponents *dateComp1 = [[NSDateComponents alloc] init];
+		[dateComps setDay:[dateComponents day]];
+		[dateComps setMonth:[dateComponents month]];
+		[dateComps setYear:[dateComponents year]];
+		[dateComps setHour:10];
+		[dateComps setMinute:0];
+		[dateComps setSecond:0];
+		
+		
+		NSDate *morningDate =[calendar dateFromComponents:dateComps];
+		[dateComps setHour:22];
+		NSDate *eveningDate = [calendar dateFromComponents:dateComps];
+		//[eveningDate retain];
+		//[morningDate retain];
+		
+		[[CoreDataManager getCoreDataManagerInstance] setMorningEveningTime:morningDate eveningDate:eveningDate];
+		[dateComps release];
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Setup" message:@"Go to the Setup Screen to update your notification times" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Setup",nil];
 		[alert show];
 		alert.delegate = self;
