@@ -24,9 +24,11 @@ static currentPage = 0;
 
 static NSMutableArray* dates = nil;
 
+static BOOL firstLoad = YES;
+
 @implementation ScrollDiaryScreenController
 
-@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict,histRefViewCont;
+@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict,histRefViewCont, imagesForFilePath;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -186,12 +188,18 @@ static NSMutableArray* dates = nil;
 	scrollView.delegate = self;
 	scrollView.alwaysBounceHorizontal = YES;
 	scrollView.clipsToBounds = YES;
+	
+	//only go to the most recent date if we just loaded the view otherwise, stay at the date they were on...
+	if(firstLoad){
 	[scrollView setContentOffset:CGPointMake(scrollView.frame.size.width*(kNumberOfPages-1), 0)];
+		
+	}
     [self loadScrollViewWithPage:kNumberOfPages-1];
 	[self loadScrollViewWithPage:kNumberOfPages-2];
 	
 	//CoreDataManager *c = [CoreDataManager getCoreDataManagerInstance];
 	
+	firstLoad = NO;
 	[dateTableView reloadData];
 	
 }
@@ -201,7 +209,6 @@ static NSMutableArray* dates = nil;
     [super viewDidLoad];
 	
 	[self viewDidAppear:NO];
-	
 	
 	
 }
@@ -295,8 +302,8 @@ static NSMutableArray* dates = nil;
 	if([r isKindOfClass:[TextReflection class]]){
 		TextReflection *t = (TextReflection*)r;
 		NSString *text = [t reflectionText];
-		if([text length] > 20){
-			text = [text substringToIndex:20];
+		if([text length] > 30){
+			text = [text substringToIndex:30];
 		}
 		cell.textLabel.text = text;
 		
