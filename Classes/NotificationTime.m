@@ -359,43 +359,23 @@
 	[self.dateFormatter setDateStyle:NSDateFormatterNoStyle];
 	[self.dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 	//self.infoButton
+	MorningEveningTime* alarmTimes = [[CoreDataManager getCoreDataManagerInstance] fetchMorningEveningTime];
 	
-	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+	morningDate = [alarmTimes morningDate];
+	eveningDate = [alarmTimes eveningDate];
 	
-    // Get the current date
-    NSDate *pickerDate = [NSDate date];
-    // Break the date up into components
-    NSDateComponents *dateComponents = [calendar components:( NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit )
-												   fromDate:pickerDate];
-    NSDateComponents *timeComponents = [calendar components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit )
-												   fromDate:pickerDate];
-    // Set up the fire time
-    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-	//NSDateComponents *dateComp1 = [[NSDateComponents alloc] init];
-    [dateComps setDay:[dateComponents day]];
-    [dateComps setMonth:[dateComponents month]];
-    [dateComps setYear:[dateComponents year]];
-    [dateComps setHour:10];
-	[dateComps setMinute:0];
-	[dateComps setSecond:0];
-	
-	
-	morningDate =[calendar dateFromComponents:dateComps];
-	[dateComps setHour:22];
-	eveningDate = [calendar dateFromComponents:dateComps];
-	[eveningDate retain];
-	[morningDate retain];
+	[self scheduleNotifications];
 	
 	self.dataArray2=[NSArray arrayWithObjects:[self.dateFormatter stringFromDate:morningDate], [self.dateFormatter stringFromDate:eveningDate], nil];
 	
 	//TEST
-	[[CoreDataManager getCoreDataManagerInstance] setMorningEveningTime:morningDate eveningDate:eveningDate];
+	//[[CoreDataManager getCoreDataManagerInstance] setMorningEveningTime:morningDate eveningDate:eveningDate];
 	
-	[self scheduleNotifications];
 	
-	NSLog([eveningDate description]);
+	
+	NSLog([[alarmTimes morningDate] description]);
 	[datePicker setDate:morningDate];
-	[dateComps release];
+
 }
 
 
