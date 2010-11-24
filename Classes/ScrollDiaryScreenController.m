@@ -116,7 +116,7 @@ static BOOL firstLoad = YES;
 			ColorReflection* cr = (ColorReflection*) [colors objectAtIndex:(arc4random() % [colors count])];
 			red = [[cr colorRed] floatValue];
 			green = [[cr colorGreen] floatValue];
-			blue = [[cr colorGreen] floatValue];
+			blue = [[cr colorBlue] floatValue];
 		}
 		UIColor *randomColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 		UIImage *img = [UIImage imageNamed:@"DiaryFlower.png" withColor:randomColor];
