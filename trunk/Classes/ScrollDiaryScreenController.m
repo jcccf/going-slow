@@ -47,6 +47,7 @@ static NSMutableArray* dates = nil;
 	NSMutableArray *allref = [d reflections];
 	
 	NSMutableArray *returnValue = [[NSMutableArray alloc] init];
+	[returnValue retain];
 	
 	for(Reflection *r in allref){
 		if([r isKindOfClass:[ColorReflection class]])
@@ -88,7 +89,6 @@ static NSMutableArray* dates = nil;
 		if(currentPage != page){
 			currentPage = page;
 			[dateTableView reloadData];
-			
 		}
 		
 		[self loadScrollViewWithPage:page-1];
@@ -128,39 +128,52 @@ static NSMutableArray* dates = nil;
 	for(int i = 0; i < kNumberOfPages; i++){
 		
 		ScrollViewPageController *s = [[ScrollViewPageController alloc] init];
+		UIView *v = [[UIView alloc] init];
 		
-		//right now image views are just repeat of "breathe".  
-		
-		//TODO:
-		
-		
-		CGFloat red = (arc4random() % 32767) / 32767.0f;
-		CGFloat green = (arc4random() % 32767) / 32767.0f;
-		CGFloat blue = (arc4random() % 32767) / 32767.0f;
-		
+		// Get a Random Color for a Day
+		NSString *dateKey = [dates objectAtIndex:i];
+		DayTableObject *d = [tableManager.dayToTableRepDict objectForKey:dateKey];
+		NSMutableArray *allref = [d reflections];
+		NSMutableArray *colors = [[NSMutableArray alloc] init];
+		for(Reflection *r in allref){
+			if([r isKindOfClass:[ColorReflection class]])
+				[colors addObject:r];
+		}
+		CGFloat red = 1.0f;
+		CGFloat green = 1.0f;
+		CGFloat blue = 1.0f;
+		if ([colors count] > 0) {
+			ColorReflection* cr = (ColorReflection*) [colors objectAtIndex:(arc4random() % [colors count])];
+			red = [[cr colorRed] floatValue];
+			green = [[cr colorGreen] floatValue];
+			blue = [[cr colorGreen] floatValue];
+		}
+//		CGFloat red = (arc4random() % 32767) / 32767.0f;
+//		CGFloat green = (arc4random() % 32767) / 32767.0f;
+//		CGFloat blue = (arc4random() % 32767) / 32767.0f;
 		UIColor *randomColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 		UIImage *img = [UIImage imageNamed:@"DiaryFlower.png" withColor:randomColor];
-		
 		
 		//CHANGE THIS TO REPRESENT THE CORRECT FLOWER
 		s.imageView = [[UIImageView alloc] initWithImage:img];
 		s.imageView.frame = CGRectMake(i*scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height);
+		[v addSubview:s.imageView];
 		
 		// Add Left Arrow
-		UIImageView* leftArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowLeft.png"]];
-		leftArrow.frame = CGRectMake(10, 80, 25, 25);
+		if (i != 0) {
+			UIImageView* leftArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowLeft.png"]];
+			leftArrow.frame = CGRectMake(i*scrollView.frame.size.width+10, 80, 25, 25);
+			[v addSubview:leftArrow];
+		}
 		
 		// Add Right Arrow
-		UIImageView* rightArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight.png"]];
-		rightArrow.frame = CGRectMake(scrollView.frame.size.width-35, 80, 25, 25);
-		
-		
-		UIView *v = [[UIView alloc] init];
-		[v addSubview:s.imageView];
-		[v addSubview:leftArrow];
-		[v addSubview:rightArrow];
+		if (i < kNumberOfPages-1 ) {
+			UIImageView* rightArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ArrowRight.png"]];
+			rightArrow.frame = CGRectMake((i+1)*scrollView.frame.size.width-35, 80, 25, 25);
+			[v addSubview:rightArrow];
+		}
+			
 		s.view = v;
-		
 		[viewControllers addObject:s];
 		
 	}
