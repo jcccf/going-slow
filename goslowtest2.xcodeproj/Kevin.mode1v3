@@ -272,13 +272,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>46</integer>
+									<integer>7</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 350}, {228, 614}}</string>
+							<string>{{0, 0}, {228, 614}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -315,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Screen1ViewController.m</string>
+								<string>CoreDataManager.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,17 +323,16 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Screen1ViewController.m</string>
+										<string>CoreDataManager.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0A669DFA129E319F00C4658A</string>
+										<string>0A669E14129E334F00C4658A</string>
 										<key>history</key>
 										<array>
 											<string>0A5494BB126372B900FA89FD</string>
 											<string>0A5494BE126372B900FA89FD</string>
 											<string>0A5494F71263745B00FA89FD</string>
-											<string>0A1AF33E12792569006BBA9F</string>
 											<string>0A1AF42512793C3E006BBA9F</string>
 											<string>0AAC0FE0127AAB6F00A64DAC</string>
 											<string>0ADA1027127B68CB00901601</string>
@@ -375,12 +374,13 @@
 											<string>0A669DE3129E30C700C4658A</string>
 											<string>0A669DE4129E30C700C4658A</string>
 											<string>0A669DE6129E30C700C4658A</string>
-											<string>0A669DE7129E30C700C4658A</string>
 											<string>0A669DE8129E30C700C4658A</string>
 											<string>0A669DE9129E30C700C4658A</string>
-											<string>0A669DEA129E30C700C4658A</string>
-											<string>0A669DF9129E319F00C4658A</string>
-											<string>0A669DE5129E30C700C4658A</string>
+											<string>0A669DFD129E31E800C4658A</string>
+											<string>0A669DFE129E31E800C4658A</string>
+											<string>0A669E11129E334F00C4658A</string>
+											<string>0A669E12129E334F00C4658A</string>
+											<string>0A669E13129E334F00C4658A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -578,12 +578,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>0A669E15129E334F00C4658A</string>
 		<string>0A669DC2129DA37100C4658A</string>
 		<string>0A669DBD129DA34600C4658A</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>0A4DC330126EAEA6008445A5</string>
 		<string>0A54947A1263687C00FA89FD</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/Kevin/Desktop/trunk/goslowtest2.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -803,7 +804,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

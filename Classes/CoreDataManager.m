@@ -309,78 +309,6 @@ static CoreDataManager *sharedInstance = nil;
 // look to NSPredicate for SQL-like queries
 -(Suggestion*) fetchSuggestion {
 	
-//	// Fetch Suggestions From Data Store
-//	// Create Request
-//	NSFetchRequest *request = [[NSFetchRequest alloc] init];
-//	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Suggestion" inManagedObjectContext:managedObjectContext];
-//	[request setEntity:entity];
-//	
-//	// Set Sort Descriptors
-//	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastSeen" ascending:NO];
-//	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-//	
-//	[request setSortDescriptors:sortDescriptors];
-//	[sortDescriptors release];
-//	[sortDescriptor release];
-//	
-//	// Fetch Results
-//	NSError *error;
-//	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-//	assert(mutableFetchResults != nil);
-//	
-////	NSEnumerator *enumerator = [mutableFetchResults objectEnumerator];
-////	id element;
-////	
-////	while(element = [enumerator nextObject]) {
-////		Suggestion *suggestion = (Suggestion*) element;
-////		// Do your thing with the object.
-////		NSLog(@"Date: %@", [suggestion lastSeen]);
-////    }
-//	
-//	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:0];
-//	NSDate *latestDate = [suggestion lastSeen];
-//	
-//	//Get a Random Suggestion if it's a new day
-//	if(![self isToday:latestDate]) {
-//		
-//		NSCalendar *calendar = [NSCalendar currentCalendar];
-//		NSDateComponents *offset = [[NSDateComponents alloc] init];
-//		[offset setDay:-14];
-//		// Return the date that was 14 days ago
-//		NSDate *cutoffDate = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
-//		
-//		[offset release];
-//		
-//		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastSeen <= %@) || (lastSeen == nil)", cutoffDate];
-//		[request setPredicate:predicate];
-//		
-//		// Fetch Results
-//		NSError *error;
-////		[mutableFetchResults release];
-//		mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-//		assert(mutableFetchResults != nil);
-//		
-//		int suggestionsArrayLength = [mutableFetchResults count];
-//		//Get a Random Suggestion
-//		int randomIndex = arc4random() % suggestionsArrayLength;
-//		
-//		suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:randomIndex];	
-//		
-//		// Send to Sync Manager
-//		// Uncomment the below when fixed.
-//		NSArray *sugarRay = [NSArray arrayWithObjects:[suggestion theme], [NSDate date], nil];
-//		[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:sugarRay];
-//		[[SyncManager getSyncManagerInstance] syncData];
-//	}
-//	[request release];
-//	
-//	//Set last seen to today's date
-//	[suggestion setLastSeen:[NSDate date]];
-//	NSLog(@"Date: %@", [suggestion lastSeen]);
-//	[self saveChanges];	
-//	
-//	return suggestion;
-	
 	// Fetch Suggestions From Data Store
 	// Create Request
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -401,28 +329,6 @@ static CoreDataManager *sharedInstance = nil;
 	
 	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:(arc4random() % [mutableFetchResults count])];
 	
-//	for (int i = 0; i < [mutableFetchResults count]; i++) {
-//		Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:i];
-//		NSDate *scheduledDate = [suggestion nextSeen];
-//		
-//		if ([self isToday:scheduledDate]) {
-//			[request release];
-//			
-//			//Set last seen to today's date
-//			[suggestion setLastSeen:[NSDate date]];
-//			NSLog(@"Date: %@", [suggestion lastSeen]);
-//			[self saveChanges];	
-//			
-//			return suggestion;
-//		}
-//	}
-//		
-//	[request release];
-//	
-//	mutableFetchResults = [self randomizeSuggestions];
-	
-//	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:0];
-	
 	bool mustReschedule = YES;
 	
 	for (int i = 0; i < [mutableFetchResults count]; i++) {
@@ -436,7 +342,7 @@ static CoreDataManager *sharedInstance = nil;
 	}
 	
 	if (mustReschedule) {
-		mutableFetchResults = [self randomizeSuggestions];
+		[self randomizeSuggestions];
 	}
 	
 	[request release];
@@ -483,7 +389,7 @@ static CoreDataManager *sharedInstance = nil;
 	
 }
 
--(NSMutableArray*) randomizeSuggestions {
+-(void) randomizeSuggestions {
 	
 	// Fetch Suggestions From Data Store
 	// Create Request
@@ -541,7 +447,113 @@ static CoreDataManager *sharedInstance = nil;
 	
 	[offset release];
 	
-	return mutableFetchResults;
+	[self scheduleNotifications];
+	
+}
+
+-(void) scheduleNotifications {
+	//[self.view removeFromSuperview];
+	[[UIApplication sharedApplication] cancelAllLocalNotifications];
+	
+	NSMutableArray *suggestions = [[CoreDataManager getCoreDataManagerInstance] fetchSuggestions];
+	MorningEveningTime *times = [[CoreDataManager getCoreDataManagerInstance] fetchMorningEveningTime];
+	NSDate *morningDate = [times morningDate];
+	NSDate *eveningDate = [times eveningDate];
+	
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSDateComponents *offset = [[NSDateComponents alloc] init];
+	
+	for (int i = 0; i < [suggestions count]; i++) {
+		
+		Suggestion *suggestion = [suggestions objectAtIndex:i];
+		NSTimeInterval diff = [[suggestion nextSeen] timeIntervalSinceDate:morningDate];
+		
+		int days = (int) diff / (60*60*24);
+		NSLog(@"days since %@: %i", morningDate, days);
+		
+		[offset setDay:days];
+		//[offset setMinute:i];	
+		NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:morningDate options:0];
+		//NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
+		
+		UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
+		if (localNotifMorning == nil)
+			return;
+		
+		localNotifMorning.fireDate = notificationDate;
+		localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
+		//localNotifMorning.repeatInterval = NSMinuteCalendarUnit;
+		
+		localNotifMorning.alertBody = [NSString stringWithFormat:@"Today's Suggestion: %@", [suggestion theme]];
+		localNotifMorning.alertAction = @"See More";
+		
+		// Schedule ONLY for notifications happening in the future
+		// Notifications scheduled for the past fire immediately
+		if ([[localNotifMorning fireDate] timeIntervalSinceNow] > 0) {
+			NSLog(@"Scheduling %@", [suggestion theme]);
+			[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
+		}
+		
+		[localNotifMorning release];
+		
+		
+	}
+	
+	[offset release];
+	
+	//UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
+	UILocalNotification *localNotifEvening = [[UILocalNotification alloc] init];
+	//    if (localNotifMorning == nil)
+	//        return;
+	if (localNotifEvening == nil)
+        return;
+	
+	localNotifEvening.fireDate = eveningDate;
+	//localNotifMorning.fireDate = morningDate;
+	
+	localNotifEvening.timeZone = [NSTimeZone defaultTimeZone];
+	//localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
+	
+	localNotifEvening.repeatInterval = NSDayCalendarUnit;
+	//	localNotifMorning.repeatInterval = NSDayCalendarUnit;
+	
+	//	localNotifMorning.alertBody = @"Would you like a suggestion?";
+	//	localNotifMorning.alertAction = @"See More";
+	localNotifEvening.alertBody = @"How was your day?";
+	localNotifEvening.alertAction = @"Reflect";
+	NSString *key = [NSString stringWithString:@"Type"];
+	NSString *val = [NSString stringWithString:@"Reflect"];
+	localNotifEvening.userInfo = [NSDictionary dictionaryWithObject:val forKey:key];
+	
+	
+	[[UIApplication sharedApplication] scheduleLocalNotification:localNotifEvening];
+	//[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
+	
+	[localNotifEvening release];
+	//[localNotifMorning release];
+	
+	/*localNotif.fireDate = [itemDate dateByAddingTimeInterval:1];
+	 
+	 //1 day repeat interval
+	 localNotif.repeatInterval = NSDayCalendarUnit;
+	 // localNotif.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
+	 localNotif.timeZone = [NSTimeZone defaultTimeZone];
+	 
+	 // Notification details
+	 localNotif.alertBody = @"You should reflect";
+	 // Set the action button
+	 localNotif.alertAction = @"Reflect";
+	 
+	 localNotif.soundName = UILocalNotificationDefaultSoundName;
+	 localNotif.applicationIconBadgeNumber = 1;
+	 
+	 // Specify custom data for the notification
+	 NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
+	 localNotif.userInfo = infoDict;
+	 
+	 // Schedule the notification
+	 [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+	 [localNotif release];*/
 	
 }
 
