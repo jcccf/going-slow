@@ -37,7 +37,8 @@
 
 -(Suggestion*)fetchSuggestion;
 -(NSMutableArray*) fetchSuggestions;
--(NSMutableArray*) randomizeSuggestions;
+-(void) randomizeSuggestions;
+-(void) scheduleNotifications;
 
 -(NSMutableArray*) fetchReflections:(NSString*) reflectionType;
 -(bool)isToday:(NSDate*)refDate;

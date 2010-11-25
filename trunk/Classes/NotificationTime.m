@@ -12,109 +12,6 @@
 @synthesize datePicker, delegateReference, doneButton, dataArray, dateFormatter, infoButton, dataArray2;
 @synthesize morningDate, eveningDate;
 
--(void) scheduleNotifications {
-	//[self.view removeFromSuperview];
-	[[UIApplication sharedApplication] cancelAllLocalNotifications];
-	
-	NSMutableArray *suggestions = [[CoreDataManager getCoreDataManagerInstance] fetchSuggestions];
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSDateComponents *offset = [[NSDateComponents alloc] init];
-	
-	for (int i = 0; i < [suggestions count]; i++) {
-		
-		Suggestion *suggestion = [suggestions objectAtIndex:i];
-		NSTimeInterval diff = [[suggestion nextSeen] timeIntervalSinceDate:morningDate];
-		
-		int days = (int) diff / (60*60*24);
-		NSLog(@"days since %@: %i", morningDate, days);
-		
-		
-		[offset setDay:days];
-		//[offset setMinute:i];	
-		NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:morningDate options:0];
-		//NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
-		
-		UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
-		if (localNotifMorning == nil)
-			return;
-		
-		localNotifMorning.fireDate = notificationDate;
-		localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
-		//localNotifMorning.repeatInterval = NSMinuteCalendarUnit;
-		
-		localNotifMorning.alertBody = [NSString stringWithFormat:@"Today's Suggestion: %@", [suggestion theme]];
-		localNotifMorning.alertAction = @"See More";
-		
-		// Schedule ONLY for notifications happening in the future
-		// Notifications scheduled for the past fire immediately
-		if ([[localNotifMorning fireDate] timeIntervalSinceNow] > 0) {
-			NSLog(@"Scheduling %@", [suggestion theme]);
-			[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
-		}
-		
-		[localNotifMorning release];
-
-		
-	}
-	
-	[offset release];
-	
-	//UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
-	UILocalNotification *localNotifEvening = [[UILocalNotification alloc] init];
-	//    if (localNotifMorning == nil)
-	//        return;
-	if (localNotifEvening == nil)
-        return;
-	
-	localNotifEvening.fireDate = eveningDate;
-	//localNotifMorning.fireDate = morningDate;
-	
-	localNotifEvening.timeZone = [NSTimeZone defaultTimeZone];
-	//localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
-	
-	localNotifEvening.repeatInterval = NSDayCalendarUnit;
-	//	localNotifMorning.repeatInterval = NSDayCalendarUnit;
-	
-	//	localNotifMorning.alertBody = @"Would you like a suggestion?";
-	//	localNotifMorning.alertAction = @"See More";
-	localNotifEvening.alertBody = @"How was your day?";
-	localNotifEvening.alertAction = @"Reflect";
-	NSString *key = [NSString stringWithString:@"Type"];
-	NSString *val = [NSString stringWithString:@"Reflect"];
-	localNotifEvening.userInfo = [NSDictionary dictionaryWithObject:val forKey:key];
-	
-	
-	[[UIApplication sharedApplication] scheduleLocalNotification:localNotifEvening];
-	//[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
-	
-	[localNotifEvening release];
-	//[localNotifMorning release];
-	
-	/*localNotif.fireDate = [itemDate dateByAddingTimeInterval:1];
-	 
-	 //1 day repeat interval
-	 localNotif.repeatInterval = NSDayCalendarUnit;
-	 // localNotif.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
-	 localNotif.timeZone = [NSTimeZone defaultTimeZone];
-	 
-	 // Notification details
-	 localNotif.alertBody = @"You should reflect";
-	 // Set the action button
-	 localNotif.alertAction = @"Reflect";
-	 
-	 localNotif.soundName = UILocalNotificationDefaultSoundName;
-	 localNotif.applicationIconBadgeNumber = 1;
-	 
-	 // Specify custom data for the notification
-	 NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
-	 localNotif.userInfo = infoDict;
-	 
-	 // Schedule the notification
-	 [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-	 [localNotif release];*/
-	
-}
-
 -(IBAction)goToHomeScreen:(id)sender{
 	CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
 	CGRect endFrame = self.datePicker.frame;
@@ -247,7 +144,7 @@
 	
 	[[CoreDataManager getCoreDataManagerInstance] setMorningEveningTime:morningDate eveningDate:eveningDate];
 
-	[self scheduleNotifications];
+	[[CoreDataManager getCoreDataManagerInstance] scheduleNotifications];
 	
 }
 
@@ -364,7 +261,7 @@
 	morningDate = [alarmTimes morningDate];
 	eveningDate = [alarmTimes eveningDate];
 	
-	[self scheduleNotifications];
+	[[CoreDataManager getCoreDataManagerInstance] scheduleNotifications];
 	
 	self.dataArray2=[NSArray arrayWithObjects:[self.dateFormatter stringFromDate:morningDate], [self.dateFormatter stringFromDate:eveningDate], nil];
 	
