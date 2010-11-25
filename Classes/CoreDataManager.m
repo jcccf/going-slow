@@ -399,27 +399,47 @@ static CoreDataManager *sharedInstance = nil;
 	NSError *error;
 	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
 	
+	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:(arc4random() % [mutableFetchResults count])];
+	
+//	for (int i = 0; i < [mutableFetchResults count]; i++) {
+//		Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:i];
+//		NSDate *scheduledDate = [suggestion nextSeen];
+//		
+//		if ([self isToday:scheduledDate]) {
+//			[request release];
+//			
+//			//Set last seen to today's date
+//			[suggestion setLastSeen:[NSDate date]];
+//			NSLog(@"Date: %@", [suggestion lastSeen]);
+//			[self saveChanges];	
+//			
+//			return suggestion;
+//		}
+//	}
+//		
+//	[request release];
+//	
+//	mutableFetchResults = [self randomizeSuggestions];
+	
+//	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:0];
+	
+	bool mustReschedule = YES;
+	
 	for (int i = 0; i < [mutableFetchResults count]; i++) {
-		Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:i];
-		NSDate *scheduledDate = [suggestion nextSeen];
+		Suggestion *s = (Suggestion*)[mutableFetchResults objectAtIndex:i];
+		NSDate *scheduledDate = [s nextSeen];
 		
 		if ([self isToday:scheduledDate]) {
-			[request release];
-			
-			//Set last seen to today's date
-			[suggestion setLastSeen:[NSDate date]];
-			NSLog(@"Date: %@", [suggestion lastSeen]);
-			[self saveChanges];	
-			
-			return suggestion;
+			mustReschedule = NO;
+			break;
 		}
 	}
-		
+	
+	if (mustReschedule) {
+		mutableFetchResults = [self randomizeSuggestions];
+	}
+	
 	[request release];
-	
-	mutableFetchResults = [self randomizeSuggestions];
-	
-	Suggestion *suggestion = (Suggestion*)[mutableFetchResults objectAtIndex:0];
 	
 	// Send to Sync Manager
 	// Uncomment the below when fixed.
