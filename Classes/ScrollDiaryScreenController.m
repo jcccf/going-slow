@@ -63,7 +63,7 @@ static BOOL firstLoad = YES;
 		int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
 		if(currentPage != page){
 			currentPage = page;
-			imagesForFilePath = nil;
+			//imagesForFilePath = nil;
 			[dateTableView reloadData];
 		}
 		
