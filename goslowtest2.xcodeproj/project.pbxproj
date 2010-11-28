@@ -62,6 +62,10 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
 		8C85BA43127A754F0060A355 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C85BA42127A754F0060A355 /* icon.jpg */; };
+		B952BA4612A0FAB9001A8754 /* AboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B952BA4512A0FAB9001A8754 /* AboutView.m */; };
+		B952BA6312A0FC5D001A8754 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B952BA6212A0FC5D001A8754 /* AboutView.xib */; };
+		B952BB5C12A1F95D001A8754 /* AckView.m in Sources */ = {isa = PBXBuildFile; fileRef = B952BB5B12A1F95D001A8754 /* AckView.m */; };
+		B952BB5E12A1F9EB001A8754 /* AckView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B952BB5D12A1F9EB001A8754 /* AckView.xib */; };
 		D00C842612656A37000DD3A9 /* Suggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = D00C842512656A37000DD3A9 /* Suggestion.m */; };
 		D023B4CB1265396A00575359 /* NotificationTime.m in Sources */ = {isa = PBXBuildFile; fileRef = D023B4C91265396A00575359 /* NotificationTime.m */; };
 		D023B4CC1265396A00575359 /* NotificationTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = D023B4CA1265396A00575359 /* NotificationTime.xib */; };
@@ -187,6 +191,12 @@
 		32CA4F630368D1EE00C91783 /* goslowtest2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goslowtest2_Prefix.pch; sourceTree = "<group>"; };
 		8C85BA42127A754F0060A355 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* goslowtest2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "goslowtest2-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B952BA4412A0FAB9001A8754 /* AboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutView.h; path = ../AboutView.h; sourceTree = "<group>"; };
+		B952BA4512A0FAB9001A8754 /* AboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutView.m; path = ../AboutView.m; sourceTree = "<group>"; };
+		B952BA6212A0FC5D001A8754 /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
+		B952BB5A12A1F95D001A8754 /* AckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AckView.h; sourceTree = "<group>"; };
+		B952BB5B12A1F95D001A8754 /* AckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AckView.m; sourceTree = "<group>"; };
+		B952BB5D12A1F9EB001A8754 /* AckView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AckView.xib; sourceTree = "<group>"; };
 		D00C842412656A37000DD3A9 /* Suggestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Suggestion.h; sourceTree = "<group>"; };
 		D00C842512656A37000DD3A9 /* Suggestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Suggestion.m; sourceTree = "<group>"; };
 		D023B4C81265396A00575359 /* NotificationTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTime.h; sourceTree = "<group>"; };
@@ -306,6 +316,9 @@
 				DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */,
 				0A5EA3721277F79500B6B9A8 /* ReflectTextView.h */,
 				0A5EA3731277F79500B6B9A8 /* ReflectTextView.m */,
+				B952BA4412A0FAB9001A8754 /* AboutView.h */,
+				B952BA4512A0FAB9001A8754 /* AboutView.m */,
+				B952BA6212A0FC5D001A8754 /* AboutView.xib */,
 				0A5EA3741277F79500B6B9A8 /* ReflectTextViewController.h */,
 				0A5EA3751277F79500B6B9A8 /* ReflectTextViewController.m */,
 				0A5EA3761277F79500B6B9A8 /* ReflectTextViewController.xib */,
@@ -328,6 +341,9 @@
 				0A4DC38D126EAF8A008445A5 /* SyncManager.m */,
 				10607E8D12937EE100595C5B /* SyncManagerConnectionDelegate.h */,
 				10607E8E12937EE100595C5B /* SyncManagerConnectionDelegate.m */,
+				B952BB5A12A1F95D001A8754 /* AckView.h */,
+				B952BB5B12A1F95D001A8754 /* AckView.m */,
+				B952BB5D12A1F9EB001A8754 /* AckView.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -463,7 +479,6 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "goslowtest2" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -543,6 +558,8 @@
 				107493E0129C7B4C00D35C2E /* ArrowRight.png in Resources */,
 				107493E3129C7B5500D35C2E /* Empty_Diary.png in Resources */,
 				0A022828129C856100E1A28B /* DiaryFlower.png in Resources */,
+				B952BA6312A0FC5D001A8754 /* AboutView.xib in Resources */,
+				B952BB5E12A1F9EB001A8754 /* AckView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +605,8 @@
 				DFA1095F129C6EE800690AF4 /* ReflectionTableManager.m in Sources */,
 				DFA10963129C6F1700690AF4 /* DayTableObject.m in Sources */,
 				0A02282D129C85CF00E1A28B /* UIImage+Colored.m in Sources */,
+				B952BA4612A0FAB9001A8754 /* AboutView.m in Sources */,
+				B952BB5C12A1F95D001A8754 /* AckView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +651,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphonesimulator4.0;
 			};
 			name = Debug;
 		};
@@ -646,7 +665,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphonesimulator4.0;
 			};
 			name = Release;
 		};

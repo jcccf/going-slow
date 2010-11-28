@@ -9,8 +9,24 @@
 #import "NotificationTime.h"
 
 @implementation NotificationTime
-@synthesize datePicker, delegateReference, doneButton, dataArray, dateFormatter, infoButton, dataArray2;
-@synthesize morningDate, eveningDate;
+@synthesize datePicker, delegateReference, doneButton, dataArray, dateFormatter, dataArray2;
+@synthesize morningDate, eveningDate, listOfItems, aboutView, ackView;
+
+-(void)goToAboutText
+{
+	if(aboutView == nil){
+		aboutView = [[AboutView alloc] initWithNibName:@"AboutView" bundle:nil];
+	}
+	[[self navigationController] pushViewController:aboutView animated:YES];
+}
+
+-(void)goToAckText
+{
+	if(ackView == nil){
+		ackView = [[AckView alloc] initWithNibName:@"AckView" bundle:nil];
+	}
+	[[self navigationController] pushViewController:ackView animated:YES];
+}
 
 -(IBAction)goToHomeScreen:(id)sender{
 	CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
@@ -32,95 +48,7 @@
 	CGRect newFrame = self.tableView.frame;
 	newFrame.size.height += self.datePicker.frame.size.height;
 	self.tableView.frame = newFrame;
-//	//[self.view removeFromSuperview];
-//	[[UIApplication sharedApplication] cancelAllLocalNotifications];
-//	
-//	NSMutableArray *suggestionsArray = [[SuggestionList getInstance] returnArray];
-//	NSCalendar *calendar = [NSCalendar currentCalendar];
-//	
-//	for (int i = 0; i < [suggestionsArray count]; i++) {
-//
-//		NSDateComponents *offset = [[NSDateComponents alloc] init];
-//		[offset setDay:i];
-//		//[offset setMinute:i];
-//		NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:morningDate options:0];
-//		//NSDate *notificationDate = [calendar dateByAddingComponents:offset toDate:[NSDate date] options:0];
-//		
-//		[offset release];
-//		
-//		Suggestion *suggestion = [suggestionsArray objectAtIndex:i]; 
-//		
-//		UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
-//		if (localNotifMorning == nil)
-//			return;
-//		
-//		localNotifMorning.fireDate = notificationDate;
-//		localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
-//		//localNotifMorning.repeatInterval = NSMinuteCalendarUnit;
-//		
-//		localNotifMorning.alertBody = [NSString stringWithFormat:@"Today's Suggestion: %@", [suggestion theme]];
-//		localNotifMorning.alertAction = @"See More";
-//		
-//		[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
-//		
-//		[localNotifMorning release];
-//		
-//		
-//	}
-//	
-//	//UILocalNotification *localNotifMorning = [[UILocalNotification alloc] init];
-//	UILocalNotification *localNotifEvening = [[UILocalNotification alloc] init];
-////    if (localNotifMorning == nil)
-////        return;
-//	if (localNotifEvening == nil)
-//        return;
-//	
-//	localNotifEvening.fireDate = eveningDate;
-//	//localNotifMorning.fireDate = morningDate;
-//	
-//	localNotifEvening.timeZone = [NSTimeZone defaultTimeZone];
-//	//localNotifMorning.timeZone = [NSTimeZone defaultTimeZone];
-//	
-//	localNotifEvening.repeatInterval = NSDayCalendarUnit;
-////	localNotifMorning.repeatInterval = NSDayCalendarUnit;
-//	
-////	localNotifMorning.alertBody = @"Would you like a suggestion?";
-////	localNotifMorning.alertAction = @"See More";
-//	localNotifEvening.alertBody = @"How was your day?";
-//	localNotifEvening.alertAction = @"Reflect";
-//	NSString *key = [NSString stringWithString:@"Type"];
-//	NSString *val = [NSString stringWithString:@"Reflect"];
-//	localNotifEvening.userInfo = [NSDictionary dictionaryWithObject:val forKey:key];
-//	
-//	
-//	[[UIApplication sharedApplication] scheduleLocalNotification:localNotifEvening];
-//	//[[UIApplication sharedApplication] scheduleLocalNotification:localNotifMorning];
-//	
-//	[localNotifEvening release];
-//	//[localNotifMorning release];
-//	
-//	/*localNotif.fireDate = [itemDate dateByAddingTimeInterval:1];
-//	
-//	//1 day repeat interval
-//	localNotif.repeatInterval = NSDayCalendarUnit;
-//	// localNotif.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
-//    localNotif.timeZone = [NSTimeZone defaultTimeZone];
-//	
-//	// Notification details
-//    localNotif.alertBody = @"You should reflect";
-//	// Set the action button
-//    localNotif.alertAction = @"Reflect";
-//	
-//    localNotif.soundName = UILocalNotificationDefaultSoundName;
-//    localNotif.applicationIconBadgeNumber = 1;
-//	
-//	// Specify custom data for the notification
-//    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
-//    localNotif.userInfo = infoDict;
-//	
-//	// Schedule the notification
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-//    [localNotif release];*/
+
 	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 	
 	if([indexPath row] == 0) {
@@ -138,7 +66,7 @@
 	
 		// remove the "Done" button in the nav bar
 	
-	self.navigationItem.rightBarButtonItem = self.infoButton;
+	self.navigationItem.rightBarButtonItem = nil;
 	
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
@@ -159,25 +87,48 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.dataArray count];
+	//Number of rows it should expect should be based on the section
+	NSDictionary *dictionary = [listOfItems objectAtIndex:section];
+	NSArray *array = [dictionary objectForKey:@"setup"];
+	NSLog([NSString stringWithFormat:@"%d", [array count]]);
+	return [array count];
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return [listOfItems count];
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *targetCell = [tableView cellForRowAtIndexPath:indexPath];
 	
 	MorningEveningTime* alarmTimes = [[CoreDataManager getCoreDataManagerInstance] fetchMorningEveningTime];
+	
 	NSIndexPath* morningRow = [NSIndexPath indexPathForRow:0 inSection:0];
+	NSIndexPath* eveningRow = [NSIndexPath indexPathForRow:1 inSection:0];
+	NSIndexPath* aboutRow = [NSIndexPath indexPathForRow:0 inSection:1];
+	NSIndexPath* ackRow = [NSIndexPath indexPathForRow:1 inSection:1];
 	
 	if ([morningRow isEqual:indexPath]) {
+		self.datePicker.hidden=false;
 		self.datePicker.date = [alarmTimes morningDate];
-	} else {
+	} else if([eveningRow isEqual:indexPath]) {
+		self.datePicker.hidden=false;
 		self.datePicker.date = [alarmTimes eveningDate];
+	} else if ([aboutRow isEqual: indexPath]) {
+		self.datePicker.hidden=true;
+		[self goToAboutText];
+	} else {
+		self.datePicker.hidden=true;
+		[self goToAckText];
 	}
+	
 	
 	//self.datePicker.date = [self.dateFormatter dateFromString:targetCell.detailTextLabel.text];
 	
 	// check if our date picker is already on screen
+	if ([morningRow isEqual:indexPath] || [eveningRow isEqual:indexPath]) {
 	if (self.datePicker.superview == nil)
 	{
 		[self.view.window addSubview: self.datePicker];
@@ -211,6 +162,7 @@
 		// add the "Done" button to the nav bar
 		self.navigationItem.rightBarButtonItem = self.doneButton;
 	}
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -223,8 +175,16 @@
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kCustomCellID] autorelease];
 	}
 	
-	cell.textLabel.text = [self.dataArray objectAtIndex:indexPath.row];
-	cell.detailTextLabel.text = [self.dataArray2 objectAtIndex:indexPath.row];
+	NSDictionary *dictionary = [listOfItems objectAtIndex:indexPath.section];
+	NSArray *array = [dictionary objectForKey:@"setup"];
+	NSString *cellValue = [array objectAtIndex:indexPath.row];
+	cell.textLabel.text = cellValue;
+	if (indexPath.section==0) {
+		cell.detailTextLabel.text = [self.dataArray2 objectAtIndex:indexPath.row];
+	}
+	else {
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	}
 	
 	return cell;
 }
@@ -235,20 +195,12 @@
 	[self.datePicker removeFromSuperview];
 }
 
--(IBAction)showInfo:(id)sender{
-	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"About" message:@"Go Slow is an application that helps you reduce stress. It gives you a suggestion in the morning and a reminder to reflect in the evening."
-												   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-	[alert show];
-	[alert release];
-	
-}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.navigationItem.rightBarButtonItem = self.infoButton;
+	listOfItems = [[NSMutableArray alloc] init];
 	//delegateReference = [[UIApplication sharedApplication] delegate];
 	self.dataArray = [NSArray arrayWithObjects:@"Morning Reminder", @"Evening Reminder", nil];
 	
@@ -264,11 +216,20 @@
 	[[CoreDataManager getCoreDataManagerInstance] scheduleNotifications];
 	
 	self.dataArray2=[NSArray arrayWithObjects:[self.dateFormatter stringFromDate:morningDate], [self.dateFormatter stringFromDate:eveningDate], nil];
+	NSArray *about=[NSArray arrayWithObjects:@"About",@"Acknowledgements",nil];
 	
 	//TEST
 	//[[CoreDataManager getCoreDataManagerInstance] setMorningEveningTime:morningDate eveningDate:eveningDate];
+	NSDictionary *timesDict = [NSDictionary dictionaryWithObject:dataArray forKey:@"setup"];
 	
+	NSDictionary *aboutDict = [NSDictionary dictionaryWithObject:about forKey:@"setup"];
 	
+	[listOfItems addObject:timesDict];
+	[listOfItems addObject:aboutDict];
+	
+	NSLog([NSString stringWithFormat:@"%d", [listOfItems count]]);
+	
+	NSLog([about description]);
 	
 	NSLog([[alarmTimes morningDate] description]);
 	[datePicker setDate:morningDate];
