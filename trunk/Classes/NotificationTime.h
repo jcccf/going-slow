@@ -10,9 +10,13 @@
 #import "goslowtest2AppDelegate.h"
 #import "CoreDataManager.h"
 #import "Suggestion.h"
+#import "AboutView.h"
+#import "AckView.h"
 
 @interface NotificationTime : UITableViewController {
 	//IBOutlet UITableView *tableview;
+	AboutView *aboutView;
+	AckView *ackView;
 	IBOutlet UIDatePicker *datePicker;
 	goslowtest2AppDelegate *delegateReference;
 	NSDate *morningDate;
@@ -21,7 +25,7 @@
 	NSArray *dataArray;	
 	NSArray *dataArray2;	
 	NSDateFormatter *dateFormatter;
-	UIBarButtonItem *infoButton;
+	NSMutableArray *listOfItems;
 }
 
 //@property (nonatomic, retain) IBOutlet UITableView *tableview;
@@ -33,7 +37,9 @@
 @property (nonatomic, retain) NSArray *dataArray2; 
 @property (nonatomic, retain) NSDateFormatter *dateFormatter; 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *infoButton;
+@property (nonatomic, retain) NSMutableArray *listOfItems; 
+@property (nonatomic,retain) AboutView *aboutView;
+@property (nonatomic,retain) AckView *ackView;
 
 
 - (IBAction) goToHomeScreen:(id)sender;
