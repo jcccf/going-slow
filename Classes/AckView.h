@@ -12,8 +12,10 @@
 @interface AckView : UIViewController {
 	UITextView *tView;
 	UINavigationItem *navigationItem;
+	UIWebView *wView;
 }
 
 @property (nonatomic,retain) IBOutlet UITextView *tView;
 @property (nonatomic,retain) IBOutlet UINavigationItem *navigationItem;
+@property (nonatomic,retain) IBOutlet UIWebView *wView;
 @end
