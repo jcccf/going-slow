@@ -10,7 +10,7 @@
 
 
 @implementation AckView
-@synthesize navigationItem, tView;
+@synthesize navigationItem, tView, wView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -19,12 +19,18 @@
 }
 
 - (void)viewDidLoad {
-	
     [super viewDidLoad];
 	self.navigationItem.title = @"Acknowledgements";
 	self.navigationItem.leftBarButtonItem.title = @"Back";
 	tView.delegate = self;
 	[tView becomeFirstResponder];
+	NSString* ack1 = @"<div style=\"font-family: Helvetica\">";
+	NSString* ack2 = @"<h3>Prof. Gilly Leshed, Assistant Professor, Information Science Department, Cornell University</h3><h3>Gannett Health Services, Cornell University</h3>";
+	NSString* ack3 = @"<h2>The Going Slow Team</h2><ul><li>Akshay Bapat</li><li>Justin Cheng</li><li>Jeremy Crockett</li><li>Greg Thomas</li><li>Nikhil Nawathe</li><li>Kevin Tse</li></ul>";
+	NSString* ack4 = @"<h2>Miscellany</h2><ul><li>Blank Diary Icon from http://bigkobe.deviantart.com</li><li>Tab Bar Icons from http://glyphish.com/</li></ul>";
+	NSString* ack5 = @"</div>";
+	NSString* acknowledgementsText = [NSString stringWithFormat:@"%@%@%@%@%@", ack1, ack2, ack3, ack4, ack5];
+	[wView loadHTMLString:acknowledgementsText baseURL:[NSURL URLWithString:@"about:blank"]];
 }
 
 

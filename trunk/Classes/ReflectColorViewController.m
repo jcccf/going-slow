@@ -54,9 +54,9 @@
     [super viewDidLoad];
 	[self animateColorWheelToShow:YES duration:0.3];
 	colorWheel.pickedColorDelegate = self;
-	[[colorButton layer] setCornerRadius:8.0f];
+	//[[colorButton layer] setCornerRadius:8.0f];
 	[[colorButton layer] setMasksToBounds:YES];
-	[[colorButton layer] setBorderWidth:1.0f];
+	//[[colorButton layer] setBorderWidth:1.0f];
 	self.navigationItem.title = @"Add Color";
 	self.navigationItem.rightBarButtonItem = saveButton;
 	//self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
