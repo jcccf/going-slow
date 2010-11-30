@@ -52,7 +52,7 @@ static BOOL firstLoad = YES;
 	//s should never be nil
 	assert(s != nil);
 	assert(s.view != nil);
-	assert(s.imageView != nil);
+	//assert(s.imageView != nil);
 	[scrollView addSubview:s.view];
 }
 
@@ -76,7 +76,9 @@ static BOOL firstLoad = YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-	
+	for (UIView* v in scrollView.subviews){
+		[v removeFromSuperview];
+	}
 	//dateToPageDict = [[NSMutableDictionary alloc] init];
 	
 	//set kNumberofPages here with how many dates are in coredata etc.
@@ -114,19 +116,37 @@ static BOOL firstLoad = YES;
 		CGFloat red = 1.0f;
 		CGFloat green = 1.0f;
 		CGFloat blue = 1.0f;
+		int j = 1;
 		if ([colors count] > 0) {
-			ColorReflection* cr = (ColorReflection*) [colors objectAtIndex:(arc4random() % [colors count])];
-			red = [[cr colorRed] floatValue];
-			green = [[cr colorGreen] floatValue];
-			blue = [[cr colorBlue] floatValue];
+			for (ColorReflection* cr in [colors reverseObjectEnumerator]) {
+				// Make the colored flower
+				red = [[cr colorRed] floatValue];
+				green = [[cr colorGreen] floatValue];
+				blue = [[cr colorBlue] floatValue];
+				UIColor *myColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+				UIImage *img = [UIImage imageNamed:@"DiaryFlower.png" withColor:myColor];
+				// Add the flower
+				UIImageView* uiv = [[UIImageView alloc] initWithImage:img];
+				double scale = 1.0;
+				double offset = scrollView.frame.size.width / ([colors count]+1) * j - scrollView.frame.size.width / scale / 2;
+				double voffset = 0;
+				
+				if ([colors count] > 3) {
+					img = [UIImage imageNamed:@"DiaryFlowerStalkless.png" withColor:myColor];
+					uiv = [[UIImageView alloc] initWithImage:img];
+					scale = 1.0/log([colors count]/2.0);
+					offset = ((arc4random() % 32 - 16.0) * 5.0) / scale + (scrollView.frame.size.width * 0.58 * scale)/2.0;
+					while (offset > scrollView.frame.size.width - scrollView.frame.size.width * scale / 2 || offset < - scrollView.frame.size.width * scale) {
+						offset = ((arc4random() % 32 - 16.0) * 5.0) / scale + (scrollView.frame.size.width * 0.58 * scale)/2.0;
+					}
+					voffset = arc4random() % 10 * 5.0 / scale + (scrollView.frame.size.height * 0.3 * scale)/2.0;
+				}
+				
+				uiv.frame = CGRectMake(i*scrollView.frame.size.width + offset, voffset, scrollView.frame.size.width * scale, scrollView.frame.size.height * scale);
+				[v addSubview:uiv];
+				j++;
+			}
 		}
-		UIColor *randomColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
-		UIImage *img = [UIImage imageNamed:@"DiaryFlower.png" withColor:randomColor];
-		
-		// Add the flower
-		s.imageView = [[UIImageView alloc] initWithImage:img];
-		s.imageView.frame = CGRectMake(i*scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height);
-		[v addSubview:s.imageView];
 		
 		// Add Left Arrow if needed
 		if (i != 0) {
@@ -141,7 +161,6 @@ static BOOL firstLoad = YES;
 			rightArrow.frame = CGRectMake((i+1)*scrollView.frame.size.width-35, 80, 25, 25);
 			[v addSubview:rightArrow];
 		}
-		
 		s.view = v;
 		[viewControllers addObject:s];
 	}
@@ -157,8 +176,7 @@ static BOOL firstLoad = YES;
 	
 	//only go to the most recent date if we just loaded the view otherwise, stay at the date they were on...
 	if(firstLoad){
-	[scrollView setContentOffset:CGPointMake(scrollView.frame.size.width*(kNumberOfPages-1), 0)];
-		
+		[scrollView setContentOffset:CGPointMake(scrollView.frame.size.width*(kNumberOfPages-1), 0)];
 	}
     [self loadScrollViewWithPage:kNumberOfPages-1];
 	[self loadScrollViewWithPage:kNumberOfPages-2];
