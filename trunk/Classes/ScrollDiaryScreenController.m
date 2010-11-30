@@ -28,7 +28,7 @@ static BOOL firstLoad = YES;
 
 @implementation ScrollDiaryScreenController
 
-@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict,histRefViewCont, emptyDiaryImage, imagesForFilePath;
+@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict,histRefViewCont, emptyDiaryImage, imagesForFilePath, activity;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -64,7 +64,9 @@ static BOOL firstLoad = YES;
 		if(currentPage != page){
 			currentPage = page;
 			//imagesForFilePath = nil;
+			[activity startAnimating];
 			[dateTableView reloadData];
+			[activity stopAnimating];
 		}
 		
 		[self loadScrollViewWithPage:page-1];
@@ -165,12 +167,14 @@ static BOOL firstLoad = YES;
 	
 	firstLoad = NO;
 	[dateTableView reloadData];
+	[activity stopAnimating];
 	
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	//zactivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	[self viewDidAppear:NO];
 }
 
@@ -221,6 +225,7 @@ static BOOL firstLoad = YES;
 }
 
 -(UIImage*)scaleImage:(UIImage*)image toSize:(CGSize)size {
+	[activity startAnimating];
 	UIGraphicsBeginImageContext(size);
 	[image drawInRect:CGRectMake(0, 0, size.width, size.height)];
 	UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -270,6 +275,7 @@ static BOOL firstLoad = YES;
 		
 		if(imagesForFilePath == nil){
 			imagesForFilePath = [[NSMutableDictionary alloc] init];
+			
 		}
 		PhotoReflection *p = (PhotoReflection*)r;
 		
@@ -277,11 +283,12 @@ static BOOL firstLoad = YES;
 		if([imagesForFilePath objectForKey:[p filepath]] == nil){
 			
 			//NSData *photoData = UIImageJPEGRepresentation([UIImage imageWithContentsOfFile:[p filepath]], 0.0);
-			
+			//[activity startAnimating];
 			UIImage *i = [self scaleImage:[UIImage imageWithContentsOfFile:[p filepath]] toSize:CGSizeMake(32, 44)];
 			
 			[i retain];
 			[imagesForFilePath setObject:i forKey:[p filepath]];
+			//[activity stopAnimating];
 			//[i release];
 		}
 		
@@ -291,7 +298,7 @@ static BOOL firstLoad = YES;
 	
     // Configure the cell...
 	//cell.textLabel.text = [NSString stringWithFormat:@"Cell number %i", [indexPath row]];
-    
+    [activity stopAnimating];
     return cell;
 }
 
@@ -361,6 +368,7 @@ static BOOL firstLoad = YES;
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
+	
 	
 	Reflection *r = [thisDateTable objectAtIndex:[indexPath row]];
 	
