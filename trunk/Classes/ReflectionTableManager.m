@@ -21,15 +21,15 @@
 -(id)init{
 	
 	dayToTableRepDict = [[NSMutableDictionary alloc] init];
-	
-	
 		
 	CoreDataManager *data = [CoreDataManager getCoreDataManagerInstance];
 	
 	NSMutableArray *allReflections = [data fetchReflections:@"Reflection"];
 	
 	for(Reflection *r in allReflections){
-		NSString *subDate = [[[r createdAt] description] substringToIndex:10];
+		
+//		NSString *subDate = [[[r createdAt] description] substringToIndex:10];
+		NSString *subDate = [[[CoreDataManager getCoreDataManagerInstance] convertToLocalTimezone: [r createdAt]] substringToIndex:10];
 		
 		//If this date is not already in the table
 		if([dayToTableRepDict objectForKey:subDate] == nil){

@@ -168,6 +168,29 @@ static CoreDataManager *sharedInstance = nil;
 	return daysElapsed;
 }
 
+-(NSString*) convertToLocalTimezone:(NSDate*) sourceDate {
+	
+	//NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+	NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+	
+	NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+	[formatter setTimeZone:destinationTimeZone];
+	
+	NSString* destinationString = [formatter stringFromDate:sourceDate];
+	NSLog(@"Converted: %@", destinationString);
+	
+//	NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
+//	NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
+//	NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;
+//	
+//	NSDate* destinationDate = [[[NSDate alloc] initWithTimeInterval:interval sinceDate:sourceDate] autorelease];
+//	destinationDate = [formatter dateFromString:destinationDate];
+	
+	return destinationString;
+	
+}
+
 -(void)addAllSuggestions{
 	[self deleteAllObjects:@"Suggestion"];
 	
@@ -577,17 +600,6 @@ static CoreDataManager *sharedInstance = nil;
 	// Fetch Results
 	NSError *error;
 	NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-	assert(mutableFetchResults != nil);
-	
-	//	NSEnumerator *enumerator = [mutableFetchResults objectEnumerator];
-	//	id element;
-	//	
-	//	while(element = [enumerator nextObject]) {
-	//		Suggestion *suggestion = (Suggestion*) element;
-	//		// Do your thing with the object.
-	//		NSLog(@"Date: %@", [suggestion lastSeen]);
-	//    }
-
 	
 	[request release];
 	

@@ -26,13 +26,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
 -(void)populateArraysAndSortDates{
 	dates = [[NSMutableArray alloc] init];
 	reflectionsToDate = [[CoreDataManager getCoreDataManagerInstance] fetchReflections:@"Reflection"];
 	
 	for(Reflection *r in reflectionsToDate){
-		if(![dates containsObject:[[[r createdAt] description] substringToIndex: 10]]){	
+		if(![dates containsObject:[[[r createdAt] description] substringToIndex: 10]]){
 			[dates addObject:[[[r createdAt] description] substringToIndex: 10]];
 			NSLog([NSString stringWithFormat:@"Added Reflection %@ to date array", [[r createdAt] description]]);
 		}

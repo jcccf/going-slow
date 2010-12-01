@@ -43,6 +43,7 @@
 -(NSMutableArray*) fetchReflections:(NSString*) reflectionType;
 -(bool)isToday:(NSDate*)refDate;
 -(int)daysElapsed:(NSDate*)refDate;
+-(NSString*) convertToLocalTimezone:(NSDate*) sourceDate;
 
 -(void)addColorReflection:(NSArray *)colors;
 -(void)addPhotoReflection:(NSString *)filepath;
