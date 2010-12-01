@@ -240,11 +240,17 @@
 	
 	
 	[[self navigationController] dismissModalViewControllerAnimated:YES];
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your photo reflection was saved to your diary!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-	[alert show];
-	[alert release];
-	// Save image
-	//UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+	//Save image to camera roll if selected
+	
+	BOOL userSelection = [[NSUserDefaults standardUserDefaults] boolForKey:@"CameraRollSave"];;
+	if(userSelection){
+		UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+	}
+	else{
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your photo reflection was saved to your diary!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+		}
 	
 	//[picker release];
 }
@@ -260,12 +266,12 @@
 								 otherButtonTitles:nil];
 	else // All is well
 		alert = [[UIAlertView alloc] initWithTitle:@"Success" 
-										   message:@"Image saved to Photo Album." 
+										   message:@"Photo reflection saved to Photo Album and Diary!." 
 										  delegate:self cancelButtonTitle:@"Ok" 
 								 otherButtonTitles:nil];
 	[alert show];
 	[alert release];
-	[[self navigationController] dismissModalViewControllerAnimated:YES];
+	//[[self navigationController] dismissModalViewControllerAnimated:YES];
 }
 
 -(void)goToText

@@ -103,6 +103,8 @@
 		DF74D6351278DA7C00E92851 /* ReflectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */; };
 		DFA1095F129C6EE800690AF4 /* ReflectionTableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA1095E129C6EE800690AF4 /* ReflectionTableManager.m */; };
 		DFA10963129C6F1700690AF4 /* DayTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA10962129C6F1700690AF4 /* DayTableObject.m */; };
+		DFAAC05212A6FE20000BAB46 /* CameraSaveController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAAC05012A6FE20000BAB46 /* CameraSaveController.m */; };
+		DFAAC05312A6FE20000BAB46 /* CameraSaveController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFAAC05112A6FE20000BAB46 /* CameraSaveController.xib */; };
 		DFAB0E30128A3FCA000392F4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAB0E2F128A3FCA000392F4 /* Reachability.m */; };
 		DFAB0E5A128A4378000392F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */; };
 		DFACCC1A12790089004CE2ED /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFACCC1812790089004CE2ED /* HistoryTableViewController.m */; };
@@ -244,6 +246,9 @@
 		DFA1095E129C6EE800690AF4 /* ReflectionTableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionTableManager.m; sourceTree = "<group>"; };
 		DFA10961129C6F1700690AF4 /* DayTableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTableObject.h; sourceTree = "<group>"; };
 		DFA10962129C6F1700690AF4 /* DayTableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTableObject.m; sourceTree = "<group>"; };
+		DFAAC04F12A6FE20000BAB46 /* CameraSaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSaveController.h; sourceTree = "<group>"; };
+		DFAAC05012A6FE20000BAB46 /* CameraSaveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSaveController.m; sourceTree = "<group>"; };
+		DFAAC05112A6FE20000BAB46 /* CameraSaveController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraSaveController.xib; sourceTree = "<group>"; };
 		DFAB0E2E128A3FCA000392F4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		DFAB0E2F128A3FCA000392F4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -346,6 +351,9 @@
 				B952BB5A12A1F95D001A8754 /* AckView.h */,
 				B952BB5B12A1F95D001A8754 /* AckView.m */,
 				B952BB5D12A1F9EB001A8754 /* AckView.xib */,
+				DFAAC04F12A6FE20000BAB46 /* CameraSaveController.h */,
+				DFAAC05012A6FE20000BAB46 /* CameraSaveController.m */,
+				DFAAC05112A6FE20000BAB46 /* CameraSaveController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -565,6 +573,7 @@
 				B952BA6312A0FC5D001A8754 /* AboutView.xib in Resources */,
 				B952BB5E12A1F9EB001A8754 /* AckView.xib in Resources */,
 				1075DDA212A5B24600D61419 /* DiaryFlowerStalkless.png in Resources */,
+				DFAAC05312A6FE20000BAB46 /* CameraSaveController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +621,7 @@
 				0A02282D129C85CF00E1A28B /* UIImage+Colored.m in Sources */,
 				B952BA4612A0FAB9001A8754 /* AboutView.m in Sources */,
 				B952BB5C12A1F95D001A8754 /* AckView.m in Sources */,
+				DFAAC05212A6FE20000BAB46 /* CameraSaveController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

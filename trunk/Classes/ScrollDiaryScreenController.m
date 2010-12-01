@@ -80,7 +80,7 @@ static BOOL firstLoad = YES;
 		[v removeFromSuperview];
 	}
 	//dateToPageDict = [[NSMutableDictionary alloc] init];
-	
+	//int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
 	//set kNumberofPages here with how many dates are in coredata etc.
 	viewControllers = [[NSMutableArray alloc] init];
 	tableManager = [[ReflectionTableManager alloc] init];
@@ -200,6 +200,8 @@ static BOOL firstLoad = YES;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	CGFloat pageWidth = scrollView.frame.size.width;
+	int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
 	//zactivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	[self viewDidAppear:NO];
 }
