@@ -10,7 +10,7 @@
 
 @implementation NotificationTime
 @synthesize datePicker, delegateReference, doneButton, dataArray, dateFormatter, dataArray2;
-@synthesize morningDate, eveningDate, listOfItems, aboutView, ackView;
+@synthesize morningDate, eveningDate, listOfItems, aboutView, ackView, cameraSaveView;
 
 -(void)goToAboutText
 {
@@ -28,6 +28,15 @@
 	[[self navigationController] pushViewController:ackView animated:YES];
 }
 
+-(void)goToCameraOptions
+{
+	if(cameraSaveView == nil){
+		cameraSaveView = [[CameraSaveController alloc] initWithNibName:@"CameraSaveController" bundle:nil];
+	}
+	
+	[[self navigationController] pushViewController:cameraSaveView animated:YES];
+	
+}
 -(IBAction)goToHomeScreen:(id)sender{
 	CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
 	CGRect endFrame = self.datePicker.frame;
@@ -110,6 +119,7 @@
 	NSIndexPath* aboutRow = [NSIndexPath indexPathForRow:0 inSection:1];
 	NSIndexPath* ackRow = [NSIndexPath indexPathForRow:1 inSection:1];
 	
+	
 	if ([morningRow isEqual:indexPath]) {
 		self.datePicker.hidden=false;
 		self.datePicker.date = [alarmTimes morningDate];
@@ -119,10 +129,15 @@
 	} else if ([aboutRow isEqual: indexPath]) {
 		self.datePicker.hidden=true;
 		[self goToAboutText];
-	} else {
+	} else if ([ackRow isEqual:indexPath]){
 		self.datePicker.hidden=true;
 		[self goToAckText];
 	}
+	else {
+		self.datePicker.hidden = true;
+		[self goToCameraOptions];
+	}
+
 	
 	
 	//self.datePicker.date = [self.dateFormatter dateFromString:targetCell.detailTextLabel.text];
@@ -218,14 +233,21 @@
 	self.dataArray2=[NSArray arrayWithObjects:[self.dateFormatter stringFromDate:morningDate], [self.dateFormatter stringFromDate:eveningDate], nil];
 	NSArray *about=[NSArray arrayWithObjects:@"About",@"Acknowledgements",nil];
 	
+	
+	NSArray *camera = [NSArray arrayWithObjects:@"Camera Save Options", nil];
+	
+	NSDictionary *cameraDict = [NSDictionary dictionaryWithObject:camera forKey:@"setup"];
 	//TEST
 	//[[CoreDataManager getCoreDataManagerInstance] setMorningEveningTime:morningDate eveningDate:eveningDate];
 	NSDictionary *timesDict = [NSDictionary dictionaryWithObject:dataArray forKey:@"setup"];
 	
 	NSDictionary *aboutDict = [NSDictionary dictionaryWithObject:about forKey:@"setup"];
 	
+	
+	
 	[listOfItems addObject:timesDict];
 	[listOfItems addObject:aboutDict];
+	[listOfItems addObject:cameraDict];
 	
 	NSLog([NSString stringWithFormat:@"%d", [listOfItems count]]);
 	

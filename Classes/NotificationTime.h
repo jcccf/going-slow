@@ -11,12 +11,14 @@
 #import "CoreDataManager.h"
 #import "Suggestion.h"
 #import "AboutView.h"
+#import "CameraSaveController.h"
 #import "AckView.h"
 
 @interface NotificationTime : UITableViewController {
 	//IBOutlet UITableView *tableview;
 	AboutView *aboutView;
 	AckView *ackView;
+	CameraSaveController *cameraSaveView;
 	IBOutlet UIDatePicker *datePicker;
 	goslowtest2AppDelegate *delegateReference;
 	NSDate *morningDate;
@@ -39,6 +41,7 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, retain) NSMutableArray *listOfItems; 
 @property (nonatomic,retain) AboutView *aboutView;
+@property (nonatomic,retain) CameraSaveController *cameraSaveView;
 @property (nonatomic,retain) AckView *ackView;
 
 
