@@ -145,6 +145,16 @@ static BOOL firstLoad = YES;
 				j++;
 			}
 		}
+		else{
+			// Default, have a white flower
+			UIColor *myColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+			UIImage *img = [UIImage imageNamed:@"DiaryFlower.png" withColor:myColor];
+			// Add the flower
+			UIImageView* uiv = [[UIImageView alloc] initWithImage:img];
+			uiv.frame = CGRectMake(i*scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height);
+			
+			[v addSubview:uiv];
+		}
 		
 		// Add Left Arrow if needed
 		if (i != 0) {
