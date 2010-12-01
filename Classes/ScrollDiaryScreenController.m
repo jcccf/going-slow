@@ -297,6 +297,7 @@ static BOOL firstLoad = YES;
 		}
 		cell.textLabel.text = text;
 		cell.imageView.image = nil;
+		//cell.backgroundView = nil;
 		
 	}
 	if([r isKindOfClass:[PhotoReflection class]]){
@@ -312,7 +313,7 @@ static BOOL firstLoad = YES;
 			
 			//NSData *photoData = UIImageJPEGRepresentation([UIImage imageWithContentsOfFile:[p filepath]], 0.0);
 			//[activity startAnimating];
-			UIImage *i = [self scaleImage:[UIImage imageWithContentsOfFile:[p filepath]] toSize:CGSizeMake(32, 44)];
+			UIImage *i = [self scaleImage:[UIImage imageWithContentsOfFile:[p filepath]] toSize:CGSizeMake(240, 44)];
 			
 			[i retain];
 			[imagesForFilePath setObject:i forKey:[p filepath]];
@@ -320,6 +321,7 @@ static BOOL firstLoad = YES;
 			//[i release];
 		}
 		
+		//cell.backgroundView = [[UIImageView alloc] initWithImage:[imagesForFilePath objectForKey:[p filepath]]];
 		cell.imageView.image = [imagesForFilePath objectForKey:[p filepath]];
 		cell.textLabel.text = @"Photo";
 	}
