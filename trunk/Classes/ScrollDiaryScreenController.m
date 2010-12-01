@@ -135,11 +135,9 @@ static BOOL firstLoad = YES;
 					img = [UIImage imageNamed:@"DiaryFlowerStalkless.png" withColor:myColor];
 					uiv = [[UIImageView alloc] initWithImage:img];
 					scale = 1.0/log([colors count]/2.0);
-					offset = ((arc4random() % 32 - 16.0) * 5.0) / scale + (scrollView.frame.size.width * 0.58 * scale)/2.0;
-					while (offset > scrollView.frame.size.width - scrollView.frame.size.width * scale / 2 || offset < - scrollView.frame.size.width * scale) {
-						offset = ((arc4random() % 32 - 16.0) * 5.0) / scale + (scrollView.frame.size.width * 0.58 * scale)/2.0;
-					}
-					voffset = arc4random() % 10 * 5.0 / scale + (scrollView.frame.size.height * 0.3 * scale)/2.0;
+					NSLog(@"%f",  ((scrollView.frame.size.width-0.0) * scale) / 2);
+					offset = arc4random() % (int) scrollView.frame.size.width - ((scrollView.frame.size.width-0.0) * scale) / 2;
+					voffset = arc4random() % (int) scrollView.frame.size.height - (scrollView.frame.size.height * scale)/2.0;
 				}
 				
 				uiv.frame = CGRectMake(i*scrollView.frame.size.width + offset, voffset, scrollView.frame.size.width * scale, scrollView.frame.size.height * scale);
