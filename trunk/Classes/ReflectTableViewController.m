@@ -239,10 +239,10 @@
 	[[CoreDataManager getCoreDataManagerInstance] addPhotoReflection:fullPath];
 	
 	
-	[[self navigationController] dismissModalViewControllerAnimated:YES];
 	//Save image to camera roll if selected
 	
-	BOOL userSelection = [[NSUserDefaults standardUserDefaults] boolForKey:@"CameraRollSave"];;
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	BOOL userSelection = [[NSUserDefaults standardUserDefaults] boolForKey:@"CameraRollSave"];
 	if(userSelection){
 		UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	}
@@ -251,7 +251,7 @@
 		[alert show];
 		[alert release];
 		}
-	
+	[[self navigationController] dismissModalViewControllerAnimated:YES];
 	//[picker release];
 }
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
