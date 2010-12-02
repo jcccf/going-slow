@@ -28,6 +28,7 @@
 	
 	IBOutlet UIActivityIndicatorView *activity;
 	
+	UIImage *cameraImage;
 	
 	//dictionary given a file path returns an image.  This is so we don't load from disk everytime we reload the tableView with photos
 	NSMutableDictionary *imagesForFilePath;
@@ -49,6 +50,7 @@
 @property(nonatomic,retain) IBOutlet UIImageView* emptyDiaryImage;
 @property(nonatomic,retain) NSMutableDictionary *imagesForFilePath;
 @property(nonatomic,retain) UIActivityIndicatorView *activity;
+@property(nonatomic,retain) UIImage *cameraImage;
 
 -(void)loadScrollViewWithPage:(int)page;
 

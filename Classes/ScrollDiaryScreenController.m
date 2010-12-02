@@ -28,7 +28,7 @@ static BOOL firstLoad = YES;
 
 @implementation ScrollDiaryScreenController
 
-@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict,histRefViewCont, emptyDiaryImage, imagesForFilePath, activity;
+@synthesize scrollView, dateTableView, viewControllers, tableManager, dateToPageDict,histRefViewCont, emptyDiaryImage, imagesForFilePath, activity, cameraImage;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -254,8 +254,12 @@ static BOOL firstLoad = YES;
 
 -(UIImage*)scaleImage:(UIImage*)image toSize:(CGSize)size {
 	[activity startAnimating];
+	if(cameraImage == nil){
+		cameraImage = [UIImage imageNamed:@"icon_digital_camera.png"];
+	}
 	UIGraphicsBeginImageContext(size);
-	[image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+	[cameraImage drawInRect:CGRectMake(0, 0, 50, 44)];
+	[image drawInRect:CGRectMake(50, 0, size.width, size.height)];
 	UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	    return newImage;
@@ -313,17 +317,27 @@ static BOOL firstLoad = YES;
 			
 			//NSData *photoData = UIImageJPEGRepresentation([UIImage imageWithContentsOfFile:[p filepath]], 0.0);
 			//[activity startAnimating];
-			UIImage *i = [self scaleImage:[UIImage imageWithContentsOfFile:[p filepath]] toSize:CGSizeMake(240, 44)];
+			UIImage *i = [UIImage imageWithContentsOfFile:[p filepath]];
+			//UIImage *i = [self scaleImage:[UIImage imageWithContentsOfFile:[p filepath]] toSize:CGSizeMake(scrollView.frame.size.width, 44)];
+			CGSize imgSize = [i size];
 			
-			[i retain];
-			[imagesForFilePath setObject:i forKey:[p filepath]];
+			CGRect rect = CGRectMake(imgSize.width/4, imgSize.height/4, scrollView.frame.size.width, 44);
+			
+			CGImageRef imgRef = CGImageCreateWithImageInRect([i CGImage], rect);
+			
+			UIImage *im = [UIImage imageWithCGImage:imgRef];
+			CGImageRelease(imgRef);
+			
+			[im retain];
+			[imagesForFilePath setObject:im forKey:[p filepath]];
 			//[activity stopAnimating];
 			//[i release];
 		}
 		
 		//cell.backgroundView = [[UIImageView alloc] initWithImage:[imagesForFilePath objectForKey:[p filepath]]];
+		//[[cell.imageView] setFrame:CGRectMake(0, 0, 320, 44)];
 		cell.imageView.image = [imagesForFilePath objectForKey:[p filepath]];
-		cell.textLabel.text = @"Photo";
+		//cell.textLabel.text = @"Photo";
 	}
 	
     // Configure the cell...
