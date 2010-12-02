@@ -224,6 +224,7 @@ static SyncManager *sharedInstance = nil;
 	NSArray *objects = [NSKeyedUnarchiver unarchiveObjectWithData:objectsData];
 	// }
 	if(objects != nil && netStatus == ReachableViaWiFi){
+		[ar removeObjectsInArray:objects];
 		[ar addObjectsFromArray:objects];
 	}
 	NSLog(@"Loaded Buffered Data");
@@ -312,9 +313,9 @@ static SyncManager *sharedInstance = nil;
 	
 	NSLog(@"out of wifi if-then");
 	// Save to NSUserDefaults
-	//[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:ar] forKey:@"savedArray"];
-	//[[NSUserDefaults standardUserDefaults] synchronize];
-	//NSLog(@"Saved Buffered Data");
+	[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:ar] forKey:@"savedArray"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	NSLog(@"Saved Buffered Data");
 	
 }
 

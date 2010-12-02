@@ -40,7 +40,6 @@
   didFailWithError:(NSError *)error
 {
     // release the connection, and the data object
-    [connection release];
 	
 	NSLog(@"A connection error happened!");
 	
@@ -61,6 +60,8 @@
 	[lock unlock];
 	NSLog(@"%@ failed and was saved to the pending urlRequest list", syncType);
     NSLog(@"%@ failed with error - %@", syncType, [error localizedDescription]);
+	
+	[connection release];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
