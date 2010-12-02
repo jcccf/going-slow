@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	hackTime = 0.0;
 	self.navigationItem.title = @"How was your day?";
 	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 	self.navigationItem.backBarButtonItem = backButton;
@@ -210,49 +211,61 @@
 }
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-	// Access the uncropped image from info dictionary
-	UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-	
-	//save image to syncdatamanager
-	
-	[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:image];
-	[[SyncManager getSyncManagerInstance] syncData];
-	
-	//Save image to disk
-	
-	NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(image, 0.25f)];
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	
-	NSString *imagePath = [paths objectAtIndex:0];
-	NSString *fullPath = [NSString stringWithFormat:@"%@/%@.jpg",imagePath,[[NSDate date] description]];
-	
-	
-	BOOL f = [imageData writeToFile:fullPath atomically:YES];
-	
-	if(!f)
-		NSLog(@"Image save fail");
+	// HACK to prevent multiple calls of didFinishPickingMediaWithInfo
+	if (hackTime == 0.0) {
+		hackTime = CFAbsoluteTimeGetCurrent();
+	}
+	if (CFAbsoluteTimeGetCurrent() - hackTime < 1.0) {
+		//Do nothing
+	}
 	else {
-		NSLog(@"Image saved!");
-	}
-
-	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:10]];
-	[[CoreDataManager getCoreDataManagerInstance] addPhotoReflection:fullPath];
-	
-	
-	//Save image to camera roll if selected
-	
-	[[NSUserDefaults standardUserDefaults] synchronize];
-	BOOL userSelection = [[NSUserDefaults standardUserDefaults] boolForKey:@"CameraRollSave"];
-	if(userSelection){
-		UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-	}
-	else{
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your photo reflection was saved to your diary!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+		hackTime = CFAbsoluteTimeGetCurrent();
+		
+		NSLog(@"Did Finish Picking!");
+		
+		// Access the uncropped image from info dictionary
+		UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+		
+		//save image to syncdatamanager
+		
+		[[[SyncManager getSyncManagerInstance] bufferedReflections] addObject:image];
+		[[SyncManager getSyncManagerInstance] syncData];
+		
+		//Save image to disk
+		
+		NSData *imageData = [NSData dataWithData:UIImageJPEGRepresentation(image, 0.25f)];
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		
+		NSString *imagePath = [paths objectAtIndex:0];
+		NSString *fullPath = [NSString stringWithFormat:@"%@/%@.jpg",imagePath,[[NSDate date] description]];
+		
+		
+		BOOL f = [imageData writeToFile:fullPath atomically:YES];
+		
+		if(!f)
+			NSLog(@"Image save fail");
+		else {
+			NSLog(@"Image saved!");
+		}
+		
+		[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:10]];
+		[[CoreDataManager getCoreDataManagerInstance] addPhotoReflection:fullPath];
+		
+		
+		//Save image to camera roll if selected
+		
+		[[NSUserDefaults standardUserDefaults] synchronize];
+		BOOL userSelection = [[NSUserDefaults standardUserDefaults] boolForKey:@"CameraRollSave"];
+		if(userSelection){
+			UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+		}
+		
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save!" message:@"Your photo reflection was saved!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
-		}
-	[[self navigationController] dismissModalViewControllerAnimated:YES];
-	//[picker release];
+		[[self navigationController] dismissModalViewControllerAnimated:YES];
+		//[picker release];
+	}
 }
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {

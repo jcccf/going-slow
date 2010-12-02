@@ -19,6 +19,7 @@
 	ReflectTextViewController *reflectTextViewController;
 	CoreDataManager *coreDataManager;
 	UILabel* savedLabel;
+	double hackTime;
 }
 
 -(void)storeReflection:(Reflection *)r;
