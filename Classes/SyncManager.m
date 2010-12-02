@@ -303,8 +303,10 @@ static SyncManager *sharedInstance = nil;
 		}
 		[ar removeObjectsInArray:objectsToDelete];
 		[objectsToDelete release];
+		[[self urLock] lock];
 		[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:ar] forKey:@"savedArray"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
+		[[self urLock] unlock];
 		NSLog(@"Saved Buffered Data");
 	}
 	else {
@@ -313,8 +315,10 @@ static SyncManager *sharedInstance = nil;
 	
 	NSLog(@"out of wifi if-then");
 	// Save to NSUserDefaults
+	[[self urLock] lock];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:ar] forKey:@"savedArray"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+	[[self urLock] unlock];
 	NSLog(@"Saved Buffered Data");
 	
 }

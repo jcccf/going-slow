@@ -46,17 +46,23 @@
 	assert(urlRequest != nil);
 	
 	// Add to the pending urlRequest list
+	NSLog(@"Trying to lock");
 	[lock lock];
+	NSLog(@"Trying to lock2");
 	NSMutableArray* ar = [[NSMutableArray alloc] init];
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	NSData *objectsData = [userDefaults objectForKey:@"savedUrlRequests"];
 	NSArray *objects = [NSKeyedUnarchiver unarchiveObjectWithData:objectsData];
+	NSLog(@"Trying to lock3");
 	if(objects != nil){
+		[ar removeObjectsInArray:objects];
 		[ar addObjectsFromArray:objects];
 	}
+	NSLog(@"Trying to lock4");
 	[ar addObject:urlRequest];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:ar] forKey:@"savedUrlRequests"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+	NSLog(@"Trying to lock5");
 	[lock unlock];
 	NSLog(@"%@ failed and was saved to the pending urlRequest list", syncType);
     NSLog(@"%@ failed with error - %@", syncType, [error localizedDescription]);
