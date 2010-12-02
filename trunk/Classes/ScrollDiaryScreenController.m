@@ -337,7 +337,7 @@ static BOOL firstLoad = YES;
 		//cell.backgroundView = [[UIImageView alloc] initWithImage:[imagesForFilePath objectForKey:[p filepath]]];
 		//[[cell.imageView] setFrame:CGRectMake(0, 0, 320, 44)];
 		cell.imageView.image = [imagesForFilePath objectForKey:[p filepath]];
-		//cell.textLabel.text = @"Photo";
+		cell.textLabel.text = @"";
 	}
 	
     // Configure the cell...
