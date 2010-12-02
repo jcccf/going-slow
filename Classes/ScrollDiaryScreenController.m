@@ -321,11 +321,11 @@ static BOOL firstLoad = YES;
 			//UIImage *i = [self scaleImage:[UIImage imageWithContentsOfFile:[p filepath]] toSize:CGSizeMake(scrollView.frame.size.width, 44)];
 			CGSize imgSize = [i size];
 			
-			CGRect rect = CGRectMake(imgSize.width/4, imgSize.height/4, scrollView.frame.size.width, 44);
+			CGRect rect = CGRectMake(imgSize.width/2, 0, imgSize.width/8, imgSize.height);
 			
 			CGImageRef imgRef = CGImageCreateWithImageInRect([i CGImage], rect);
 			
-			UIImage *im = [UIImage imageWithCGImage:imgRef];
+			UIImage *im = [UIImage imageWithCGImage:imgRef scale:1.0f orientation:UIImageOrientationRight];
 			CGImageRelease(imgRef);
 			
 			[im retain];
