@@ -51,6 +51,8 @@
 		1082E6241278DC3100A7701A /* CameraReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1082E6211278DC3100A7701A /* CameraReflect.png */; };
 		1082E6251278DC3100A7701A /* ColorReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1082E6221278DC3100A7701A /* ColorReflect.png */; };
 		1082E6261278DC3100A7701A /* TextReflect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1082E6231278DC3100A7701A /* TextReflect.png */; };
+		10A56BE712A7296500DEA1B0 /* CameraSaveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A56BE512A7296500DEA1B0 /* CameraSaveController.m */; };
+		10A56BE812A7296500DEA1B0 /* CameraSaveController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A56BE612A7296500DEA1B0 /* CameraSaveController.xib */; };
 		10BFF65C128DAC7D00B58E2C /* LogScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BFF659128DAC7D00B58E2C /* LogScreen.m */; };
 		10BFF65D128DAC7D00B58E2C /* Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BFF65B128DAC7D00B58E2C /* Screen.m */; };
 		10BFF661128DACF300B58E2C /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10BFF660128DACF300B58E2C /* 19-gear.png */; };
@@ -103,8 +105,6 @@
 		DF74D6351278DA7C00E92851 /* ReflectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF74D62F1278DA7C00E92851 /* ReflectTableViewController.xib */; };
 		DFA1095F129C6EE800690AF4 /* ReflectionTableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA1095E129C6EE800690AF4 /* ReflectionTableManager.m */; };
 		DFA10963129C6F1700690AF4 /* DayTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA10962129C6F1700690AF4 /* DayTableObject.m */; };
-		DFAAC05212A6FE20000BAB46 /* CameraSaveController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAAC05012A6FE20000BAB46 /* CameraSaveController.m */; };
-		DFAAC05312A6FE20000BAB46 /* CameraSaveController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFAAC05112A6FE20000BAB46 /* CameraSaveController.xib */; };
 		DFAB0E30128A3FCA000392F4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAB0E2F128A3FCA000392F4 /* Reachability.m */; };
 		DFAB0E5A128A4378000392F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */; };
 		DFACCC1A12790089004CE2ED /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFACCC1812790089004CE2ED /* HistoryTableViewController.m */; };
@@ -178,6 +178,9 @@
 		1082E6211278DC3100A7701A /* CameraReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CameraReflect.png; sourceTree = "<group>"; };
 		1082E6221278DC3100A7701A /* ColorReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColorReflect.png; sourceTree = "<group>"; };
 		1082E6231278DC3100A7701A /* TextReflect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextReflect.png; sourceTree = "<group>"; };
+		10A56BE412A7296500DEA1B0 /* CameraSaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSaveController.h; sourceTree = "<group>"; };
+		10A56BE512A7296500DEA1B0 /* CameraSaveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSaveController.m; sourceTree = "<group>"; };
+		10A56BE612A7296500DEA1B0 /* CameraSaveController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraSaveController.xib; sourceTree = "<group>"; };
 		10BFF658128DAC7D00B58E2C /* LogScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogScreen.h; path = Classes/LogScreen.h; sourceTree = "<group>"; };
 		10BFF659128DAC7D00B58E2C /* LogScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogScreen.m; path = Classes/LogScreen.m; sourceTree = "<group>"; };
 		10BFF65A128DAC7D00B58E2C /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Screen.h; path = Classes/Screen.h; sourceTree = "<group>"; };
@@ -246,9 +249,6 @@
 		DFA1095E129C6EE800690AF4 /* ReflectionTableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionTableManager.m; sourceTree = "<group>"; };
 		DFA10961129C6F1700690AF4 /* DayTableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTableObject.h; sourceTree = "<group>"; };
 		DFA10962129C6F1700690AF4 /* DayTableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTableObject.m; sourceTree = "<group>"; };
-		DFAAC04F12A6FE20000BAB46 /* CameraSaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSaveController.h; sourceTree = "<group>"; };
-		DFAAC05012A6FE20000BAB46 /* CameraSaveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSaveController.m; sourceTree = "<group>"; };
-		DFAAC05112A6FE20000BAB46 /* CameraSaveController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraSaveController.xib; sourceTree = "<group>"; };
 		DFAB0E2E128A3FCA000392F4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		DFAB0E2F128A3FCA000392F4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DFAB0E59128A4378000392F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -351,9 +351,9 @@
 				10607E8E12937EE100595C5B /* SyncManagerConnectionDelegate.m */,
 				0A02282B129C85CF00E1A28B /* UIImage+Colored.h */,
 				0A02282C129C85CF00E1A28B /* UIImage+Colored.m */,
-				DFAAC04F12A6FE20000BAB46 /* CameraSaveController.h */,
-				DFAAC05012A6FE20000BAB46 /* CameraSaveController.m */,
-				DFAAC05112A6FE20000BAB46 /* CameraSaveController.xib */,
+				10A56BE412A7296500DEA1B0 /* CameraSaveController.h */,
+				10A56BE512A7296500DEA1B0 /* CameraSaveController.m */,
+				10A56BE612A7296500DEA1B0 /* CameraSaveController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -573,7 +573,7 @@
 				B952BA6312A0FC5D001A8754 /* AboutView.xib in Resources */,
 				B952BB5E12A1F9EB001A8754 /* AckView.xib in Resources */,
 				1075DDA212A5B24600D61419 /* DiaryFlowerStalkless.png in Resources */,
-				DFAAC05312A6FE20000BAB46 /* CameraSaveController.xib in Resources */,
+				10A56BE812A7296500DEA1B0 /* CameraSaveController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +621,7 @@
 				0A02282D129C85CF00E1A28B /* UIImage+Colored.m in Sources */,
 				B952BA4612A0FAB9001A8754 /* AboutView.m in Sources */,
 				B952BB5C12A1F95D001A8754 /* AckView.m in Sources */,
-				DFAAC05212A6FE20000BAB46 /* CameraSaveController.m in Sources */,
+				10A56BE712A7296500DEA1B0 /* CameraSaveController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
