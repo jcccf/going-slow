@@ -346,6 +346,10 @@ static BOOL firstLoad = YES;
     return cell;
 }
 
+-(UITableViewCellAccessoryType)tableView:(UITableView*)tv accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath{
+		return UITableViewCellAccessoryDisclosureIndicator;
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	
 	
