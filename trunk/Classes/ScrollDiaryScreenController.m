@@ -195,6 +195,8 @@ static BOOL firstLoad = YES;
 	[dateTableView reloadData];
 	[activity stopAnimating];
 	
+	[[CoreDataManager getCoreDataManagerInstance] addLog:[NSNumber numberWithInt:2]];
+	
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
